@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Kubernetes on 虾米技术网</title>
+        <link>https://xmyy.com/categories/kubernetes/</link>
+        <description>Recent content in Kubernetes on 虾米技术网</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>虾米技术网 xmyy.com</copyright><atom:link href="https://xmyy.com/categories/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    </channel>
+</rss>
