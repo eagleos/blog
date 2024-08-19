@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="《网页颜色不再单调》发表于2000年7月10日《上海微型计算机周刊》,Web color is no longer monotonous">
+<title>网页颜色不再单调</title>
+
+<link rel='canonical' href='https://xmyy.com/article/Web-color-is-no-longer-monotonous/'>
+
+<link rel="stylesheet" href="/scss/style.min.bb98bd5bb997adc5d660f10dcffc7ef564ffadc0075160e92a649814700bd7bd.css"><meta property='og:title' content="网页颜色不再单调">
+<meta property='og:description' content="《网页颜色不再单调》发表于2000年7月10日《上海微型计算机周刊》,Web color is no longer monotonous">
+<meta property='og:url' content='https://xmyy.com/article/Web-color-is-no-longer-monotonous/'>
+<meta property='og:site_name' content='虾米技术网'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='网页' /><meta property='article:tag' content='html' /><meta property='article:tag' content='网页颜色' /><meta property='article:published_time' content='2023-07-09T08:03:00&#43;08:00'/><meta property='article:modified_time' content='2023-07-09T08:03:00&#43;08:00'/><meta property='og:image' content='https://xmyy.com/article/Web-color-is-no-longer-monotonous/florian-klauer-nptLmg6jqDo-unsplash.jpg' />
+<meta name="twitter:title" content="网页颜色不再单调">
+<meta name="twitter:description" content="《网页颜色不再单调》发表于2000年7月10日《上海微型计算机周刊》,Web color is no longer monotonous"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://xmyy.com/article/Web-color-is-no-longer-monotonous/florian-klauer-nptLmg6jqDo-unsplash.jpg' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/eagle_huc7d4d4a429513d02ed402ba0e1d9f519_8869_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">虾米技术网</a></h1>
+            <h2 class="site-description">xmyy.com</h2>
+        </div>
+    </header>
+
+
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档|Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索|Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链|Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://xmyy.com/" selected>中文</option>
+                                
+                                    <option value="https://xmyy.com/en/" >English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/article/Web-color-is-no-longer-monotonous/">
+                <img src="/article/Web-color-is-no-longer-monotonous/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_800x0_resize_q75_box.jpg"
+                        srcset="/article/Web-color-is-no-longer-monotonous/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_800x0_resize_q75_box.jpg 800w, /article/Web-color-is-no-longer-monotonous/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="1199" 
+                        loading="lazy"
+                        alt="Featured image of post 网页颜色不再单调" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/eagle/" style="background-color: #d09daa; color: #fff;">
+                雄鹰论文
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/article/Web-color-is-no-longer-monotonous/">网页颜色不再单调</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            《网页颜色不再单调》发表于2000年7月10日《上海微型计算机周刊》,Web color is no longer monotonous
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+
+    
+    <footer class="article-time">
+        <span class="post-meta-item">
+          <i class="fas fa-pen"></i>
+          
+            <span class="article-type" style="color: white; font-size: 14px; background: #bf59f3; padding: 0 5px 1px 5px; margin-right: 5px; border-radius: 2px;">原创</span>
+          
+        </span>
+        
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+            <div class="post-author">
+                作者：童建平
+
+            </div>
+        </div>
+        
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">
+2023-07-09 08:03</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><span class="nowrap"><span class="emojify">🙈</span>《上海微型计算机周刊》2000年7月10日 《网页颜色不再单调》 福建农林大学 童建平</span></p>
+<p>以下为文字版，扫描版请详见文末图片：</p>
+<p><br>          个人主页如今是因特网上一道独特的风景，对因特网的发展是不可或缺的，这从很多个人站点加盟商业网站就可见一斑。为使主页更富有独特性，很多人情笃于网页编程，可是却苦于网页颜色的选择，毕竟在整个32bit的颜色里，相信是没有人可以完全记得住其色码的。小弟近日觅得web.colors和HTML Coloring Guide两款网页颜色编辑软件，如遇佳音，特介绍给各位共享。
+<br>          web.colors（如图1）提供了几个预设的颜色搭配模板，在&quot;HTML Colors&quot;框中选择要设置的对象如背景色，然后在&quot;Color Presets&quot;框的&quot;Themes&quot;栏中选择内建好的搭配色系，其对应的RGB、HEX、VB编码就会即时出现在下面的&quot;Color Settings&quot;和&quot;HTML Code&quot;框中，并在&quot;HTML Sample&quot;框中给出其预览效果。如果不满意，可以直接点击&quot;HTML Colors&quot;框中的颜色条框，对其自定义。</p>
+<p><img src="/article/Web-color-is-no-longer-monotonous/webcolor1.gif"
+	width="250"
+	height="208"
+	srcset="/article/Web-color-is-no-longer-monotonous/webcolor1_hue66ecc4ba6469586cd764cea68e57f95_8816_480x0_resize_box_1.gif 480w, /article/Web-color-is-no-longer-monotonous/webcolor1_hue66ecc4ba6469586cd764cea68e57f95_8816_1024x0_resize_box_1.gif 1024w"
+	loading="lazy"
+	
+		alt="图1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="120"
+		data-flex-basis="288px"
+	
+>
+<br>图1</p>
+<p><br>          我们可以在&quot;Color Presets&quot;框中移动滑块进行调整，或者点击&quot;Decimal（十进制）&ldquo;和&quot;HEX（十六进制）&ldquo;按钮手工修改，以达到满意效果。web.colors提供了复制按钮，方便我们把满意的颜色编码粘贴于网页中，如何操作，看了图1就一目了然了，这里就不赘述了。我们也可以从中取色码用于字元的颜色设定。我们还可以点击下方的&quot;Color Manager&quot;和&quot;Theme Manager&quot;按钮，把编辑满意的搭配方案存盘,以便日后的使用。web.colors可以到http://mydown.cpcw.com/下载,大小为2MB。文件下载后在安装上需要注意，你可能会见到一个提示讯息告诉你你的系统中有些文件需要被更改，你必须先覆盖这些文件，重启后才能继续安装。
+<br>          HTML Coloring Guide（如图2）是网页字元配色的好帮手，是一个简单好用的色码产生器，特别适合用来辅助惯用文字型编辑器撰写网页的人。使用者可以通过RGB三色调整轴或是直接由色盘挑选（点击右边的&quot;PICK&quot;按钮）的方式，轻松指定网页中BGCOLOR、TEXT、LINK、VLINK、ALINK等参数元的颜色，同样可在下面的框中即时看到配出的效果,同样可以对色码直接进行复制、剪贴。HTML Coloring Guide还有一个独特的功能就是可以从图片中吸取色素：点击&quot;File&quot;菜单的&quot;Get Color from Picture&rdquo;,即可用鼠标随意从图片中选取颜色。还可以点击&quot;file&quot;菜单中的&quot;Get Background Picture&quot;选择背景图片，下面自动产生的HTML标签语句会给出背景图的路径，如不满意，可点击&quot;File&quot;菜单的&quot;Cancel Picture&quot;取消选择。类似于web.colors内建的搭配色系，HTML Coloring Guide有一个可供使用者自订的常用配色列表（见于菜单&quot;Presettings&quot;中），方便使用者随时调用。HTML Coloring Guide是共享软件，可到http://www.mydown.com下载，大小为1.7MB。</p>
+<p><img src="/article/Web-color-is-no-longer-monotonous/webcolor2.gif"
+	width="250"
+	height="170"
+	srcset="/article/Web-color-is-no-longer-monotonous/webcolor2_hud046f7139fd89e4a742a17ce8844e070_8843_480x0_resize_box_1.gif 480w, /article/Web-color-is-no-longer-monotonous/webcolor2_hud046f7139fd89e4a742a17ce8844e070_8843_1024x0_resize_box_1.gif 1024w"
+	loading="lazy"
+	
+		alt="图2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="147"
+		data-flex-basis="352px"
+	
+>
+<br>图2</p>
+<p><br>          （在MYDOWN下载:<A href="http://mydown.cpcw.com/Detailed/3967.html" target="_blank">web.colors</A>　　<A href="http://mydown.cpcw.com/Detailed/27107.html" target="_blank">HTML Coloring Guide</A>）</p>
+<p>扫描版请详见如下：</p>
+<p><img src="/article/Web-color-is-no-longer-monotonous/Web-color-is-no-longer-monotonous.jpg"
+	width="1520"
+	height="1206"
+	srcset="/article/Web-color-is-no-longer-monotonous/Web-color-is-no-longer-monotonous_huebbfad1edfa8e198fe68a27ac6a615ca_1135312_480x0_resize_q75_box.jpg 480w, /article/Web-color-is-no-longer-monotonous/Web-color-is-no-longer-monotonous_huebbfad1edfa8e198fe68a27ac6a615ca_1135312_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="网页颜色不再单调Web color is no longer monotonous"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="126"
+		data-flex-basis="302px"
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%BD%91%E9%A1%B5/">网页</a>
+        
+            <a href="/tags/html/">Html</a>
+        
+            <a href="/tags/%E7%BD%91%E9%A1%B5%E9%A2%9C%E8%89%B2/">网页颜色</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/article/Dynamic-HTML-technology-on-the-status-bar/">
+        
+        
+            <div class="article-image">
+                <img src="/article/Dynamic-HTML-technology-on-the-status-bar/_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_0ece189ababbd00c7f7605edaf3b0c58.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 状态栏上的动态HTML技术"
+                        data-key="Dynamic-HTML-technology-on-the-status-bar" 
+                        data-hash="md5-ZQ7E9/kU3iHeoCt/2SKyDg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">状态栏上的动态HTML技术</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/Dynamic-HTML-technology-wonderful-examples/">
+        
+        
+            <div class="article-image">
+                <img src="/article/Dynamic-HTML-technology-wonderful-examples/_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_0ece189ababbd00c7f7605edaf3b0c58.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 动态HTML技术精彩实例"
+                        data-key="Dynamic-HTML-technology-wonderful-examples" 
+                        data-hash="md5-ZQ7E9/kU3iHeoCt/2SKyDg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">动态HTML技术精彩实例</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/A-short-proof-of-an-inequality-question/">
+        
+        
+            <div class="article-image">
+                <img src="/article/A-short-proof-of-an-inequality-question/_hub241c2a9c7a2caf7e16a2a5bbc7141ff_18711_0d93edc5de9d0908dd62a372f5b813ee.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 一道不等式题的简证"
+                        data-key="A-short-proof-of-an-inequality-question" 
+                        data-hash="md5-qP0SZmoraoRHTFhZUJGh8A==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">一道不等式题的简证</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/knowing-in-exploration/">
+        
+        
+            <div class="article-image">
+                <img src="/article/knowing-in-exploration/_hud7e36f7e20e71be184458283bdae4646_55974_23a5d351d2fc2374f952239b6e9c423a.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 求知贵探索"
+                        data-key="knowing-in-exploration" 
+                        data-hash="md5-xRTZFpFxc6SKQuARS0aZYQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">求知贵探索</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/Learn-a-little-about-determinants/">
+        
+        
+            <div class="article-image">
+                <img src="/article/Learn-a-little-about-determinants/_hu958d513eeefe5556a31d065479ecc5ac_14205_7bffa90d1e66ca9b8184fda08a99dc7e.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 学一点“行列式”知识"
+                        data-key="Learn-a-little-about-determinants" 
+                        data-hash="md5-jq4GZk3fs&#43;jcbgAHVstwOw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">学一点“行列式”知识</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;  2000 -  2024 <a href="https://xmyy.com/" target="_blank">虾米技术网 xmyy.com</a>
+    </section>
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 ，主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+            </main>
+        </div>
+        <script type="text/javascript" src="/ts/main.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://xmyy.com/css/googleapis-css2.css">
+
+    </body>
+</html>
