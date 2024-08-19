@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="《状态栏上的动态HTML技术》发表于 2000年第9期《软件世界》,Dynamic HTML technology on the status bar">
+<title>状态栏上的动态HTML技术</title>
+
+<link rel='canonical' href='https://xmyy.com/article/Dynamic-HTML-technology-on-the-status-bar/'>
+
+<link rel="stylesheet" href="/scss/style.min.bb98bd5bb997adc5d660f10dcffc7ef564ffadc0075160e92a649814700bd7bd.css"><meta property='og:title' content="状态栏上的动态HTML技术">
+<meta property='og:description' content="《状态栏上的动态HTML技术》发表于 2000年第9期《软件世界》,Dynamic HTML technology on the status bar">
+<meta property='og:url' content='https://xmyy.com/article/Dynamic-HTML-technology-on-the-status-bar/'>
+<meta property='og:site_name' content='虾米技术网'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='动态HTML' /><meta property='article:tag' content='html' /><meta property='article:tag' content='状态栏' /><meta property='article:published_time' content='2023-07-09T08:02:00&#43;08:00'/><meta property='article:modified_time' content='2023-07-09T08:02:00&#43;08:00'/><meta property='og:image' content='https://xmyy.com/article/Dynamic-HTML-technology-on-the-status-bar/florian-klauer-nptLmg6jqDo-unsplash.jpg' />
+<meta name="twitter:title" content="状态栏上的动态HTML技术">
+<meta name="twitter:description" content="《状态栏上的动态HTML技术》发表于 2000年第9期《软件世界》,Dynamic HTML technology on the status bar"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://xmyy.com/article/Dynamic-HTML-technology-on-the-status-bar/florian-klauer-nptLmg6jqDo-unsplash.jpg' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/eagle_huc7d4d4a429513d02ed402ba0e1d9f519_8869_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">虾米技术网</a></h1>
+            <h2 class="site-description">xmyy.com</h2>
+        </div>
+    </header>
+
+
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档|Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索|Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链|Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://xmyy.com/" selected>中文</option>
+                                
+                                    <option value="https://xmyy.com/en/" >English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/article/Dynamic-HTML-technology-on-the-status-bar/">
+                <img src="/article/Dynamic-HTML-technology-on-the-status-bar/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_800x0_resize_q75_box.jpg"
+                        srcset="/article/Dynamic-HTML-technology-on-the-status-bar/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_800x0_resize_q75_box.jpg 800w, /article/Dynamic-HTML-technology-on-the-status-bar/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="1199" 
+                        loading="lazy"
+                        alt="Featured image of post 状态栏上的动态HTML技术" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/eagle/" style="background-color: #d09daa; color: #fff;">
+                雄鹰论文
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/article/Dynamic-HTML-technology-on-the-status-bar/">状态栏上的动态HTML技术</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            《状态栏上的动态HTML技术》发表于 2000年第9期《软件世界》,Dynamic HTML technology on the status bar
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+
+    
+    <footer class="article-time">
+        <span class="post-meta-item">
+          <i class="fas fa-pen"></i>
+          
+            <span class="article-type" style="color: white; font-size: 14px; background: #bf59f3; padding: 0 5px 1px 5px; margin-right: 5px; border-radius: 2px;">原创</span>
+          
+        </span>
+        
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+            <div class="post-author">
+                作者：童建平
+
+            </div>
+        </div>
+        
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">
+2023-07-09 08:02</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 3 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><span class="nowrap"><span class="emojify">🙈</span>《软件世界》 2000年第9期 《状态栏上的动态HTML技术》 福建农林大学 童建平</span></p>
+<p>以下为文字版，扫描版请详见文末图片：</p>
+<p>          动态HTML（DHTML，Dynamic Hyper Text Markup Language）作为浏览器自带的功能，实际上只是一种概念，并不属于一种专门的技术，不过我们更热衷于将其看作一种网页创作技巧。且看DHTML如何在小小状态栏上尽展身手，从中DHTML之精彩可窥一斑。
+<br>          一、跑马灯效果
+<br>          在状态栏可实现多种跑马灯效果，但一般均为比较单调的从左往右或从右往左等滚动效果。而只须将下面代码粘贴于<code>&lt;head&gt;</code>和<code>&lt;/head&gt;</code>之间，既能实现字母（或文字）一个接一个地从右边飞向左边的动态效果。可以任意替换代码中的msgBan5中的字符串。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">Language</span><span class="o">=</span><span class="s">&#34;JavaScript&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">msgBan5</span><span class="p">,</span> <span class="nx">msgBan5b</span><span class="p">,</span> <span class="nx">chaine5</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="nx">chainePart5</span><span class="p">,</span> <span class="nx">delaiBan5</span><span class="p">,</span> <span class="nx">ban5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">msgBan5</span><span class="o">=</span><span class="s1">&#39;http://loveme99.yeah.net&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">banniere5</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">banniere5</span><span class="p">(</span><span class="nx">delai</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="nx">delaiBan5</span> <span class="o">=</span> <span class="nx">delai</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">chaine5</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="nx">chaine5</span> <span class="o">=</span> <span class="s2">&#34; &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">msgBan5b</span> <span class="o">=</span> <span class="nx">msgBan5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">chainePart5</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">chaine5</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="nx">msgBan5b</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&#34; &#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="nx">chainePart5</span> <span class="o">=</span> <span class="nx">chainePart5</span> <span class="o">+</span> <span class="nx">chaine5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">chaine5</span> <span class="o">=</span> <span class="nx">msgBan5b</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">msgBan5b</span> <span class="o">=</span> <span class="nx">msgBan5b</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nx">msgBan5b</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">chainePart5</span> <span class="o">=</span> <span class="nx">chainePart5</span> <span class="o">+</span> <span class="nx">chaine5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">chaine5</span> <span class="o">=</span> <span class="nx">msgBan5b</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">msgBan5b</span> <span class="o">=</span> <span class="nx">msgBan5b</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nx">msgBan5b</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">120</span><span class="p">;</span> <span class="nx">i</span><span class="o">=</span><span class="nx">i</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">chaine5</span> <span class="o">=</span> <span class="s2">&#34; &#34;</span> <span class="o">+</span> <span class="nx">chaine5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span> <span class="nx">chaine5</span> <span class="o">=</span> <span class="nx">chaine5</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="nx">chaine5</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">window</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">chainePart5</span> <span class="o">+</span> <span class="nx">chaine5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">ban5</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">setTimeout</span><span class="p">(</span><span class="s1">&#39;banniere5(delaiBan5)&#39;</span><span class="p">,</span><span class="nx">delai</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><br>          二、实时时间
+<br>          实时时间（包括具体日期）可以以文本框方式出现在网页中，也可以出现在状态栏上，但出现在状态栏上一般只能为难懂的英文格式，如下面的代码一显示格式为&quot;Web Jun 9 13:47:43 UTC+0800 1999&quot;。本人经过探索，可实现中文显示，只须将下面的代码二粘贴于<code>&lt;head&gt;</code>和<code>&lt;/head&gt;</code>之间，然后将<code>&lt;body&gt;</code>改为<code>&lt;BODY onLoad=&quot;startclock()&quot;&gt;</code>即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!--Begin代码一--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">HTML</span><span class="p">&gt;&lt;</span><span class="nt">HEAD</span><span class="p">&gt;&lt;</span><span class="nt">TITLE</span><span class="p">&gt;&lt;/</span><span class="nt">TITLE</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&#34;JavaScript&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">doClock</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="nb">window</span><span class="p">.</span><span class="nx">setTimeout</span><span class="p">(</span><span class="s2">&#34;doClock()&#34;</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">today</span><span class="o">=</span><span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="nx">self</span><span class="p">.</span><span class="nx">status</span><span class="o">=</span><span class="nx">today</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">HEAD</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">BODY</span> <span class="na">onload</span><span class="o">=</span><span class="s">&#34;doClock()&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">BODY</span><span class="p">&gt;&lt;/</span><span class="nt">HTML</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--End代码一--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--Begin代码二--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">SCRIPT</span> <span class="na">LANGUAGE</span><span class="o">=</span><span class="s">JAVASCRIPT</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">timerID</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">timerRunning</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">chin</span><span class="o">=</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="s2">&#34;日&#34;</span><span class="p">,</span><span class="s2">&#34;一&#34;</span><span class="p">,</span><span class="s2">&#34;二&#34;</span><span class="p">,</span><span class="s2">&#34;三&#34;</span><span class="p">,</span><span class="s2">&#34;四&#34;</span><span class="p">,</span><span class="s2">&#34;五&#34;</span><span class="p">,</span><span class="s2">&#34;六&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">stopclock</span> <span class="p">(){</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nx">timerRunning</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timerID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">timerRunning</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">showtime</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">hours</span> <span class="o">=</span> <span class="nx">now</span><span class="p">.</span><span class="nx">getHours</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">minutes</span> <span class="o">=</span> <span class="nx">now</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">seconds</span> <span class="o">=</span> <span class="nx">now</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">day</span><span class="o">=</span><span class="nx">now</span><span class="p">.</span><span class="nx">getDay</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">date</span><span class="o">=</span><span class="nx">now</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">month</span><span class="o">=</span><span class="nx">now</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">year</span><span class="o">=</span><span class="nx">now</span><span class="p">.</span><span class="nx">getYear</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">second</span><span class="o">=</span><span class="nx">now</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">riqi</span><span class="o">=</span><span class="p">(</span><span class="nx">month</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&#34;月&#34;</span><span class="o">+</span><span class="nx">date</span><span class="o">+</span><span class="s2">&#34;日&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">xingqi</span><span class="o">=</span><span class="s2">&#34;星期&#34;</span><span class="o">+</span><span class="nx">chin</span><span class="p">[</span><span class="nx">day</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">nian</span><span class="o">=</span><span class="p">(</span><span class="nx">year</span><span class="p">)</span><span class="o">+</span><span class="s2">&#34;年&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">timeValue</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span> 
+</span></span><span class="line"><span class="cl"><span class="nx">timeValue</span> <span class="o">+=</span><span class="s2">&#34;现在时间是：&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">timeValue</span> <span class="o">+=</span><span class="nx">nian</span>
+</span></span><span class="line"><span class="cl"><span class="nx">timeValue</span> <span class="o">+=</span><span class="s2">&#34; &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">timeValue</span> <span class="o">+=</span><span class="nx">riqi</span><span class="o">+</span><span class="s2">&#34; &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">timeValue</span> <span class="o">+=</span><span class="s2">&#34; &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">timeValue</span> <span class="o">+=</span> <span class="p">(</span><span class="nx">hours</span> <span class="o">&gt;=</span> <span class="mi">12</span><span class="p">)</span> <span class="o">?</span> <span class="s2">&#34;下午&#34;</span> <span class="o">:</span> <span class="s2">&#34;上午&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">timeValue</span> <span class="o">+=</span><span class="s2">&#34; &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">timeValue</span> <span class="o">+=</span><span class="p">((</span><span class="nx">hours</span> <span class="o">&gt;</span><span class="mi">12</span><span class="p">)</span> <span class="o">?</span> <span class="nx">hours</span> <span class="o">-</span><span class="mi">12</span> <span class="o">:</span><span class="nx">hours</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">timeValue</span> <span class="o">+=</span> <span class="p">((</span><span class="nx">minutes</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="o">?</span> <span class="s2">&#34;:0&#34;</span> <span class="o">:</span> <span class="s2">&#34;:&#34;</span><span class="p">)</span> <span class="o">+</span> <span class="nx">minutes</span>
+</span></span><span class="line"><span class="cl"><span class="nx">timeValue</span> <span class="o">+=</span> <span class="p">((</span><span class="nx">seconds</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="o">?</span> <span class="s2">&#34;:0&#34;</span> <span class="o">:</span> <span class="s2">&#34;:&#34;</span><span class="p">)</span> <span class="o">+</span> <span class="nx">seconds</span>
+</span></span><span class="line"><span class="cl"><span class="nx">timeValue</span> <span class="o">+=</span><span class="s2">&#34; &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">timeValue</span> <span class="o">+=</span><span class="nx">xingqi</span><span class="o">+</span><span class="s2">&#34; &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">window</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">timeValue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">timerID</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="s2">&#34;showtime()&#34;</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">timerRunning</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">startclock</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="nx">stopclock</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="nx">showtime</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">SCRIPT</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--End代码二--&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><br>          三、来访次数统计
+<br>          将以下代码粘贴于<code>&lt;head&gt;</code>和<code>&lt;/head&gt;</code>之间，用于在状态栏显示来访者是第几次来访。如果将以下代码与上面的“跑马灯效果”代码结合起来，使之动态化，是不是可以带给来访者一些惊喜呢？将下面代码最后一句<code>&quot;window.status=string;&quot;</code>删掉，其后粘贴“跑马灯效果”代码的主体部分（即<code>&quot;&lt;!--&quot;</code>和<code>&quot;--&gt;&quot;</code>之间的代码），再将msgBan5字符串内容换成string，即将<code>“msgBan5='http://loveme99.yeah.net';”</code>换成<code>“msgBan5=string;”</code>，即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&#34;JavaScript&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">caution</span><span class="o">=</span><span class="kc">false</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">string</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">setCookie</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="nx">value</span><span class="p">,</span><span class="nx">expires</span><span class="p">,</span><span class="nx">path</span><span class="p">,</span><span class="nx">domain</span><span class="p">,</span><span class="nx">secure</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">curCookie</span><span class="o">=</span><span class="nx">name</span><span class="o">+</span><span class="s2">&#34;=&#34;</span><span class="o">+</span><span class="nx">escape</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span><span class="o">+</span><span class="p">((</span><span class="nx">expires</span><span class="p">)</span><span class="o">?</span><span class="s2">&#34;;expires=&#34;</span><span class="o">+</span><span class="nx">expires</span><span class="p">.</span><span class="nx">toGMTString</span><span class="p">()</span><span class="o">:</span><span class="s2">&#34;&#34;</span><span class="p">)</span><span class="o">+</span><span class="p">((</span><span class="nx">path</span><span class="p">)</span><span class="o">?</span><span class="s2">&#34;;domain=&#34;</span><span class="o">+</span><span class="nx">domain</span><span class="o">:</span><span class="s2">&#34;&#34;</span><span class="p">)</span><span class="o">+</span><span class="p">((</span><span class="nx">secure</span><span class="p">)</span><span class="o">?</span><span class="s2">&#34;;secure&#34;</span><span class="o">:</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">caution</span><span class="o">||</span><span class="p">(</span><span class="nx">name</span><span class="o">+</span><span class="s2">&#34;=&#34;</span><span class="o">+</span><span class="nx">escape</span><span class="p">(</span><span class="nx">value</span><span class="p">)).</span><span class="nx">length</span><span class="o">&lt;=</span><span class="mi">4000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="o">=</span><span class="nx">curCookie</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nx">confirm</span><span class="p">(</span><span class="s2">&#34;小甜饼文件过大，删除？&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="o">=</span><span class="nx">curCookie</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">getCookie</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">prefix</span><span class="o">=</span><span class="nx">name</span><span class="o">+</span><span class="s2">&#34;=&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">cookieStartIndex</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">prefix</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nx">cookieStartIndex</span><span class="o">==-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="kc">null</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">cookieEndIndex</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&#34;;&#34;</span><span class="p">,</span><span class="nx">cookieStartIndex</span><span class="o">+</span><span class="nx">prefix</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nx">cookieEndIndex</span><span class="o">==-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">cookieEndIndex</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">length</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="nx">unescape</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">cookieStartIndex</span><span class="o">+</span><span class="nx">prefix</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span><span class="nx">cookieEndIndex</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">deleteCookie</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="nx">path</span><span class="p">,</span><span class="nx">domain</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nx">getCookie</span><span class="p">(</span><span class="nx">name</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="o">=</span><span class="nx">name</span><span class="o">+</span><span class="s2">&#34;=&#34;</span><span class="o">+</span><span class="p">((</span><span class="nx">path</span><span class="p">)</span><span class="o">?</span><span class="s2">&#34;;path=&#34;</span><span class="o">+</span><span class="nx">path</span><span class="o">:</span><span class="s2">&#34;&#34;</span><span class="p">)</span><span class="o">+</span><span class="p">((</span><span class="nx">domain</span><span class="p">)</span><span class="o">?</span><span class="s2">&#34;;domain=&#34;</span><span class="o">+</span><span class="nx">domain</span><span class="o">:</span><span class="s2">&#34;&#34;</span><span class="p">)</span><span class="o">+</span><span class="s2">&#34;;expires=Thu,01-Jan-70 00:00:01 GMT&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">fixDate</span><span class="p">(</span><span class="nx">date</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">base</span><span class="o">=</span><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">skew</span><span class="o">=</span><span class="nx">base</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nx">skew</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">date</span><span class="p">.</span><span class="nx">setTime</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span><span class="o">-</span><span class="nx">skew</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">now</span><span class="o">=</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nx">fixDate</span><span class="p">(</span><span class="nx">now</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">now</span><span class="p">.</span><span class="nx">setTime</span><span class="p">(</span><span class="nx">now</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span><span class="o">+</span><span class="mi">365</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">1000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">visits</span><span class="o">=</span><span class="nx">getCookie</span><span class="p">(</span><span class="s2">&#34;counter&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">visits</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">visits</span><span class="o">=</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl"><span class="nx">visits</span><span class="o">=</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">visits</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="nx">setCookie</span><span class="p">(</span><span class="s2">&#34;counter&#34;</span><span class="p">,</span><span class="nx">visits</span><span class="p">,</span><span class="nx">now</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">string</span><span class="o">+=</span><span class="s2">&#34;欢迎您第&#34;</span><span class="o">+</span><span class="nx">visits</span><span class="o">+</span><span class="s2">&#34;次访问本主页。&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">window</span><span class="p">.</span><span class="nx">status</span><span class="o">=</span><span class="nx">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//--&gt;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><br>          如今在因特网上炙手可热的DHTML，越来越亲近我们。只要我们不懈努力，必能尽情领略其壮丽风景。</p>
+<p>扫描版请详见如下：</p>
+<p><img src="/article/Dynamic-HTML-technology-on-the-status-bar/Dynamic-HTML-technology-on-the-status-bar.jpg"
+	width="636"
+	height="1660"
+	srcset="/article/Dynamic-HTML-technology-on-the-status-bar/Dynamic-HTML-technology-on-the-status-bar_huebbfad1edfa8e198fe68a27ac6a615ca_367356_480x0_resize_q75_box.jpg 480w, /article/Dynamic-HTML-technology-on-the-status-bar/Dynamic-HTML-technology-on-the-status-bar_huebbfad1edfa8e198fe68a27ac6a615ca_367356_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="状态栏上的动态HTML技术Dynamic HTML technology on the status bar"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="38"
+		data-flex-basis="91px"
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%8A%A8%E6%80%81HTML/">动态HTML</a>
+        
+            <a href="/tags/html/">Html</a>
+        
+            <a href="/tags/%E7%8A%B6%E6%80%81%E6%A0%8F/">状态栏</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/article/Dynamic-HTML-technology-wonderful-examples/">
+        
+        
+            <div class="article-image">
+                <img src="/article/Dynamic-HTML-technology-wonderful-examples/_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_0ece189ababbd00c7f7605edaf3b0c58.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 动态HTML技术精彩实例"
+                        data-key="Dynamic-HTML-technology-wonderful-examples" 
+                        data-hash="md5-ZQ7E9/kU3iHeoCt/2SKyDg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">动态HTML技术精彩实例</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/A-short-proof-of-an-inequality-question/">
+        
+        
+            <div class="article-image">
+                <img src="/article/A-short-proof-of-an-inequality-question/_hub241c2a9c7a2caf7e16a2a5bbc7141ff_18711_0d93edc5de9d0908dd62a372f5b813ee.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 一道不等式题的简证"
+                        data-key="A-short-proof-of-an-inequality-question" 
+                        data-hash="md5-qP0SZmoraoRHTFhZUJGh8A==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">一道不等式题的简证</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/knowing-in-exploration/">
+        
+        
+            <div class="article-image">
+                <img src="/article/knowing-in-exploration/_hud7e36f7e20e71be184458283bdae4646_55974_23a5d351d2fc2374f952239b6e9c423a.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 求知贵探索"
+                        data-key="knowing-in-exploration" 
+                        data-hash="md5-xRTZFpFxc6SKQuARS0aZYQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">求知贵探索</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/Learn-a-little-about-determinants/">
+        
+        
+            <div class="article-image">
+                <img src="/article/Learn-a-little-about-determinants/_hu958d513eeefe5556a31d065479ecc5ac_14205_7bffa90d1e66ca9b8184fda08a99dc7e.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 学一点“行列式”知识"
+                        data-key="Learn-a-little-about-determinants" 
+                        data-hash="md5-jq4GZk3fs&#43;jcbgAHVstwOw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">学一点“行列式”知识</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/Tribute-to-ChenJingrun/">
+        
+        
+            <div class="article-image">
+                <img src="/article/Tribute-to-ChenJingrun/_hu0a3f1163de68d0b9471979ebf0ecf11e_32400_a354a9a1f5102742bceb4ec236f4ce2f.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 轸念陈景润"
+                        data-key="Tribute-to-ChenJingrun" 
+                        data-hash="md5-rC&#43;UhC7sa7h6Y66uIugvQQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">轸念陈景润</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;  2000 -  2024 <a href="https://xmyy.com/" target="_blank">虾米技术网 xmyy.com</a>
+    </section>
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 ，主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+            </main>
+        </div>
+        <script type="text/javascript" src="/ts/main.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://xmyy.com/css/googleapis-css2.css">
+
+    </body>
+</html>
