@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="《主页制作经验拾遗》发表于2000年10月30日《上海微型计算机周刊》,Gleanings from homepage creation experience">
+<title>主页制作经验拾遗</title>
+
+<link rel='canonical' href='https://xmyy.com/article/Gleanings-from-homepage-creation-experience/'>
+
+<link rel="stylesheet" href="/scss/style.min.bb98bd5bb997adc5d660f10dcffc7ef564ffadc0075160e92a649814700bd7bd.css"><meta property='og:title' content="主页制作经验拾遗">
+<meta property='og:description' content="《主页制作经验拾遗》发表于2000年10月30日《上海微型计算机周刊》,Gleanings from homepage creation experience">
+<meta property='og:url' content='https://xmyy.com/article/Gleanings-from-homepage-creation-experience/'>
+<meta property='og:site_name' content='虾米技术网'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='主页制作' /><meta property='article:tag' content='网站制作' /><meta property='article:tag' content='经验' /><meta property='article:tag' content='拾遗' /><meta property='article:published_time' content='2023-07-09T08:05:00&#43;08:00'/><meta property='article:modified_time' content='2023-07-09T08:05:00&#43;08:00'/><meta property='og:image' content='https://xmyy.com/article/Gleanings-from-homepage-creation-experience/florian-klauer-nptLmg6jqDo-unsplash.jpg' />
+<meta name="twitter:title" content="主页制作经验拾遗">
+<meta name="twitter:description" content="《主页制作经验拾遗》发表于2000年10月30日《上海微型计算机周刊》,Gleanings from homepage creation experience"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://xmyy.com/article/Gleanings-from-homepage-creation-experience/florian-klauer-nptLmg6jqDo-unsplash.jpg' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/eagle_huc7d4d4a429513d02ed402ba0e1d9f519_8869_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">虾米技术网</a></h1>
+            <h2 class="site-description">xmyy.com</h2>
+        </div>
+    </header>
+
+
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档|Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索|Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链|Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://xmyy.com/" selected>中文</option>
+                                
+                                    <option value="https://xmyy.com/en/" >English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/article/Gleanings-from-homepage-creation-experience/">
+                <img src="/article/Gleanings-from-homepage-creation-experience/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_800x0_resize_q75_box.jpg"
+                        srcset="/article/Gleanings-from-homepage-creation-experience/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_800x0_resize_q75_box.jpg 800w, /article/Gleanings-from-homepage-creation-experience/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="1199" 
+                        loading="lazy"
+                        alt="Featured image of post 主页制作经验拾遗" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/eagle/" style="background-color: #d09daa; color: #fff;">
+                雄鹰论文
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/article/Gleanings-from-homepage-creation-experience/">主页制作经验拾遗</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            《主页制作经验拾遗》发表于2000年10月30日《上海微型计算机周刊》,Gleanings from homepage creation experience
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+
+    
+    <footer class="article-time">
+        <span class="post-meta-item">
+          <i class="fas fa-pen"></i>
+          
+            <span class="article-type" style="color: white; font-size: 14px; background: #bf59f3; padding: 0 5px 1px 5px; margin-right: 5px; border-radius: 2px;">原创</span>
+          
+        </span>
+        
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+            <div class="post-author">
+                作者：童建平
+
+            </div>
+        </div>
+        
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">
+2023-07-09 08:05</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><span class="nowrap"><span class="emojify">🙈</span>《上海微型计算机周刊》2000年10月30日 《主页制作经验拾遗》 福建农林大学 童建平</span></p>
+<p>以下为文字版，扫描版请详见文末图片：</p>
+<p>          现在人人在做主页，关键是如何推陈出新、吸引匆匆过客，提高访问量。小弟不才，点滴经验愿与各位分享。
+<br>          首先您选择的免费主页空间很关键，要求访问速度快，不至于使访问者失去耐心；而且容量要适当大，方便日后主页扩容，免得换空间影响访问量。要切合实际、高瞻远瞩地规划主页总体结构，避免日后因维护困难而夭折。设计主页时，java程序固然可以使您的主页增色不少，但java会使浏览速度减慢至少50% ，故每个页面最好不要使用超过2个的java程序，首页尽量不要使用java程序。没有图片的主页是不可思议的，但单张图片不要超过30k,动画图片控制在15K左右为宜，每页图片总量不要超过60k，其下载速度才是可以让人接受的。若切实需要使用大图片，应使用分割技术。应该尽量给每张图片加上注解，使包括设置了禁显图片在内的访问者在图片下载前能知道网页的结构。
+<br>          我们崇尚学习、借鉴著名网站的设计，但不提倡抄袭，要体现您的个性与风格。很多网站都有&quot;设为主页&quot;、&ldquo;添加收藏夹&quot;的链接，不过多是介绍如何手工操作，下面的代码则将使您的主页呈现新意：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;cursor:hand;color:blue&#34;</span> <span class="na">href</span> <span class="na">onClick</span><span class="o">=</span><span class="s">&#34;this.style.behavior=&#39;url(#default#homepage)&#39;;this.setHomePage(&#39;http://chinahacker2000.home.chinaren.com&#39;);&#34;</span><span class="p">&gt;</span>设为主页<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&#34;JavaScript&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">bookmarkit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="nb">window</span><span class="p">.</span><span class="nx">external</span><span class="p">.</span><span class="nx">addFavorite</span><span class="p">(</span><span class="s1">&#39;http://chinahacker2000.home.chinaren.com&#39;</span><span class="p">,</span><span class="s1">&#39;童建平主页&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">all</span><span class="p">)</span> <span class="c1">//判断是否IE，只有IE支持。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;&lt;a href=&#34;#&#34; onClick=&#34;bookmarkit()&#34;&gt;加入收藏夹&lt;/a&gt;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><br>          您也应该有个&quot;what&rsquo;s new&quot;页面，及时提供主页最近更新信息，若能配上滚动字幕显示，将更加醒目：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">HTML</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">HEAD</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">TITLE</span><span class="p">&gt;</span>new message<span class="p">&lt;/</span><span class="nt">TITLE</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&#34;JavaScript&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--</span>
+</span></span><span class="line"><span class="cl"><span class="nx">lstart</span><span class="o">=</span><span class="mi">50</span>
+</span></span><span class="line"><span class="cl"><span class="nx">loop</span><span class="o">=</span><span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="nx">speed</span><span class="o">=</span><span class="mi">200</span>
+</span></span><span class="line"><span class="cl"><span class="nx">pr_step</span><span class="o">=</span><span class="mi">5</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">makeObj</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span><span class="nx">nest</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl"><span class="nx">nest</span><span class="o">=</span><span class="p">(</span><span class="o">!</span><span class="nx">nest</span><span class="p">)</span><span class="o">?</span><span class="s1">&#39;&#39;</span><span class="o">:</span><span class="s1">&#39;document.&#39;</span><span class="o">+</span><span class="nx">nest</span><span class="o">+</span><span class="s1">&#39;.&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">css</span><span class="o">=</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">layers</span><span class="p">)</span><span class="o">?</span> <span class="nb">eval</span><span class="p">(</span><span class="nx">nest</span><span class="o">+</span><span class="s1">&#39;document.&#39;</span><span class="o">+</span><span class="nx">obj</span><span class="p">)</span><span class="o">:</span><span class="nb">eval</span><span class="p">(</span><span class="nx">obj</span><span class="o">+</span><span class="s1">&#39;.style&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">scrollHeight</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">layers</span><span class="o">?</span><span class="k">this</span><span class="p">.</span><span class="nx">css</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">height</span><span class="o">:</span><span class="nb">eval</span><span class="p">(</span><span class="nx">obj</span><span class="o">+</span><span class="s1">&#39;.offsetHeight&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">up</span><span class="o">=</span><span class="nx">goUp</span>
+</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">obj</span><span class="o">=</span><span class="nx">obj</span><span class="o">+</span><span class="s2">&#34;Object&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">obj</span><span class="o">+</span><span class="s2">&#34;=this&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="k">this</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">goUp</span><span class="p">(</span><span class="nx">speed</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">css</span><span class="p">.</span><span class="nx">top</span><span class="p">)</span><span class="o">&gt;-</span><span class="k">this</span><span class="p">.</span><span class="nx">scrollHeight</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">css</span><span class="p">.</span><span class="nx">top</span><span class="o">=</span><span class="nb">parseInt</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">css</span><span class="p">.</span><span class="nx">top</span><span class="p">)</span><span class="o">-</span><span class="nx">pr_step</span>
+</span></span><span class="line"><span class="cl"><span class="nx">setTimeout</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">obj</span><span class="o">+</span><span class="s2">&#34;.up(&#34;</span><span class="o">+</span><span class="nx">speed</span><span class="o">+</span><span class="s2">&#34;)&#34;</span><span class="p">,</span><span class="nx">speed</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">loop</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">css</span><span class="p">.</span><span class="nx">top</span><span class="o">=</span><span class="nx">lstart</span>
+</span></span><span class="line"><span class="cl"><span class="nb">eval</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">obj</span><span class="o">+</span><span class="s2">&#34;.up(&#34;</span><span class="o">+</span><span class="nx">speed</span><span class="o">+</span><span class="s2">&#34;)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">slideInit</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl"><span class="nx">oSlide</span><span class="o">=</span><span class="nx">makeObj</span><span class="p">(</span><span class="s1">&#39;divNews&#39;</span><span class="p">,</span><span class="s1">&#39;divCont&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">oSlide</span><span class="p">.</span><span class="nx">css</span><span class="p">.</span><span class="nx">top</span><span class="o">=</span><span class="nx">lstart</span>
+</span></span><span class="line"><span class="cl"><span class="nx">oSlide</span><span class="p">.</span><span class="nx">up</span><span class="p">(</span><span class="nx">speed</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//--&gt;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">HEAD</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">BODY</span> <span class="na">bgcolor</span><span class="o">=</span><span class="s">&#34;#e6e6fa&#34;</span> <span class="na">OnLoad</span><span class="o">=</span><span class="s">&#34;slideInit()&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;divCont&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;position:absolute;width:300;height:100;top:60;left:0;clip:rect(0,250,150,0)&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;divNews&#34;</span><span class="na">style</span><span class="o">=</span><span class="s">&#34;position:absolute;top:0;left:0&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">font</span> <span class="na">face</span><span class="o">=</span><span class="s">&#34;Arial&#34;</span> <span class="na">color</span><span class="o">=</span><span class="s">&#34;#408080&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">更新信息：<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">改版主页全部上传完毕<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">http://chinahacker2000.home.chinaren.com<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">Your Message......<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">Your Message......<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">Your Message......<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">Your Message......<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">Your Message......<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">Your Message......<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">BODY</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">HTML</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><br>          现在制作网页的软件俯拾皆是(有点夸张^_^),但小弟认为还是应该自己动手用HTML、DHTML等设计主页，才能创造出有特色的主页。这样有个好处，一些文字特效大可不必动用Photoshop等制图，用DHTML就可实现，同时省去了图片下载时间：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">font</span> <span class="na">color</span><span class="o">=</span><span class="s">&#34;blue&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;width:50;height:0;filter:wave(Add=0,Phase=4,Freq=5,LightStrength=5,Strength=2)&#34;</span><span class="p">&gt;</span>水波<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">font</span> <span class="na">color</span><span class="o">=</span><span class="s">&#34;red&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;width:50;height:0;filter:Blur(Add=1,Direction=45,Strength=8)&#34;</span><span class="p">&gt;</span>模糊化<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">font</span> <span class="na">color</span><span class="o">=</span><span class="s">&#34;purple&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;width:50;height:0;filter:Glow(Color=#9966cc,Stength=8)&#34;</span><span class="p">&gt;</span>光照<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">font</span> <span class="na">color</span><span class="o">=</span><span class="s">&#34;black&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;width:90;height:0;filter:DropShadow(Color=black,OffX=6,OffY=6,Positive=1)&#34;</span><span class="p">&gt;</span>阴影<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">font</span> <span class="na">color</span><span class="o">=</span><span class="s">&#34;black&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;width:50;height:0;filter:Alpha(Opacity=0,FinishOpacity=75,Style=2)&#34;</span><span class="p">&gt;</span>透明化<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">font</span> <span class="na">color</span><span class="o">=</span><span class="s">&#34;black&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;width:50;height:0;filter:Mask(Color=fuchsia)&#34;</span><span class="p">&gt;</span>反显<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">font</span> <span class="na">color</span><span class="o">=</span><span class="s">&#34;maroon&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;width:80;height:0;filter:FlipH&#34;</span><span class="p">&gt;</span>水平倒影<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><br>          有人用小图片代替<code>&lt;ul&gt;</code>做段落标记，您可想过字体也可以用来做标记：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">FONT</span> <span class="na">color</span><span class="o">=</span><span class="s">#ff0000</span> <span class="na">face</span><span class="o">=</span><span class="s">Wingdings</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">FONT</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><br>          最后，如果您自认为自己的主页做得不错，为防止您的主页被置于别人网页页面中&mdash;-作为其框架，可以在首页文件的<head>中加入如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&#34;JavaScript&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">!=</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>扫描版请详见如下：</p>
+<p><img src="/article/Gleanings-from-homepage-creation-experience/Gleanings-from-homepage-creation-experience.jpg"
+	width="800"
+	height="1100"
+	srcset="/article/Gleanings-from-homepage-creation-experience/Gleanings-from-homepage-creation-experience_hu112b43374be241a0b1c6ea841e26c5d4_834055_480x0_resize_q75_box.jpg 480w, /article/Gleanings-from-homepage-creation-experience/Gleanings-from-homepage-creation-experience_hu112b43374be241a0b1c6ea841e26c5d4_834055_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="主页制作经验拾遗Gleanings from homepage creation experience"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="72"
+		data-flex-basis="174px"
+	
+>
+<img src="/article/Gleanings-from-homepage-creation-experience/Gleanings-from-homepage-creation-experience_2.jpg"
+	width="800"
+	height="1290"
+	srcset="/article/Gleanings-from-homepage-creation-experience/Gleanings-from-homepage-creation-experience_2_hua9710e5049e135777d940950f56e0875_359416_480x0_resize_q75_box.jpg 480w, /article/Gleanings-from-homepage-creation-experience/Gleanings-from-homepage-creation-experience_2_hua9710e5049e135777d940950f56e0875_359416_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="主页制作经验拾遗Gleanings from homepage creation experience 2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="62"
+		data-flex-basis="148px"
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E4%B8%BB%E9%A1%B5%E5%88%B6%E4%BD%9C/">主页制作</a>
+        
+            <a href="/tags/%E7%BD%91%E7%AB%99%E5%88%B6%E4%BD%9C/">网站制作</a>
+        
+            <a href="/tags/%E7%BB%8F%E9%AA%8C/">经验</a>
+        
+            <a href="/tags/%E6%8B%BE%E9%81%97/">拾遗</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/article/Simple-implementation-of-web-search-function/">
+        
+        
+            <div class="article-image">
+                <img src="/article/Simple-implementation-of-web-search-function/_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_0ece189ababbd00c7f7605edaf3b0c58.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 网页检索功能的简单实现"
+                        data-key="Simple-implementation-of-web-search-function" 
+                        data-hash="md5-ZQ7E9/kU3iHeoCt/2SKyDg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">网页检索功能的简单实现</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/DIY-Peer-to-Peer-Network-Setup/">
+        
+        
+            <div class="article-image">
+                <img src="/article/DIY-Peer-to-Peer-Network-Setup/_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_0ece189ababbd00c7f7605edaf3b0c58.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 组建对等网DIY"
+                        data-key="DIY-Peer-to-Peer-Network-Setup" 
+                        data-hash="md5-ZQ7E9/kU3iHeoCt/2SKyDg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">组建对等网DIY</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/WinImage-good-tool-for-making-images/">
+        
+        
+            <div class="article-image">
+                <img src="/article/WinImage-good-tool-for-making-images/_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_0ece189ababbd00c7f7605edaf3b0c58.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post winimage--制作镜像文件的好工具"
+                        data-key="WinImage-good-tool-for-making-images" 
+                        data-hash="md5-ZQ7E9/kU3iHeoCt/2SKyDg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">winimage--制作镜像文件的好工具</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/Web-color-is-no-longer-monotonous/">
+        
+        
+            <div class="article-image">
+                <img src="/article/Web-color-is-no-longer-monotonous/_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_0ece189ababbd00c7f7605edaf3b0c58.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 网页颜色不再单调"
+                        data-key="Web-color-is-no-longer-monotonous" 
+                        data-hash="md5-ZQ7E9/kU3iHeoCt/2SKyDg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">网页颜色不再单调</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/Dynamic-HTML-technology-on-the-status-bar/">
+        
+        
+            <div class="article-image">
+                <img src="/article/Dynamic-HTML-technology-on-the-status-bar/_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_0ece189ababbd00c7f7605edaf3b0c58.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 状态栏上的动态HTML技术"
+                        data-key="Dynamic-HTML-technology-on-the-status-bar" 
+                        data-hash="md5-ZQ7E9/kU3iHeoCt/2SKyDg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">状态栏上的动态HTML技术</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;  2000 -  2024 <a href="https://xmyy.com/" target="_blank">虾米技术网 xmyy.com</a>
+    </section>
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 ，主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+            </main>
+        </div>
+        <script type="text/javascript" src="/ts/main.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://xmyy.com/css/googleapis-css2.css">
+
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Winimage on 虾米技术网</title>
+        <link>https://xmyy.com/tags/winimage/</link>
+        <description>Recent content in Winimage on 虾米技术网</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>虾米技术网 xmyy.com</copyright>
+        <lastBuildDate>Sun, 09 Jul 2023 08:04:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/winimage/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>winimage--制作镜像文件的好工具</title>
+        <link>https://xmyy.com/article/WinImage-good-tool-for-making-images/</link>
+        <pubDate>Sun, 09 Jul 2023 08:04:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/article/WinImage-good-tool-for-making-images/</guid>
+        <description>&lt;img src="https://xmyy.com/article/WinImage-good-tool-for-making-images/florian-klauer-nptLmg6jqDo-unsplash.jpg" alt="Featured image of post winimage--制作镜像文件的好工具" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙈&lt;/span&gt;《互联网世界》2000年第10期 《winimage--制作镜像文件的好工具》 福建农林大学 童建平&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;以下为文字版，扫描版请详见文末图片：&lt;/p&gt;
+&lt;p&gt;          菜鸟我一年来常用WinImage软件格式化软盘，可近日才发现其强大的功能&amp;mdash;-制作镜像文件，如获至宝，惭愧之余，特向各位虾兄虾姐推荐之。
+&lt;br&gt;          WinImage是个小软件(如图1)，安装后仅500KB左右，却有强大的格式化软盘功能，支持标准及非标准格式化，提供多种格式化类型，可将1.44MB软盘格式化为1.72MB(而HD-COPY最多只能格式化至1.68MB),且能自动修复坏扇区;经笔者一年来使用比较，发现其修复功能强于HD-COPY。
+&lt;img src=&#34;https://xmyy.com/article/WinImage-good-tool-for-making-images/winimage1.jpg&#34;
+	width=&#34;498&#34;
+	height=&#34;413&#34;
+	srcset=&#34;https://xmyy.com/article/WinImage-good-tool-for-making-images/winimage1_hu699802865ff9d5a66d9d741cbb962617_32051_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/WinImage-good-tool-for-making-images/winimage1_hu699802865ff9d5a66d9d741cbb962617_32051_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;图1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;120&#34;
+		data-flex-basis=&#34;289px&#34;
+	
+&gt;
+&lt;br&gt;图1
+使用WinImage格式化软盘,只需点击其工具栏&amp;quot;New&amp;quot;(左边第一个）图标，选择格式化类型，再点击&amp;quot;Format and Write disk&amp;quot;(左边第九个)图标，即可。格式化时还可选择音乐伴奏,可点击菜单&amp;quot;Options\Settings\Notification&amp;quot;进行设置。
+&lt;br&gt;          然而，WinImage更强大的功能在于其读写img镜像文件功能。它支持多种类型的镜像文件，如后缀为img、imz、ima、iso、dsk、cif、wil、wlz等文件。如同Winzip能任意对打开的zip文件进行增减一样(顺便提一下Winzip7.0和Winzip8.0的注册方法一样：注册名：nianqing，注册码：434F0BAB)，在WinImage工具栏里点击&amp;quot;Open&amp;quot;(左边第二个)图标，打开一个img镜像文件，便在窗口中列出其所含文件，可在窗口中任意增减文件，如右击欲删除的文件，在弹出的菜单中选&amp;quot;Delete file&amp;quot;,即可将其从img文件中删掉;又如点击工具栏&amp;quot;Inject&amp;quot;(左边第五个)图标，从目录中选择某个文件，便可将其加入img文件;最后按&amp;quot;Save&amp;quot;(左边第三个)图标保存即可。值得一提的是，对于窗口中显示的文件列表，WinImage提供了保存功能，可点击菜单&amp;quot;File\Save as Text/HTML&amp;quot;,再选择保存为文本或网页htm文件方式，便于直观查看img文件所含文件。不过，保存为htm文件时会产生部分乱码，不能显示汉字。究其原因，是WinImage软件设计者在转换后的htm文件中设置成&amp;quot;&lt;meta content=&#34;text/html; charset=windows-1252&#34;&gt;&amp;quot;,只须将&amp;quot;windows-1252&amp;quot;改成&amp;quot;gb2312&amp;quot;即可正常显示汉字，可在注册表中进行修改，这可说是WinImage的小瑕疵，也许下一版本会改正过来。
+&lt;br&gt;          要建立新的img文件，若欲制作的文件为&amp;quot;c:\create&amp;quot;中所有文件，则点击菜单&amp;quot;File\Batch Assistant&amp;quot;( 也可点击&amp;quot;File\Batch Assistant wizard&amp;quot;,根据制作精灵向导提示操作),弹出&amp;quot;Batch Assistant&amp;quot;对话框(如图2)，在左边&amp;quot;Source&amp;quot;框中选&amp;quot;Directory injecting&amp;quot;,再在&amp;quot;Directory injecting&amp;quot;框中选择目录&amp;quot;c:\create&amp;quot;;然后在右边的&amp;quot;Destination&amp;quot;中选择&amp;quot;Set of image files&amp;quot;,在&amp;quot;Set of image files&amp;quot;框中点击&amp;quot;Browse&amp;quot;按钮，弹出&amp;quot;另存为&amp;quot;对话框，选择img文件保存目录如&amp;quot;c:\img&amp;quot;，需要指出的是，WinImage默认文件保存格式为imz，为使其生成的文件能被HD-COPY等软件读写，可在保存时在&amp;quot;保存类型&amp;quot;选框中选择&amp;quot;All files&amp;quot;,再取名为&amp;quot;filename.img&amp;quot;即可。
+&lt;img src=&#34;https://xmyy.com/article/WinImage-good-tool-for-making-images/winimage2.jpg&#34;
+	width=&#34;484&#34;
+	height=&#34;401&#34;
+	srcset=&#34;https://xmyy.com/article/WinImage-good-tool-for-making-images/winimage2_hu72306af5b24b2162a2449aecb6f10da0_16865_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/WinImage-good-tool-for-making-images/winimage2_hu72306af5b24b2162a2449aecb6f10da0_16865_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;图2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;120&#34;
+		data-flex-basis=&#34;289px&#34;
+	
+&gt;
+&lt;br&gt;图2
+img文件必须经解压才可使用，我们可以用WinImage制成自解压文件，点击菜单&amp;quot;File\Create Self-Extracting file&amp;quot;,根据向导提示即可完成，但未注册版对此功能有限制。
+&lt;br&gt;          最后，谈一下解压img文件的小技巧。有些程序的编译器如Turbo C的安装文件(img文件)多达几张软盘，若一一解压至软盘，再分盘安装，实在太麻烦了。我们无须用软盘，只须用WinImage和subst命令即可完成安装。DOS路径替换命令subst可以建立虚拟驱动器，即可用一个驱动器字母代替完整的路径名来访问目录，格式为：subst d: d:path。现在我们先建立&amp;quot;c:\setup&amp;quot;目录来存放解压img文件后生成的安装文件;再用WinImage打开文件&amp;quot;e:\turboc30.dos\disk1.img&amp;quot;,点击工具栏&amp;quot;Extract&amp;quot;(左边第四个)图标，选择解压目录,解压到&amp;quot;c:\setup&amp;quot;;然后点击&amp;quot;开始\程序\MS-DOS方式&amp;quot;，在DOS提示符下键入&amp;quot;subst a: c:\setup&amp;quot;,需要注意的是被替换的驱动器不能为当前缺省驱;再键入&amp;quot;a:&amp;quot;，执行install.exe开始安装;之后会有提示插入第二张安装盘，这时用Alt+Tab切换回Windows，删掉&amp;quot;c:\setup&amp;quot;所有文件，解压&amp;quot;e:\turbo30.dos\disk2.img&amp;quot;到&amp;quot;c:\setup&amp;quot;,又用Alt+Tab切换回Dos，按任意键继续安装;如此反复，直至安装完毕。有些安装程序允许我们简化操作，不难发现，大部分安装程序无非是依次分盘自解压各安装盘上的文件。因此，我们可以用WinImage将所有的镜像文件都解压到目录&amp;quot;c:\setup&amp;quot;(这时点击菜单&amp;quot;File\Batch Assistant&amp;quot;进行解压更方便，方法类同于前述建立新img文件),使用subst后再执行install.exe,安装程序会自行解压所有的安装文件，待其提示插入第二张安装盘时，只须一直按任意键忽略过去，即可完成安装！安装完要记住在DOS下键入&amp;quot;subst a: /d&amp;quot;,其中&amp;quot;/d&amp;quot;表示删除一个替换。用这种方法安装，省去频繁读写软盘的烦琐，也可避免因软盘可能存在坏扇区而影响安装进程，而此法安装所需时间大大低于常法，何乐而不用之呢？
+&lt;br&gt;          WinImage还有诸多功能，有兴趣的朋友不妨自己加以研究，这里就不赘述了。可以在http://www.winimage.com/winimage.htm 下载得到30天试用版的WinImage，不过过了期其功能仍无限制，本人主页http://loveme1999.163.net也提供下载，并将尽快推出其解密注册汉化版。&lt;/p&gt;
+&lt;p&gt;扫描版请详见如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/WinImage-good-tool-for-making-images/WinImage-good-tool-for-making-images.jpg&#34;
+	width=&#34;800&#34;
+	height=&#34;1100&#34;
+	srcset=&#34;https://xmyy.com/article/WinImage-good-tool-for-making-images/WinImage-good-tool-for-making-images_hua48ad8f92cd8e510dd7bc7db43c1f5f4_749115_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/WinImage-good-tool-for-making-images/WinImage-good-tool-for-making-images_hua48ad8f92cd8e510dd7bc7db43c1f5f4_749115_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;winimage&amp;ndash;制作镜像文件的好工具WinImage good tool for making images&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;72&#34;
+		data-flex-basis=&#34;174px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

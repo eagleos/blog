@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="《winimage--制作镜像文件的好工具》发表于2000年第10期《互联网世界》,WinImage good tool for making images">
+<title>winimage--制作镜像文件的好工具</title>
+
+<link rel='canonical' href='https://xmyy.com/article/WinImage-good-tool-for-making-images/'>
+
+<link rel="stylesheet" href="/scss/style.min.bb98bd5bb997adc5d660f10dcffc7ef564ffadc0075160e92a649814700bd7bd.css"><meta property='og:title' content="winimage--制作镜像文件的好工具">
+<meta property='og:description' content="《winimage--制作镜像文件的好工具》发表于2000年第10期《互联网世界》,WinImage good tool for making images">
+<meta property='og:url' content='https://xmyy.com/article/WinImage-good-tool-for-making-images/'>
+<meta property='og:site_name' content='虾米技术网'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='winimage' /><meta property='article:tag' content='镜像文件' /><meta property='article:tag' content='工具' /><meta property='article:published_time' content='2023-07-09T08:04:00&#43;08:00'/><meta property='article:modified_time' content='2023-07-09T08:04:00&#43;08:00'/><meta property='og:image' content='https://xmyy.com/article/WinImage-good-tool-for-making-images/florian-klauer-nptLmg6jqDo-unsplash.jpg' />
+<meta name="twitter:title" content="winimage--制作镜像文件的好工具">
+<meta name="twitter:description" content="《winimage--制作镜像文件的好工具》发表于2000年第10期《互联网世界》,WinImage good tool for making images"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://xmyy.com/article/WinImage-good-tool-for-making-images/florian-klauer-nptLmg6jqDo-unsplash.jpg' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/eagle_huc7d4d4a429513d02ed402ba0e1d9f519_8869_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">虾米技术网</a></h1>
+            <h2 class="site-description">xmyy.com</h2>
+        </div>
+    </header>
+
+
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档|Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索|Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链|Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://xmyy.com/" selected>中文</option>
+                                
+                                    <option value="https://xmyy.com/en/" >English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/article/WinImage-good-tool-for-making-images/">
+                <img src="/article/WinImage-good-tool-for-making-images/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_800x0_resize_q75_box.jpg"
+                        srcset="/article/WinImage-good-tool-for-making-images/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_800x0_resize_q75_box.jpg 800w, /article/WinImage-good-tool-for-making-images/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="1199" 
+                        loading="lazy"
+                        alt="Featured image of post winimage--制作镜像文件的好工具" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/eagle/" style="background-color: #d09daa; color: #fff;">
+                雄鹰论文
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/article/WinImage-good-tool-for-making-images/">winimage--制作镜像文件的好工具</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            《winimage--制作镜像文件的好工具》发表于2000年第10期《互联网世界》,WinImage good tool for making images
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+
+    
+    <footer class="article-time">
+        <span class="post-meta-item">
+          <i class="fas fa-pen"></i>
+          
+            <span class="article-type" style="color: white; font-size: 14px; background: #bf59f3; padding: 0 5px 1px 5px; margin-right: 5px; border-radius: 2px;">原创</span>
+          
+        </span>
+        
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+            <div class="post-author">
+                作者：童建平
+
+            </div>
+        </div>
+        
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">
+2023-07-09 08:04</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><span class="nowrap"><span class="emojify">🙈</span>《互联网世界》2000年第10期 《winimage--制作镜像文件的好工具》 福建农林大学 童建平</span></p>
+<p>以下为文字版，扫描版请详见文末图片：</p>
+<p>          菜鸟我一年来常用WinImage软件格式化软盘，可近日才发现其强大的功能&mdash;-制作镜像文件，如获至宝，惭愧之余，特向各位虾兄虾姐推荐之。
+<br>          WinImage是个小软件(如图1)，安装后仅500KB左右，却有强大的格式化软盘功能，支持标准及非标准格式化，提供多种格式化类型，可将1.44MB软盘格式化为1.72MB(而HD-COPY最多只能格式化至1.68MB),且能自动修复坏扇区;经笔者一年来使用比较，发现其修复功能强于HD-COPY。
+<img src="/article/WinImage-good-tool-for-making-images/winimage1.jpg"
+	width="498"
+	height="413"
+	srcset="/article/WinImage-good-tool-for-making-images/winimage1_hu699802865ff9d5a66d9d741cbb962617_32051_480x0_resize_q75_box.jpg 480w, /article/WinImage-good-tool-for-making-images/winimage1_hu699802865ff9d5a66d9d741cbb962617_32051_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="图1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="120"
+		data-flex-basis="289px"
+	
+>
+<br>图1
+使用WinImage格式化软盘,只需点击其工具栏&quot;New&quot;(左边第一个）图标，选择格式化类型，再点击&quot;Format and Write disk&quot;(左边第九个)图标，即可。格式化时还可选择音乐伴奏,可点击菜单&quot;Options\Settings\Notification&quot;进行设置。
+<br>          然而，WinImage更强大的功能在于其读写img镜像文件功能。它支持多种类型的镜像文件，如后缀为img、imz、ima、iso、dsk、cif、wil、wlz等文件。如同Winzip能任意对打开的zip文件进行增减一样(顺便提一下Winzip7.0和Winzip8.0的注册方法一样：注册名：nianqing，注册码：434F0BAB)，在WinImage工具栏里点击&quot;Open&quot;(左边第二个)图标，打开一个img镜像文件，便在窗口中列出其所含文件，可在窗口中任意增减文件，如右击欲删除的文件，在弹出的菜单中选&quot;Delete file&quot;,即可将其从img文件中删掉;又如点击工具栏&quot;Inject&quot;(左边第五个)图标，从目录中选择某个文件，便可将其加入img文件;最后按&quot;Save&quot;(左边第三个)图标保存即可。值得一提的是，对于窗口中显示的文件列表，WinImage提供了保存功能，可点击菜单&quot;File\Save as Text/HTML&quot;,再选择保存为文本或网页htm文件方式，便于直观查看img文件所含文件。不过，保存为htm文件时会产生部分乱码，不能显示汉字。究其原因，是WinImage软件设计者在转换后的htm文件中设置成&quot;<meta content="text/html; charset=windows-1252">&quot;,只须将&quot;windows-1252&quot;改成&quot;gb2312&quot;即可正常显示汉字，可在注册表中进行修改，这可说是WinImage的小瑕疵，也许下一版本会改正过来。
+<br>          要建立新的img文件，若欲制作的文件为&quot;c:\create&quot;中所有文件，则点击菜单&quot;File\Batch Assistant&quot;( 也可点击&quot;File\Batch Assistant wizard&quot;,根据制作精灵向导提示操作),弹出&quot;Batch Assistant&quot;对话框(如图2)，在左边&quot;Source&quot;框中选&quot;Directory injecting&quot;,再在&quot;Directory injecting&quot;框中选择目录&quot;c:\create&quot;;然后在右边的&quot;Destination&quot;中选择&quot;Set of image files&quot;,在&quot;Set of image files&quot;框中点击&quot;Browse&quot;按钮，弹出&quot;另存为&quot;对话框，选择img文件保存目录如&quot;c:\img&quot;，需要指出的是，WinImage默认文件保存格式为imz，为使其生成的文件能被HD-COPY等软件读写，可在保存时在&quot;保存类型&quot;选框中选择&quot;All files&quot;,再取名为&quot;filename.img&quot;即可。
+<img src="/article/WinImage-good-tool-for-making-images/winimage2.jpg"
+	width="484"
+	height="401"
+	srcset="/article/WinImage-good-tool-for-making-images/winimage2_hu72306af5b24b2162a2449aecb6f10da0_16865_480x0_resize_q75_box.jpg 480w, /article/WinImage-good-tool-for-making-images/winimage2_hu72306af5b24b2162a2449aecb6f10da0_16865_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="图2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="120"
+		data-flex-basis="289px"
+	
+>
+<br>图2
+img文件必须经解压才可使用，我们可以用WinImage制成自解压文件，点击菜单&quot;File\Create Self-Extracting file&quot;,根据向导提示即可完成，但未注册版对此功能有限制。
+<br>          最后，谈一下解压img文件的小技巧。有些程序的编译器如Turbo C的安装文件(img文件)多达几张软盘，若一一解压至软盘，再分盘安装，实在太麻烦了。我们无须用软盘，只须用WinImage和subst命令即可完成安装。DOS路径替换命令subst可以建立虚拟驱动器，即可用一个驱动器字母代替完整的路径名来访问目录，格式为：subst d: d:path。现在我们先建立&quot;c:\setup&quot;目录来存放解压img文件后生成的安装文件;再用WinImage打开文件&quot;e:\turboc30.dos\disk1.img&quot;,点击工具栏&quot;Extract&quot;(左边第四个)图标，选择解压目录,解压到&quot;c:\setup&quot;;然后点击&quot;开始\程序\MS-DOS方式&quot;，在DOS提示符下键入&quot;subst a: c:\setup&quot;,需要注意的是被替换的驱动器不能为当前缺省驱;再键入&quot;a:&quot;，执行install.exe开始安装;之后会有提示插入第二张安装盘，这时用Alt+Tab切换回Windows，删掉&quot;c:\setup&quot;所有文件，解压&quot;e:\turbo30.dos\disk2.img&quot;到&quot;c:\setup&quot;,又用Alt+Tab切换回Dos，按任意键继续安装;如此反复，直至安装完毕。有些安装程序允许我们简化操作，不难发现，大部分安装程序无非是依次分盘自解压各安装盘上的文件。因此，我们可以用WinImage将所有的镜像文件都解压到目录&quot;c:\setup&quot;(这时点击菜单&quot;File\Batch Assistant&quot;进行解压更方便，方法类同于前述建立新img文件),使用subst后再执行install.exe,安装程序会自行解压所有的安装文件，待其提示插入第二张安装盘时，只须一直按任意键忽略过去，即可完成安装！安装完要记住在DOS下键入&quot;subst a: /d&quot;,其中&quot;/d&quot;表示删除一个替换。用这种方法安装，省去频繁读写软盘的烦琐，也可避免因软盘可能存在坏扇区而影响安装进程，而此法安装所需时间大大低于常法，何乐而不用之呢？
+<br>          WinImage还有诸多功能，有兴趣的朋友不妨自己加以研究，这里就不赘述了。可以在http://www.winimage.com/winimage.htm 下载得到30天试用版的WinImage，不过过了期其功能仍无限制，本人主页http://loveme1999.163.net也提供下载，并将尽快推出其解密注册汉化版。</p>
+<p>扫描版请详见如下：</p>
+<p><img src="/article/WinImage-good-tool-for-making-images/WinImage-good-tool-for-making-images.jpg"
+	width="800"
+	height="1100"
+	srcset="/article/WinImage-good-tool-for-making-images/WinImage-good-tool-for-making-images_hua48ad8f92cd8e510dd7bc7db43c1f5f4_749115_480x0_resize_q75_box.jpg 480w, /article/WinImage-good-tool-for-making-images/WinImage-good-tool-for-making-images_hua48ad8f92cd8e510dd7bc7db43c1f5f4_749115_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="winimage&ndash;制作镜像文件的好工具WinImage good tool for making images"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="72"
+		data-flex-basis="174px"
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/winimage/">Winimage</a>
+        
+            <a href="/tags/%E9%95%9C%E5%83%8F%E6%96%87%E4%BB%B6/">镜像文件</a>
+        
+            <a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/article/Simple-implementation-of-web-search-function/">
+        
+        
+            <div class="article-image">
+                <img src="/article/Simple-implementation-of-web-search-function/_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_0ece189ababbd00c7f7605edaf3b0c58.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 网页检索功能的简单实现"
+                        data-key="Simple-implementation-of-web-search-function" 
+                        data-hash="md5-ZQ7E9/kU3iHeoCt/2SKyDg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">网页检索功能的简单实现</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/DIY-Peer-to-Peer-Network-Setup/">
+        
+        
+            <div class="article-image">
+                <img src="/article/DIY-Peer-to-Peer-Network-Setup/_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_0ece189ababbd00c7f7605edaf3b0c58.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 组建对等网DIY"
+                        data-key="DIY-Peer-to-Peer-Network-Setup" 
+                        data-hash="md5-ZQ7E9/kU3iHeoCt/2SKyDg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">组建对等网DIY</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/Gleanings-from-homepage-creation-experience/">
+        
+        
+            <div class="article-image">
+                <img src="/article/Gleanings-from-homepage-creation-experience/_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_0ece189ababbd00c7f7605edaf3b0c58.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 主页制作经验拾遗"
+                        data-key="Gleanings-from-homepage-creation-experience" 
+                        data-hash="md5-ZQ7E9/kU3iHeoCt/2SKyDg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">主页制作经验拾遗</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/Web-color-is-no-longer-monotonous/">
+        
+        
+            <div class="article-image">
+                <img src="/article/Web-color-is-no-longer-monotonous/_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_0ece189ababbd00c7f7605edaf3b0c58.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 网页颜色不再单调"
+                        data-key="Web-color-is-no-longer-monotonous" 
+                        data-hash="md5-ZQ7E9/kU3iHeoCt/2SKyDg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">网页颜色不再单调</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/Dynamic-HTML-technology-on-the-status-bar/">
+        
+        
+            <div class="article-image">
+                <img src="/article/Dynamic-HTML-technology-on-the-status-bar/_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_0ece189ababbd00c7f7605edaf3b0c58.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 状态栏上的动态HTML技术"
+                        data-key="Dynamic-HTML-technology-on-the-status-bar" 
+                        data-hash="md5-ZQ7E9/kU3iHeoCt/2SKyDg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">状态栏上的动态HTML技术</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;  2000 -  2024 <a href="https://xmyy.com/" target="_blank">虾米技术网 xmyy.com</a>
+    </section>
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 ，主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+            </main>
+        </div>
+        <script type="text/javascript" src="/ts/main.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://xmyy.com/css/googleapis-css2.css">
+
+    </body>
+</html>

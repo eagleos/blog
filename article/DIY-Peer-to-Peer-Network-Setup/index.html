@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="《组建对等网DIY》发表于2000年第11期《电脑知识与技术》,DIY Peer-to-Peer Network Setup">
+<title>组建对等网DIY</title>
+
+<link rel='canonical' href='https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/'>
+
+<link rel="stylesheet" href="/scss/style.min.bb98bd5bb997adc5d660f10dcffc7ef564ffadc0075160e92a649814700bd7bd.css"><meta property='og:title' content="组建对等网DIY">
+<meta property='og:description' content="《组建对等网DIY》发表于2000年第11期《电脑知识与技术》,DIY Peer-to-Peer Network Setup">
+<meta property='og:url' content='https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/'>
+<meta property='og:site_name' content='虾米技术网'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='对等网' /><meta property='article:tag' content='计算机网络' /><meta property='article:tag' content='网卡' /><meta property='article:tag' content='网络通信' /><meta property='article:tag' content='DIY' /><meta property='article:tag' content='组建' /><meta property='article:tag' content='Peer-to-Peer' /><meta property='article:published_time' content='2023-07-09T08:06:00&#43;08:00'/><meta property='article:modified_time' content='2023-07-09T08:06:00&#43;08:00'/><meta property='og:image' content='https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/florian-klauer-nptLmg6jqDo-unsplash.jpg' />
+<meta name="twitter:title" content="组建对等网DIY">
+<meta name="twitter:description" content="《组建对等网DIY》发表于2000年第11期《电脑知识与技术》,DIY Peer-to-Peer Network Setup"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/florian-klauer-nptLmg6jqDo-unsplash.jpg' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/eagle_huc7d4d4a429513d02ed402ba0e1d9f519_8869_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">虾米技术网</a></h1>
+            <h2 class="site-description">xmyy.com</h2>
+        </div>
+    </header>
+
+
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档|Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索|Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链|Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://xmyy.com/" selected>中文</option>
+                                
+                                    <option value="https://xmyy.com/en/" >English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/article/DIY-Peer-to-Peer-Network-Setup/">
+                <img src="/article/DIY-Peer-to-Peer-Network-Setup/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_800x0_resize_q75_box.jpg"
+                        srcset="/article/DIY-Peer-to-Peer-Network-Setup/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_800x0_resize_q75_box.jpg 800w, /article/DIY-Peer-to-Peer-Network-Setup/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="1199" 
+                        loading="lazy"
+                        alt="Featured image of post 组建对等网DIY" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/eagle/" style="background-color: #d09daa; color: #fff;">
+                雄鹰论文
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/article/DIY-Peer-to-Peer-Network-Setup/">组建对等网DIY</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            《组建对等网DIY》发表于2000年第11期《电脑知识与技术》,DIY Peer-to-Peer Network Setup
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+
+    
+    <footer class="article-time">
+        <span class="post-meta-item">
+          <i class="fas fa-pen"></i>
+          
+            <span class="article-type" style="color: white; font-size: 14px; background: #bf59f3; padding: 0 5px 1px 5px; margin-right: 5px; border-radius: 2px;">原创</span>
+          
+        </span>
+        
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+            <div class="post-author">
+                作者：童建平
+
+            </div>
+        </div>
+        
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">
+2023-07-09 08:06</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><span class="nowrap"><span class="emojify">🙈</span>《电脑知识与技术》2000年第11期 《组建对等网DIY》 福建农林大学 童建平</span></p>
+<p>以下为文字版，扫描版请详见文末图片：</p>
+<p>          &ldquo;网络就是计算机&rdquo;。朋友，你是否想过在自己的&quot;爱姬&quot;上演绎这句至理名言？Now,Let&rsquo;s go&hellip;&hellip;
+<br>          组建对等网并不是专业性的、复杂的事情。你只要拥有网卡、集线器、网线，稍为动手，就可以体味网络的神奇。当然，首先你要了解一些组网常识，免得奸商敲你一笔。
+<br>          对等网，又称点对点网络（Peer To Peer)，指不使用专门的服务器，各终端机既是服务提供者（服务器），又是网络服务申请者。组建对等网的重要元件之一是网卡，各联网机均需配置一块网卡。网卡按总线分为ISA、PCI网卡。ISA网卡虽然价格便宜，但因其易与计算机其它设备如声卡、显卡的中断、I/O地址发生冲突，已属淘汰之列。理想的网卡应是PCI网卡，其优越性勿庸讳言。网卡从速度上可分为10M网卡、100M网卡、10/100M自适应网卡。100M的网卡速度快但价格贵，而且得配较贵的100M的集线器，建议使用10/100M自适应网卡。网卡按接口分BNC接口和RJ-45接口，部分网卡二者兼而有之，但目前普遍使用RJ-45接口的网卡。BNC接口组成总线型网络，RJ-45接口组成星型网，后者稳定性更佳。网卡工作分单工和双工方式。单工即通信时在某一时刻只能接收（或发送）数据，二者不能同时进行，双工则相反。使用同轴电缆和BNC插头的网卡其双工方式无效，即为单工；使用双绞线和FJ-45插头的网卡才能使用双工方式。显然BNC插头的网卡已不能满足如今网络通信需要。 每一块网卡都有一个编号（Ethernet Address），该编号（Node ID）在世界范围内是唯一的，在网络应用中非常有用，应记录下来备用。集线器（HUB）普遍使用的有8口和16口两种，8口最多可连8台机器，16口可连16台。每级连一个HUB，需增加一根双绞线。如果只有两台机器相连，大可不必购买价格不菲的HUB，双绞线按1-3、2-6、5-7、4-8相对应的方法相连即可。但两台计算机距离若超过150米&ndash;双绞线通讯极限长度，则应使用HUB或其它方法。双绞线即网线，分3类线、4类线、5类线，也有分为3类线、5类线、超5类线的。建议选购传输性能较优的5类线，而且应是非屏蔽的，如AMP牌1米才1.5元左右。购买网线前要先量好联网计算机之间距离，注意不是直线距离，多台联网的话，该距离指的是计算机到HUB的距离。
+<br>          组网关键一步是制作网线。制作比较困难，而且需要专门工具，一般可以要求商家免费做好，但这就违背了DIY原则：Do It Yourself!多买几个RJ-45接头，向商家借来工具，开始自己动手吧：首先，用压线钳上的剥线刀在距双绞线顶部约2厘米处绕线割一圈，将绝缘线剥下，露出四对双绞线。四对双绞线中的每条芯线都标有特别的颜色，而且这些颜色有公认的规定。对调第3、5两根线后，RJ-45头带卡子的一面向下，双绞线从左到右依次为&quot;白橙&quot;、&ldquo;橙&rdquo;、&ldquo;白绿&rdquo;、&ldquo;蓝&rdquo;、&ldquo;白蓝&rdquo;、&ldquo;绿&rdquo;、&ldquo;白棕&rdquo;、&ldquo;棕&rdquo;。然后将网线剪齐并插入到RJ-45接头中，注意要插到底。接着将RJ-45接头插入压线钳中的压接槽中，把压线钳使劲压一下即可。双绞线另一头可依法炮制。网线做好后，将网线一头插入自己电脑网卡RJ-45接头中，一头插入HUB中，即可开机测试，若确信软件设置无误而无法联网，则应重做网线试试看。
+<br>          物理连接后，若事先未做软件设置，则现在进入&quot;瘟酒吧&quot;，一般PCI网卡无需用到随卡所带的驱动盘，win9X会自动检测到新硬件，并可从win9X安装盘中找到网卡的驱动程序。安装完驱动程序按提示重启后，右击桌面&quot;网上邻居&quot;图标，点击&quot;属性&quot;，或打开&quot;控制面板&quot;的&quot;网络&quot;项，均可进入&quot;网络&quot;对话框进行设置(如图1)。&ldquo;Microsoft网络客户&rdquo;、&ldquo;TCP/IP协议&rdquo;、&ldquo;Microsoft网络上的文件与打印机共享&quot;是联网必须的，如果有缺，可以点&quot;添加&quot;按钮来加入。注意若要打联网游戏，还应加入Microsoft的&quot;IPX/SPX兼容协议&rdquo;。在该&quot;配置&quot;选项卡中，&ldquo;主网络登录&quot;可选为&quot;Windows登录&rdquo;，可节省一点启动时间，而不影响联网。在&quot;标识&quot;选项卡中，各台计算机&quot;工作组&quot;名称要一致，否则查找联网计算机会很不方便。</p>
+<p><img src="/article/DIY-Peer-to-Peer-Network-Setup/peertopeer1.jpg"
+	width="370"
+	height="415"
+	srcset="/article/DIY-Peer-to-Peer-Network-Setup/peertopeer1_huc6f50d4da5253c347a367b39a634b9ae_23897_480x0_resize_q75_box.jpg 480w, /article/DIY-Peer-to-Peer-Network-Setup/peertopeer1_huc6f50d4da5253c347a367b39a634b9ae_23897_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="图1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="89"
+		data-flex-basis="213px"
+	
+>
+<br>图1</p>
+<p>为方便联网，在&quot;网络&quot;对话框&quot;网络列表&quot;中，双击与网络适配器相关联的&quot;TCP/IP协议&quot;，弹出&quot;TCP/IP属性&quot;对话框(如图2)。</p>
+<p><img src="/article/DIY-Peer-to-Peer-Network-Setup/peertopeer2.jpg"
+	width="373"
+	height="406"
+	srcset="/article/DIY-Peer-to-Peer-Network-Setup/peertopeer2_hu6f6b34a240c4024641feb6fd0b2a0728_20696_480x0_resize_q75_box.jpg 480w, /article/DIY-Peer-to-Peer-Network-Setup/peertopeer2_hu6f6b34a240c4024641feb6fd0b2a0728_20696_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="图2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="91"
+		data-flex-basis="220px"
+	
+>
+<br>图2</p>
+<p>在&quot;IP地址&quot;选项卡中，选中&quot;指定IP地址&quot;复选框，填入IP地址&quot;192.168.0.x&quot;(x取整数1~254)，不同计算机x值应不同，再填入子网掩码&quot;255.255.255.0&quot;。其它如&quot;WINS配置&quot;、&ldquo;网关&rdquo;、&ldquo;DNS配置&quot;等选项卡采用默认设置即可。当一切设置完毕、重启后，按&quot;WIN+E&quot;打开资源管理器，右击欲共享驱动器，菜单中多了&quot;共享&quot;项，点击之，可设为&quot;只读&rdquo;、&ldquo;完全&rdquo;、&ldquo;根据密码访问&quot;共享方式，注意若设为&quot;根据密码访问&rdquo;，则只读密码、完全访问密码应该不同。也可以右击欲共享资源，选择&quot;映射网络驱动器&quot;，映射为某个盘，则在&quot;我的电脑&quot;中会多出一个盘。使用这个盘的条件是这个盘的&quot;宿主&quot;必须开机且已联网。如果在共享驱动器盘符前出现一双&quot;奉献之手&quot;，说明共享成功。这样，至多再一次重启，你就可以点击&quot;网上邻居&quot;浏览联网电脑的资源了。要共享打印机，则需在&quot;我的电脑&quot;中打开&quot;打印机&quot;，选择&quot;添加打印机&quot;，按&quot;下一步&quot;，选择&quot;网络打印机&quot;，再按&quot;下一步&quot;，在&quot;网络路径或队列名&quot;编辑框中填入相应内容，如&quot;\game\hp&quot;,&ldquo;game&quot;为共享打印机的计算机名，“hp”为打印机名，然后正确安装驱动程序即可。
+<br>          联网成功后，各计算机可共享软驱、光驱等，可以实现网上广播等。在一台计算机上打开超级解霸2000，点击&quot;控制&quot;菜单下的&quot;控制设置&rdquo;，在DVB数字视频广播中选择允许DVB功能，然后点击配置DVB广播，在弹出的对话框中选择进行网络DVB广播，确定后开始播放VCD。接收方打开超级解霸2000，点击&quot;文件&quot;菜单中&quot;接收 网络DVB广播&quot;，弹出如图3的对话框，点确定后即可同时看VCD。</p>
+<p><img src="/article/DIY-Peer-to-Peer-Network-Setup/peertopeer3.jpg"
+	width="486"
+	height="501"
+	srcset="/article/DIY-Peer-to-Peer-Network-Setup/peertopeer3_hu879e3a3d66be206c1c0ca5f4bbfb6b43_55664_480x0_resize_q75_box.jpg 480w, /article/DIY-Peer-to-Peer-Network-Setup/peertopeer3_hu879e3a3d66be206c1c0ca5f4bbfb6b43_55664_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="图3"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="97"
+		data-flex-basis="232px"
+	
+>
+<br>图3</p>
+<p>不过，若播放方内存小于接收方内存，则接收方的声音会断断续续。也许联网打游戏是许多人的至爱，但你可想过在对等网上过把黑客瘾？当你用冰河软件成功控制对方计算机后，最好卸掉对方的杀毒软件，否则当对方杀毒软件弹出如图4的警告框时，你的阴谋就流产了。怎么样，还不快去感受网络的神奇？</p>
+<p><img src="/article/DIY-Peer-to-Peer-Network-Setup/peertopeer4.jpg"
+	width="480"
+	height="467"
+	srcset="/article/DIY-Peer-to-Peer-Network-Setup/peertopeer4_hu1ee36551a9260b80757ece43c223ff06_41613_480x0_resize_q75_box.jpg 480w, /article/DIY-Peer-to-Peer-Network-Setup/peertopeer4_hu1ee36551a9260b80757ece43c223ff06_41613_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="图4"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="102"
+		data-flex-basis="246px"
+	
+>
+<br>图4</p>
+<p>扫描版请详见如下：</p>
+<p><img src="/article/DIY-Peer-to-Peer-Network-Setup/DIY-Peer-to-Peer-Network-Setup.jpg"
+	width="1022"
+	height="654"
+	srcset="/article/DIY-Peer-to-Peer-Network-Setup/DIY-Peer-to-Peer-Network-Setup_hu20f14e35635aef1593149b7bc736b5ec_621478_480x0_resize_q75_box.jpg 480w, /article/DIY-Peer-to-Peer-Network-Setup/DIY-Peer-to-Peer-Network-Setup_hu20f14e35635aef1593149b7bc736b5ec_621478_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="组建对等网DIY DIY Peer-to-Peer Network Setup"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="156"
+		data-flex-basis="375px"
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%AF%B9%E7%AD%89%E7%BD%91/">对等网</a>
+        
+            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+        
+            <a href="/tags/%E7%BD%91%E5%8D%A1/">网卡</a>
+        
+            <a href="/tags/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/">网络通信</a>
+        
+            <a href="/tags/DIY/">DIY</a>
+        
+            <a href="/tags/%E7%BB%84%E5%BB%BA/">组建</a>
+        
+            <a href="/tags/Peer-to-Peer/">Peer-to-Peer</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/article/Simple-implementation-of-web-search-function/">
+        
+        
+            <div class="article-image">
+                <img src="/article/Simple-implementation-of-web-search-function/_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_0ece189ababbd00c7f7605edaf3b0c58.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 网页检索功能的简单实现"
+                        data-key="Simple-implementation-of-web-search-function" 
+                        data-hash="md5-ZQ7E9/kU3iHeoCt/2SKyDg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">网页检索功能的简单实现</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/Gleanings-from-homepage-creation-experience/">
+        
+        
+            <div class="article-image">
+                <img src="/article/Gleanings-from-homepage-creation-experience/_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_0ece189ababbd00c7f7605edaf3b0c58.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 主页制作经验拾遗"
+                        data-key="Gleanings-from-homepage-creation-experience" 
+                        data-hash="md5-ZQ7E9/kU3iHeoCt/2SKyDg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">主页制作经验拾遗</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/WinImage-good-tool-for-making-images/">
+        
+        
+            <div class="article-image">
+                <img src="/article/WinImage-good-tool-for-making-images/_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_0ece189ababbd00c7f7605edaf3b0c58.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post winimage--制作镜像文件的好工具"
+                        data-key="WinImage-good-tool-for-making-images" 
+                        data-hash="md5-ZQ7E9/kU3iHeoCt/2SKyDg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">winimage--制作镜像文件的好工具</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/Web-color-is-no-longer-monotonous/">
+        
+        
+            <div class="article-image">
+                <img src="/article/Web-color-is-no-longer-monotonous/_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_0ece189ababbd00c7f7605edaf3b0c58.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 网页颜色不再单调"
+                        data-key="Web-color-is-no-longer-monotonous" 
+                        data-hash="md5-ZQ7E9/kU3iHeoCt/2SKyDg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">网页颜色不再单调</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/Dynamic-HTML-technology-on-the-status-bar/">
+        
+        
+            <div class="article-image">
+                <img src="/article/Dynamic-HTML-technology-on-the-status-bar/_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_0ece189ababbd00c7f7605edaf3b0c58.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 状态栏上的动态HTML技术"
+                        data-key="Dynamic-HTML-technology-on-the-status-bar" 
+                        data-hash="md5-ZQ7E9/kU3iHeoCt/2SKyDg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">状态栏上的动态HTML技术</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;  2000 -  2024 <a href="https://xmyy.com/" target="_blank">虾米技术网 xmyy.com</a>
+    </section>
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 ，主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+            </main>
+        </div>
+        <script type="text/javascript" src="/ts/main.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://xmyy.com/css/googleapis-css2.css">
+
+    </body>
+</html>

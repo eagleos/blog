@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>网卡 on 虾米技术网</title>
+        <link>https://xmyy.com/tags/%E7%BD%91%E5%8D%A1/</link>
+        <description>Recent content in 网卡 on 虾米技术网</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>虾米技术网 xmyy.com</copyright>
+        <lastBuildDate>Sun, 09 Jul 2023 08:06:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/%E7%BD%91%E5%8D%A1/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>组建对等网DIY</title>
+        <link>https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/</link>
+        <pubDate>Sun, 09 Jul 2023 08:06:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/</guid>
+        <description>&lt;img src="https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/florian-klauer-nptLmg6jqDo-unsplash.jpg" alt="Featured image of post 组建对等网DIY" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙈&lt;/span&gt;《电脑知识与技术》2000年第11期 《组建对等网DIY》 福建农林大学 童建平&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;以下为文字版，扫描版请详见文末图片：&lt;/p&gt;
+&lt;p&gt;          &amp;ldquo;网络就是计算机&amp;rdquo;。朋友，你是否想过在自己的&amp;quot;爱姬&amp;quot;上演绎这句至理名言？Now,Let&amp;rsquo;s go&amp;hellip;&amp;hellip;
+&lt;br&gt;          组建对等网并不是专业性的、复杂的事情。你只要拥有网卡、集线器、网线，稍为动手，就可以体味网络的神奇。当然，首先你要了解一些组网常识，免得奸商敲你一笔。
+&lt;br&gt;          对等网，又称点对点网络（Peer To Peer)，指不使用专门的服务器，各终端机既是服务提供者（服务器），又是网络服务申请者。组建对等网的重要元件之一是网卡，各联网机均需配置一块网卡。网卡按总线分为ISA、PCI网卡。ISA网卡虽然价格便宜，但因其易与计算机其它设备如声卡、显卡的中断、I/O地址发生冲突，已属淘汰之列。理想的网卡应是PCI网卡，其优越性勿庸讳言。网卡从速度上可分为10M网卡、100M网卡、10/100M自适应网卡。100M的网卡速度快但价格贵，而且得配较贵的100M的集线器，建议使用10/100M自适应网卡。网卡按接口分BNC接口和RJ-45接口，部分网卡二者兼而有之，但目前普遍使用RJ-45接口的网卡。BNC接口组成总线型网络，RJ-45接口组成星型网，后者稳定性更佳。网卡工作分单工和双工方式。单工即通信时在某一时刻只能接收（或发送）数据，二者不能同时进行，双工则相反。使用同轴电缆和BNC插头的网卡其双工方式无效，即为单工；使用双绞线和FJ-45插头的网卡才能使用双工方式。显然BNC插头的网卡已不能满足如今网络通信需要。 每一块网卡都有一个编号（Ethernet Address），该编号（Node ID）在世界范围内是唯一的，在网络应用中非常有用，应记录下来备用。集线器（HUB）普遍使用的有8口和16口两种，8口最多可连8台机器，16口可连16台。每级连一个HUB，需增加一根双绞线。如果只有两台机器相连，大可不必购买价格不菲的HUB，双绞线按1-3、2-6、5-7、4-8相对应的方法相连即可。但两台计算机距离若超过150米&amp;ndash;双绞线通讯极限长度，则应使用HUB或其它方法。双绞线即网线，分3类线、4类线、5类线，也有分为3类线、5类线、超5类线的。建议选购传输性能较优的5类线，而且应是非屏蔽的，如AMP牌1米才1.5元左右。购买网线前要先量好联网计算机之间距离，注意不是直线距离，多台联网的话，该距离指的是计算机到HUB的距离。
+&lt;br&gt;          组网关键一步是制作网线。制作比较困难，而且需要专门工具，一般可以要求商家免费做好，但这就违背了DIY原则：Do It Yourself!多买几个RJ-45接头，向商家借来工具，开始自己动手吧：首先，用压线钳上的剥线刀在距双绞线顶部约2厘米处绕线割一圈，将绝缘线剥下，露出四对双绞线。四对双绞线中的每条芯线都标有特别的颜色，而且这些颜色有公认的规定。对调第3、5两根线后，RJ-45头带卡子的一面向下，双绞线从左到右依次为&amp;quot;白橙&amp;quot;、&amp;ldquo;橙&amp;rdquo;、&amp;ldquo;白绿&amp;rdquo;、&amp;ldquo;蓝&amp;rdquo;、&amp;ldquo;白蓝&amp;rdquo;、&amp;ldquo;绿&amp;rdquo;、&amp;ldquo;白棕&amp;rdquo;、&amp;ldquo;棕&amp;rdquo;。然后将网线剪齐并插入到RJ-45接头中，注意要插到底。接着将RJ-45接头插入压线钳中的压接槽中，把压线钳使劲压一下即可。双绞线另一头可依法炮制。网线做好后，将网线一头插入自己电脑网卡RJ-45接头中，一头插入HUB中，即可开机测试，若确信软件设置无误而无法联网，则应重做网线试试看。
+&lt;br&gt;          物理连接后，若事先未做软件设置，则现在进入&amp;quot;瘟酒吧&amp;quot;，一般PCI网卡无需用到随卡所带的驱动盘，win9X会自动检测到新硬件，并可从win9X安装盘中找到网卡的驱动程序。安装完驱动程序按提示重启后，右击桌面&amp;quot;网上邻居&amp;quot;图标，点击&amp;quot;属性&amp;quot;，或打开&amp;quot;控制面板&amp;quot;的&amp;quot;网络&amp;quot;项，均可进入&amp;quot;网络&amp;quot;对话框进行设置(如图1)。&amp;ldquo;Microsoft网络客户&amp;rdquo;、&amp;ldquo;TCP/IP协议&amp;rdquo;、&amp;ldquo;Microsoft网络上的文件与打印机共享&amp;quot;是联网必须的，如果有缺，可以点&amp;quot;添加&amp;quot;按钮来加入。注意若要打联网游戏，还应加入Microsoft的&amp;quot;IPX/SPX兼容协议&amp;rdquo;。在该&amp;quot;配置&amp;quot;选项卡中，&amp;ldquo;主网络登录&amp;quot;可选为&amp;quot;Windows登录&amp;rdquo;，可节省一点启动时间，而不影响联网。在&amp;quot;标识&amp;quot;选项卡中，各台计算机&amp;quot;工作组&amp;quot;名称要一致，否则查找联网计算机会很不方便。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/peertopeer1.jpg&#34;
+	width=&#34;370&#34;
+	height=&#34;415&#34;
+	srcset=&#34;https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/peertopeer1_huc6f50d4da5253c347a367b39a634b9ae_23897_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/peertopeer1_huc6f50d4da5253c347a367b39a634b9ae_23897_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;图1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;89&#34;
+		data-flex-basis=&#34;213px&#34;
+	
+&gt;
+&lt;br&gt;图1&lt;/p&gt;
+&lt;p&gt;为方便联网，在&amp;quot;网络&amp;quot;对话框&amp;quot;网络列表&amp;quot;中，双击与网络适配器相关联的&amp;quot;TCP/IP协议&amp;quot;，弹出&amp;quot;TCP/IP属性&amp;quot;对话框(如图2)。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/peertopeer2.jpg&#34;
+	width=&#34;373&#34;
+	height=&#34;406&#34;
+	srcset=&#34;https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/peertopeer2_hu6f6b34a240c4024641feb6fd0b2a0728_20696_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/peertopeer2_hu6f6b34a240c4024641feb6fd0b2a0728_20696_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;图2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;91&#34;
+		data-flex-basis=&#34;220px&#34;
+	
+&gt;
+&lt;br&gt;图2&lt;/p&gt;
+&lt;p&gt;在&amp;quot;IP地址&amp;quot;选项卡中，选中&amp;quot;指定IP地址&amp;quot;复选框，填入IP地址&amp;quot;192.168.0.x&amp;quot;(x取整数1~254)，不同计算机x值应不同，再填入子网掩码&amp;quot;255.255.255.0&amp;quot;。其它如&amp;quot;WINS配置&amp;quot;、&amp;ldquo;网关&amp;rdquo;、&amp;ldquo;DNS配置&amp;quot;等选项卡采用默认设置即可。当一切设置完毕、重启后，按&amp;quot;WIN+E&amp;quot;打开资源管理器，右击欲共享驱动器，菜单中多了&amp;quot;共享&amp;quot;项，点击之，可设为&amp;quot;只读&amp;rdquo;、&amp;ldquo;完全&amp;rdquo;、&amp;ldquo;根据密码访问&amp;quot;共享方式，注意若设为&amp;quot;根据密码访问&amp;rdquo;，则只读密码、完全访问密码应该不同。也可以右击欲共享资源，选择&amp;quot;映射网络驱动器&amp;quot;，映射为某个盘，则在&amp;quot;我的电脑&amp;quot;中会多出一个盘。使用这个盘的条件是这个盘的&amp;quot;宿主&amp;quot;必须开机且已联网。如果在共享驱动器盘符前出现一双&amp;quot;奉献之手&amp;quot;，说明共享成功。这样，至多再一次重启，你就可以点击&amp;quot;网上邻居&amp;quot;浏览联网电脑的资源了。要共享打印机，则需在&amp;quot;我的电脑&amp;quot;中打开&amp;quot;打印机&amp;quot;，选择&amp;quot;添加打印机&amp;quot;，按&amp;quot;下一步&amp;quot;，选择&amp;quot;网络打印机&amp;quot;，再按&amp;quot;下一步&amp;quot;，在&amp;quot;网络路径或队列名&amp;quot;编辑框中填入相应内容，如&amp;quot;\game\hp&amp;quot;,&amp;ldquo;game&amp;quot;为共享打印机的计算机名，“hp”为打印机名，然后正确安装驱动程序即可。
+&lt;br&gt;          联网成功后，各计算机可共享软驱、光驱等，可以实现网上广播等。在一台计算机上打开超级解霸2000，点击&amp;quot;控制&amp;quot;菜单下的&amp;quot;控制设置&amp;rdquo;，在DVB数字视频广播中选择允许DVB功能，然后点击配置DVB广播，在弹出的对话框中选择进行网络DVB广播，确定后开始播放VCD。接收方打开超级解霸2000，点击&amp;quot;文件&amp;quot;菜单中&amp;quot;接收 网络DVB广播&amp;quot;，弹出如图3的对话框，点确定后即可同时看VCD。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/peertopeer3.jpg&#34;
+	width=&#34;486&#34;
+	height=&#34;501&#34;
+	srcset=&#34;https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/peertopeer3_hu879e3a3d66be206c1c0ca5f4bbfb6b43_55664_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/peertopeer3_hu879e3a3d66be206c1c0ca5f4bbfb6b43_55664_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;图3&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;97&#34;
+		data-flex-basis=&#34;232px&#34;
+	
+&gt;
+&lt;br&gt;图3&lt;/p&gt;
+&lt;p&gt;不过，若播放方内存小于接收方内存，则接收方的声音会断断续续。也许联网打游戏是许多人的至爱，但你可想过在对等网上过把黑客瘾？当你用冰河软件成功控制对方计算机后，最好卸掉对方的杀毒软件，否则当对方杀毒软件弹出如图4的警告框时，你的阴谋就流产了。怎么样，还不快去感受网络的神奇？&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/peertopeer4.jpg&#34;
+	width=&#34;480&#34;
+	height=&#34;467&#34;
+	srcset=&#34;https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/peertopeer4_hu1ee36551a9260b80757ece43c223ff06_41613_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/peertopeer4_hu1ee36551a9260b80757ece43c223ff06_41613_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;图4&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;102&#34;
+		data-flex-basis=&#34;246px&#34;
+	
+&gt;
+&lt;br&gt;图4&lt;/p&gt;
+&lt;p&gt;扫描版请详见如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/DIY-Peer-to-Peer-Network-Setup.jpg&#34;
+	width=&#34;1022&#34;
+	height=&#34;654&#34;
+	srcset=&#34;https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/DIY-Peer-to-Peer-Network-Setup_hu20f14e35635aef1593149b7bc736b5ec_621478_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/DIY-Peer-to-Peer-Network-Setup_hu20f14e35635aef1593149b7bc736b5ec_621478_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;组建对等网DIY DIY Peer-to-Peer Network Setup&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;156&#34;
+		data-flex-basis=&#34;375px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
