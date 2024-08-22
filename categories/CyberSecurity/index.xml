@@ -6,6 +6,415 @@
         <description>Recent content in 网络安全 on 虾米技术网</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>虾米技术网 xmyy.com</copyright><atom:link href="https://xmyy.com/categories/CyberSecurity/index.xml" rel="self" type="application/rss+xml" />
+        <copyright>虾米技术网 xmyy.com</copyright>
+        <lastBuildDate>Mon, 16 Nov 2020 23:59:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/categories/CyberSecurity/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>从玩转靶机DVWA看程序设计安全</title>
+        <link>https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/</link>
+        <pubDate>Mon, 16 Nov 2020 23:59:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/</guid>
+        <description>&lt;img src="https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA1.jpg" alt="Featured image of post 从玩转靶机DVWA看程序设计安全" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;💁🏻‍♂️&lt;/span&gt;《今日头条》 2020-11-16 《从玩转靶机DVWA看程序设计安全》 童建平&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言
+&lt;/h2&gt;&lt;p&gt;靶机，在军事领域意指作为射击训练目标的一种军用飞行器。类似地，在网络安全行业，靶机，也称靶场，泛指作为渗透测试用途的一种软件或系统。常见的渗透测试靶机系统有DVWA、Metasploitable、mutillidaemutillidae、SQLol、hackxor、BodgeIt、Exploit KB、WackoPicko、OWASP Hackademic、WebGoat、XSSeducation、Web for Pentester、Lazysysadmin等等，举不胜举。DVWA就是其中最著名、最基础的靶场。
+&lt;img src=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA1.jpg&#34;
+	width=&#34;1920&#34;
+	height=&#34;800&#34;
+	srcset=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu89a1f8216a8e347b3274a9768eebfda9_157973_c56b2d5e8dac818fd11ca793ea5ff519.jpg 480w, https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu89a1f8216a8e347b3274a9768eebfda9_157973_47e41a9102861b4661a96cf0cc67c291.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;240&#34;
+		data-flex-basis=&#34;576px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;关于dvwa&#34;&gt;关于DVWA
+&lt;/h2&gt;&lt;p&gt;DVWA，全称Dam Vulnerable Web Application，是著名的OWASP开源的一个在线web安全教学平台，基于PHP+Mysql编写，用于常规WEB漏洞教学及检测WEB脆弱性，包含暴力破解、命令执行、CSRF、文件包含、SQL注入、XSS、盲注等常见的一些安全漏洞，并且分Low、Medium、High、Impossible四种不同的安全等级，等级越高难度也越大，同时每一个漏洞可以直接在页面选择查看源码进行源码对比加以学习。
+&lt;img src=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA2.png&#34;
+	width=&#34;534&#34;
+	height=&#34;462&#34;
+	srcset=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu4f002f1be3d91ca91376ecae3660ef95_135241_0ffb4e9d86a0faf5b04e670ca3e2d86b.png 480w, https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu4f002f1be3d91ca91376ecae3660ef95_135241_28f252b368fe3ca0c5f05241fe307e17.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;115&#34;
+		data-flex-basis=&#34;277px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装配置dvwa&#34;&gt;安装配置DVWA
+&lt;/h2&gt;&lt;p&gt;DVWA是推荐新手首选靶场，配置简单，可运行在LAMP(Linux+Apache+Mysql+Php)之类的环境中，也可以运行在Windows系统中，只要您有个支持php+mysql的环境即可。这种环境的配置方法，网络上文章多如牛毛，这里就不赘述了。下面小编为您讲述如何在Centos 7.x下安装配置DVWA。&lt;/p&gt;
+&lt;h4 id=&#34;下载源码&#34;&gt;下载源码
+&lt;/h4&gt;&lt;p&gt;首先，我们需要到DVWA官方Github地址下载源码：
+&lt;img src=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA3.jpg&#34;
+	width=&#34;1629&#34;
+	height=&#34;845&#34;
+	srcset=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu1c41d4205feb41d8b3e1019d434a91c8_122055_354a476a5cc47fd466d5ec4b60f8fc2a.jpg 480w, https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu1c41d4205feb41d8b3e1019d434a91c8_122055_5a9cafcdb30175984724dca711219932.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;192&#34;
+		data-flex-basis=&#34;462px&#34;
+	
+&gt;
+&lt;br&gt;官方于2个月前的9月13日发布了最新版本2.01，也可以直接通过下面地址下载源码包：&lt;/p&gt;
+&lt;h4 id=&#34;安装配置&#34;&gt;安装配置
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;将下载的压缩包保存到本地后，通过rz命令(如果找不到此命令，请运行yum –y install lrzsz安装)将其上传到您的服务器上。解压后，会生成子目录DVWA-2.0.1，需要将该子目录下的所有文件移至您的站点根目录下。假设您的站点根目录是/opt/allsite/domain.com/wwwroot，则解压后目录结构如下图：
+&lt;img src=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA4.jpg&#34;
+	width=&#34;627&#34;
+	height=&#34;381&#34;
+	srcset=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA4_hu7717b596f1eb3a423f0f1f00820b0238_80878_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA4_hu7717b596f1eb3a423f0f1f00820b0238_80878_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;164&#34;
+		data-flex-basis=&#34;394px&#34;
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;进入上图中config目录，重命名配置文件：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv config.inc.php.dist config.inc.php
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;br&gt;修改其中$_DVWA数组各项值，如将$_DVWA[ &amp;lsquo;db_server&amp;rsquo; ]、$_DVWA[ &amp;lsquo;db_database&amp;rsquo; ]、$_DVWA[ &amp;lsquo;db_user&amp;rsquo; ]、$_DVWA[ &amp;lsquo;db_password&amp;rsquo; ]的值更改为您的数据库地址、数据库名、数据库用户名、数据库密码对应的值。如下图：
+&lt;img src=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA5.jpg&#34;
+	width=&#34;836&#34;
+	height=&#34;337&#34;
+	srcset=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA5_hu94ccbc42d434fa1ebfaff3f9d62e15bf_62168_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA5_hu94ccbc42d434fa1ebfaff3f9d62e15bf_62168_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;248&#34;
+		data-flex-basis=&#34;595px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;如果您的php配置文件/etc/php.ini中没有开启允许allow_url_include，需要开启之，否则安装过程中会提示：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PHP function allow_url_include: Disabled
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;下面是修改后正确的配置：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA6.jpg&#34;
+	width=&#34;536&#34;
+	height=&#34;55&#34;
+	srcset=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA6_hu937c80980008a92029e88d4b4672d443_9006_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA6_hu937c80980008a92029e88d4b4672d443_9006_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;974&#34;
+		data-flex-basis=&#34;2338px&#34;
+	
+&gt;
+&lt;br&gt;如果变更了php配置，记得用systemctl reload httpd等命令重启下apache服务！&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;还有一个坑需要事先修改配置以避免，否则您可能在安装过程中遇到如下错误：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;You can also use this to reset the administrator credentials &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;admin // password&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; at any stage.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;reCAPTCHA key: Missing
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;User: apache&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; Writable folder /opt/allsite/domain.com/wwwroot/config: Yes
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Status in red, indicate there will be an issue when trying to &lt;span class=&#34;nb&#34;&gt;complete&lt;/span&gt; some modules.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这是有关谷歌验证码的功能，解决方法很简单，修改前面第2步骤中的配置文件config.inc.php，将其中$_DVWA[ &amp;lsquo;recaptcha_public_key&amp;rsquo; ]和$_DVWA[ &amp;lsquo;recaptcha_private_key&amp;rsquo; ]的值改为如下即可：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$_DVWA[ &amp;#39;recaptcha_public_key&amp;#39; ] = &amp;#39;6LdK7xITAAzzAAJQTfL7fu6I-0aPl8KHHieAT_yJg&amp;#39;;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$_DVWA[ &amp;#39;recaptcha_private_key&amp;#39; ] = &amp;#39;6LdK7xITAzzAAL_uw9YXVUOPoIHPZLfw2K1n5NVQ&amp;#39;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如下图：
+&lt;img src=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA7.jpg&#34;
+	width=&#34;792&#34;
+	height=&#34;124&#34;
+	srcset=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA7_hu595e3f0a4cf73bd7882b6499206ac94d_24825_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA7_hu595e3f0a4cf73bd7882b6499206ac94d_24825_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;638&#34;
+		data-flex-basis=&#34;1532px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;假设您的网站域名是www.domain.com，此时即可访问http://www.domain.com/setup.php 进行初始化数据库，如下图：
+&lt;img src=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA8.jpg&#34;
+	width=&#34;1187&#34;
+	height=&#34;839&#34;
+	srcset=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA8_hu4182ac6ed3a184845b77cf9b618bb321_96693_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA8_hu4182ac6ed3a184845b77cf9b618bb321_96693_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;141&#34;
+		data-flex-basis=&#34;339px&#34;
+	
+&gt;
+&lt;br&gt;只要在Status in red一行前面的检测项都是绿色的，就可以下拉页面，点击下图的Create / Reset Database按钮就行初始化数据。否则，请根据红色错误提示进行修改相关配置解决。
+&lt;img src=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA9.jpg&#34;
+	width=&#34;762&#34;
+	height=&#34;325&#34;
+	srcset=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA9_hu5ef00affed0ac70efc41bcfe8c04d0df_39218_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA9_hu5ef00affed0ac70efc41bcfe8c04d0df_39218_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;234&#34;
+		data-flex-basis=&#34;562px&#34;
+	
+&gt;
+&lt;br&gt;这个setup.php页面，可以在任何时候，您需要时进行访问，进行重新初始化操作，方便重新测试使用。&lt;/li&gt;
+&lt;li&gt;成功初始化数据库后，即完成安装。系统自动跳转到登录页面http://www.domain.com/login.php ，如下图：
+&lt;img src=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA10.jpg&#34;
+	width=&#34;1415&#34;
+	height=&#34;843&#34;
+	srcset=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu05e4fe607fc1ff3063d2bf6a69533b8e_37734_758682f0f83d8b83fc22b01e0220aeed.jpg 480w, https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu05e4fe607fc1ff3063d2bf6a69533b8e_37734_41671088a4f8ec79612cc8d1a624aebf.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;167&#34;
+		data-flex-basis=&#34;402px&#34;
+	
+&gt;&lt;/li&gt;
+&lt;li&gt;此时输入默认的用户名admin，密码password，即可成功登录DVWA，如下图：
+&lt;img src=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA11.jpg&#34;
+	width=&#34;1187&#34;
+	height=&#34;841&#34;
+	srcset=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hucba60b65bf341e0d9062fa70304c00e2_165200_4af6d1cd18264bc1d3a9f140c7cd1daa.jpg 480w, https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hucba60b65bf341e0d9062fa70304c00e2_165200_dcb27f123a18fe071936f46854c63ecc.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;141&#34;
+		data-flex-basis=&#34;338px&#34;
+	
+&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;dvwa演练&#34;&gt;DVWA演练
+&lt;/h2&gt;&lt;p&gt;上面已经完成了DVWA的安装，下面我们可以开始愉快的学习之旅了，让我们来看看如何在DVWA中进行渗透攻防演练。&lt;/p&gt;
+&lt;h4 id=&#34;安全级别&#34;&gt;安全级别
+&lt;/h4&gt;&lt;p&gt;本文开头介绍了DVWA分4种安全模式，安装完成后默认配置是最高级别的Impossible安全模式，为方便我们学习渗透测试，需要修改等级为最低级别Low：
+&lt;br&gt;登录DVWA后，点击左边菜单&amp;quot;DVWA Security&amp;quot;，在如下图中的下拉菜单中选择Low并点击Submit按钮提交，即可完成配置：
+&lt;img src=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA12.jpg&#34;
+	width=&#34;1013&#34;
+	height=&#34;639&#34;
+	srcset=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu5fa86c6a9a0e82bc68b346b3202f3267_99111_592fef41a369767b44901186b66dd1ac.jpg 480w, https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu5fa86c6a9a0e82bc68b346b3202f3267_99111_987a7c997dbc05a92bd19560678b5b0e.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;158&#34;
+		data-flex-basis=&#34;380px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;brute-force暴力破解&#34;&gt;Brute Force(暴力破解)
+&lt;/h4&gt;&lt;p&gt;然后我们点击左边菜单&amp;quot;Brute Force(暴力破解)&amp;quot;，如下图：
+&lt;img src=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA13.jpg&#34;
+	width=&#34;1102&#34;
+	height=&#34;452&#34;
+	srcset=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu2b5ccc7f83f451944a23e3b37dff0bd6_52250_c61dcbb42e241927e1c687a7e579d262.jpg 480w, https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu2b5ccc7f83f451944a23e3b37dff0bd6_52250_5f1f95284c2e1e7da8dcb143f2ada35a.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;243&#34;
+		data-flex-basis=&#34;585px&#34;
+	
+&gt;
+&lt;br&gt;我们在用户名和密码框中输入随意的字符，将提示用户名或密码不正确，如下图：
+&lt;img src=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA14.jpg&#34;
+	width=&#34;1148&#34;
+	height=&#34;508&#34;
+	srcset=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hue35bf92ea62c180c61f471a44c89eb14_63098_a1f1a16f379a66a08fcb54067b5cecac.jpg 480w, https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hue35bf92ea62c180c61f471a44c89eb14_63098_ec28e5ef58a20f36dc662a87ec5d1221.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;225&#34;
+		data-flex-basis=&#34;542px&#34;
+	
+&gt;
+&lt;br&gt;此时，我们可以在该页面右下角点击&amp;quot;View Surce(查看源代码)&amp;ldquo;按钮，查看此页面的源代码，这是DVWA很有用的一个功能，方便我们边查询源码边学习如何渗透测试，如下图：
+&lt;img src=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA15.jpg&#34;
+	width=&#34;1100&#34;
+	height=&#34;826&#34;
+	srcset=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu559d621a7d26431be69115006af105ef_106245_d5203eb31af16b3d48ac5887711ef07a.jpg 480w, https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu559d621a7d26431be69115006af105ef_106245_2bd4cb98c05ecc6e2a0dd69b958d854f.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;319px&#34;
+	
+&gt;
+&lt;br&gt;如图所示，代码中的SQL语句为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;SELECT&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;`&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;users&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;`&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;WHERE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;$user&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;AND&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;password&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;$pass&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如上图，我们输入的用户名是gdfgdsf，密码是fgsdgsdfg，则此SQL查询语句向数据库提交查询：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;SELECT&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;`&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;users&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;`&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;WHERE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;gdfgdsf&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;AND&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;password&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;fgsdgsdfg&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;由于数据库中不存在此用户名，自然通过不了，提示用户名或密码错误。
+&lt;br&gt;那如果我们用户名改为输入:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;admin&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;--
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;即admin后面加个英文单引号再加双连字符(&amp;ndash;)再加1个空格，如下图：
+&lt;img src=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA16.jpg&#34;
+	width=&#34;1111&#34;
+	height=&#34;650&#34;
+	srcset=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hubf44478a336750a419f1341354da8334_70721_fb8fe667a02129e49019d8b4a974b2c2.jpg 480w, https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hubf44478a336750a419f1341354da8334_70721_991efb89c48c6e0463b680d183263787.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;170&#34;
+		data-flex-basis=&#34;410px&#34;
+	
+&gt;
+&lt;br&gt;是不是见证奇迹的时刻发生了？我们成功绕过了程序设置，系统提示我们登录成功，而我们连密码都输入为空的。
+&lt;br&gt;我们来看看当输入上面用户名时，SQL语句变成了什么?SQL语句就变成：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;SELECT&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;`&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;users&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;`&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;WHERE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;admin&amp;#39;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;-- &amp;#39; AND password = &amp;#39;&amp;#39;;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;为什么这个语句能绕过验证呢？这是因为双连字符(&amp;ndash;)在SQL中通常具有特别的含义，它起到注释作用，表示其后面的语句属于注释，应被忽略不予执行。于是上面的语句等价于执行了：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;SELECT&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;`&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;users&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;`&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;WHERE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;admin&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;数据库正好存在有名称为admin的用户，于是攻击者就能绕过成功登录系统了。
+&lt;br&gt;类似如上，构建含有特殊字符的用户名，还可以结合使用union等语句进行攻击，是很有用的技巧。&lt;/p&gt;
+&lt;h2 id=&#34;启示录&#34;&gt;启示录
+&lt;/h2&gt;&lt;p&gt;限于时间和篇幅，上面只是简单介绍下DVWA的暴力破解模块，仅为其冰山一角，更多功能有待您去发现和体验，本文仅为抛砖引玉。从上面的源代码可看出，写出那样的代码是程序新手经常犯的错误，对SQL语句中引用的变量等缺乏应有的过滤操作，引发了安全风险。
+&lt;br&gt;那如何提高程序安全设计呢？其实DVWA也隐藏了给我们提高程序安全设计的技巧。我们将DVWA Security安全级别改为Medium，然后再返回菜单&amp;quot;Brute Force(暴力破解)&amp;quot;，点击查看源代码，将看到如下图所示：
+&lt;img src=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA17.jpg&#34;
+	width=&#34;1415&#34;
+	height=&#34;821&#34;
+	srcset=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hud42bf80c9b30185e6af93ce8364734a8_150509_e9c592e48e2c3292b37b6edb29ab05bf.jpg 480w, https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hud42bf80c9b30185e6af93ce8364734a8_150509_49cf3e2ee911870933f9f2c27f817f77.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;172&#34;
+		data-flex-basis=&#34;413px&#34;
+	
+&gt;
+&lt;br&gt;由上可见，DVWA提供了使用mysqli_real_escape_string和md5函数对用户输入值进行相关转换操作，某种程度上提升了安全性。但道高一尺，魔高一丈，这点小把戏还是对付不了中级黑客的。
+&lt;br&gt;接着，我们将DVWA Security安全级别改为High，然后同样再返回菜单&amp;quot;Brute Force(暴力破解)&amp;quot;，点击查看源代码，将看到如下图所示：
+&lt;img src=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA18.jpg&#34;
+	width=&#34;1330&#34;
+	height=&#34;823&#34;
+	srcset=&#34;https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hucb0758e523fe9bd6b012eed2e2ec3f5f_136928_79dd804751cf67e8e866af04de672769.jpg 480w, https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hucb0758e523fe9bd6b012eed2e2ec3f5f_136928_712586582387b686158503c413385e7d.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;161&#34;
+		data-flex-basis=&#34;387px&#34;
+	
+&gt;
+&lt;br&gt;怎么样，代码是不是更进化了？还对session进行了认证。然并卵，在高级黑客面前这点改进估计还是相形见拙，还是会被攻破。您自己可以再更改安全等级，再看DVWA新的代码安全改进。从中，您可以学到很多程序安全设计技巧。
+&lt;br&gt;所以，DVWA不仅仅是一款供渗透测试人员进行演练的靶场，也是广大&amp;quot;程序猿&amp;quot;学习提高的榜样。希望您能喜欢这套系统。
+&lt;br&gt;好了，本期教程先到这里，希望能给您带来帮助。小编一字字码字好累，一张张截图好苦，如果您喜欢，请记得帮忙点赞、收藏、转发，并点击关注小编，不胜感激！您的肯定将是小编前进的动力！本文由&amp;quot;世说鹰语&amp;quot;原创，欢迎关注，带您一起长知识！&lt;/p&gt;
+</description>
+        </item>
+        
     </channel>
 </rss>

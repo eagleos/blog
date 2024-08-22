@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="《从玩转靶机DVWA看程序设计安全》发表于《今日头条》,Programming Security from Playing with the Target DVWA">
+<title>从玩转靶机DVWA看程序设计安全</title>
+
+<link rel='canonical' href='https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/'>
+
+<link rel="stylesheet" href="/scss/style.min.bb98bd5bb997adc5d660f10dcffc7ef564ffadc0075160e92a649814700bd7bd.css"><meta property='og:title' content="从玩转靶机DVWA看程序设计安全">
+<meta property='og:description' content="《从玩转靶机DVWA看程序设计安全》发表于《今日头条》,Programming Security from Playing with the Target DVWA">
+<meta property='og:url' content='https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/'>
+<meta property='og:site_name' content='虾米技术网'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='网络安全' /><meta property='article:tag' content='靶机' /><meta property='article:tag' content='DVWA' /><meta property='article:published_time' content='2020-11-16T23:59:00&#43;08:00'/><meta property='article:modified_time' content='2020-11-16T23:59:00&#43;08:00'/><meta property='og:image' content='https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA1.jpg' />
+<meta name="twitter:title" content="从玩转靶机DVWA看程序设计安全">
+<meta name="twitter:description" content="《从玩转靶机DVWA看程序设计安全》发表于《今日头条》,Programming Security from Playing with the Target DVWA"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA1.jpg' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/eagle_huc7d4d4a429513d02ed402ba0e1d9f519_8869_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">虾米技术网</a></h1>
+            <h2 class="site-description">xmyy.com</h2>
+        </div>
+    </header>
+
+
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档|Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索|Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链|Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://xmyy.com/" selected>中文</option>
+                                
+                                    <option value="https://xmyy.com/en/" >English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#关于dvwa">关于DVWA</a></li>
+    <li><a href="#安装配置dvwa">安装配置DVWA</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#下载源码">下载源码</a></li>
+            <li><a href="#安装配置">安装配置</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#dvwa演练">DVWA演练</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#安全级别">安全级别</a></li>
+            <li><a href="#brute-force暴力破解">Brute Force(暴力破解)</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#启示录">启示录</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/article/Programming-Security-from-Playing-with-the-Target-DVWA/">
+                <img src="/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu89a1f8216a8e347b3274a9768eebfda9_157973_3d3c60f6cf08f9063246bbba12848293.jpg"
+                        srcset="/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu89a1f8216a8e347b3274a9768eebfda9_157973_3d3c60f6cf08f9063246bbba12848293.jpg 800w, /article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu89a1f8216a8e347b3274a9768eebfda9_157973_98ed8ec7090f7ef0abadc0c0631102c1.jpg 1600w"
+                        width="800" 
+                        height="333" 
+                        loading="lazy"
+                        alt="Featured image of post 从玩转靶机DVWA看程序设计安全" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/CyberSecurity/" style="background-color: #8bb4b2; color: #fff;">
+                网络安全
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/article/Programming-Security-from-Playing-with-the-Target-DVWA/">从玩转靶机DVWA看程序设计安全</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            《从玩转靶机DVWA看程序设计安全》发表于《今日头条》,Programming Security from Playing with the Target DVWA
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+
+    
+    <footer class="article-time">
+        <span class="post-meta-item">
+          <i class="fas fa-pen"></i>
+          
+            <span class="article-type" style="color: white; font-size: 14px; background: #bf59f3; padding: 0 5px 1px 5px; margin-right: 5px; border-radius: 2px;">原创</span>
+          
+        </span>
+        
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+            <div class="post-author">
+                作者：童建平
+
+            </div>
+        </div>
+        
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">
+2020-11-16 23:59</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><span class="nowrap"><span class="emojify">💁🏻‍♂️</span>《今日头条》 2020-11-16 《从玩转靶机DVWA看程序设计安全》 童建平</span></p>
+<h2 id="前言">前言
+</h2><p>靶机，在军事领域意指作为射击训练目标的一种军用飞行器。类似地，在网络安全行业，靶机，也称靶场，泛指作为渗透测试用途的一种软件或系统。常见的渗透测试靶机系统有DVWA、Metasploitable、mutillidaemutillidae、SQLol、hackxor、BodgeIt、Exploit KB、WackoPicko、OWASP Hackademic、WebGoat、XSSeducation、Web for Pentester、Lazysysadmin等等，举不胜举。DVWA就是其中最著名、最基础的靶场。
+<img src="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA1.jpg"
+	width="1920"
+	height="800"
+	srcset="/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu89a1f8216a8e347b3274a9768eebfda9_157973_c56b2d5e8dac818fd11ca793ea5ff519.jpg 480w, /article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu89a1f8216a8e347b3274a9768eebfda9_157973_47e41a9102861b4661a96cf0cc67c291.jpg 1024w"
+	loading="lazy"
+	
+		alt="从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="240"
+		data-flex-basis="576px"
+	
+></p>
+<h2 id="关于dvwa">关于DVWA
+</h2><p>DVWA，全称Dam Vulnerable Web Application，是著名的OWASP开源的一个在线web安全教学平台，基于PHP+Mysql编写，用于常规WEB漏洞教学及检测WEB脆弱性，包含暴力破解、命令执行、CSRF、文件包含、SQL注入、XSS、盲注等常见的一些安全漏洞，并且分Low、Medium、High、Impossible四种不同的安全等级，等级越高难度也越大，同时每一个漏洞可以直接在页面选择查看源码进行源码对比加以学习。
+<img src="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA2.png"
+	width="534"
+	height="462"
+	srcset="/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu4f002f1be3d91ca91376ecae3660ef95_135241_0ffb4e9d86a0faf5b04e670ca3e2d86b.png 480w, /article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu4f002f1be3d91ca91376ecae3660ef95_135241_28f252b368fe3ca0c5f05241fe307e17.png 1024w"
+	loading="lazy"
+	
+		alt="从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="115"
+		data-flex-basis="277px"
+	
+></p>
+<h2 id="安装配置dvwa">安装配置DVWA
+</h2><p>DVWA是推荐新手首选靶场，配置简单，可运行在LAMP(Linux+Apache+Mysql+Php)之类的环境中，也可以运行在Windows系统中，只要您有个支持php+mysql的环境即可。这种环境的配置方法，网络上文章多如牛毛，这里就不赘述了。下面小编为您讲述如何在Centos 7.x下安装配置DVWA。</p>
+<h4 id="下载源码">下载源码
+</h4><p>首先，我们需要到DVWA官方Github地址下载源码：
+<img src="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA3.jpg"
+	width="1629"
+	height="845"
+	srcset="/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu1c41d4205feb41d8b3e1019d434a91c8_122055_354a476a5cc47fd466d5ec4b60f8fc2a.jpg 480w, /article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu1c41d4205feb41d8b3e1019d434a91c8_122055_5a9cafcdb30175984724dca711219932.jpg 1024w"
+	loading="lazy"
+	
+		alt="从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="192"
+		data-flex-basis="462px"
+	
+>
+<br>官方于2个月前的9月13日发布了最新版本2.01，也可以直接通过下面地址下载源码包：</p>
+<h4 id="安装配置">安装配置
+</h4><ol>
+<li>将下载的压缩包保存到本地后，通过rz命令(如果找不到此命令，请运行yum –y install lrzsz安装)将其上传到您的服务器上。解压后，会生成子目录DVWA-2.0.1，需要将该子目录下的所有文件移至您的站点根目录下。假设您的站点根目录是/opt/allsite/domain.com/wwwroot，则解压后目录结构如下图：
+<img src="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA4.jpg"
+	width="627"
+	height="381"
+	srcset="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA4_hu7717b596f1eb3a423f0f1f00820b0238_80878_480x0_resize_q75_box.jpg 480w, /article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA4_hu7717b596f1eb3a423f0f1f00820b0238_80878_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="164"
+		data-flex-basis="394px"
+	
+></li>
+<li>进入上图中config目录，重命名配置文件：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mv config.inc.php.dist config.inc.php
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><br>修改其中$_DVWA数组各项值，如将$_DVWA[ &lsquo;db_server&rsquo; ]、$_DVWA[ &lsquo;db_database&rsquo; ]、$_DVWA[ &lsquo;db_user&rsquo; ]、$_DVWA[ &lsquo;db_password&rsquo; ]的值更改为您的数据库地址、数据库名、数据库用户名、数据库密码对应的值。如下图：
+<img src="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA5.jpg"
+	width="836"
+	height="337"
+	srcset="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA5_hu94ccbc42d434fa1ebfaff3f9d62e15bf_62168_480x0_resize_q75_box.jpg 480w, /article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA5_hu94ccbc42d434fa1ebfaff3f9d62e15bf_62168_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="248"
+		data-flex-basis="595px"
+	
+></p>
+<ol start="3">
+<li>如果您的php配置文件/etc/php.ini中没有开启允许allow_url_include，需要开启之，否则安装过程中会提示：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">PHP function allow_url_include: Disabled
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下面是修改后正确的配置：</p>
+<p><img src="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA6.jpg"
+	width="536"
+	height="55"
+	srcset="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA6_hu937c80980008a92029e88d4b4672d443_9006_480x0_resize_q75_box.jpg 480w, /article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA6_hu937c80980008a92029e88d4b4672d443_9006_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="974"
+		data-flex-basis="2338px"
+	
+>
+<br>如果变更了php配置，记得用systemctl reload httpd等命令重启下apache服务！</p>
+<ol start="4">
+<li>还有一个坑需要事先修改配置以避免，否则您可能在安装过程中遇到如下错误：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">You can also use this to reset the administrator credentials <span class="o">(</span><span class="s2">&#34;admin // password&#34;</span><span class="o">)</span> at any stage.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">reCAPTCHA key: Missing
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>User: apache<span class="o">]</span> Writable folder /opt/allsite/domain.com/wwwroot/config: Yes
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Status in red, indicate there will be an issue when trying to <span class="nb">complete</span> some modules.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这是有关谷歌验证码的功能，解决方法很简单，修改前面第2步骤中的配置文件config.inc.php，将其中$_DVWA[ &lsquo;recaptcha_public_key&rsquo; ]和$_DVWA[ &lsquo;recaptcha_private_key&rsquo; ]的值改为如下即可：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$_DVWA[ &#39;recaptcha_public_key&#39; ] = &#39;6LdK7xITAAzzAAJQTfL7fu6I-0aPl8KHHieAT_yJg&#39;;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$_DVWA[ &#39;recaptcha_private_key&#39; ] = &#39;6LdK7xITAzzAAL_uw9YXVUOPoIHPZLfw2K1n5NVQ&#39;;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如下图：
+<img src="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA7.jpg"
+	width="792"
+	height="124"
+	srcset="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA7_hu595e3f0a4cf73bd7882b6499206ac94d_24825_480x0_resize_q75_box.jpg 480w, /article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA7_hu595e3f0a4cf73bd7882b6499206ac94d_24825_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="638"
+		data-flex-basis="1532px"
+	
+></p>
+<ol start="5">
+<li>假设您的网站域名是www.domain.com，此时即可访问http://www.domain.com/setup.php 进行初始化数据库，如下图：
+<img src="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA8.jpg"
+	width="1187"
+	height="839"
+	srcset="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA8_hu4182ac6ed3a184845b77cf9b618bb321_96693_480x0_resize_q75_box.jpg 480w, /article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA8_hu4182ac6ed3a184845b77cf9b618bb321_96693_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="141"
+		data-flex-basis="339px"
+	
+>
+<br>只要在Status in red一行前面的检测项都是绿色的，就可以下拉页面，点击下图的Create / Reset Database按钮就行初始化数据。否则，请根据红色错误提示进行修改相关配置解决。
+<img src="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA9.jpg"
+	width="762"
+	height="325"
+	srcset="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA9_hu5ef00affed0ac70efc41bcfe8c04d0df_39218_480x0_resize_q75_box.jpg 480w, /article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA9_hu5ef00affed0ac70efc41bcfe8c04d0df_39218_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="234"
+		data-flex-basis="562px"
+	
+>
+<br>这个setup.php页面，可以在任何时候，您需要时进行访问，进行重新初始化操作，方便重新测试使用。</li>
+<li>成功初始化数据库后，即完成安装。系统自动跳转到登录页面http://www.domain.com/login.php ，如下图：
+<img src="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA10.jpg"
+	width="1415"
+	height="843"
+	srcset="/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu05e4fe607fc1ff3063d2bf6a69533b8e_37734_758682f0f83d8b83fc22b01e0220aeed.jpg 480w, /article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu05e4fe607fc1ff3063d2bf6a69533b8e_37734_41671088a4f8ec79612cc8d1a624aebf.jpg 1024w"
+	loading="lazy"
+	
+		alt="从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="167"
+		data-flex-basis="402px"
+	
+></li>
+<li>此时输入默认的用户名admin，密码password，即可成功登录DVWA，如下图：
+<img src="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA11.jpg"
+	width="1187"
+	height="841"
+	srcset="/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hucba60b65bf341e0d9062fa70304c00e2_165200_4af6d1cd18264bc1d3a9f140c7cd1daa.jpg 480w, /article/Programming-Security-from-Playing-with-the-Target-DVWA/_hucba60b65bf341e0d9062fa70304c00e2_165200_dcb27f123a18fe071936f46854c63ecc.jpg 1024w"
+	loading="lazy"
+	
+		alt="从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="141"
+		data-flex-basis="338px"
+	
+></li>
+</ol>
+<h2 id="dvwa演练">DVWA演练
+</h2><p>上面已经完成了DVWA的安装，下面我们可以开始愉快的学习之旅了，让我们来看看如何在DVWA中进行渗透攻防演练。</p>
+<h4 id="安全级别">安全级别
+</h4><p>本文开头介绍了DVWA分4种安全模式，安装完成后默认配置是最高级别的Impossible安全模式，为方便我们学习渗透测试，需要修改等级为最低级别Low：
+<br>登录DVWA后，点击左边菜单&quot;DVWA Security&quot;，在如下图中的下拉菜单中选择Low并点击Submit按钮提交，即可完成配置：
+<img src="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA12.jpg"
+	width="1013"
+	height="639"
+	srcset="/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu5fa86c6a9a0e82bc68b346b3202f3267_99111_592fef41a369767b44901186b66dd1ac.jpg 480w, /article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu5fa86c6a9a0e82bc68b346b3202f3267_99111_987a7c997dbc05a92bd19560678b5b0e.jpg 1024w"
+	loading="lazy"
+	
+		alt="从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="158"
+		data-flex-basis="380px"
+	
+></p>
+<h4 id="brute-force暴力破解">Brute Force(暴力破解)
+</h4><p>然后我们点击左边菜单&quot;Brute Force(暴力破解)&quot;，如下图：
+<img src="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA13.jpg"
+	width="1102"
+	height="452"
+	srcset="/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu2b5ccc7f83f451944a23e3b37dff0bd6_52250_c61dcbb42e241927e1c687a7e579d262.jpg 480w, /article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu2b5ccc7f83f451944a23e3b37dff0bd6_52250_5f1f95284c2e1e7da8dcb143f2ada35a.jpg 1024w"
+	loading="lazy"
+	
+		alt="从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="243"
+		data-flex-basis="585px"
+	
+>
+<br>我们在用户名和密码框中输入随意的字符，将提示用户名或密码不正确，如下图：
+<img src="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA14.jpg"
+	width="1148"
+	height="508"
+	srcset="/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hue35bf92ea62c180c61f471a44c89eb14_63098_a1f1a16f379a66a08fcb54067b5cecac.jpg 480w, /article/Programming-Security-from-Playing-with-the-Target-DVWA/_hue35bf92ea62c180c61f471a44c89eb14_63098_ec28e5ef58a20f36dc662a87ec5d1221.jpg 1024w"
+	loading="lazy"
+	
+		alt="从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="225"
+		data-flex-basis="542px"
+	
+>
+<br>此时，我们可以在该页面右下角点击&quot;View Surce(查看源代码)&ldquo;按钮，查看此页面的源代码，这是DVWA很有用的一个功能，方便我们边查询源码边学习如何渗透测试，如下图：
+<img src="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA15.jpg"
+	width="1100"
+	height="826"
+	srcset="/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu559d621a7d26431be69115006af105ef_106245_d5203eb31af16b3d48ac5887711ef07a.jpg 480w, /article/Programming-Security-from-Playing-with-the-Target-DVWA/_hu559d621a7d26431be69115006af105ef_106245_2bd4cb98c05ecc6e2a0dd69b958d854f.jpg 1024w"
+	loading="lazy"
+	
+		alt="从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="133"
+		data-flex-basis="319px"
+	
+>
+<br>如图所示，代码中的SQL语句为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="o">`</span><span class="n">users</span><span class="o">`</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;$user&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;$pass&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>如上图，我们输入的用户名是gdfgdsf，密码是fgsdgsdfg，则此SQL查询语句向数据库提交查询：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="o">`</span><span class="n">users</span><span class="o">`</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;gdfgdsf&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;fgsdgsdfg&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>由于数据库中不存在此用户名，自然通过不了，提示用户名或密码错误。
+<br>那如果我们用户名改为输入:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">admin</span><span class="s1">&#39;--
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>即admin后面加个英文单引号再加双连字符(&ndash;)再加1个空格，如下图：
+<img src="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA16.jpg"
+	width="1111"
+	height="650"
+	srcset="/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hubf44478a336750a419f1341354da8334_70721_fb8fe667a02129e49019d8b4a974b2c2.jpg 480w, /article/Programming-Security-from-Playing-with-the-Target-DVWA/_hubf44478a336750a419f1341354da8334_70721_991efb89c48c6e0463b680d183263787.jpg 1024w"
+	loading="lazy"
+	
+		alt="从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="170"
+		data-flex-basis="410px"
+	
+>
+<br>是不是见证奇迹的时刻发生了？我们成功绕过了程序设置，系统提示我们登录成功，而我们连密码都输入为空的。
+<br>我们来看看当输入上面用户名时，SQL语句变成了什么?SQL语句就变成：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="o">`</span><span class="n">users</span><span class="o">`</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;admin&#39;</span><span class="c1">-- &#39; AND password = &#39;&#39;;
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>为什么这个语句能绕过验证呢？这是因为双连字符(&ndash;)在SQL中通常具有特别的含义，它起到注释作用，表示其后面的语句属于注释，应被忽略不予执行。于是上面的语句等价于执行了：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="o">`</span><span class="n">users</span><span class="o">`</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;admin&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>数据库正好存在有名称为admin的用户，于是攻击者就能绕过成功登录系统了。
+<br>类似如上，构建含有特殊字符的用户名，还可以结合使用union等语句进行攻击，是很有用的技巧。</p>
+<h2 id="启示录">启示录
+</h2><p>限于时间和篇幅，上面只是简单介绍下DVWA的暴力破解模块，仅为其冰山一角，更多功能有待您去发现和体验，本文仅为抛砖引玉。从上面的源代码可看出，写出那样的代码是程序新手经常犯的错误，对SQL语句中引用的变量等缺乏应有的过滤操作，引发了安全风险。
+<br>那如何提高程序安全设计呢？其实DVWA也隐藏了给我们提高程序安全设计的技巧。我们将DVWA Security安全级别改为Medium，然后再返回菜单&quot;Brute Force(暴力破解)&quot;，点击查看源代码，将看到如下图所示：
+<img src="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA17.jpg"
+	width="1415"
+	height="821"
+	srcset="/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hud42bf80c9b30185e6af93ce8364734a8_150509_e9c592e48e2c3292b37b6edb29ab05bf.jpg 480w, /article/Programming-Security-from-Playing-with-the-Target-DVWA/_hud42bf80c9b30185e6af93ce8364734a8_150509_49cf3e2ee911870933f9f2c27f817f77.jpg 1024w"
+	loading="lazy"
+	
+		alt="从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="172"
+		data-flex-basis="413px"
+	
+>
+<br>由上可见，DVWA提供了使用mysqli_real_escape_string和md5函数对用户输入值进行相关转换操作，某种程度上提升了安全性。但道高一尺，魔高一丈，这点小把戏还是对付不了中级黑客的。
+<br>接着，我们将DVWA Security安全级别改为High，然后同样再返回菜单&quot;Brute Force(暴力破解)&quot;，点击查看源代码，将看到如下图所示：
+<img src="/article/Programming-Security-from-Playing-with-the-Target-DVWA/Programming-Security-from-Playing-with-the-Target-DVWA18.jpg"
+	width="1330"
+	height="823"
+	srcset="/article/Programming-Security-from-Playing-with-the-Target-DVWA/_hucb0758e523fe9bd6b012eed2e2ec3f5f_136928_79dd804751cf67e8e866af04de672769.jpg 480w, /article/Programming-Security-from-Playing-with-the-Target-DVWA/_hucb0758e523fe9bd6b012eed2e2ec3f5f_136928_712586582387b686158503c413385e7d.jpg 1024w"
+	loading="lazy"
+	
+		alt="从玩转靶机DVWA看程序设计安全Programming Security from Playing with the Target DVWA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="161"
+		data-flex-basis="387px"
+	
+>
+<br>怎么样，代码是不是更进化了？还对session进行了认证。然并卵，在高级黑客面前这点改进估计还是相形见拙，还是会被攻破。您自己可以再更改安全等级，再看DVWA新的代码安全改进。从中，您可以学到很多程序安全设计技巧。
+<br>所以，DVWA不仅仅是一款供渗透测试人员进行演练的靶场，也是广大&quot;程序猿&quot;学习提高的榜样。希望您能喜欢这套系统。
+<br>好了，本期教程先到这里，希望能给您带来帮助。小编一字字码字好累，一张张截图好苦，如果您喜欢，请记得帮忙点赞、收藏、转发，并点击关注小编，不胜感激！您的肯定将是小编前进的动力！本文由&quot;世说鹰语&quot;原创，欢迎关注，带您一起长知识！</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a>
+        
+            <a href="/tags/%E9%9D%B6%E6%9C%BA/">靶机</a>
+        
+            <a href="/tags/DVWA/">DVWA</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;  2000 -  2024 <a href="https://xmyy.com/" target="_blank">虾米技术网 xmyy.com</a>
+    </section>
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 ，主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+            </main>
+        </div>
+        <script type="text/javascript" src="/ts/main.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://xmyy.com/css/googleapis-css2.css">
+
+    </body>
+</html>

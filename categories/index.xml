@@ -16,6 +16,14 @@
         <description>&lt;img src="https://xmyy.com/categories/eagle/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post 雄鹰论文" /&gt;</description>
         </item>
         <item>
+        <title>网络安全</title>
+        <link>https://xmyy.com/categories/CyberSecurity/</link>
+        <pubDate>Mon, 16 Nov 2020 23:59:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/categories/CyberSecurity/</guid>
+        <description>&lt;img src="https://xmyy.com/categories/CyberSecurity/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post 网络安全" /&gt;</description>
+        </item>
+        <item>
         <title>Kubernetes</title>
         <link>https://xmyy.com/categories/kubernetes/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -38,14 +46,6 @@
         
         <guid>https://xmyy.com/categories/DevOps/</guid>
         <description>&lt;img src="https://xmyy.com/categories/DevOps/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post 开发运维" /&gt;</description>
-        </item>
-        <item>
-        <title>网络安全</title>
-        <link>https://xmyy.com/categories/CyberSecurity/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://xmyy.com/categories/CyberSecurity/</guid>
-        <description>&lt;img src="https://xmyy.com/categories/CyberSecurity/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post 网络安全" /&gt;</description>
         </item>
         
     </channel>

@@ -343,6 +343,30 @@
         <guid>https://xmyy.com/tags/%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B/</guid>
         <description></description>
         </item>
+        <item>
+        <title>DVWA</title>
+        <link>https://xmyy.com/tags/DVWA/</link>
+        <pubDate>Mon, 16 Nov 2020 23:59:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/DVWA/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>靶机</title>
+        <link>https://xmyy.com/tags/%E9%9D%B6%E6%9C%BA/</link>
+        <pubDate>Mon, 16 Nov 2020 23:59:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/%E9%9D%B6%E6%9C%BA/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>网络安全</title>
+        <link>https://xmyy.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</link>
+        <pubDate>Mon, 16 Nov 2020 23:59:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</guid>
+        <description></description>
+        </item>
         
     </channel>
 </rss>
