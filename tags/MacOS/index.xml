@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>MacOS on 虾米技术网</title>
+        <link>https://xmyy.com/tags/MacOS/</link>
+        <description>Recent content in MacOS on 虾米技术网</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>虾米技术网 xmyy.com</copyright>
+        <lastBuildDate>Fri, 11 Dec 2020 18:50:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/MacOS/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>如何在MacOS上安装VeraCrypt以跨平台保护数据</title>
+        <link>https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/</link>
+        <pubDate>Fri, 11 Dec 2020 18:50:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/</guid>
+        <description>&lt;img src="https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms.jpg" alt="Featured image of post 如何在MacOS上安装VeraCrypt以跨平台保护数据" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;💁🏻‍♂️&lt;/span&gt;《今日头条》 2020-12-11 《如何在MacOS上安装VeraCrypt以跨平台保护数据》 童建平&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;不管您从事互联网行业，还是从事其它行业，是不是经常有这种工作需求：白天在公司忙乎一些活，没干完，需要拷贝文件回家继续加班处理？而要拷贝的文件可能存放于不同子目录，每次拷贝一不小心就遗漏拷贝了，甚为麻烦。有什么又快捷又安全的方式来改变这种落后的拷贝方式、高效地解决问题呢？&lt;/p&gt;
+&lt;p&gt;亦或还有一种场景：公司为您配置的电脑安装的是Windows 10操作系统，而您家里的个人电脑如小编一样是Macbook Air之类的苹果公司产品，使用的是不同的MacOS操作系统，我们有一些公事上或私事上的敏感数据文件，需要用某种方式进行保护且在这两种不同操作系统中互相拷贝。那如何解决这个需求呢？&lt;/p&gt;
+&lt;h2 id=&#34;veracrypt有什么用&#34;&gt;Veracrypt有什么用？
+&lt;/h2&gt;&lt;p&gt;要解决上述这些问题和需求，其实VeraCrypt将是不二选择，且听小编娓娓道来。VeraCrypt是一种免费和开放源代码的多平台加密工具，可在Windows、Linux和Mac OS上运行，可在GUI图形界面和命令行、控制台上使用。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms1.jpg&#34;
+	width=&#34;1279&#34;
+	height=&#34;619&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hufb98cb295f29f55eeea5f8d8a14040bc_32803_02c93b872383399a1b203e04dbbe58e3.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hufb98cb295f29f55eeea5f8d8a14040bc_32803_14cea0861313f9db5f2ba80d4cabea84.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;206&#34;
+		data-flex-basis=&#34;495px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;使用VeraCrypt，任何人都可以制作加密卷以保护数据、免遭未经授权的访问、使用、泄露、破坏和修改。您可以像在普通硬盘中一样将文件存储在VeraCrypt加密卷上。每当将数据存储在VeraCrypt卷中时，数据将在保存之前自动进行加密，并在加载后自动解密，而无需任何用户干预。正在VeraCrypt卷上写入的数据将被自动加密，从加密卷中复制或读取的数据将被自动解密。卸载VeraCrypt加密卷后，将无法访问和加密数据。要访问数据，您应该使用正确的密码或密钥文件加载VeraCrypt卷。没有使用正确的密码、密钥文件，任何人都无法窃取、读取、编辑加密卷上的数据。整个文件系统将被加密，包括文件名、文件夹名、每个文件的内容、可用空间、元数据等。&lt;/p&gt;
+&lt;p&gt;VeraCrypt提供多种加密算法，包括AES、Camellia、Kuznyechik、Serpent和 Twofish等，如下列表：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms2.jpg&#34;
+	width=&#34;888&#34;
+	height=&#34;572&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hu8fa0dd0559d2970903f2f180477b1f58_66630_65ae307b9d7b8dfe68c53fd9a20cc290.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hu8fa0dd0559d2970903f2f180477b1f58_66630_6e936be95aa75eaaff761dbde9640872.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;155&#34;
+		data-flex-basis=&#34;372px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;其他特性还有支持FAT32和NTFS分区、隐藏卷标、热键启动等。&lt;/p&gt;
+&lt;p&gt;这是VeraCrypt的功能和亮点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;以文件方式创建虚拟加密磁盘，并将其加载为真实磁盘。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;加密整个分区或存储设备，例如USB闪存驱动器或硬盘驱动器。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;支持加密安装Windows的系统分区或磁盘（预启动身份验证）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;加密是自动的、实时的（动态的）和透明的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;允许并行化和流水线化读取和写入数据，就像未加密驱动器一样快。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;加密支持在现代处理器上的硬件加速。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;提供合理的可否认性，以防万一您被迫透露密码：隐藏卷（伪装）和隐藏操作系统。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;为什么选择veracrypt&#34;&gt;为什么选择Veracrypt？
+&lt;/h2&gt;&lt;p&gt;VeraCrypt与当年号称全球最好加密软件的TrueCrypt一样，&amp;ldquo;殊途同归&amp;rdquo;（某种方面而言）用于磁盘加密，它是基于TrueCrypt的免费磁盘加密软件，是由法国安全顾问Mounir Idrassi主导并于2013年6月发布、在TrueCrypt被迫关闭后至今积极开发、持续更新的可靠的TrueCrypt 分支，青出于蓝而胜于蓝。&lt;/p&gt;
+&lt;p&gt;VeraCrypt解决了TrueCrypt存在的许多漏洞和安全性问题，增强了用于系统和分区的加密算法的安全性，使其免受日益发展的暴力破解攻击的影响。这种增强的安全性仅在打开加密分区时增加了一些延迟，而不会影响应用程序使用阶段的性能。这是合法使用者可以接受的，但是它使攻击者更难访问加密数据。 例如，当系统分区被加密时，TrueCrypt使用PBKDF2-RIPEMD160进行1000次迭代加密处理，而VeraCrypt使用327670次迭代加密处理。&lt;/p&gt;
+&lt;p&gt;对于标准卷和其他分区，TrueCrypt最多使用2000次迭代，而VeraCrypt则对RIPEMD160算法使用655340次迭代，对于SHA-2和Whirlpool算法，则使用500000次迭代。&lt;/p&gt;
+&lt;p&gt;VeraCrypt是免费和开源的，比TrueCrypt更安全，适用于Windows、Linux和Mac OS多平台操作系统，适用于硬盘或USB驱动器，读写速度极快。它是TrueCrypt关闭后的最佳替代品，没有之一。&lt;/p&gt;
+&lt;p&gt;下面，本文将指导您如何在MacOS上安装使用VeraCrypt以保护文件数据安全，仅作抛砖引玉，希望能给您带来帮助。&lt;/p&gt;
+&lt;h2 id=&#34;如何在macos上安装veracrypt&#34;&gt;如何在MacOS上安装VeraCrypt
+&lt;/h2&gt;&lt;p&gt;VeraCrypt支持Mac OS X Lion 10.7及以上版本。针对OS X Lion 10.7 和OS X Mountain Lion 10.8的最新版本是1.24-Update7，而适用于OS X Mavericks 10.9及以上的最新版本是11月28日刚发布的1.24-Update8版本。&lt;/p&gt;
+&lt;p&gt;VeraCrypt依赖OSXFuse来运行，一些用户曾反馈说它在macOS Big Sur上运行存在问题。OSXFuse已对此作了更新，以适应新的macOS操作系统，FUSE版本4.0.0增加了对Apple Silicon的支持以及其他更改。VeraCrypt版本1.24-Update8已于11月28日发布，以解决macOS Big Sur和FUSE 4.0.x兼容性问题。&lt;/p&gt;
+&lt;h4 id=&#34;下载并安装osxfuse&#34;&gt;下载并安装OSXFuse
+&lt;/h4&gt;&lt;p&gt;首先，我们需要去先下载并安装OSXFuse（如果您的系统中还未安装该软件的话），否则在VeraCrypt安装过程中您将碰到如下错误提示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms3.jpg&#34;
+	width=&#34;620&#34;
+	height=&#34;431&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hu16fa952dea8571442544985545385bd0_25082_038a36657ed26abcfd7e90e10f279c69.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hu16fa952dea8571442544985545385bd0_25082_2609107d302bedc0ae397fa2668fec9e.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;143&#34;
+		data-flex-basis=&#34;345px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;上面截图中的地址，在国内可能无法访问，您可以到其github官网 &lt;a class=&#34;link&#34; href=&#34;https://github.com/osxfuse/osxfuse/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/osxfuse/osxfuse/releases&lt;/a&gt; 上下载：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms4.jpg&#34;
+	width=&#34;1267&#34;
+	height=&#34;677&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hu211166077b40925fff42e3426f7af7b1_71431_88c4df6bc4c97ac09c92b920fa2eb8a4.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hu211166077b40925fff42e3426f7af7b1_71431_5b07e720b38e5f33da4a4180095d38b1.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;187&#34;
+		data-flex-basis=&#34;449px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;然后双击下载到的macfuse-4.0.4.dmg文件，将打开如下图的界面：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms5.jpg&#34;
+	width=&#34;662&#34;
+	height=&#34;484&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_33485_ae52e3d38ed9eab68ecf453b6d441d57.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_33485_d2e841ebb79669528a7f093c231a7431.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;136&#34;
+		data-flex-basis=&#34;328px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;双击图中箭头所示的install macFUSE.pkg，将弹出如下界面：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms6.jpg&#34;
+	width=&#34;617&#34;
+	height=&#34;437&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hu7c9d17a50f085595bad54868098ab22d_23300_a1871643a866c330294dc8db4954c781.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hu7c9d17a50f085595bad54868098ab22d_23300_5a837377df182e77be08e5dcf133f158.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;141&#34;
+		data-flex-basis=&#34;338px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;理所当然，点击继续，出现如下图界面：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms7.jpg&#34;
+	width=&#34;732&#34;
+	height=&#34;550&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_46523_82cdbe4a62869d657b52b90272e662bb.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_46523_bb3776b32fb07c5cabd8e7cb7936aefd.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;319px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;再次点击&amp;quot;继续&amp;quot;按钮，如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms8.jpg&#34;
+	width=&#34;732&#34;
+	height=&#34;550&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_66212_337c0932db455c608bd2b90d71d424e2.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_66212_afbb8f40ab7e33194d5458862b354bdc.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;319px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;有兴趣可以阅读下这软件许可协议，当然也可以直接点击&amp;quot;继续&amp;quot;按钮，如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms9.jpg&#34;
+	width=&#34;618&#34;
+	height=&#34;437&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huc8ae0dfbd194e97ffddbe96e83a2ca66_51880_1dc1d88a2380d1c3f716f887df5c3535.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huc8ae0dfbd194e97ffddbe96e83a2ca66_51880_e1d6631c8144f0c0ad22f76247b7dce5.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;141&#34;
+		data-flex-basis=&#34;339px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;当然得点击同意按钮了，再出现如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms10.jpg&#34;
+	width=&#34;732&#34;
+	height=&#34;550&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_32238_ca405a20f34578d54b28be79d5f81122.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_32238_82c2cefba1a870fbf64cee2c5a651109.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;319px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;现在终于要开始安装了，点击&amp;quot;安装&amp;quot;按钮，出现下图界面：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms11.jpg&#34;
+	width=&#34;619&#34;
+	height=&#34;433&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hu12ca957104b9e52cdeb19c6ddd33ebce_31567_d38c8f5b6f4361d46c50c63afbc9b162.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hu12ca957104b9e52cdeb19c6ddd33ebce_31567_e49a8dd4e242ae220866624e13b220eb.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;142&#34;
+		data-flex-basis=&#34;343px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;软件您当前登录的用户密码，再点击&amp;quot;安装软件&amp;quot;按钮，将会弹出警告框：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms12.jpg&#34;
+	width=&#34;610&#34;
+	height=&#34;430&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hu6cf5942b2b39506863452be61ef0b62e_27434_9910b2692f04a4cabf5fce2a93c88688.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hu6cf5942b2b39506863452be61ef0b62e_27434_eda0f8d1f2ab4d8c0427c3d455e87089.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;141&#34;
+		data-flex-basis=&#34;340px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;这是MacOS系统的安全性特征，点击&amp;quot;打开安全性偏好设置&amp;quot;按钮，跳转到系统控制面板：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms13.jpg&#34;
+	width=&#34;780&#34;
+	height=&#34;685&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_41819_a660cecc1e7c0fcb2d1493556def90f1.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_41819_d00f5f70094512ef3c17dcdf4cdc3505.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;113&#34;
+		data-flex-basis=&#34;273px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;图中显示来自开发者&amp;quot;Benjamin Fleischer&amp;quot;的系统软件已被阻止载入，不用管这提示，直接点击旁边的&amp;quot;允许&amp;quot;按钮，然后就完成安装了，如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms14.jpg&#34;
+	width=&#34;732&#34;
+	height=&#34;550&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_29137_c1f9de60ba5c9b23c3f26ac0475890b3.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_29137_84368bce7b2b9090270a55c3bfbeb6ef.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;319px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;下面我们可以进行VeraCrypt的安装步骤了。&lt;/p&gt;
+&lt;h4 id=&#34;下载并安装veracrypt&#34;&gt;下载并安装VeraCrypt
+&lt;/h4&gt;&lt;p&gt;您可以到VeraCrypt官网 &lt;a class=&#34;link&#34; href=&#34;https://www.veracrypt.fr/en/Downloads.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.veracrypt.fr/en/Downloads.html&lt;/a&gt; 选择下载您需要的版本。如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms15.png&#34;
+	width=&#34;1072&#34;
+	height=&#34;890&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hu54851d110d945f53a3ad2202feabeb2b_232119_4ee30a9597ca7913d5af81df29b27028.png 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hu54851d110d945f53a3ad2202feabeb2b_232119_a2cfaae625f14082f7c5ab821929d103.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;120&#34;
+		data-flex-basis=&#34;289px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;如果下载速度不畅，也可以到其github官网 &lt;a class=&#34;link&#34; href=&#34;https://github.com/veracrypt/VeraCrypt&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/veracrypt/VeraCrypt&lt;/a&gt; 下载对应的软件包，这里就不赘述了。&lt;/p&gt;
+&lt;p&gt;双击下载到的 VeraCrypt_1.24-Update8.dmg文件，将出现如下图界面：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms16.jpg&#34;
+	width=&#34;826&#34;
+	height=&#34;516&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_32915_33331cde41f4991ee6fe7d237d89e15c.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_32915_6fbe7604140ae7155fac8ecfc3cc5068.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;160&#34;
+		data-flex-basis=&#34;384px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;双击图中的VeraCrypt_Installer.pkg，出现下图界面：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms17.jpg&#34;
+	width=&#34;732&#34;
+	height=&#34;550&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_28356_ff18e0a73e28c75c0c15ca8f27c3aad2.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_28356_915b7f0f931750d94c1b9f4ff9646ef1.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;319px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;点击图中&amp;quot;继续&amp;quot;按钮，出现如下图界面：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms18.jpg&#34;
+	width=&#34;732&#34;
+	height=&#34;550&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_58274_5916dcb2d60677dd642404bb2c6e6b34.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_58274_04b9d486c5f7f1eb429d5ffdc4316d26.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;319px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;同样地，再点击&amp;quot;继续&amp;quot;按钮，出现如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms19.jpg&#34;
+	width=&#34;619&#34;
+	height=&#34;435&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huc89e79e28e298e73c226ea4fc81c3034_41121_4380051bec93388ce8b9de82ac3348bc.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huc89e79e28e298e73c226ea4fc81c3034_41121_5e8f9fd66d79d87da7e6991eb31739d7.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;142&#34;
+		data-flex-basis=&#34;341px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;安装过程都是大同小异，也点击&amp;quot;同意&amp;quot;按钮，出现如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms20.jpg&#34;
+	width=&#34;732&#34;
+	height=&#34;550&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_32916_f3f56021514a30630c53c9481797f996.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_32916_d72eabf798743d55f921c2256e21e44b.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;319px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;出现类似的页面，在这里可以更改安装位置，或按默认即可，然后点击&amp;quot;安装&amp;quot;按钮开始安装，出现如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms21.jpg&#34;
+	width=&#34;614&#34;
+	height=&#34;434&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hu68de5f73c0509894c1542f94ad4fca4e_30656_8c1825f9d655496e4983afdaf97e70ca.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hu68de5f73c0509894c1542f94ad4fca4e_30656_53d5cd7e68608801bf8e3800367fa3e1.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;141&#34;
+		data-flex-basis=&#34;339px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;同样需要输入您当前用户密码。这也是MacOS安全机制有别于Windows的地方，由于安装软件需要输入密码确认，一定程度上可以避免像Windows上恶意软件的泛滥。跑题了，点击&amp;quot;安装软件&amp;quot;按钮继续，出现如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms22.jpg&#34;
+	width=&#34;732&#34;
+	height=&#34;550&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_28152_5ca99904af220a9e04e7e2372c54b1fe.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_28152_1b5950eedee8cddb4d7bf27836d2272b.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;319px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;哦耶！安装成功了！安装过程就此结束！&lt;/p&gt;
+&lt;h4 id=&#34;brew方式安装veracrypt&#34;&gt;Brew方式安装VeraCrypt
+&lt;/h4&gt;&lt;p&gt;除了dmg包的方式安装VeraCrypt，MacOS下也可以使用brew方式安装VeraCrypt。&lt;/p&gt;
+&lt;p&gt;如果您的系统上还没安装brew，仅需要下面一条命令进行安装：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ruby -e &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; &amp;lt; /dev/null 2&amp;gt; /dev/null &lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; brew install caskroom/cask/brew-cask 2&amp;gt; /dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;然后使用下面命令即可完成安装VeraCrypt：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew cask install veracrypt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;当然这种方式要求比较熟练的相关技能，推荐使用前面的dmg包方式进行安装。&lt;/p&gt;
+&lt;h2 id=&#34;如何在macos上使用veracrypt&#34;&gt;如何在MacOS上使用VeraCrypt
+&lt;/h2&gt;&lt;p&gt;在MacOS的启动台找到VeraCrypt的图标，点击打开，将看到VeraCrypt的主界面如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms23.jpg&#34;
+	width=&#34;748&#34;
+	height=&#34;668&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_45646_96afdf09085d318be9c68c9208f23229.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_45646_688fdeb6f3386b8bc66be497b8ba7181.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;111&#34;
+		data-flex-basis=&#34;268px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;安装后，软件界面是英文的，官方没有提供中文语言包，但官方在 &lt;a class=&#34;link&#34; href=&#34;https://www.veracrypt.fr/code/VeraCrypt/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.veracrypt.fr/code/VeraCrypt/&lt;/a&gt; 提供了源码包，您有兴趣的话，可以自行去下载并进行汉化处理，重新生成安装包。&lt;/p&gt;
+&lt;p&gt;界面虽然是英文的，但与Windows版本差别不大，且相关配置过程中一般按默认配置一直点&amp;quot;下一步&amp;quot;之类按钮即可，丝毫不影响我们使用。下面介绍下如何在MacOS下创建和加载加密卷。&lt;/p&gt;
+&lt;h4 id=&#34;创建加密卷&#34;&gt;创建加密卷
+&lt;/h4&gt;&lt;p&gt;在MacOS下创建加密卷，与在Windows下不尽相同，操作相对简单，这里不打算占用篇幅进行描述，有兴趣的朋友，可以点击下面链接去看我之前发表的文章：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://xmyy.com/article/How-to-Protect-Sensitive-Files-on-PC-with-VeraCrypt/&#34; target=&#34;_blank&#34;&gt;如何使用VeraCrypt保护PC上的敏感文件&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;加载加密卷&#34;&gt;加载加密卷
+&lt;/h4&gt;&lt;p&gt;这里回到文首提到的问题和需求，VeraCrypt是可以跨平台使用的，所以，比如您在Windows下按照上面所述我的文章《如何使用VeraCrypt保护PC上的敏感文件》中的方法创建了加密卷，您完全可以在卸载加密卷后，将加密卷文件拷贝到MacOS下来加载使用。下面将为您展示此操作：&lt;/p&gt;
+&lt;p&gt;我将Windows下创建的加密卷文件拷贝到我的Mac电脑中，在VeraCrypt主界面中点击&amp;quot;Select File（选择打开文件）&amp;ldquo;按钮，选择我的加密卷存放路径，点击一个未使用的Slot卷标，如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms24.jpg&#34;
+	width=&#34;748&#34;
+	height=&#34;668&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_49621_4cfb836a26a31f852415ded16ea8dbd2.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_49621_b953972ae23277caa3d14629b33c7988.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;111&#34;
+		data-flex-basis=&#34;268px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;其它配置如&amp;quot;Nerver save history(不保存历史纪录)&amp;ldquo;按默认不变，然后点击&amp;quot;Mount（加载）&amp;ldquo;按钮，出现如下图界面：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms25.jpg&#34;
+	width=&#34;630&#34;
+	height=&#34;546&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hu7a64f915a3fb6fc437bec364f7c09533_50305_2cd9f2734adb7a46e719cdfbeef96c22.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hu7a64f915a3fb6fc437bec364f7c09533_50305_be3a8cc2e86d4acf6cb9aaaa4e4c318b.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;115&#34;
+		data-flex-basis=&#34;276px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;同样输入您的加密卷密码，然后点&amp;quot;OK（确定）&amp;ldquo;按钮，将弹出如下图，提示您稍等片刻且软件可能暂时无法响应：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms26.jpg&#34;
+	width=&#34;632&#34;
+	height=&#34;552&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hudb8e265feeaafadba9614e1452b4bcfa_48079_460114a212e3adbd2edc8d6e32675469.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_hudb8e265feeaafadba9614e1452b4bcfa_48079_f4579ac95fab2fb38e5174840e4ad287.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;114&#34;
+		data-flex-basis=&#34;274px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;从这里可以看出，VeraCrypt确实比TrueCrypt在加载时慢一点，因为它需要进行更强的加密运算，也才多费几秒，这是可以接受的。然后就出现如下图加载成功的界面了：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms27.jpg&#34;
+	width=&#34;720&#34;
+	height=&#34;640&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_49140_aea316f541879b0e399e214b123369b8.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_49140_4a354e35fd0ffcc9487edbae555724ce.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;112&#34;
+		data-flex-basis=&#34;270px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;然后返回MacOS的 &amp;ldquo;访达&amp;quot;窗口，可以看到我们在Windows下创建的加密卷文件中的目录和文件都存在：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms28.jpg&#34;
+	width=&#34;882&#34;
+	height=&#34;548&#34;
+	srcset=&#34;https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_39421_7164101a915a0d44bd9536c6a0abf3ef.jpg 480w, https://xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/_huf95874092d1f2972245de3c60edde066_39421_a0089bb2fa83e8d07a318a6ba3a6bebb.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;如何在MacOS上安装VeraCrypt以跨平台保护数据How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;160&#34;
+		data-flex-basis=&#34;386px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;这就是VeraCrypt给我们带来的好处，非常适合需要跨平台进行数据传输文件的我们。一方面保障了我们的数据安全性要求，一方面提高了效率。每次我们需要跨平台操作时，仅需要拷贝这个加密卷文件即可，就不用理会里面那么多子目录和文件了，也就不用担心会遗漏一些文件拷贝，也就不再需要下班回家后还要打电话叫尚在公司的同事帮你打开公司电脑，还得告诉同事你的电脑密码叫他（她）帮您传输遗漏的文件给您了。&lt;/p&gt;
+&lt;h4 id=&#34;重命名加密卷&#34;&gt;重命名加密卷
+&lt;/h4&gt;&lt;p&gt;加密完加密卷后，如上图所示，卷标默认名称&amp;quot;NO NAME&amp;rdquo;，中文意思是&amp;quot;没有名字&amp;rdquo;，也许有强迫症的您是不是感觉不爽？那么如何改名呢？&lt;/p&gt;
+&lt;p&gt;比如，您想将名字改为&amp;quot;eagle&amp;quot;的话，仅需要在终端下输入下面命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/usr/sbin/diskutil rename &lt;span class=&#34;s2&#34;&gt;&amp;#34;NO NAME&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;eagle&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;如何保护veracrypt加密卷文件&#34;&gt;如何保护VeraCrypt加密卷文件
+&lt;/h2&gt;&lt;p&gt;我们建议，应将加密卷文件存放于电脑不易被找到的位置，以加强隐私安全保护。熟悉iso9001认证等安全认证的朋友应该知道，安全性要求我们需要给电脑设定屏保密码之类的，以避免我们离开电脑时造成信息泄露。我们确实应该做好这方面的安全配置。&lt;/p&gt;
+&lt;p&gt;如果您没有配置这些，万一哪天有恶意者进入您的电脑，或者您不小心自己误删了加密卷文件，那可得了？数据就丢失了！怎么在MacOS下避免这种情况呢？&lt;/p&gt;
+&lt;p&gt;您可以对加密码卷所在的目录及其本身增加密码认证处理，即进入加密卷目录时，需要输入密码才能访问，可以一定程度上避免这种被删除或误删除的情况。&lt;/p&gt;
+&lt;p&gt;具体操作方法为：&lt;/p&gt;
+&lt;p&gt;在&amp;quot;访达&amp;quot;窗口中，定位到您的加密卷所在的目录，右键点击&amp;quot;显示简介&amp;rdquo;，设置文件夹操作脚本，修改open操作，复制下面代码替换原来的提示注释即可：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;on opening folder this_folder
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tell application &lt;span class=&#34;s2&#34;&gt;&amp;#34;Finder&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; dialogresult to display dialog &lt;span class=&#34;s2&#34;&gt;&amp;#34;请输入密码:&amp;#34;&lt;/span&gt; buttons &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;确认&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt; default button &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; default answer &lt;span class=&#34;s2&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; PWText to the text returned of dialogresult
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; not &lt;span class=&#34;nv&#34;&gt;PWText&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;这里请替换成您要设置的密码&amp;#34;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;close folder this_folder
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;beep &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;display dialog &lt;span class=&#34;s2&#34;&gt;&amp;#34;密码错误！&amp;#34;&lt;/span&gt; buttons &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;关闭!&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;end &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;end tell
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;end opening folder
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

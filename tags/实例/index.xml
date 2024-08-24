@@ -7,13 +7,13 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>虾米技术网 xmyy.com</copyright>
-        <lastBuildDate>Sun, 09 Jul 2023 08:08:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/%E5%AE%9E%E4%BE%8B/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 09 Jul 2019 08:08:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/%E5%AE%9E%E4%BE%8B/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>用DHTML制作动画一例</title>
         <link>https://xmyy.com/article/An-example-of-animation-using-DHTML/</link>
-        <pubDate>Sun, 09 Jul 2023 08:08:00 +0800</pubDate>
+        <pubDate>Tue, 09 Jul 2019 08:08:00 +0800</pubDate>
         
         <guid>https://xmyy.com/article/An-example-of-animation-using-DHTML/</guid>
-        <description>&lt;img src="https://xmyy.com/article/An-example-of-animation-using-DHTML/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post 用DHTML制作动画一例" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙈&lt;/span&gt;《软件世界》2001年第1期 《用DHTML制作动画一例》 福建农林大学 童建平&lt;/span&gt;&lt;/p&gt;
+        <description>&lt;img src="https://xmyy.com/article/An-example-of-animation-using-DHTML/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post 用DHTML制作动画一例" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;💁🏻‍♂️&lt;/span&gt;《软件世界》2001年第1期 《用DHTML制作动画一例》 福建农林大学 童建平&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;以下为文字版，扫描版请详见文末图片：&lt;/p&gt;
 &lt;p&gt;          许多斑竹刻意修饰其首页，就是为了给访客良好的印象。动画是不可或缺的方法，但设计不错的动画，其文件大小也不菲，成了影响页面下载速度的瓶颈，这也是不少网友关闭浏览器显示图片、播放动画功能的原因。而今，当ASP、CGI、PHP等大放异彩时，动态HTML(DHTML)并未失去其生存空间，相反地，微软称将在IE 6.0中增入新的DHTML功能，足以证明这一点；本文这个DHTML制作动画的实例也可作为佐证。
 &lt;br&gt;          本例通过DHTML编程，实现小圆点〔如图1〕沿着预定轨迹〔如图2、图3〕运动，从而实现动画效果〔如图4〕。该动画用来修饰页面的右下角，主要由三张总计7KB大小的图片组合而成，各图文件大小都很小，拥有分割图片的快速下载优势；而对于相同功能的单张动画图片，其大小是不言而喻的，且就本例而言，还会影响其它网页内容的排版。用动态HTML制作动画，深入挖掘DHTML，您是否被DHTML的魄力所动？OK，让我们一起来用DHTML制作动画：
@@ -514,10 +514,10 @@
         <item>
         <title>动态HTML技术精彩实例</title>
         <link>https://xmyy.com/article/Dynamic-HTML-technology-wonderful-examples/</link>
-        <pubDate>Sun, 09 Jul 2023 08:01:00 +0800</pubDate>
+        <pubDate>Tue, 09 Jul 2019 08:01:00 +0800</pubDate>
         
         <guid>https://xmyy.com/article/Dynamic-HTML-technology-wonderful-examples/</guid>
-        <description>&lt;img src="https://xmyy.com/article/Dynamic-HTML-technology-wonderful-examples/florian-klauer-nptLmg6jqDo-unsplash.png" alt="Featured image of post 动态HTML技术精彩实例" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙈&lt;/span&gt;《上海微型计算机周刊》2000年6月5日 《动态HTML技术精彩实例》 福建农林大学 童建平&lt;/span&gt;&lt;/p&gt;
+        <description>&lt;img src="https://xmyy.com/article/Dynamic-HTML-technology-wonderful-examples/florian-klauer-nptLmg6jqDo-unsplash.png" alt="Featured image of post 动态HTML技术精彩实例" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;💁🏻‍♂️&lt;/span&gt;《上海微型计算机周刊》2000年6月5日第23期 《动态HTML技术精彩实例》 福建农林大学 童建平&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;以下为文字版，扫描版请详见文末图片：&lt;/p&gt;
 &lt;p&gt;          要想提高自己主页的知名度，就是要有可观的回头客，这就要求主页能给人良好的印象，而动态HTML(DHTML)技术制作的动态网页，能产生令人震撼的视觉冲击效果，使你的主页令人流连忘返。
 &lt;br&gt;          下面介绍几个精彩实例，以飨读者。
@@ -753,6 +753,20 @@
 		class=&#34;gallery-image&#34; 
 		data-flex-grow=&#34;137&#34;
 		data-flex-basis=&#34;329px&#34;
+	
+&gt;
+&lt;img src=&#34;https://xmyy.com/article/Dynamic-HTML-technology-wonderful-examples/Dynamic-HTML-technology-wonderful-examples.png&#34;
+	width=&#34;3290&#34;
+	height=&#34;1482&#34;
+	srcset=&#34;https://xmyy.com/article/Dynamic-HTML-technology-wonderful-examples/Dynamic-HTML-technology-wonderful-examples_hu8789388e891893bbd6885eccdd09eb34_354567_480x0_resize_box_3.png 480w, https://xmyy.com/article/Dynamic-HTML-technology-wonderful-examples/Dynamic-HTML-technology-wonderful-examples_hu8789388e891893bbd6885eccdd09eb34_354567_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;动态HTML技术精彩实例Dynamic HTML technology wonderful examples&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;221&#34;
+		data-flex-basis=&#34;532px&#34;
 	
 &gt;&lt;/p&gt;
 </description>

@@ -7,13 +7,13 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>虾米技术网 xmyy.com</copyright>
-        <lastBuildDate>Sun, 09 Jul 2023 08:07:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/%E7%BD%91%E9%A1%B5/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 09 Jul 2019 08:07:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/%E7%BD%91%E9%A1%B5/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>网页检索功能的简单实现</title>
         <link>https://xmyy.com/article/Simple-implementation-of-web-search-function/</link>
-        <pubDate>Sun, 09 Jul 2023 08:07:00 +0800</pubDate>
+        <pubDate>Tue, 09 Jul 2019 08:07:00 +0800</pubDate>
         
         <guid>https://xmyy.com/article/Simple-implementation-of-web-search-function/</guid>
-        <description>&lt;img src="https://xmyy.com/article/Simple-implementation-of-web-search-function/web-search.jpg" alt="Featured image of post 网页检索功能的简单实现" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙈&lt;/span&gt;《电脑知识与技术》2000年第11期 《网页检索功能的简单实现》 福建农林大学 童建平&lt;/span&gt;&lt;/p&gt;
+        <description>&lt;img src="https://xmyy.com/article/Simple-implementation-of-web-search-function/web-search.jpg" alt="Featured image of post 网页检索功能的简单实现" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;💁🏻‍♂️&lt;/span&gt;《电脑知识与技术》2000年第11期 《网页检索功能的简单实现》 福建农林大学 童建平&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;以下为文字版，扫描版请详见文末图片：&lt;/p&gt;
 &lt;p&gt;          如今，个人主页已由当初的星火燎原发展到现在的如火如荼，内容是否丰富成了制约个人主页成败的瓶颈。而在提供大量信息的同时，若能提供站内检索服务，必能吸引访客，迅速抢占个人主页排行榜的制高点。著名网站如Yahoo!那样的搜索引擎对于个人主页是望尘莫及的，更有&amp;quot;杀鸡用牛刀&amp;quot;之嫌，因此，本文介绍一个适合个人主页的检索例子，其功能虽不能与Yahoo!同日同语，但其检索速度较Yahoo!是有过之而无不及。
 &lt;br&gt;          请将下面代码粘贴于&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;和&lt;code&gt;&amp;lt;/head&amp;gt;&lt;/code&gt;中。其中，第一个script中的代码的功能是：当鼠标移近文本框时，反显文本框中的文字，方便输入。第二个script代码中，Keyword数组存放关键词，Keyword[0]为关键词的数量，可根据关键词的增减进行增减；Searched数组存放检索结果信息，AboutHtm数组存放检索结果相关Htm文件的链接地址；当用户输入的关键词与Keyword数组元素匹配时，显示相应Searched数组信息，直接点击Searched信息，即可浏览相应AboutHtm数组元素所指向的Htm文件。后面的SearchedHtm函数定义检索结果页面，可修改stats参数，设置是否显示工具栏、状态栏等。&lt;/p&gt;
@@ -219,10 +219,10 @@
         <item>
         <title>网页颜色不再单调</title>
         <link>https://xmyy.com/article/Web-color-is-no-longer-monotonous/</link>
-        <pubDate>Sun, 09 Jul 2023 08:03:00 +0800</pubDate>
+        <pubDate>Tue, 09 Jul 2019 08:03:00 +0800</pubDate>
         
         <guid>https://xmyy.com/article/Web-color-is-no-longer-monotonous/</guid>
-        <description>&lt;img src="https://xmyy.com/article/Web-color-is-no-longer-monotonous/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post 网页颜色不再单调" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙈&lt;/span&gt;《上海微型计算机周刊》2000年7月10日 《网页颜色不再单调》 福建农林大学 童建平&lt;/span&gt;&lt;/p&gt;
+        <description>&lt;img src="https://xmyy.com/article/Web-color-is-no-longer-monotonous/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post 网页颜色不再单调" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;💁🏻‍♂️&lt;/span&gt;《上海微型计算机周刊》2000年7月10日第28期 《网页颜色不再单调》 福建农林大学 童建平&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;以下为文字版，扫描版请详见文末图片：&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;          个人主页如今是因特网上一道独特的风景，对因特网的发展是不可或缺的，这从很多个人站点加盟商业网站就可见一斑。为使主页更富有独特性，很多人情笃于网页编程，可是却苦于网页颜色的选择，毕竟在整个32bit的颜色里，相信是没有人可以完全记得住其色码的。小弟近日觅得web.colors和HTML Coloring Guide两款网页颜色编辑软件，如遇佳音，特介绍给各位共享。
 &lt;br&gt;          web.colors（如图1）提供了几个预设的颜色搭配模板，在&amp;quot;HTML Colors&amp;quot;框中选择要设置的对象如背景色，然后在&amp;quot;Color Presets&amp;quot;框的&amp;quot;Themes&amp;quot;栏中选择内建好的搭配色系，其对应的RGB、HEX、VB编码就会即时出现在下面的&amp;quot;Color Settings&amp;quot;和&amp;quot;HTML Code&amp;quot;框中，并在&amp;quot;HTML Sample&amp;quot;框中给出其预览效果。如果不满意，可以直接点击&amp;quot;HTML Colors&amp;quot;框中的颜色条框，对其自定义。&lt;/p&gt;

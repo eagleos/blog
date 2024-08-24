@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="《在Windows 10上使用WSL安装Centos》发表于《今日头条》,Installing Centos on Windows 10 using WSL">
+<title>在Windows 10上使用WSL安装Centos</title>
+
+<link rel='canonical' href='https://xmyy.com/article/Installing-Centos-on-Windows-10-using-WSL/'>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/eagleos/blog/scss/style.min.bb98bd5bb997adc5d660f10dcffc7ef564ffadc0075160e92a649814700bd7bd.css"><meta property='og:title' content="在Windows 10上使用WSL安装Centos">
+<meta property='og:description' content="《在Windows 10上使用WSL安装Centos》发表于《今日头条》,Installing Centos on Windows 10 using WSL">
+<meta property='og:url' content='https://xmyy.com/article/Installing-Centos-on-Windows-10-using-WSL/'>
+<meta property='og:site_name' content='虾米技术网'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='WSL' /><meta property='article:tag' content='Windows10' /><meta property='article:tag' content='Win10' /><meta property='article:tag' content='Centos' /><meta property='article:published_time' content='2020-11-03T18:15:00&#43;08:00'/><meta property='article:modified_time' content='2020-11-03T18:15:00&#43;08:00'/><meta property='og:image' content='https://xmyy.com/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL.jpg' />
+<meta name="twitter:title" content="在Windows 10上使用WSL安装Centos">
+<meta name="twitter:description" content="《在Windows 10上使用WSL安装Centos》发表于《今日头条》,Installing Centos on Windows 10 using WSL"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://xmyy.com/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL.jpg' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/eagleos/blog/img/eagle_huc7d4d4a429513d02ed402ba0e1d9f519_8869_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">虾米技术网</a></h1>
+            <h2 class="site-description">xmyy.com</h2>
+        </div>
+    </header>
+
+
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档|Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索|Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链|Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://xmyy.com/" selected>中文</option>
+                                
+                                    <option value="https://xmyy.com/en/" >English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#如何在wsl上安装-centos-7">如何在WSL上安装 CentOS 7</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#1-下载centos-wsl">1: 下载CentOS WSL</a></li>
+            <li><a href="#2-解压wsl-centos-7x">2: 解压WSL CentOS 7.x</a></li>
+            <li><a href="#3-在wsl中运行centosexe-并安装">3: 在WSL中运行CentOS.exe 并安装</a></li>
+            <li><a href="#4-完成安装">4: 完成安装</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#在wsl上启动centos-7">在WSL上启动CentOS 7</a></li>
+    <li><a href="#在wsl上更新centos-7">在WSL上更新Centos 7</a></li>
+    <li><a href="#在wsl上卸载centos-7">在WSL上卸载CentOS 7</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/article/Installing-Centos-on-Windows-10-using-WSL/">
+                <img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL_hu042130161c2b6c330ef21e4d39f984aa_520402_800x0_resize_q75_box.jpg"
+                        srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL_hu042130161c2b6c330ef21e4d39f984aa_520402_800x0_resize_q75_box.jpg 800w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL_hu042130161c2b6c330ef21e4d39f984aa_520402_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="450" 
+                        loading="lazy"
+                        alt="Featured image of post 在Windows 10上使用WSL安装Centos" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/system/" style="background-color: #d7b64d; color: #fff;">
+                操作系统
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/article/Installing-Centos-on-Windows-10-using-WSL/">在Windows 10上使用WSL安装Centos</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            《在Windows 10上使用WSL安装Centos》发表于《今日头条》,Installing Centos on Windows 10 using WSL
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+
+    
+    <footer class="article-time">
+        <span class="post-meta-item">
+          <i class="fas fa-pen"></i>
+          
+            <span class="article-type" style="color: white; font-size: 14px; background: #bf59f3; padding: 0 5px 1px 5px; margin-right: 5px; border-radius: 2px;">原创</span>
+          
+        </span>
+        
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+            <div class="post-author">
+                作者：童建平
+
+            </div>
+        </div>
+        
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">
+2020-11-03 18:15</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><span class="nowrap"><span class="emojify">💁🏻‍♂️</span>《今日头条》 2020-11-03 《在Windows 10上使用WSL安装Centos》 童建平</span></p>
+<p>通过本文，您将获得一个简单的方式在Windows 10 WSL上手工安装CentOS ，以便学习使用RHEL的 RPM 或YUM 等命令……</p>
+<p>WSL(Windows Subsystem for Linux)为用户提供了颇具吸引力的前沿功能。因为WSL可以让您不需要安装诸如VirtualBox之类的虚拟化软件，就可以直接在Windows 10系统中学习使用Linux命令。适用于Linux的Windows子系统通常被简称为WSL，是一个在Windows 10和Windows Server 2019上能够运行原生Linux二进制可执行文件（ELF格式）的兼容层。</p>
+<p>通常我们可以通过Microsoft store安装特定Linux发行版，微软商店提供了一些预编译的轻量级镜像，目前可供选择的有： Ubuntu、Kali Linux、Debian、AlpinLinux、OpenSUSE 和SUSE Enterprise Server等发行版。因此，如果您想安装CentOS/RHEL (Red Hat Enterprise) 或者Arch Linux ，您不得不手工安装它们。那么，我们该怎么操作呢？</p>
+<h2 id="如何在wsl上安装-centos-7">如何在WSL上安装 CentOS 7
+</h2><p>注意：开始安装前，您必须先在Windows 10中启用WSL，如果您不清楚怎么操作，请查阅参考笔者之前的文章：</p>
+<p><a href="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/" target="_blank">漫谈在Windows Server 2019中安装使用WSL</a></p>
+<h4 id="1-下载centos-wsl">1: 下载CentOS WSL
+</h4><p>首先我们需要下载一个可用于WSL的CentOS镜像，该镜像应该是一个经过压缩的，且包含了rootfs及其它文件。幸运地，Github有牛人提供了一个开源的可运行在WSL上的CentOS实例，地址为：https://github.com/yuk7/CentWSL ，其最新版本基于目前流行的版本CentOS 7.6。如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL1.jpg"
+	width="790"
+	height="528"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL1_huf475c0e1e71e372d73127ff92fea6509_38711_480x0_resize_q75_box.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL1_huf475c0e1e71e372d73127ff92fea6509_38711_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="149"
+		data-flex-basis="359px"
+	
+></p>
+<h4 id="2-解压wsl-centos-7x">2: 解压WSL CentOS 7.x
+</h4><p>从上面Github地址下载对应的压缩文件，右键点击并解压之，解压后文件大小300MB左右。如下，我们用WinRAR解压，当然您也可以用系统默认解压程序或其它解压缩工具。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL2.jpg"
+	width="761"
+	height="523"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL2_hu7ca42d87c4d816ed893b411180078d20_50436_480x0_resize_q75_box.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL2_hu7ca42d87c4d816ed893b411180078d20_50436_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="145"
+		data-flex-basis="349px"
+	
+></p>
+<h4 id="3-在wsl中运行centosexe-并安装">3: 在WSL中运行CentOS.exe 并安装
+</h4><p>解压后，您将在目标目录中看到2个文件：rootfs.tar.gz和CentOS.exe。我们需要运行CentOS.exe，以便解压其中的文件并注册到WSL。右键点击并以管理员身份运行：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL3.jpg"
+	width="800"
+	height="533"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL3_hud8856f10853927e5288d73d79b6e1b9b_55012_480x0_resize_q75_box.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL3_hud8856f10853927e5288d73d79b6e1b9b_55012_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="150"
+		data-flex-basis="360px"
+	
+></p>
+<h4 id="4-完成安装">4: 完成安装
+</h4><p>稍等一些时间，系统将自动进行初始化，完成后您将看到如下图所示消息，此时可按任意键退出安装。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL4.jpg"
+	width="872"
+	height="509"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL4_hue4441994c33a9417ccbd098734abf048_19771_480x0_resize_q75_box.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL4_hue4441994c33a9417ccbd098734abf048_19771_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="171"
+		data-flex-basis="411px"
+	
+></p>
+<h2 id="在wsl上启动centos-7">在WSL上启动CentOS 7
+</h2><p>要在WSL上启动运行Centos，这时您返回解压后的目录，您将看到多出了2个目录，如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL5.jpg"
+	width="876"
+	height="445"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL5_hu9d0e9a703c4328de7d1c154f1b5f0989_37377_480x0_resize_q75_box.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL5_hu9d0e9a703c4328de7d1c154f1b5f0989_37377_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="196"
+		data-flex-basis="472px"
+	
+></p>
+<p>不用理会，此时再次右击并以管理员身份运行CentOS.exe，即成功登录系统了，如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL6.jpg"
+	width="839"
+	height="504"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL6_huf95fcf5976124e09d6b48a10c4a367bb_17150_480x0_resize_q75_box.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL6_huf95fcf5976124e09d6b48a10c4a367bb_17150_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="166"
+		data-flex-basis="399px"
+	
+></p>
+<h2 id="在wsl上更新centos-7">在WSL上更新Centos 7
+</h2><p>现在，您可以随心所欲在CentOS上运行您想要执行的命令了。然而，为了检验系统可用性，我们最好使用yum命令测试下更新系统：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yum -y update
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL7.jpg"
+	width="981"
+	height="511"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL7_hud42832b084554ee4803aae67c3e08f60_107322_480x0_resize_q75_box.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL7_hud42832b084554ee4803aae67c3e08f60_107322_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="191"
+		data-flex-basis="460px"
+	
+></p>
+<h2 id="在wsl上卸载centos-7">在WSL上卸载CentOS 7
+</h2><p>如果您因为某种原因不想使用了，可以使用下面命令在WSL上卸载CentOS：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">./CentOS.exe clean
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>当您在使用CentOS过程中遭遇一些错误想重装，或者您不小心删除了解压缩的目录需要重装时，我们需要先卸载之：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL8.jpg"
+	width="660"
+	height="118"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL8_hu99bf7c4c4d3b7b04b5101ac8e496c3ce_23620_480x0_resize_q75_box.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/Installing-Centos-on-Windows-10-using-WSL8_hu99bf7c4c4d3b7b04b5101ac8e496c3ce_23620_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="559"
+		data-flex-basis="1342px"
+	
+></p>
+<p>在WSL上重新安装CentOS，只需要重新执行前面的步骤操作即可。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/WSL/">WSL</a>
+        
+            <a href="/tags/Windows10/">Windows10</a>
+        
+            <a href="/tags/Win10/">Win10</a>
+        
+            <a href="/tags/Centos/">Centos</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/article/3-Steps-to-Reset-Windows-10-Password/">
+        
+        
+            <div class="article-image">
+                <img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/3-Steps-to-Reset-Windows-10-Password/_hub078c052602c7a69a5f8dc45425068e8_23093_bacedcd08965f7e7b480dad35af32e87.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Win10忘记密码怎么办？3步教您重置Windows10密码"
+                        data-key="3-Steps-to-Reset-Windows-10-Password" 
+                        data-hash="md5-3&#43;41h847aZXNX5sxrTDISw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Win10忘记密码怎么办？3步教您重置Windows10密码</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/">
+        
+        
+            <div class="article-image">
+                <img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huc4978c463cf56c0c7430dc851005064f_13142_2a7b6ef8e6e22051180146f1b6cd9366.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 漫谈在Windows Server 2019中安装使用WSL"
+                        data-key="Rambling-about-installing-and-using-WSL-on-Windows-Server-2019" 
+                        data-hash="md5-QliXRIHcJva7dsA&#43;wUYhTQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">漫谈在Windows Server 2019中安装使用WSL</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;  2000 -  2024 <a href="https://xmyy.com/" target="_blank">虾米技术网 xmyy.com</a>
+    </section>
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 ，主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+            </main>
+        </div>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/eagleos/blog/ts/main.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://xmyy.com/css/googleapis-css2.css">
+
+    </body>
+</html>

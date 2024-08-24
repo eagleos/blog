@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="《漫谈在Windows Server 2019中安装使用WSL》发表于《今日头条》,Rambling about installing and using WSL on Windows Server 2019">
+<title>漫谈在Windows Server 2019中安装使用WSL</title>
+
+<link rel='canonical' href='https://xmyy.com/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/'>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/eagleos/blog/scss/style.min.bb98bd5bb997adc5d660f10dcffc7ef564ffadc0075160e92a649814700bd7bd.css"><meta property='og:title' content="漫谈在Windows Server 2019中安装使用WSL">
+<meta property='og:description' content="《漫谈在Windows Server 2019中安装使用WSL》发表于《今日头条》,Rambling about installing and using WSL on Windows Server 2019">
+<meta property='og:url' content='https://xmyy.com/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/'>
+<meta property='og:site_name' content='虾米技术网'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='WSL' /><meta property='article:tag' content='Windows Server' /><meta property='article:tag' content='Win2019' /><meta property='article:tag' content='ubuntu' /><meta property='article:published_time' content='2020-11-02T15:22:00&#43;08:00'/><meta property='article:modified_time' content='2020-11-02T15:22:00&#43;08:00'/><meta property='og:image' content='https://xmyy.com/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019.jpg' />
+<meta name="twitter:title" content="漫谈在Windows Server 2019中安装使用WSL">
+<meta name="twitter:description" content="《漫谈在Windows Server 2019中安装使用WSL》发表于《今日头条》,Rambling about installing and using WSL on Windows Server 2019"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://xmyy.com/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019.jpg' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/eagleos/blog/img/eagle_huc7d4d4a429513d02ed402ba0e1d9f519_8869_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">虾米技术网</a></h1>
+            <h2 class="site-description">xmyy.com</h2>
+        </div>
+    </header>
+
+
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档|Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索|Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链|Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://xmyy.com/" selected>中文</option>
+                                
+                                    <option value="https://xmyy.com/en/" >English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/">
+                <img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huc4978c463cf56c0c7430dc851005064f_13142_e394e3447f767f44af874a6377671e04.jpg"
+                        srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huc4978c463cf56c0c7430dc851005064f_13142_e394e3447f767f44af874a6377671e04.jpg 800w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huc4978c463cf56c0c7430dc851005064f_13142_53be9bd9705144747bd1b16f03ab512c.jpg 1600w"
+                        width="800" 
+                        height="457" 
+                        loading="lazy"
+                        alt="Featured image of post 漫谈在Windows Server 2019中安装使用WSL" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/system/" style="background-color: #d7b64d; color: #fff;">
+                操作系统
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/">漫谈在Windows Server 2019中安装使用WSL</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            《漫谈在Windows Server 2019中安装使用WSL》发表于《今日头条》,Rambling about installing and using WSL on Windows Server 2019
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+
+    
+    <footer class="article-time">
+        <span class="post-meta-item">
+          <i class="fas fa-pen"></i>
+          
+            <span class="article-type" style="color: white; font-size: 14px; background: #bf59f3; padding: 0 5px 1px 5px; margin-right: 5px; border-radius: 2px;">原创</span>
+          
+        </span>
+        
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+            <div class="post-author">
+                作者：童建平
+
+            </div>
+        </div>
+        
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">
+2020-11-02 15:22</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><span class="nowrap"><span class="emojify">💁🏻‍♂️</span>《今日头条》 2020-11-02 《漫谈在Windows Server 2019中安装使用WSL》 童建平</span></p>
+<p>熟稔IT历史的朋友一定不会忘记98蓝屏事件：时任微软CEO的比尔·盖茨和助理 Chris Capossela在1998年春季计算机分销商展会（COMDEX ）现场演示Windows 98的&quot;即插即用&quot;（plug-and-play）新特性时，经历了演示计算机当场冷不丁甩出蓝屏死机（Blue Screen of Death，简称BSOD）界面的尴尬一幕：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-1.gif"
+	width="500"
+	height="373"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu4b508fa5c6e1461cfd70b75b0fd58d5c_7187790_618eec0a13e15f167ceacbec2bd5220f.gif 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu4b508fa5c6e1461cfd70b75b0fd58d5c_7187790_0a2c709620c7267d490009bce526d8fe.gif 1024w"
+	loading="lazy"
+	
+		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="134"
+		data-flex-basis="321px"
+	
+></p>
+<p>尽管微软极力想要化解其中的尴尬，但该事件还是在该公司的历史上留下了难以抹去的一笔。蓝屏死机几乎已经成为了微软Windows操作系统的标志。</p>
+<p>那么，作为从业IT的您，如果是一名运维工程师，当你正在紧急处理线上故障时，突然办公电脑蓝屏死机了；又亦或您是一名程序猿，正在专注&quot;写bug&quot;时，也BSOD了，这是多么令人崩溃的事情啊。所以，拥有一个稳定的操作系统，是您的不二选择。</p>
+<p>笔者自从Windows Server 2000以来，一直用Windows Server系列产品作为办公操作系统，深谙其利：</p>
+<ul>
+<li>Windows Server系列一般基于同时期的Windows家庭版开发而来，拥有相同的内核，如Windows Server 2012就是一套基于Windows 8基础上开发出来的服务器版系统，Windows Server 2019则基于Windows 10。如果您细心，会注意到很多Windows Update更新文件，Windows Server系列与Windows家庭版系列其实是相同的文件。所以使用Windows Server系列不会对您的日常办公带来什么不便。</li>
+<li>作为办公用途，我们一般不需要华丽的Windows家庭版界面、多余的多媒体等功能，所以使用Windows Server系列作为办公操作系统完全适合，且能带来更高的稳定性(如基本告别蓝屏死机)、安全性。</li>
+<li>Windows Server系列在内存管理和网络功能等方面要比Windows家庭版系列表现优秀，要求的硬件配置也更低(比如使用Windows 7最低内存要求为4G，Windows Server 2008 R2最低内存要求仅为512M)，也就意味着同等硬件配置情况下，使用Windows Server能使用更大的内存等资源，带来更高的工作效率。</li>
+<li>不管您是运维工程还是程序猿，是不是经常在工作中需要搭建测试环境用于日常工作调试？在Windows Server系列上安装这些测试环境自然比在Windows家庭版系列上安装使用更便捷高效及稳定。</li>
+</ul>
+<p>因此，笔者极力推荐各位安装使用Windows Server系列最新版本Windows Server 2019用于办公，再配合安装使用WSL，可以告别以前在办公电脑上还要安装虚拟机安装LNMP等测试环境的窘境了。</p>
+<p>大家知道，Windows 10推出了备受推崇的WSL。WSL，即Windows Subsystem for Linux，中文名称：适用于Linux的Windows子系统，可让开发人员按原样运行 GNU/Linux 环境 - 包括大多数命令行工具、实用工具和应用程序 - 且不会产生传统虚拟机或双启动设置开销。如今，Windows Server 2019在版本1709及更高版本上也可以安装使用WSL了。</p>
+<p>启用WSL，您可以：</p>
+<ul>
+<li>选择您偏好的 GNU/Linux 分发版。</li>
+<li>运行常用的命令行软件工具（例如 grep、sed、awk）或其他 ELF-64 二进制文件。</li>
+<li>运行 Bash shell 脚本和 GNU/Linux 命令行应用程序，包括：
+<ul>
+<li>工具：vim、emacs、tmux。</li>
+<li>语言：NodeJS、Javascript、Python、Ruby、C/ C++、C# 与 F#、Rust、Go 等。</li>
+<li>服务：SSHD、MySQL、Apache、lighttpd、MongoDB、PostgreSQL。</li>
+</ul>
+</li>
+<li>使用自己的 GNU/Linux 分发包管理器安装其他软件。</li>
+<li>使用类似于 Unix 的命令行 shell 调用 Windows 应用程序。</li>
+<li>在 Windows 上调用 GNU/Linux 应用程序。</li>
+</ul>
+<p>要在Windows Server 2019上使用WSL，首先需要确定您的系统版本大于1709，可按下面步骤确定您的操作系统版本：</p>
+<p>①在开始菜单中点击Windows Powershell进入，或者在开始菜单中磁性贴中点击Windows Powershell进入，如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-2.jpg"
+	width="560"
+	height="609"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu1e946754459ef454d2d3a95218bb62ff_41706_fa776c1c68e236f4473ba53974adef95.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu1e946754459ef454d2d3a95218bb62ff_41706_c411f8c4b0b800fdc6d2bf077c7987a9.jpg 1024w"
+	loading="lazy"
+	
+		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="91"
+		data-flex-basis="220px"
+	
+></p>
+<p>②输入Powershell命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Get-ComputerInfo <span class="p">|</span> Select WindowsProductName, WindowsVersion, WindowsInstallationType, OsServerLevel, OsVersion, OsHardwareAbstractionLayer
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-3.jpg"
+	width="747"
+	height="135"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hube9b5ed2449f9d6a02a7546db3934817_20220_49d8c399d1a571497b2671151d6451e3.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hube9b5ed2449f9d6a02a7546db3934817_20220_f48fc44d4f38c7d04bb87210cf8291bf.jpg 1024w"
+	loading="lazy"
+	
+		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="553"
+		data-flex-basis="1328px"
+	
+></p>
+<p>③稍等几秒，系统输出结果，如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">WindowsProductName : Windows Server <span class="m">2019</span> Datacenter
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">WindowsVersion : <span class="m">1809</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">WindowsInstallationType : Server
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">OsServerLevel : FullServer
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">OsVersion : 10.0.17763
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">OsHardwareAbstractionLayer : 10.0.17763.1131
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-4.jpg"
+	width="748"
+	height="245"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hube9b5ed2449f9d6a02a7546db3934817_31297_63086ed8655994964c066261cd31ef68.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hube9b5ed2449f9d6a02a7546db3934817_31297_94740ccd1cea1aba315032052c10a4c1.jpg 1024w"
+	loading="lazy"
+	
+		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="305"
+		data-flex-basis="732px"
+	
+></p>
+<p>上面的WindowsVersion的值即为您的系统版本。图中值为1809，满足WSL安装要求。</p>
+<p>然后继续在上面的Powershell窗口中输入如下命令启用WSL：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-5.jpg"
+	width="750"
+	height="278"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hud905d8570759aa23d45a6c411c00c16b_35212_2ef34ce185e0ead8193c29e98c9aa8e5.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hud905d8570759aa23d45a6c411c00c16b_35212_84fed2e5d88da4b797f9685bf204bec2.jpg 1024w"
+	loading="lazy"
+	
+		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="269"
+		data-flex-basis="647px"
+	
+></p>
+<p>回车后， 稍等几秒，会提示您选择并重启计算机，如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-6.jpg"
+	width="748"
+	height="276"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu1305947a3f39938e32cd872d987e5aa1_38384_f4eecc270dee5a5ca8d369d5911b3618.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu1305947a3f39938e32cd872d987e5aa1_38384_6ac9fc3cd416a00be0a5a9ccab516138.jpg 1024w"
+	loading="lazy"
+	
+		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="271"
+		data-flex-basis="650px"
+	
+></p>
+<p>输入y或直接回车，电脑立即重启。重启后即成功启用了WSL。</p>
+<p>接下来，就是选择下载并安装您喜欢的Linux发行版，在Windows 10下可以通过Microsoft Store应用直接下载安装，在Windows Server 2019中Microsoft Store应用不可用，可以通过以下网址来下载并手动安装Linux发行版：</p>
+<ul>
+<li>Ubuntu 20.04 <a class="link" href="https://aka.ms/wslubuntu2004"  target="_blank" rel="noopener"
+    >https://aka.ms/wslubuntu2004</a></li>
+<li>Ubuntu 20.04 ARM <a class="link" href="https://aka.ms/wslubuntu2004arm"  target="_blank" rel="noopener"
+    >https://aka.ms/wslubuntu2004arm</a></li>
+<li>Ubuntu 18.04 <a class="link" href="https://aka.ms/wsl-ubuntu-1804"  target="_blank" rel="noopener"
+    >https://aka.ms/wsl-ubuntu-1804</a></li>
+<li>Ubuntu 18.04 ARM <a class="link" href="https://aka.ms/wsl-ubuntu-1804-arm"  target="_blank" rel="noopener"
+    >https://aka.ms/wsl-ubuntu-1804-arm</a></li>
+<li>Ubuntu 16.04 <a class="link" href="https://aka.ms/wsl-ubuntu-1604"  target="_blank" rel="noopener"
+    >https://aka.ms/wsl-ubuntu-1604</a></li>
+<li>Debian GNU/Linux <a class="link" href="https://aka.ms/wsl-debian-gnulinux"  target="_blank" rel="noopener"
+    >https://aka.ms/wsl-debian-gnulinux</a></li>
+<li>Kali Linux <a class="link" href="https://aka.ms/wsl-kali-linux-new"  target="_blank" rel="noopener"
+    >https://aka.ms/wsl-kali-linux-new</a></li>
+<li>OpenSUSE Leap 42 <a class="link" href="https://aka.ms/wsl-opensuse-42"  target="_blank" rel="noopener"
+    >https://aka.ms/wsl-opensuse-42</a></li>
+<li>SUSE Linux Enterprise Server 12 <a class="link" href="https://aka.ms/wsl-sles-12"  target="_blank" rel="noopener"
+    >https://aka.ms/wsl-sles-12</a></li>
+<li>Fedora Remix for WSL <a class="link" href="https://github.com/WhitewaterFoundry/WSLFedoraRemix/releases/"  target="_blank" rel="noopener"
+    >https://github.com/WhitewaterFoundry/WSLFedoraRemix/releases/</a></li>
+</ul>
+<p>然而，需要注意的是，如上个别发行版如Kali Linux并不适合于Windows Server 2019，因为Kali Linux需要运行在WSL 2上面，而目前Windows Server 2019是运行在WSL上的，除非您安装使用Windows Server 2019 Insider Preview版本，才能支持WSL 2。WSL 2 是适用于Linux的Windows子系统体系结构的一个新版本，它支持适用于Linux的Windows子系统在Windows 运行ELF64 Linux二进制文件，WSL 2 仅适用于Windows 10 版本1903、内部版本18362或更高版本。如果您试图强制在Windows Server 2019上安装使用Kali Linux，将不幸遭遇本文文首所述的BSOD。</p>
+<p>现在，以Ubuntu 16.04为例，我们通过Powershell下载此发行版：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx –UseBasicParsing
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-7.jpg"
+	width="764"
+	height="122"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_16968_7689fe5efedf043ce85380b3e3f920c1.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_16968_d42b4bbb539744ebc766e3efe0a0c95a.jpg 1024w"
+	loading="lazy"
+	
+		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="626"
+		data-flex-basis="1502px"
+	
+></p>
+<p>回车后开始下载，取决于您的下载速度，可能费时很长，如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-8.jpg"
+	width="761"
+	height="164"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_17632_c39536b1f7fb8894e83199d9a5e4cd5d.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_17632_09d7190da0764548c08c50818d142779.jpg 1024w"
+	loading="lazy"
+	
+		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="464"
+		data-flex-basis="1113px"
+	
+></p>
+<p>有可能就遇到下载失败了，如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-9.jpg"
+	width="761"
+	height="214"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hue0466c4e96725c3e4dd24cd6a66feb73_30886_fbd678789cc44f00e4408415c37a4aba.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hue0466c4e96725c3e4dd24cd6a66feb73_30886_d3ec9a99a9583bc9037280a01497d2d0.jpg 1024w"
+	loading="lazy"
+	
+		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="355"
+		data-flex-basis="853px"
+	
+></p>
+<p>这时候，为方便查看下载进度，我们改用curl命令进行下载：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl.exe -L -o ubuntu-1604.appx https://aka.ms/wsl-ubuntu-1604
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>也是失败，如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-10.jpg"
+	width="762"
+	height="288"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_45893_5f19cf7e74471ea257c2a4030461215f.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_45893_27bab01c816e44c16b14d61de027790f.jpg 1024w"
+	loading="lazy"
+	
+		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="264"
+		data-flex-basis="635px"
+	
+></p>
+<p>于是再改成下载更新版本的ubuntu：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl.exe -L -o ubuntu-1804.appx https://aka.ms/wsl-ubuntu-1804
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下载速度就很快了，5分钟左右就完成下载了，如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-11.jpg"
+	width="747"
+	height="195"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu02b37057b8984a33cb9a99c8ba004b6b_35788_410927c9e0933374a2f7fabf34b0eb09.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu02b37057b8984a33cb9a99c8ba004b6b_35788_fe3ba939dabdad6349e29ab36c563db5.jpg 1024w"
+	loading="lazy"
+	
+		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="383"
+		data-flex-basis="919px"
+	
+></p>
+<p>然后对下载后ubuntu-1804.appx文件进行重命名，并解压到当前目录的ubuntu1804子目录下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Rename-Item ubuntu-1804.appx ubuntu-1804.zip
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Expand-Archive ubuntu-1804.zip ubuntu1804
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-12.jpg"
+	width="747"
+	height="215"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu8b1eebfbcb23ea73c6e10b2915810fa4_41576_6a3a5cc7627a7eef4e9a7c8a87eb496e.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu8b1eebfbcb23ea73c6e10b2915810fa4_41576_cbad2b4f1c04c0c4057451eb13fd4659.jpg 1024w"
+	loading="lazy"
+	
+		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="347"
+		data-flex-basis="833px"
+	
+></p>
+<p>然后继续输入下面命令切换到解压后的目录，并启动运行ubuntu：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> ubuntu1804
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ubuntu1804.exe
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-13.jpg"
+	width="747"
+	height="460"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu8b1eebfbcb23ea73c6e10b2915810fa4_67920_7d69a49c7cacfe7567d02b1677d4120f.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu8b1eebfbcb23ea73c6e10b2915810fa4_67920_0365b56d3080ba09b2ee360b4c6b9dfb.jpg 1024w"
+	loading="lazy"
+	
+		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="162"
+		data-flex-basis="389px"
+	
+></p>
+<p>很不幸，您将看到如下错误提示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-14.jpg"
+	width="748"
+	height="225"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huac1f5a2b590cbbe8b50212f07fd4795c_36001_f4c271fef8fc62c838c624d2158f49c6.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huac1f5a2b590cbbe8b50212f07fd4795c_36001_cadd3de95229c60f237702e41949d97b.jpg 1024w"
+	loading="lazy"
+	
+		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="332"
+		data-flex-basis="797px"
+	
+></p>
+<p>解决的方法有2个，1个是按照错误提示中所述手工键入&quot;.\ubuntu1804.exe&quot;，或键入字母&quot;u&quot;再按Tab键也会自动填充&quot;.\ubuntu1804.exe&quot;命令。</p>
+<p>另1个方法是使用如下PowerShell命令将您的分发版路径添加到Windows环境路径（在本例中为 C:\Users\Administrator\Ubuntu1804）中：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">$userenv</span> <span class="o">=</span> <span class="o">[</span>System.Environment<span class="o">]</span>::GetEnvironmentVariable<span class="o">(</span><span class="s2">&#34;Path&#34;</span>, <span class="s2">&#34;User&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>System.Environment<span class="o">]</span>::SetEnvironmentVariable<span class="o">(</span><span class="s2">&#34;PATH&#34;</span>, <span class="nv">$userenv</span> + <span class="s2">&#34;;C:\Users\Administrator\Ubuntu1804&#34;</span>, <span class="s2">&#34;User&#34;</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-15.jpg"
+	width="748"
+	height="247"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu6a68093c74ac925dbfd00dad3940b7d7_43937_b6e1a87343431e6d48ff1bd6b7b3e2a5.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu6a68093c74ac925dbfd00dad3940b7d7_43937_877470b48f957bb183a0183e2fbc0b0b.jpg 1024w"
+	loading="lazy"
+	
+		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="302"
+		data-flex-basis="726px"
+	
+></p>
+<p>只是，第2个方法因为是修改系统变量，需要关闭原有窗口并重新启动PowerShell或者重启下计算机。重启后，就可以在任意路径下直接通过键入&quot;.\ubuntu1804.exe&quot;命令启动您的分发版，然后稍等片刻等待系统完成初始化。如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-16.jpg"
+	width="748"
+	height="126"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu723377c76fe549e65c764685d19a69cb_15900_3e9b815010784e8a5fbe06309b91184d.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu723377c76fe549e65c764685d19a69cb_15900_4099311e56c36a7110db638bb1f3e35a.jpg 1024w"
+	loading="lazy"
+	
+		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="593"
+		data-flex-basis="1424px"
+	
+></p>
+<p>之后，按照提示输入要创建的用户名和密码，即成功登录ubuntu系统，如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-17.jpg"
+	width="748"
+	height="241"
+	srcset="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hue2a6b4c4612c06ab6c4321aaf11274e9_142537_05d36bf02dc9db133f26f24ca237cb8c.jpg 480w, https://cdn.jsdelivr.net/gh/eagleos/blog/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hue2a6b4c4612c06ab6c4321aaf11274e9_142537_d0fa6d9fd3fb8bf3bffb72c60106ddd5.jpg 1024w"
+	loading="lazy"
+	
+		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="310"
+		data-flex-basis="744px"
+	
+></p>
+<p>这样您就可以开始愉快的utuntu之旅了，在上面安装LNMP等环境，这里就暂不赘述了。喜欢本文的朋友，欢迎点赞、关注、评论哦！笔者后续将继续介绍在WSL下安装centos等发行版，敬请期待！</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/WSL/">WSL</a>
+        
+            <a href="/tags/Windows-Server/">Windows Server</a>
+        
+            <a href="/tags/Win2019/">Win2019</a>
+        
+            <a href="/tags/ubuntu/">Ubuntu</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/article/Installing-Centos-on-Windows-10-using-WSL/">
+        
+        
+            <div class="article-image">
+                <img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/Installing-Centos-on-Windows-10-using-WSL/_hu042130161c2b6c330ef21e4d39f984aa_520402_8e2ef752b1c06421b9d6f4d8910361d6.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 在Windows 10上使用WSL安装Centos"
+                        data-key="Installing-Centos-on-Windows-10-using-WSL" 
+                        data-hash="md5-JsZY30jdV5q2M8&#43;4yDwixw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">在Windows 10上使用WSL安装Centos</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/3-Steps-to-Reset-Windows-10-Password/">
+        
+        
+            <div class="article-image">
+                <img src="https://cdn.jsdelivr.net/gh/eagleos/blog/article/3-Steps-to-Reset-Windows-10-Password/_hub078c052602c7a69a5f8dc45425068e8_23093_bacedcd08965f7e7b480dad35af32e87.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Win10忘记密码怎么办？3步教您重置Windows10密码"
+                        data-key="3-Steps-to-Reset-Windows-10-Password" 
+                        data-hash="md5-3&#43;41h847aZXNX5sxrTDISw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Win10忘记密码怎么办？3步教您重置Windows10密码</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;  2000 -  2024 <a href="https://xmyy.com/" target="_blank">虾米技术网 xmyy.com</a>
+    </section>
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 ，主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+            </main>
+        </div>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/eagleos/blog/ts/main.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://xmyy.com/css/googleapis-css2.css">
+
+    </body>
+</html>

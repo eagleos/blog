@@ -7,13 +7,13 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>虾米技术网 xmyy.com</copyright>
-        <lastBuildDate>Sun, 09 Jul 2023 08:02:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/%E7%8A%B6%E6%80%81%E6%A0%8F/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 09 Jul 2019 08:02:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/%E7%8A%B6%E6%80%81%E6%A0%8F/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>状态栏上的动态HTML技术</title>
         <link>https://xmyy.com/article/Dynamic-HTML-technology-on-the-status-bar/</link>
-        <pubDate>Sun, 09 Jul 2023 08:02:00 +0800</pubDate>
+        <pubDate>Tue, 09 Jul 2019 08:02:00 +0800</pubDate>
         
         <guid>https://xmyy.com/article/Dynamic-HTML-technology-on-the-status-bar/</guid>
-        <description>&lt;img src="https://xmyy.com/article/Dynamic-HTML-technology-on-the-status-bar/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post 状态栏上的动态HTML技术" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙈&lt;/span&gt;《软件世界》 2000年第9期 《状态栏上的动态HTML技术》 福建农林大学 童建平&lt;/span&gt;&lt;/p&gt;
+        <description>&lt;img src="https://xmyy.com/article/Dynamic-HTML-technology-on-the-status-bar/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post 状态栏上的动态HTML技术" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;💁🏻‍♂️&lt;/span&gt;《软件世界》 2000年第9期 《状态栏上的动态HTML技术》 福建农林大学 童建平&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;以下为文字版，扫描版请详见文末图片：&lt;/p&gt;
 &lt;p&gt;          动态HTML（DHTML，Dynamic Hyper Text Markup Language）作为浏览器自带的功能，实际上只是一种概念，并不属于一种专门的技术，不过我们更热衷于将其看作一种网页创作技巧。且看DHTML如何在小小状态栏上尽展身手，从中DHTML之精彩可窥一斑。
 &lt;br&gt;          一、跑马灯效果
@@ -344,6 +344,34 @@
 		class=&#34;gallery-image&#34; 
 		data-flex-grow=&#34;38&#34;
 		data-flex-basis=&#34;91px&#34;
+	
+&gt;
+&lt;img src=&#34;https://xmyy.com/article/Dynamic-HTML-technology-on-the-status-bar/Dynamic-HTML-technology-on-the-status-bar.png&#34;
+	width=&#34;2860&#34;
+	height=&#34;1482&#34;
+	srcset=&#34;https://xmyy.com/article/Dynamic-HTML-technology-on-the-status-bar/Dynamic-HTML-technology-on-the-status-bar_hua894f4b69f49702a666d841cbb16b309_330353_480x0_resize_box_3.png 480w, https://xmyy.com/article/Dynamic-HTML-technology-on-the-status-bar/Dynamic-HTML-technology-on-the-status-bar_hua894f4b69f49702a666d841cbb16b309_330353_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;状态栏上的动态HTML技术Dynamic HTML technology on the status bar收录&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;192&#34;
+		data-flex-basis=&#34;463px&#34;
+	
+&gt;
+&lt;img src=&#34;https://xmyy.com/article/Dynamic-HTML-technology-on-the-status-bar/Dynamic-HTML-technology-on-the-status-bar2.png&#34;
+	width=&#34;2852&#34;
+	height=&#34;1502&#34;
+	srcset=&#34;https://xmyy.com/article/Dynamic-HTML-technology-on-the-status-bar/Dynamic-HTML-technology-on-the-status-bar2_hu5d547de980f331fa819398947cc6b9a8_1169556_480x0_resize_box_3.png 480w, https://xmyy.com/article/Dynamic-HTML-technology-on-the-status-bar/Dynamic-HTML-technology-on-the-status-bar2_hu5d547de980f331fa819398947cc6b9a8_1169556_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;状态栏上的动态HTML技术Dynamic HTML technology on the status bar收录2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;189&#34;
+		data-flex-basis=&#34;455px&#34;
 	
 &gt;&lt;/p&gt;
 </description>

@@ -7,13 +7,13 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>虾米技术网 xmyy.com</copyright>
-        <lastBuildDate>Sun, 09 Jul 2023 08:05:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/%E7%BB%8F%E9%AA%8C/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 09 Jul 2019 08:05:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/%E7%BB%8F%E9%AA%8C/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>主页制作经验拾遗</title>
         <link>https://xmyy.com/article/Gleanings-from-homepage-creation-experience/</link>
-        <pubDate>Sun, 09 Jul 2023 08:05:00 +0800</pubDate>
+        <pubDate>Tue, 09 Jul 2019 08:05:00 +0800</pubDate>
         
         <guid>https://xmyy.com/article/Gleanings-from-homepage-creation-experience/</guid>
-        <description>&lt;img src="https://xmyy.com/article/Gleanings-from-homepage-creation-experience/luca-bravo-alS7ewQ41M8-unsplash.jpg" alt="Featured image of post 主页制作经验拾遗" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;🙈&lt;/span&gt;《上海微型计算机周刊》2000年10月30日 《主页制作经验拾遗》 福建农林大学 童建平&lt;/span&gt;&lt;/p&gt;
+        <description>&lt;img src="https://xmyy.com/article/Gleanings-from-homepage-creation-experience/luca-bravo-alS7ewQ41M8-unsplash.jpg" alt="Featured image of post 主页制作经验拾遗" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;💁🏻‍♂️&lt;/span&gt;《上海微型计算机周刊》2000年10月30日第44期 《主页制作经验拾遗》 福建农林大学 童建平&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;以下为文字版，扫描版请详见文末图片：&lt;/p&gt;
 &lt;p&gt;          现在人人在做主页，关键是如何推陈出新、吸引匆匆过客，提高访问量。小弟不才，点滴经验愿与各位分享。
 &lt;br&gt;          首先您选择的免费主页空间很关键，要求访问速度快，不至于使访问者失去耐心；而且容量要适当大，方便日后主页扩容，免得换空间影响访问量。要切合实际、高瞻远瞩地规划主页总体结构，避免日后因维护困难而夭折。设计主页时，java程序固然可以使您的主页增色不少，但java会使浏览速度减慢至少50% ，故每个页面最好不要使用超过2个的java程序，首页尽量不要使用java程序。没有图片的主页是不可思议的，但单张图片不要超过30k,动画图片控制在15K左右为宜，每页图片总量不要超过60k，其下载速度才是可以让人接受的。若切实需要使用大图片，应使用分割技术。应该尽量给每张图片加上注解，使包括设置了禁显图片在内的访问者在图片下载前能知道网页的结构。
@@ -231,6 +231,20 @@
 		class=&#34;gallery-image&#34; 
 		data-flex-grow=&#34;62&#34;
 		data-flex-basis=&#34;148px&#34;
+	
+&gt;
+&lt;img src=&#34;https://xmyy.com/article/Gleanings-from-homepage-creation-experience/Gleanings-from-homepage-creation-experience.png&#34;
+	width=&#34;2864&#34;
+	height=&#34;1492&#34;
+	srcset=&#34;https://xmyy.com/article/Gleanings-from-homepage-creation-experience/Gleanings-from-homepage-creation-experience_hua1ec78bf3f14b73700206b65197778bf_334288_480x0_resize_box_3.png 480w, https://xmyy.com/article/Gleanings-from-homepage-creation-experience/Gleanings-from-homepage-creation-experience_hua1ec78bf3f14b73700206b65197778bf_334288_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;主页制作经验拾遗Gleanings from homepage creation experience收录&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;191&#34;
+		data-flex-basis=&#34;460px&#34;
 	
 &gt;&lt;/p&gt;
 </description>

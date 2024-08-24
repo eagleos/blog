@@ -7,45 +7,29 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>虾米技术网 xmyy.com</copyright>
-        <lastBuildDate>Sun, 09 Jul 2023 08:10:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>雄鹰论文</title>
-        <link>https://xmyy.com/categories/eagle/</link>
-        <pubDate>Sun, 09 Jul 2023 08:10:00 +0800</pubDate>
-        
-        <guid>https://xmyy.com/categories/eagle/</guid>
-        <description>&lt;img src="https://xmyy.com/categories/eagle/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post 雄鹰论文" /&gt;</description>
-        </item>
-        <item>
-        <title>网络安全</title>
-        <link>https://xmyy.com/categories/CyberSecurity/</link>
-        <pubDate>Mon, 16 Nov 2020 23:59:00 +0800</pubDate>
-        
-        <guid>https://xmyy.com/categories/CyberSecurity/</guid>
-        <description>&lt;img src="https://xmyy.com/categories/CyberSecurity/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post 网络安全" /&gt;</description>
-        </item>
-        <item>
-        <title>Kubernetes</title>
-        <link>https://xmyy.com/categories/kubernetes/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://xmyy.com/categories/kubernetes/</guid>
-        <description>&lt;img src="https://xmyy.com/categories/kubernetes/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Kubernetes" /&gt;</description>
-        </item>
-        <item>
+        <lastBuildDate>Sat, 27 Mar 2021 19:56:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>操作系统</title>
         <link>https://xmyy.com/categories/system/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        <pubDate>Sat, 27 Mar 2021 19:56:00 +0800</pubDate>
         
         <guid>https://xmyy.com/categories/system/</guid>
         <description>&lt;img src="https://xmyy.com/categories/system/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post 操作系统" /&gt;</description>
         </item>
         <item>
-        <title>开发运维</title>
-        <link>https://xmyy.com/categories/DevOps/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        <title>网络安全</title>
+        <link>https://xmyy.com/categories/CyberSecurity/</link>
+        <pubDate>Fri, 11 Dec 2020 18:50:00 +0800</pubDate>
         
-        <guid>https://xmyy.com/categories/DevOps/</guid>
-        <description>&lt;img src="https://xmyy.com/categories/DevOps/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post 开发运维" /&gt;</description>
+        <guid>https://xmyy.com/categories/CyberSecurity/</guid>
+        <description>&lt;img src="https://xmyy.com/categories/CyberSecurity/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post 网络安全" /&gt;</description>
+        </item>
+        <item>
+        <title>雄鹰论文</title>
+        <link>https://xmyy.com/categories/eagle/</link>
+        <pubDate>Tue, 09 Jul 2019 08:10:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/categories/eagle/</guid>
+        <description>&lt;img src="https://xmyy.com/categories/eagle/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post 雄鹰论文" /&gt;</description>
         </item>
         
     </channel>
