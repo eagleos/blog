@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://xmyy.com/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/'>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/eagleos/blog/scss/style.min.bb98bd5bb997adc5d660f10dcffc7ef564ffadc0075160e92a649814700bd7bd.css"><meta property='og:title' content="漫谈在Windows Server 2019中安装使用WSL">
+<link rel="stylesheet" href="/scss/style.min.bb98bd5bb997adc5d660f10dcffc7ef564ffadc0075160e92a649814700bd7bd.css"><meta property='og:title' content="漫谈在Windows Server 2019中安装使用WSL">
 <meta property='og:description' content="《漫谈在Windows Server 2019中安装使用WSL》发表于《今日头条》,Rambling about installing and using WSL on Windows Server 2019">
 <meta property='og:url' content='https://xmyy.com/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/'>
 <meta property='og:site_name' content='虾米技术网'>
@@ -60,7 +60,7 @@
                     
                     
                         
-                        <img src="https://raw.gitmirror.com/eagleos/blog/master/img/eagle_huc7d4d4a429513d02ed402ba0e1d9f519_8869_300x0_resize_q75_box.jpg" width="300"
+                        <img src="/img/eagle_huc7d4d4a429513d02ed402ba0e1d9f519_8869_300x0_resize_q75_box.jpg" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -220,8 +220,8 @@
     <header class="article-header">
         <div class="article-image">
             <a href="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/">
-                <img src="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huc4978c463cf56c0c7430dc851005064f_13142_e394e3447f767f44af874a6377671e04.jpg"
-                        srcset="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huc4978c463cf56c0c7430dc851005064f_13142_e394e3447f767f44af874a6377671e04.jpg 800w, https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huc4978c463cf56c0c7430dc851005064f_13142_53be9bd9705144747bd1b16f03ab512c.jpg 1600w"
+                <img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huc4978c463cf56c0c7430dc851005064f_13142_e394e3447f767f44af874a6377671e04.jpg"
+                        srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huc4978c463cf56c0c7430dc851005064f_13142_e394e3447f767f44af874a6377671e04.jpg 800w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huc4978c463cf56c0c7430dc851005064f_13142_53be9bd9705144747bd1b16f03ab512c.jpg 1600w"
                         width="800" 
                         height="457" 
                         loading="lazy"
@@ -327,10 +327,10 @@
     
     <p><span class="nowrap"><span class="emojify">💁🏻‍♂️</span>《今日头条》 2020-11-02 《漫谈在Windows Server 2019中安装使用WSL》 童建平</span></p>
 <p>熟稔IT历史的朋友一定不会忘记98蓝屏事件：时任微软CEO的比尔·盖茨和助理 Chris Capossela在1998年春季计算机分销商展会（COMDEX ）现场演示Windows 98的&quot;即插即用&quot;（plug-and-play）新特性时，经历了演示计算机当场冷不丁甩出蓝屏死机（Blue Screen of Death，简称BSOD）界面的尴尬一幕：</p>
-<p><img src="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-1.gif"
+<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-1.gif"
 	width="500"
 	height="373"
-	srcset="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu4b508fa5c6e1461cfd70b75b0fd58d5c_7187790_618eec0a13e15f167ceacbec2bd5220f.gif 480w, https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu4b508fa5c6e1461cfd70b75b0fd58d5c_7187790_0a2c709620c7267d490009bce526d8fe.gif 1024w"
+	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu4b508fa5c6e1461cfd70b75b0fd58d5c_7187790_618eec0a13e15f167ceacbec2bd5220f.gif 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu4b508fa5c6e1461cfd70b75b0fd58d5c_7187790_0a2c709620c7267d490009bce526d8fe.gif 1024w"
 	loading="lazy"
 	
 		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
@@ -369,10 +369,10 @@
 </ul>
 <p>要在Windows Server 2019上使用WSL，首先需要确定您的系统版本大于1709，可按下面步骤确定您的操作系统版本：</p>
 <p>①在开始菜单中点击Windows Powershell进入，或者在开始菜单中磁性贴中点击Windows Powershell进入，如下图：</p>
-<p><img src="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-2.jpg"
+<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-2.jpg"
 	width="560"
 	height="609"
-	srcset="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu1e946754459ef454d2d3a95218bb62ff_41706_fa776c1c68e236f4473ba53974adef95.jpg 480w, https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu1e946754459ef454d2d3a95218bb62ff_41706_c411f8c4b0b800fdc6d2bf077c7987a9.jpg 1024w"
+	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu1e946754459ef454d2d3a95218bb62ff_41706_fa776c1c68e236f4473ba53974adef95.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu1e946754459ef454d2d3a95218bb62ff_41706_c411f8c4b0b800fdc6d2bf077c7987a9.jpg 1024w"
 	loading="lazy"
 	
 		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
@@ -393,10 +393,10 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>如下图：</p>
-<p><img src="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-3.jpg"
+<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-3.jpg"
 	width="747"
 	height="135"
-	srcset="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hube9b5ed2449f9d6a02a7546db3934817_20220_49d8c399d1a571497b2671151d6451e3.jpg 480w, https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hube9b5ed2449f9d6a02a7546db3934817_20220_f48fc44d4f38c7d04bb87210cf8291bf.jpg 1024w"
+	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hube9b5ed2449f9d6a02a7546db3934817_20220_49d8c399d1a571497b2671151d6451e3.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hube9b5ed2449f9d6a02a7546db3934817_20220_f48fc44d4f38c7d04bb87210cf8291bf.jpg 1024w"
 	loading="lazy"
 	
 		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
@@ -437,10 +437,10 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>如下图：</p>
-<p><img src="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-4.jpg"
+<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-4.jpg"
 	width="748"
 	height="245"
-	srcset="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hube9b5ed2449f9d6a02a7546db3934817_31297_63086ed8655994964c066261cd31ef68.jpg 480w, https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hube9b5ed2449f9d6a02a7546db3934817_31297_94740ccd1cea1aba315032052c10a4c1.jpg 1024w"
+	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hube9b5ed2449f9d6a02a7546db3934817_31297_63086ed8655994964c066261cd31ef68.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hube9b5ed2449f9d6a02a7546db3934817_31297_94740ccd1cea1aba315032052c10a4c1.jpg 1024w"
 	loading="lazy"
 	
 		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
@@ -462,10 +462,10 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>如下图：</p>
-<p><img src="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-5.jpg"
+<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-5.jpg"
 	width="750"
 	height="278"
-	srcset="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hud905d8570759aa23d45a6c411c00c16b_35212_2ef34ce185e0ead8193c29e98c9aa8e5.jpg 480w, https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hud905d8570759aa23d45a6c411c00c16b_35212_84fed2e5d88da4b797f9685bf204bec2.jpg 1024w"
+	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hud905d8570759aa23d45a6c411c00c16b_35212_2ef34ce185e0ead8193c29e98c9aa8e5.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hud905d8570759aa23d45a6c411c00c16b_35212_84fed2e5d88da4b797f9685bf204bec2.jpg 1024w"
 	loading="lazy"
 	
 		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
@@ -477,10 +477,10 @@
 	
 ></p>
 <p>回车后， 稍等几秒，会提示您选择并重启计算机，如下图：</p>
-<p><img src="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-6.jpg"
+<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-6.jpg"
 	width="748"
 	height="276"
-	srcset="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu1305947a3f39938e32cd872d987e5aa1_38384_f4eecc270dee5a5ca8d369d5911b3618.jpg 480w, https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu1305947a3f39938e32cd872d987e5aa1_38384_6ac9fc3cd416a00be0a5a9ccab516138.jpg 1024w"
+	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu1305947a3f39938e32cd872d987e5aa1_38384_f4eecc270dee5a5ca8d369d5911b3618.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu1305947a3f39938e32cd872d987e5aa1_38384_6ac9fc3cd416a00be0a5a9ccab516138.jpg 1024w"
 	loading="lazy"
 	
 		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
@@ -526,10 +526,10 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>如下图：</p>
-<p><img src="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-7.jpg"
+<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-7.jpg"
 	width="764"
 	height="122"
-	srcset="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_16968_7689fe5efedf043ce85380b3e3f920c1.jpg 480w, https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_16968_d42b4bbb539744ebc766e3efe0a0c95a.jpg 1024w"
+	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_16968_7689fe5efedf043ce85380b3e3f920c1.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_16968_d42b4bbb539744ebc766e3efe0a0c95a.jpg 1024w"
 	loading="lazy"
 	
 		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
@@ -541,10 +541,10 @@
 	
 ></p>
 <p>回车后开始下载，取决于您的下载速度，可能费时很长，如下图：</p>
-<p><img src="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-8.jpg"
+<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-8.jpg"
 	width="761"
 	height="164"
-	srcset="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_17632_c39536b1f7fb8894e83199d9a5e4cd5d.jpg 480w, https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_17632_09d7190da0764548c08c50818d142779.jpg 1024w"
+	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_17632_c39536b1f7fb8894e83199d9a5e4cd5d.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_17632_09d7190da0764548c08c50818d142779.jpg 1024w"
 	loading="lazy"
 	
 		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
@@ -556,10 +556,10 @@
 	
 ></p>
 <p>有可能就遇到下载失败了，如下图：</p>
-<p><img src="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-9.jpg"
+<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-9.jpg"
 	width="761"
 	height="214"
-	srcset="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hue0466c4e96725c3e4dd24cd6a66feb73_30886_fbd678789cc44f00e4408415c37a4aba.jpg 480w, https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hue0466c4e96725c3e4dd24cd6a66feb73_30886_d3ec9a99a9583bc9037280a01497d2d0.jpg 1024w"
+	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hue0466c4e96725c3e4dd24cd6a66feb73_30886_fbd678789cc44f00e4408415c37a4aba.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hue0466c4e96725c3e4dd24cd6a66feb73_30886_d3ec9a99a9583bc9037280a01497d2d0.jpg 1024w"
 	loading="lazy"
 	
 		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
@@ -580,10 +580,10 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>也是失败，如下图：</p>
-<p><img src="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-10.jpg"
+<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-10.jpg"
 	width="762"
 	height="288"
-	srcset="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_45893_5f19cf7e74471ea257c2a4030461215f.jpg 480w, https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_45893_27bab01c816e44c16b14d61de027790f.jpg 1024w"
+	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_45893_5f19cf7e74471ea257c2a4030461215f.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_45893_27bab01c816e44c16b14d61de027790f.jpg 1024w"
 	loading="lazy"
 	
 		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
@@ -604,10 +604,10 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>下载速度就很快了，5分钟左右就完成下载了，如下图：</p>
-<p><img src="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-11.jpg"
+<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-11.jpg"
 	width="747"
 	height="195"
-	srcset="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu02b37057b8984a33cb9a99c8ba004b6b_35788_410927c9e0933374a2f7fabf34b0eb09.jpg 480w, https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu02b37057b8984a33cb9a99c8ba004b6b_35788_fe3ba939dabdad6349e29ab36c563db5.jpg 1024w"
+	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu02b37057b8984a33cb9a99c8ba004b6b_35788_410927c9e0933374a2f7fabf34b0eb09.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu02b37057b8984a33cb9a99c8ba004b6b_35788_fe3ba939dabdad6349e29ab36c563db5.jpg 1024w"
 	loading="lazy"
 	
 		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
@@ -632,10 +632,10 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>如下图：</p>
-<p><img src="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-12.jpg"
+<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-12.jpg"
 	width="747"
 	height="215"
-	srcset="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu8b1eebfbcb23ea73c6e10b2915810fa4_41576_6a3a5cc7627a7eef4e9a7c8a87eb496e.jpg 480w, https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu8b1eebfbcb23ea73c6e10b2915810fa4_41576_cbad2b4f1c04c0c4057451eb13fd4659.jpg 1024w"
+	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu8b1eebfbcb23ea73c6e10b2915810fa4_41576_6a3a5cc7627a7eef4e9a7c8a87eb496e.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu8b1eebfbcb23ea73c6e10b2915810fa4_41576_cbad2b4f1c04c0c4057451eb13fd4659.jpg 1024w"
 	loading="lazy"
 	
 		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
@@ -660,10 +660,10 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>如下图：</p>
-<p><img src="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-13.jpg"
+<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-13.jpg"
 	width="747"
 	height="460"
-	srcset="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu8b1eebfbcb23ea73c6e10b2915810fa4_67920_7d69a49c7cacfe7567d02b1677d4120f.jpg 480w, https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu8b1eebfbcb23ea73c6e10b2915810fa4_67920_0365b56d3080ba09b2ee360b4c6b9dfb.jpg 1024w"
+	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu8b1eebfbcb23ea73c6e10b2915810fa4_67920_7d69a49c7cacfe7567d02b1677d4120f.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu8b1eebfbcb23ea73c6e10b2915810fa4_67920_0365b56d3080ba09b2ee360b4c6b9dfb.jpg 1024w"
 	loading="lazy"
 	
 		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
@@ -675,10 +675,10 @@
 	
 ></p>
 <p>很不幸，您将看到如下错误提示：</p>
-<p><img src="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-14.jpg"
+<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-14.jpg"
 	width="748"
 	height="225"
-	srcset="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huac1f5a2b590cbbe8b50212f07fd4795c_36001_f4c271fef8fc62c838c624d2158f49c6.jpg 480w, https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huac1f5a2b590cbbe8b50212f07fd4795c_36001_cadd3de95229c60f237702e41949d97b.jpg 1024w"
+	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huac1f5a2b590cbbe8b50212f07fd4795c_36001_f4c271fef8fc62c838c624d2158f49c6.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huac1f5a2b590cbbe8b50212f07fd4795c_36001_cadd3de95229c60f237702e41949d97b.jpg 1024w"
 	loading="lazy"
 	
 		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
@@ -704,10 +704,10 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>如下图：</p>
-<p><img src="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-15.jpg"
+<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-15.jpg"
 	width="748"
 	height="247"
-	srcset="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu6a68093c74ac925dbfd00dad3940b7d7_43937_b6e1a87343431e6d48ff1bd6b7b3e2a5.jpg 480w, https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu6a68093c74ac925dbfd00dad3940b7d7_43937_877470b48f957bb183a0183e2fbc0b0b.jpg 1024w"
+	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu6a68093c74ac925dbfd00dad3940b7d7_43937_b6e1a87343431e6d48ff1bd6b7b3e2a5.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu6a68093c74ac925dbfd00dad3940b7d7_43937_877470b48f957bb183a0183e2fbc0b0b.jpg 1024w"
 	loading="lazy"
 	
 		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
@@ -719,10 +719,10 @@
 	
 ></p>
 <p>只是，第2个方法因为是修改系统变量，需要关闭原有窗口并重新启动PowerShell或者重启下计算机。重启后，就可以在任意路径下直接通过键入&quot;.\ubuntu1804.exe&quot;命令启动您的分发版，然后稍等片刻等待系统完成初始化。如下图：</p>
-<p><img src="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-16.jpg"
+<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-16.jpg"
 	width="748"
 	height="126"
-	srcset="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu723377c76fe549e65c764685d19a69cb_15900_3e9b815010784e8a5fbe06309b91184d.jpg 480w, https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu723377c76fe549e65c764685d19a69cb_15900_4099311e56c36a7110db638bb1f3e35a.jpg 1024w"
+	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu723377c76fe549e65c764685d19a69cb_15900_3e9b815010784e8a5fbe06309b91184d.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu723377c76fe549e65c764685d19a69cb_15900_4099311e56c36a7110db638bb1f3e35a.jpg 1024w"
 	loading="lazy"
 	
 		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
@@ -734,10 +734,10 @@
 	
 ></p>
 <p>之后，按照提示输入要创建的用户名和密码，即成功登录ubuntu系统，如下图：</p>
-<p><img src="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-17.jpg"
+<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-17.jpg"
 	width="748"
 	height="241"
-	srcset="https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hue2a6b4c4612c06ab6c4321aaf11274e9_142537_05d36bf02dc9db133f26f24ca237cb8c.jpg 480w, https://raw.gitmirror.com/eagleos/blog/master/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hue2a6b4c4612c06ab6c4321aaf11274e9_142537_d0fa6d9fd3fb8bf3bffb72c60106ddd5.jpg 1024w"
+	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hue2a6b4c4612c06ab6c4321aaf11274e9_142537_05d36bf02dc9db133f26f24ca237cb8c.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hue2a6b4c4612c06ab6c4321aaf11274e9_142537_d0fa6d9fd3fb8bf3bffb72c60106ddd5.jpg 1024w"
 	loading="lazy"
 	
 		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
@@ -801,7 +801,7 @@
         
         
             <div class="article-image">
-                <img src="https://raw.gitmirror.com/eagleos/blog/master/article/Installing-Centos-on-Windows-10-using-WSL/_hu042130161c2b6c330ef21e4d39f984aa_520402_8e2ef752b1c06421b9d6f4d8910361d6.jpg" 
+                <img src="/article/Installing-Centos-on-Windows-10-using-WSL/_hu042130161c2b6c330ef21e4d39f984aa_520402_8e2ef752b1c06421b9d6f4d8910361d6.jpg" 
                         width="250" 
                         height="150" 
                         loading="lazy"
@@ -825,7 +825,7 @@
         
         
             <div class="article-image">
-                <img src="https://raw.gitmirror.com/eagleos/blog/master/article/3-Steps-to-Reset-Windows-10-Password/_hub078c052602c7a69a5f8dc45425068e8_23093_bacedcd08965f7e7b480dad35af32e87.jpg" 
+                <img src="/article/3-Steps-to-Reset-Windows-10-Password/_hub078c052602c7a69a5f8dc45425068e8_23093_bacedcd08965f7e7b480dad35af32e87.jpg" 
                         width="250" 
                         height="150" 
                         loading="lazy"
@@ -930,7 +930,7 @@
 
             </main>
         </div>
-        <script type="text/javascript" src="https://raw.gitmirror.com/eagleos/blog/master/ts/main.js" defer></script>
+        <script type="text/javascript" src="/ts/main.js" defer></script>
 
 
 
@@ -943,7 +943,7 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/eagleos/blog/css/googleapis-css2.css">
+<link rel="stylesheet" type="text/css" href="https://xmyy.com/css/googleapis-css2.css">
 
     </body>
 </html>
