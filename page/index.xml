@@ -15,8 +15,8 @@
         <guid>https://xmyy.com/resume/</guid>
         <description>&lt;div class=&#34;container-fluid overcover&#34;&gt;
     &lt;div class=&#34;container profile-box&#34;&gt;
-        &lt;div class=&#34;row&#34;&gt;
-            &lt;div class=&#34;col-md-4 left-co&#34;&gt;
+        &lt;div class=&#34;row d-flex flex-column flex-md-row&#34;&gt;
+            &lt;div class=&#34;col-md-4 col-12 left-co&#34;&gt;
                 &lt;div class=&#34;left-side&#34;&gt;
                     &lt;div class=&#34;profile-info&#34;&gt;
                         &lt;img src=&#34;assets/images/avatar.png&#34; alt=&#34;童建平-照片&#34;&gt;
@@ -78,7 +78,7 @@
                         &lt;p&gt;&lt;a href=&#34;https://xmyy.com/article/Linkbotpro-Good-tool-for-testing-homepage-links/&#34; target=&#34;_blank&#34;&gt;Linkbotpro--测试主页...&lt;/a&gt;&lt;/p&gt;
                         &lt;p&gt;&lt;a href=&#34;https://xmyy.com/article/An-example-of-animation-using-DHTML/&#34; target=&#34;_blank&#34;&gt;用DHTML制作动画一例&lt;/a&gt;&lt;/p&gt;
                         &lt;p&gt;&lt;a href=&#34;https://xmyy.com/article/Simple-implementation-of-web-search-function/&#34; target=&#34;_blank&#34;&gt;网页检索功能的简单实现&lt;/a&gt;&lt;/p&gt;
-                        &lt;p&gt;&lt;a href=&#34;组建对等网DIY&#34; target=&#34;_blank&#34;&gt;组建对等网DIY&lt;/a&gt;&lt;/p&gt;
+                        &lt;p&gt;&lt;a href=&#34;https://xmyy.com/article/DIY-Peer-to-Peer-Network-Setup/&#34; target=&#34;_blank&#34;&gt;组建对等网DIY&lt;/a&gt;&lt;/p&gt;
                         &lt;p&gt;&lt;a href=&#34;https://xmyy.com/article/Gleanings-from-homepage-creation-experience/&#34; target=&#34;_blank&#34;&gt;主页制作经验拾遗&lt;/a&gt;&lt;/p&gt;
                         &lt;p&gt;&lt;a href=&#34;https://xmyy.com/article/WinImage-good-tool-for-making-images/&#34; target=&#34;_blank&#34;&gt;winimage--制作镜像...&lt;/a&gt;&lt;/p&gt;
                         &lt;p&gt;&lt;a href=&#34;https://xmyy.com/article/Web-color-is-no-longer-monotonous/&#34; target=&#34;_blank&#34;&gt;网页颜色不再单调&lt;/a&gt;&lt;/p&gt;
@@ -93,7 +93,7 @@
                     &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-            &lt;div class=&#34;col-md-8 rt-div&#34;&gt;
+            &lt;div class=&#34;col-md-8 col-12 rt-div&#34;&gt;
                 &lt;div class=&#34;rit-cover&#34;&gt;
                     &lt;h2 class=&#34;rit-titl&#34;&gt;&lt;i class=&#34;far fa-user&#34;&gt;&lt;/i&gt; 个人优势&lt;/h2&gt;
                     &lt;div class=&#34;about&#34;&gt;
@@ -129,7 +129,7 @@
                             &lt;li&gt;&lt;i class=&#34;far fa-hand-point-right&#34;&gt;&lt;/i&gt; 熟悉Dell、浪潮、联想、曙光等品牌服务器raid、存储等软硬件配置。维护过Infortrend、浪潮天梭高性能计算云服务平台。&lt;/li&gt;
                         &lt;/ul&gt;
                     &lt;/div&gt;
-                    &lt;div class=&#34;work-exp&#34;&gt;
+                    &lt;div class=&#34;last-exp&#34;&gt;
                         &lt;h6&gt;【编程】&lt;/h6&gt;
                         &lt;ul&gt;
                             &lt;li&gt;&lt;i class=&#34;far fa-hand-point-right&#34;&gt;&lt;/i&gt; 有22年以上ASP、PHP语言编程经验，曾在知名报刊上发表过十余篇文章，擅长网站设计与制作。&lt;/li&gt;
@@ -140,7 +140,7 @@
             &lt;/div&gt;
         &lt;/div&gt;
         &lt;div class=&#34;row&#34;&gt;
-            &lt;div class=&#34;col-md-4 all-co&#34;&gt;
+            &lt;div class=&#34;col-md-4 col-12 all-co&#34;&gt;
                 &lt;div class=&#34;all-side&#34;&gt;
                     &lt;h2 class=&#34;all-titl&#34;&gt;&lt;i class=&#34;fas fa-project-diagram&#34;&gt;&lt;/i&gt; 项目经验&lt;/h2&gt;
                     &lt;div class=&#34;service no-margin&#34;&gt;
@@ -152,7 +152,7 @@
                         &lt;/div&gt;
                         &lt;div class=&#34;resume-timeline-item-desc&#34;&gt;
                             &lt;ul&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 基于成本管控，选型及申请采购到Dell R740、华为企业级路由器AR6121EC-S、华为企业级交换机S2730S-S8FP4S-A(或博科Brocade 6505光纤交换机)及对应光模块、UPS等设备，自行完成网络设备zone等配置，完成搭建公司内网vcenter私有云平台。&lt;/li&gt;
+                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 基于成本管控，选型及申请采购到Dell R740、华为企业级路由器AR6121EC-S、华为企业级交换机S2730S-S8FP4S-A(或博科Brocade 6505光纤交换机，或防火墙山石网科（Hillstone）SG-6000-C680+核心汇聚交换机华三（H3C）S5560-30C-EI-G-H1)及对应光模块、UPS等设备，自行完成网络设备zone等配置，完成搭建公司内网vcenter私有云平台。&lt;/li&gt;
                                 &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 搭建gitlab、jenkins、confluence、禅道、openldap、openvpn、nextcloud、Phabricator、SonarQube、showdoc、yapi、nexus、npm私服、Archery或Yearning、堡垒机jumpserver、密码管理平台syspass等系统，且各系统集成使用ldap统一账号登录，并自编程序实现调用阿里云短信服务自助重置ldap账号密码功能。&lt;/li&gt;
                                 &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 搭建基于jenkins集群+ansible的ci/cd发布系统，按需结合nacos，应用自动化脚本成功实现灰度发布等流程。搭建zabbix、prometheus监控业务系统，结合shell及python等脚本，实现邮件、钉钉、短信报警通知功能。强化DevOPS，调用阿里云、腾讯云SDK实现自助增、删、改域名解析等功能。同时增加市电断电监控，有利保障公司内网机房安全。并搭建内网dns解决测试人员手机调试APP问题。&lt;/li&gt;
                                 &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 制定git管理等运维规范、产品迭代发布规范等流程化方案，覆盖开发、测试、上线、运维等产品生命周期。使用堡垒机审计并管理开发人员对数据库、服务器的相关访问，并开启Archery的数据脱敏功能保障生产数据安全。成功完成公司搬迁办公地点时机房的迁移工作，独当一面自我研究成功实现仅靠远程ssh登录网络设备在基本不断网情况下更换厦门总部路由器等设备ip段配置，并完成与北京分公司华为路由器AR2240C-S的IPsec VPN配置。&lt;/li&gt;
@@ -198,10 +198,7 @@
                             &lt;ul&gt;
                                 &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 项目需求：管理好国家局、国家抗疫平台、福建省医保局及其政务网、三明医保局、新疆兵团、山东、青海等各省市项目运维。&lt;/li&gt;
                                 &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 项目描述：各省市医保局网络环境不一，错综复杂，需求又不一，技术安全要求又严格严谨，运维任务繁重。&lt;/li&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 项目成果：国家医保局要求上报提交的word文档格式需要统一规范，经常被退回处理，遂使用python脚本对word文档进行统一排版处理，大大提高工作效率。
-三明市各医院使用的前置跳板机，硬件老旧需要更换且联网复杂，亲自出差处理，更换新服务器，且操作系统由windows更换为centos，在沟通困难情况下理清网络架构，最终成功平稳切换，保障各医院正常使用，受到领导表扬。
-公司需要定期汇报相关数据给各省市医保局领导，在开启系统防火墙情况下完成Hadoop大数据、数据仓库平台搭建部署，有利支撑业务需求。
-福建省医保局政务网历史运维问题多，又采用特定架构，后发现存在XSS漏洞需要修复，在沟通困难及远程登录复杂繁琐情况下通过自我不懈研究，终找到解决方法并修复之，受到医保局领导肯定。如此种种，不胜枚举。&lt;/li&gt;
+                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 项目成果：国家医保局要求上报提交的word文档格式需要统一规范，经常被退回处理，遂使用python脚本对word文档进行统一排版处理，大大提高工作效率。三明市各医院使用的前置跳板机，硬件老旧需要更换且联网复杂，亲自出差处理，更换新服务器，且操作系统由windows更换为centos，在沟通困难情况下理清网络架构，最终成功平稳切换，保障各医院正常使用，受到领导表扬。公司需要定期汇报相关数据给各省市医保局领导，在开启系统防火墙情况下完成Hadoop大数据、数据仓库平台搭建部署，有利支撑业务需求。福建省医保局政务网历史运维问题多，又采用特定架构，后发现存在XSS漏洞需要修复，在沟通困难及远程登录复杂繁琐情况下通过自我不懈研究，终找到解决方法并修复之，受到医保局领导肯定。如此种种，不胜枚举。&lt;/li&gt;
                             &lt;/ul&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
@@ -229,12 +226,7 @@
                         &lt;div class=&#34;resume-timeline-item-desc&#34;&gt;
                             &lt;ul&gt;
                                 &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 项目需求：超算中心业务发展扩大，亟需专业运维技术的落地及规范化管理，受命接管厦门市超算中心。&lt;/li&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 项目成果：搭建Vcenter虚拟化平台，部署包括servicedesk在内的一系列软件开展运维规范化整改。DIY定制centos7.x自定义系统iso镜像，指导员工结合cobbler完成快速批量装机，提高工作效率。
-利用SunwayCMS Hillstone山石网科安全网关，结合神威4000H、浪潮天梭TS10000高性能计算机系统管理软件，以及推进使用下属公司安全狗软件的批量安装部署等提升相关系统的安全性。搭建openstack平台，为部分客户提供相关服务。
-负责对公司所有域名进行整顿，规范管理，保护公司无形资产，为公司每年节省成本域名费用近1万元。
-上海合作组织首届网络反恐“厦门-2015”演习及金砖会议期间，负责协调UPS厂家提供不间断供电支持，保障相关服务器集群正常运转，团队协作圆满完成任务，获得国家公安部、外交部等部委表彰。
-莫兰蒂台风期间，负责超算中心现场应急处置，并对机房空调系统进行全面评估，设计空调系统二次给水改造方案，圆满解决问题，新方案在后续的停水停电中起到不间断服务的支撑作用。
-参与公司官网、法眼视频分析系统、学校食品安全管理平台等多个系统的安全渗透测试，发现多个未被安全团队发现的漏洞，突出能力得到领导表扬。&lt;/li&gt;
+                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 项目成果：搭建Vcenter虚拟化平台，部署包括servicedesk在内的一系列软件开展运维规范化整改。DIY定制centos7.x自定义系统iso镜像，指导员工结合cobbler完成快速批量装机，提高工作效率。利用SunwayCMS Hillstone山石网科安全网关，结合神威4000H、浪潮天梭TS10000高性能计算机系统管理软件，以及推进使用下属公司安全狗软件的批量安装部署等提升相关系统的安全性。搭建openstack平台，为部分客户提供相关服务。负责对公司所有域名进行整顿，规范管理，保护公司无形资产，为公司每年节省成本域名费用近1万元。上海合作组织首届网络反恐“厦门-2015”演习及金砖会议期间，负责协调UPS厂家提供不间断供电支持，保障相关服务器集群正常运转，团队协作圆满完成任务，获得国家公安部、外交部等部委表彰。莫兰蒂台风期间，负责超算中心现场应急处置，并对机房空调系统进行全面评估，设计空调系统二次给水改造方案，圆满解决问题，新方案在后续的停水停电中起到不间断服务的支撑作用。参与公司官网、法眼视频分析系统、学校食品安全管理平台等多个系统的安全渗透测试，发现多个未被安全团队发现的漏洞，突出能力得到领导表扬。&lt;/li&gt;
                             &lt;/ul&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
