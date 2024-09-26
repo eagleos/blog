@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>粘贴 on 虾米技术网</title>
+        <link>https://xmyy.com/tags/%E7%B2%98%E8%B4%B4/</link>
+        <description>Recent content in 粘贴 on 虾米技术网</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>虾米技术网 xmyy.com</copyright>
+        <lastBuildDate>Sun, 10 Jan 2021 23:30:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/%E7%B2%98%E8%B4%B4/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>如何在MacOS下更改复制、粘贴等快捷键 以适应Windows下使用习惯（视频）</title>
+        <link>https://xmyy.com/article/How-to-Change-Copy-Paste-and-Other-Shortcuts-in-macOS/</link>
+        <pubDate>Sun, 10 Jan 2021 23:30:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/article/How-to-Change-Copy-Paste-and-Other-Shortcuts-in-macOS/</guid>
+        <description>&lt;img src="https://xmyy.com/article/How-to-Change-Copy-Paste-and-Other-Shortcuts-in-macOS/How-to-Change-Copy-Paste-and-Other-Shortcuts-in-macOS.jpg" alt="Featured image of post 如何在MacOS下更改复制、粘贴等快捷键 以适应Windows下使用习惯（视频）" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;💁🏻‍♂️&lt;/span&gt;《今日头条》 2021-01-10 《如何在MacOS下更改复制、粘贴等快捷键 以适应Windows下使用习惯》 童建平&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;众所周知，MacOS下默认情况下使用Command+C快捷键来进行复制，而我们在Windows下习惯使用Control+C进行类似操作。
+本视频将教您如何在MacOS下更改复制、粘贴等快捷键，以适应以前Windows下的使用习惯。
+首先，打开“系统偏好设置”，然后点击键盘-&amp;gt;快捷键-&amp;gt;应用快捷键，添加复制快捷键，菜单标题分别为Copy、复制、拷贝，键盘快捷盘处则按键盘上的control+C，其它依此类推即可。&lt;/p&gt;
+&lt;p&gt;操作步骤其实很简单，请详见如下视频：&lt;/p&gt;
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;video src=&#34;How-to-Change-Copy-Paste-and-Other-Shortcuts-in-macOS.mp4&#34;
+    autoplay=&#34;true&#34; controls=&#34;controls&#34; preload=&#34;auto&#34; width=&#34;100%&#34; height=&#34;100%&#34;&gt;
+        &lt;p&gt;
+            Your browser doesn&#39;t support HTML5 video. Here is a
+            &lt;a href=&#34;How-to-Change-Copy-Paste-and-Other-Shortcuts-in-macOS.mp4&#34;&gt;link to the video&lt;/a&gt; instead.
+        &lt;/p&gt;
+    &lt;/video&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
