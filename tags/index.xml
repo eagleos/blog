@@ -8,6 +8,14 @@
         <language>zh-cn</language>
         <copyright>虾米技术网 xmyy.com</copyright>
         <lastBuildDate>Sat, 27 Mar 2021 19:56:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Win10</title>
+        <link>https://xmyy.com/tags/Win10/</link>
+        <pubDate>Sat, 27 Mar 2021 19:56:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/Win10/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Windows10</title>
         <link>https://xmyy.com/tags/Windows10/</link>
         <pubDate>Sat, 27 Mar 2021 19:56:00 +0800</pubDate>
@@ -29,6 +37,46 @@
         <pubDate>Sat, 27 Mar 2021 19:56:00 +0800</pubDate>
         
         <guid>https://xmyy.com/tags/%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Inter-Process</title>
+        <link>https://xmyy.com/tags/inter-process/</link>
+        <pubDate>Thu, 11 Feb 2021 13:27:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/inter-process/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>IPCDump</title>
+        <link>https://xmyy.com/tags/IPCDump/</link>
+        <pubDate>Thu, 11 Feb 2021 13:27:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/IPCDump/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Linux</title>
+        <link>https://xmyy.com/tags/Linux/</link>
+        <pubDate>Thu, 11 Feb 2021 13:27:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/Linux/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>跟踪进程</title>
+        <link>https://xmyy.com/tags/%E8%B7%9F%E8%B8%AA%E8%BF%9B%E7%A8%8B/</link>
+        <pubDate>Thu, 11 Feb 2021 13:27:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/%E8%B7%9F%E8%B8%AA%E8%BF%9B%E7%A8%8B/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>开源工具</title>
+        <link>https://xmyy.com/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/</link>
+        <pubDate>Thu, 11 Feb 2021 13:27:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/</guid>
         <description></description>
         </item>
         <item>
@@ -61,6 +109,70 @@
         <pubDate>Sun, 10 Jan 2021 23:30:00 +0800</pubDate>
         
         <guid>https://xmyy.com/tags/%E7%B2%98%E8%B4%B4/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Esxi</title>
+        <link>https://xmyy.com/tags/esxi/</link>
+        <pubDate>Thu, 07 Jan 2021 18:57:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/esxi/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Firewall</title>
+        <link>https://xmyy.com/tags/firewall/</link>
+        <pubDate>Thu, 07 Jan 2021 18:57:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/firewall/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Shell</title>
+        <link>https://xmyy.com/tags/shell/</link>
+        <pubDate>Thu, 07 Jan 2021 18:57:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/shell/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Ssh</title>
+        <link>https://xmyy.com/tags/ssh/</link>
+        <pubDate>Thu, 07 Jan 2021 18:57:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/ssh/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Vcenter</title>
+        <link>https://xmyy.com/tags/vcenter/</link>
+        <pubDate>Thu, 07 Jan 2021 18:57:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/vcenter/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>VSphere</title>
+        <link>https://xmyy.com/tags/vSphere/</link>
+        <pubDate>Thu, 07 Jan 2021 18:57:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/vSphere/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>防火墙</title>
+        <link>https://xmyy.com/tags/%E9%98%B2%E7%81%AB%E5%A2%99/</link>
+        <pubDate>Thu, 07 Jan 2021 18:57:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/%E9%98%B2%E7%81%AB%E5%A2%99/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>虚拟化</title>
+        <link>https://xmyy.com/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/</link>
+        <pubDate>Thu, 07 Jan 2021 18:57:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/</guid>
         <description></description>
         </item>
         <item>
@@ -141,14 +253,6 @@
         <pubDate>Tue, 03 Nov 2020 18:15:00 +0800</pubDate>
         
         <guid>https://xmyy.com/tags/Centos/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Win10</title>
-        <link>https://xmyy.com/tags/Win10/</link>
-        <pubDate>Tue, 03 Nov 2020 18:15:00 +0800</pubDate>
-        
-        <guid>https://xmyy.com/tags/Win10/</guid>
         <description></description>
         </item>
         <item>

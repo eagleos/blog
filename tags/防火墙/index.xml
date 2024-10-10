@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>防火墙 on 虾米技术网</title>
+        <link>https://xmyy.com/tags/%E9%98%B2%E7%81%AB%E5%A2%99/</link>
+        <description>Recent content in 防火墙 on 虾米技术网</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>虾米技术网 xmyy.com</copyright>
+        <lastBuildDate>Thu, 07 Jan 2021 18:57:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/%E9%98%B2%E7%81%AB%E5%A2%99/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>如何通过ssh远程登录给esxi主机防火墙添加允许ip列表（视频）</title>
+        <link>https://xmyy.com/article/How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login/</link>
+        <pubDate>Thu, 07 Jan 2021 18:57:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/article/How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login/</guid>
+        <description>&lt;img src="https://xmyy.com/article/How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login/How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login.jpg" alt="Featured image of post 如何通过ssh远程登录给esxi主机防火墙添加允许ip列表（视频）" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;💁🏻‍♂️&lt;/span&gt;《今日头条》 2021-01-07 《如何通过ssh远程登录给esxi主机防火墙添加允许ip列表》 童建平&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;事故现场：&lt;/p&gt;
+&lt;p&gt;通过VMware vSphere Client直接更改esxi的IP成功（1段ip改为2段ip），但忘了之前有配置了只允许192.168.1.0段的ip连接VMware vSphere Client的防火墙规则，造成现在无法通过VMware vSphere Client连接esxi主机了。&lt;/p&gt;
+&lt;p&gt;解决办法：&lt;/p&gt;
+&lt;p&gt;所幸原来由于某种原因有开启了ssh，并未作ip受限规则，可以通过ssh登录esxi主机，增加允许ip列表。&lt;/p&gt;
+&lt;p&gt;查看原来配置的防火墙规则命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;esxcli network firewall ruleset allowedip list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;增加允许ip列表命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;esxcli network firewall ruleset allowedip add --ip-address&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;192.168.2.0/24 --ruleset-id&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;vSphereClient
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;操作步骤其实很简单，请详见如下视频：&lt;/p&gt;
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;video src=&#34;How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login.mp4&#34;
+    autoplay=&#34;true&#34; controls=&#34;controls&#34; preload=&#34;auto&#34; width=&#34;100%&#34; height=&#34;100%&#34;&gt;
+        &lt;p&gt;
+            Your browser doesn&#39;t support HTML5 video. Here is a
+            &lt;a href=&#34;How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login.mp4&#34;&gt;link to the video&lt;/a&gt; instead.
+        &lt;/p&gt;
+    &lt;/video&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -53,6 +53,9 @@
                 href="https://xmyy.com/tags/"
                 />
   </url><url>
+    <loc>https://xmyy.com/tags/Win10/</loc>
+    <lastmod>2021-03-27T19:56:00+08:00</lastmod>
+  </url><url>
     <loc>https://xmyy.com/article/3-Steps-to-Reset-Windows-10-Password/</loc>
     <lastmod>2021-03-27T19:56:00+08:00</lastmod>
   </url><url>
@@ -68,6 +71,27 @@
     <loc>https://xmyy.com/tags/%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81/</loc>
     <lastmod>2021-03-27T19:56:00+08:00</lastmod>
   </url><url>
+    <loc>https://xmyy.com/tags/inter-process/</loc>
+    <lastmod>2021-02-11T13:27:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/tags/IPCDump/</loc>
+    <lastmod>2021-02-11T13:27:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/tags/Linux/</loc>
+    <lastmod>2021-02-11T13:27:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/tags/%E8%B7%9F%E8%B8%AA%E8%BF%9B%E7%A8%8B/</loc>
+    <lastmod>2021-02-11T13:27:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2021-02-11T13:27:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/article/IPCDump-For-tracking-inter-process-communication-on-Linux/</loc>
+    <lastmod>2021-02-11T13:27:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/categories/DevOps/</loc>
+    <lastmod>2021-02-11T13:27:00+08:00</lastmod>
+  </url><url>
     <loc>https://xmyy.com/tags/MacOS/</loc>
     <lastmod>2021-01-10T23:30:00+08:00</lastmod>
   </url><url>
@@ -82,6 +106,33 @@
   </url><url>
     <loc>https://xmyy.com/tags/%E7%B2%98%E8%B4%B4/</loc>
     <lastmod>2021-01-10T23:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/tags/esxi/</loc>
+    <lastmod>2021-01-07T18:57:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/tags/firewall/</loc>
+    <lastmod>2021-01-07T18:57:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/tags/shell/</loc>
+    <lastmod>2021-01-07T18:57:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/tags/ssh/</loc>
+    <lastmod>2021-01-07T18:57:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/tags/vcenter/</loc>
+    <lastmod>2021-01-07T18:57:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/tags/vSphere/</loc>
+    <lastmod>2021-01-07T18:57:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/tags/%E9%98%B2%E7%81%AB%E5%A2%99/</loc>
+    <lastmod>2021-01-07T18:57:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/article/How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login/</loc>
+    <lastmod>2021-01-07T18:57:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/</loc>
+    <lastmod>2021-01-07T18:57:00+08:00</lastmod>
   </url><url>
     <loc>https://xmyy.com/tags/encryption/</loc>
     <lastmod>2020-12-11T18:50:00+08:00</lastmod>
@@ -123,9 +174,6 @@
     <lastmod>2020-11-16T23:59:00+08:00</lastmod>
   </url><url>
     <loc>https://xmyy.com/tags/Centos/</loc>
-    <lastmod>2020-11-03T18:15:00+08:00</lastmod>
-  </url><url>
-    <loc>https://xmyy.com/tags/Win10/</loc>
     <lastmod>2020-11-03T18:15:00+08:00</lastmod>
   </url><url>
     <loc>https://xmyy.com/tags/WSL/</loc>

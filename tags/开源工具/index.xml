@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>开源工具 on 虾米技术网</title>
+        <link>https://xmyy.com/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/</link>
+        <description>Recent content in 开源工具 on 虾米技术网</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>虾米技术网 xmyy.com</copyright>
+        <lastBuildDate>Thu, 11 Feb 2021 13:27:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>新开源工具IPCDump：用于在Linux上跟踪进程间通信</title>
+        <link>https://xmyy.com/article/IPCDump-For-tracking-inter-process-communication-on-Linux/</link>
+        <pubDate>Thu, 11 Feb 2021 13:27:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/article/IPCDump-For-tracking-inter-process-communication-on-Linux/</guid>
+        <description>&lt;img src="https://xmyy.com/article/IPCDump-For-tracking-inter-process-communication-on-Linux/IPCDump-For-tracking-inter-process-communication-on-Linux.jpg" alt="Featured image of post 新开源工具IPCDump：用于在Linux上跟踪进程间通信" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;💁🏻‍♂️&lt;/span&gt;《今日头条》 2021-02-11 《新开源工具IPCDump：用于在Linux上跟踪进程间通信》 童建平&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;以色列一家进入传统防火墙细分领域市场的公司Guardicore近期宣布推出IPCDump，这是一种用于跟踪Linux上进程间通信的新开源工具。该工具涵盖了大多数Linux进程间通信（IPC）机制，包括管道、fifos、信号、Unix套接字、基于环回的网络和伪终端，这对于调试多进程应用程序以及提高它们在彼此之间如何通信的透明度非常有用。&lt;/p&gt;
+&lt;p&gt;Guardicore公司使用纯软件方法与物理网络脱钩，为防火墙提供了更快的替代方案。Guardicore是为敏捷企业而打造的，可在云、数据中心和端点中提供更高的安全性和可见性。&lt;/p&gt;
+&lt;p&gt;现代应用程序具有截然不同的流程，这些流程在黑盒子中相互插入，从而在发生问题时给开发人员带来了巨大挑战。对于调试复杂的多进程应用程序，此问题尤其重要。IPCDump通过跟踪应用程序通信的元数据和内容并在短暂进程之间跟踪IPC来解决此问题。&lt;/p&gt;
+&lt;p&gt;安全从业人员还可以使用此开源工具来探索业务应用程序如何与内部和外部系统进行通信。IPCDump还可以轻松跟踪短期进程的创建和破坏，这是一项繁琐的任务，通常需要安全和IT团队手动根据netstat检查端口号。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/IPCDump-For-tracking-inter-process-communication-on-Linux/IPCDump-For-tracking-inter-process-communication-on-Linux2.jpg&#34;
+	width=&#34;1200&#34;
+	height=&#34;954&#34;
+	srcset=&#34;https://xmyy.com/article/IPCDump-For-tracking-inter-process-communication-on-Linux/_hu4dd3c297222424bbac008ba24205a1ae_189822_9e4fcc0d145baeb4e692214b2cf82979.jpg 480w, https://xmyy.com/article/IPCDump-For-tracking-inter-process-communication-on-Linux/_hu4dd3c297222424bbac008ba24205a1ae_189822_3a43216c5cad27349773d6ae3cf01c2b.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;新开源工具IPCDump：用于在Linux上跟踪进程间通信IPCDump For tracking inter-process communication on Linux&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;125&#34;
+		data-flex-basis=&#34;301px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;其他功能包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持管道和FIFO&lt;/li&gt;
+&lt;li&gt;回送IPC&lt;/li&gt;
+&lt;li&gt;信号（常规和实时）&lt;/li&gt;
+&lt;li&gt;Unix流和数据报&lt;/li&gt;
+&lt;li&gt;基于伪终端的IPC&lt;/li&gt;
+&lt;li&gt;基于进程PID或名称的事件过滤&lt;/li&gt;
+&lt;li&gt;人性化或JSON格式的输出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Guardicore Research Ofri Ziv副总裁说：“ IPCDump是我们才华横溢的研发团队努力扩大细分平台技术界限的自然副产品，旨在使Guardicore的技术变得越来越强大。为此，我们需要能够更深入地研究Linux OS的内部机制，并因此开发了IPCDump。我们的目标是增加更多功能，使我们能够研究该工具尚未涵盖的其他机制，以进一步加深对内部Linux格局的了解。我们的团队还希望通过共享有用的开源调试工具来表达我们对开发和安全社区的承诺。”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/IPCDump-For-tracking-inter-process-communication-on-Linux/IPCDump-For-tracking-inter-process-communication-on-Linux3.jpg&#34;
+	width=&#34;1200&#34;
+	height=&#34;620&#34;
+	srcset=&#34;https://xmyy.com/article/IPCDump-For-tracking-inter-process-communication-on-Linux/_hud34eb41be8aa7152c46d5f3886cca97d_66652_2849575f53d7ae8ac2e8a327b14173ae.jpg 480w, https://xmyy.com/article/IPCDump-For-tracking-inter-process-communication-on-Linux/_hud34eb41be8aa7152c46d5f3886cca97d_66652_8c2d9da2a73a3d6aa0ca0c2cd0da6be0.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;新开源工具IPCDump：用于在Linux上跟踪进程间通信IPCDump For tracking inter-process communication on Linux&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;193&#34;
+		data-flex-basis=&#34;464px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;要下载IPCDump调试工具，请访问
+&lt;a class=&#34;link&#34; href=&#34;https://github.com/guardicore/ipcdump&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/guardicore/ipcdump&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

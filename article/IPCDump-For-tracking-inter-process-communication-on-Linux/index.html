@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="《新开源工具IPCDump：用于在Linux上跟踪进程间通信》发表于《今日头条》,IPCDump For tracking inter-process communication on Linux">
+<title>新开源工具IPCDump：用于在Linux上跟踪进程间通信</title>
+
+<link rel='canonical' href='https://xmyy.com/article/IPCDump-For-tracking-inter-process-communication-on-Linux/'>
+
+<link rel="stylesheet" href="/scss/style.min.b1ee696470c26668a16cfa814cde453da11a905817be39639788d15e9984714a.css">
+<link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="/plugins/themify-icons/themify-icons.css">
+
+<link rel="stylesheet" href="/css/style.css"><meta property='og:title' content="新开源工具IPCDump：用于在Linux上跟踪进程间通信">
+<meta property='og:description' content="《新开源工具IPCDump：用于在Linux上跟踪进程间通信》发表于《今日头条》,IPCDump For tracking inter-process communication on Linux">
+<meta property='og:url' content='https://xmyy.com/article/IPCDump-For-tracking-inter-process-communication-on-Linux/'>
+<meta property='og:site_name' content='虾米技术网'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='IPCDump' /><meta property='article:tag' content='Linux' /><meta property='article:tag' content='开源工具' /><meta property='article:tag' content='inter-process' /><meta property='article:tag' content='跟踪进程' /><meta property='article:published_time' content='2021-02-11T13:27:00&#43;08:00'/><meta property='article:modified_time' content='2021-02-11T13:27:00&#43;08:00'/><meta property='og:image' content='https://xmyy.com/article/IPCDump-For-tracking-inter-process-communication-on-Linux/IPCDump-For-tracking-inter-process-communication-on-Linux.jpg' />
+<meta name="twitter:title" content="新开源工具IPCDump：用于在Linux上跟踪进程间通信">
+<meta name="twitter:description" content="《新开源工具IPCDump：用于在Linux上跟踪进程间通信》发表于《今日头条》,IPCDump For tracking inter-process communication on Linux"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://xmyy.com/article/IPCDump-For-tracking-inter-process-communication-on-Linux/IPCDump-For-tracking-inter-process-communication-on-Linux.jpg' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<header class="sticky-top bg-white border-bottom border-default">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-white">
+                    <a class="navbar-brand" href="/">
+                        <img class="img-fluid" width="150px" src="/images/logo.png" alt="虾米技术网">
+                    </a>
+                    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+                        <i class="ti-menu"></i>
+                    </button>
+                    <div class="collapse navbar-collapse text-center" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">首页</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/eagle/">雄鹰论文</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/CyberSecurity/">网络安全</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/system/">操作系统</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false">友链 <i class="ti-angle-down ml-1"></i>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/links/">友链首页</a>
+                                    <a class="dropdown-item" href="https://ok118.com" target="_blank">Ok118网址导航 ok118.com</a>
+                                    <a class="dropdown-item" href="https://ip40.com" target="_blank">IP查询 ip40.com</a>
+                                    <a class="dropdown-item" href="https://xmfast.com" target="_blank">Skating网址导航 xmfast.com</a>
+                                </div>
+                            </li>
+                        </ul>
+
+
+
+
+                        <div class="m-2 border-0" id="dark-mode-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"/>
+                                <circle cx="8" cy="12" r="2" />
+                                <rect x="2" y="6" width="20" height="12" rx="6" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"/>
+                                <circle cx="16" cy="12" r="2" />
+                                <rect x="2" y="6" width="20" height="12" rx="6" />
+                            </svg>
+                        </div>
+                        <div class="search px-4">
+                            <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+                            <div class="search-wrapper">
+                                <form action="/search/" class="h-100">
+                                    <input class="search-box pl-4" id="search-query" name="keyword" type="search" placeholder="Type &amp; Hit Enter...">
+                                </form>
+                                <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="container main-container flex on-phone--column extended">
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/article/IPCDump-For-tracking-inter-process-communication-on-Linux/">
+                <img src="/article/IPCDump-For-tracking-inter-process-communication-on-Linux/_huc2ca345ead1bb033a38c44f0c9746f5c_15326_1a6fc78dbf5e07e919b9563bcadb2df3.jpg"
+                        srcset="/article/IPCDump-For-tracking-inter-process-communication-on-Linux/_huc2ca345ead1bb033a38c44f0c9746f5c_15326_1a6fc78dbf5e07e919b9563bcadb2df3.jpg 800w, /article/IPCDump-For-tracking-inter-process-communication-on-Linux/_huc2ca345ead1bb033a38c44f0c9746f5c_15326_32d33070b96de9a6369295c60b0b7346.jpg 1600w"
+                        width="800"
+                        height="533"
+                        loading="lazy"
+                        alt="Featured image of post 新开源工具IPCDump：用于在Linux上跟踪进程间通信" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/DevOps/" style="background-color: #a4a6c1; color: #fff;">
+                运维开发
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/article/IPCDump-For-tracking-inter-process-communication-on-Linux/">新开源工具IPCDump：用于在Linux上跟踪进程间通信</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            《新开源工具IPCDump：用于在Linux上跟踪进程间通信》发表于《今日头条》,IPCDump For tracking inter-process communication on Linux
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+
+    
+    <footer class="article-time">
+        <span class="post-meta-item">
+          <i class="fas fa-pen"></i>
+          
+            <span class="article-type" style="color: white; font-size: 14px; background: #bf59f3; padding: 0 5px 1px 5px; margin-right: 5px; border-radius: 2px;">原创</span>
+          
+        </span>
+        
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+            <div class="post-author">
+                作者：童建平
+
+            </div>
+        </div>
+        
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">
+2021-02-11 13:27</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><span class="nowrap"><span class="emojify">💁🏻‍♂️</span>《今日头条》 2021-02-11 《新开源工具IPCDump：用于在Linux上跟踪进程间通信》 童建平</span></p>
+<p>以色列一家进入传统防火墙细分领域市场的公司Guardicore近期宣布推出IPCDump，这是一种用于跟踪Linux上进程间通信的新开源工具。该工具涵盖了大多数Linux进程间通信（IPC）机制，包括管道、fifos、信号、Unix套接字、基于环回的网络和伪终端，这对于调试多进程应用程序以及提高它们在彼此之间如何通信的透明度非常有用。</p>
+<p>Guardicore公司使用纯软件方法与物理网络脱钩，为防火墙提供了更快的替代方案。Guardicore是为敏捷企业而打造的，可在云、数据中心和端点中提供更高的安全性和可见性。</p>
+<p>现代应用程序具有截然不同的流程，这些流程在黑盒子中相互插入，从而在发生问题时给开发人员带来了巨大挑战。对于调试复杂的多进程应用程序，此问题尤其重要。IPCDump通过跟踪应用程序通信的元数据和内容并在短暂进程之间跟踪IPC来解决此问题。</p>
+<p>安全从业人员还可以使用此开源工具来探索业务应用程序如何与内部和外部系统进行通信。IPCDump还可以轻松跟踪短期进程的创建和破坏，这是一项繁琐的任务，通常需要安全和IT团队手动根据netstat检查端口号。</p>
+<p><img src="/article/IPCDump-For-tracking-inter-process-communication-on-Linux/IPCDump-For-tracking-inter-process-communication-on-Linux2.jpg"
+	width="1200"
+	height="954"
+	srcset="/article/IPCDump-For-tracking-inter-process-communication-on-Linux/_hu4dd3c297222424bbac008ba24205a1ae_189822_9e4fcc0d145baeb4e692214b2cf82979.jpg 480w, /article/IPCDump-For-tracking-inter-process-communication-on-Linux/_hu4dd3c297222424bbac008ba24205a1ae_189822_3a43216c5cad27349773d6ae3cf01c2b.jpg 1024w"
+	loading="lazy"
+	
+		alt="新开源工具IPCDump：用于在Linux上跟踪进程间通信IPCDump For tracking inter-process communication on Linux"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="125"
+		data-flex-basis="301px"
+	
+></p>
+<p>其他功能包括：</p>
+<ul>
+<li>支持管道和FIFO</li>
+<li>回送IPC</li>
+<li>信号（常规和实时）</li>
+<li>Unix流和数据报</li>
+<li>基于伪终端的IPC</li>
+<li>基于进程PID或名称的事件过滤</li>
+<li>人性化或JSON格式的输出</li>
+</ul>
+<p>Guardicore Research Ofri Ziv副总裁说：“ IPCDump是我们才华横溢的研发团队努力扩大细分平台技术界限的自然副产品，旨在使Guardicore的技术变得越来越强大。为此，我们需要能够更深入地研究Linux OS的内部机制，并因此开发了IPCDump。我们的目标是增加更多功能，使我们能够研究该工具尚未涵盖的其他机制，以进一步加深对内部Linux格局的了解。我们的团队还希望通过共享有用的开源调试工具来表达我们对开发和安全社区的承诺。”</p>
+<p><img src="/article/IPCDump-For-tracking-inter-process-communication-on-Linux/IPCDump-For-tracking-inter-process-communication-on-Linux3.jpg"
+	width="1200"
+	height="620"
+	srcset="/article/IPCDump-For-tracking-inter-process-communication-on-Linux/_hud34eb41be8aa7152c46d5f3886cca97d_66652_2849575f53d7ae8ac2e8a327b14173ae.jpg 480w, /article/IPCDump-For-tracking-inter-process-communication-on-Linux/_hud34eb41be8aa7152c46d5f3886cca97d_66652_8c2d9da2a73a3d6aa0ca0c2cd0da6be0.jpg 1024w"
+	loading="lazy"
+	
+		alt="新开源工具IPCDump：用于在Linux上跟踪进程间通信IPCDump For tracking inter-process communication on Linux"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="193"
+		data-flex-basis="464px"
+	
+></p>
+<p>要下载IPCDump调试工具，请访问
+<a class="link" href="https://github.com/guardicore/ipcdump"  target="_blank" rel="noopener"
+    >https://github.com/guardicore/ipcdump</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/IPCDump/">IPCDump</a>
+        
+            <a href="/tags/Linux/">Linux</a>
+        
+            <a href="/tags/%E5%BC%80%E6%BA%90%E5%B7%A5%E5%85%B7/">开源工具</a>
+        
+            <a href="/tags/inter-process/">Inter-Process</a>
+        
+            <a href="/tags/%E8%B7%9F%E8%B8%AA%E8%BF%9B%E7%A8%8B/">跟踪进程</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/article/How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login/">
+        
+        
+            <div class="article-image">
+                <img src="/article/How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login/_hu9222065cc0cbf3ee20c6c8b156c95081_108455_a5b3d348e76ba76f1416d48f029d3a48.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 如何通过ssh远程登录给esxi主机防火墙添加允许ip列表（视频）"
+                        data-key="How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login" 
+                        data-hash="md5-25v2SYfczMFGuCR2VnaJgA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何通过ssh远程登录给esxi主机防火墙添加允许ip列表（视频）</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;  2000 -  2024 <a href="https://xmyy.com/" target="_blank">虾米技术网 xmyy.com</a>
+    </section>
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 ，主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+<script src="/plugins/jQuery/jquery.min.js"></script>
+<script src="/plugins/bootstrap/bootstrap.min.js" async></script>
+<script src="/plugins/slick/slick.min.js"></script>
+<script src="/js/script.js"></script>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+            </main>
+        </div>
+        <script type="text/javascript" src="/ts/main.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://xmyy.com/css/googleapis-css2.css">
+
+    </body>
+</html>
