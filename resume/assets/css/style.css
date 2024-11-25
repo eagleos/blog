@@ -690,10 +690,29 @@ body {
   .rit-cover .last-exp ul li i {
     margin-right: 5px; }
 
+  .profile-box .left-side {
+    /*background-color: #00ab9f;*/
+    background-color: #4682bf;
+    color: #FFF;
+    padding: 40px 20px;
+    /*height: 1125px;*/
+    height: 1525px;
+  }
+
   .profile-box .left-side .article-cov {
     padding: 8px; }
   .profile-box .left-side .article-cov p {
     font-size: 1.0rem; }
+
+  .profile-box .left-side .refer-cov {
+    padding: 8px; }
+  .profile-box .left-side .refer-cov b {
+    font-size: 1.3rem; }
+  .profile-box .left-side .refer-cov p {
+    font-size: 1.0rem; }
+  .profile-box .left-side .refer-cov span {
+    font-size: .8rem; }
+
 .profile-box .all-side {
   width: 993px;
   padding: 20px 20px;
