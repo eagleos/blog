@@ -346,7 +346,7 @@ body {
   margin-top: -30px;
   font-weight: 600; }
 .rit-cover .rit-titl {
-  padding: 15px;
+  padding: 12px;
   padding-left: 5px;
   border-bottom: 2px solid #CCC;
   font-size: 1.2rem; }
@@ -637,15 +637,15 @@ body {
     height: 1525px;
   }
   .rit-cover .rit-titl {
-    padding: 15px;
+    padding: 12px;
     padding-left: 5px;
     border-bottom: 2px solid #CCC;
-    font-size: 1.3rem; }
+    font-size: 1.2rem; }
   .rit-cover .rit-titl i {
     font-size: 18px;
     margin-right: 5px; }
   .rit-cover .about {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     text-align: justify;
     /*text-indent: 15px;*/
     margin-left: 5px;
