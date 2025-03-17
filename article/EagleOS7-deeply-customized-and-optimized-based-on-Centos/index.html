@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="EagleOS 7.9-基于Centos 7.9深度定制优化，全程完全自动化无人值守安装。">
+<title>EagleOS 7.9-基于Centos 7.9深度定制优化</title>
+
+<link rel='canonical' href='https://xmyy.com/article/EagleOS7-deeply-customized-and-optimized-based-on-Centos/'>
+
+<link rel="stylesheet" href="/scss/style.min.b1ee696470c26668a16cfa814cde453da11a905817be39639788d15e9984714a.css">
+<link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="/plugins/themify-icons/themify-icons.css">
+
+<link rel="stylesheet" href="/css/style.css"><meta property='og:title' content="EagleOS 7.9-基于Centos 7.9深度定制优化">
+<meta property='og:description' content="EagleOS 7.9-基于Centos 7.9深度定制优化，全程完全自动化无人值守安装。">
+<meta property='og:url' content='https://xmyy.com/article/EagleOS7-deeply-customized-and-optimized-based-on-Centos/'>
+<meta property='og:site_name' content='虾米技术网'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='EagleOS' /><meta property='article:tag' content='AlmaLinux' /><meta property='article:tag' content='Centos' /><meta property='article:tag' content='RedHat' /><meta property='article:tag' content='定制' /><meta property='article:tag' content='优化' /><meta property='article:tag' content='无人值守' /><meta property='article:tag' content='自动化' /><meta property='article:tag' content='无人参与' /><meta property='article:published_time' content='2021-05-23T16:05:30&#43;08:00'/><meta property='article:modified_time' content='2021-05-23T16:05:30&#43;08:00'/><meta property='og:image' content='https://xmyy.com/article/EagleOS7-deeply-customized-and-optimized-based-on-Centos/EagleOS7-deeply-customized-and-optimized-based-on-Centos.png' />
+<meta name="twitter:title" content="EagleOS 7.9-基于Centos 7.9深度定制优化">
+<meta name="twitter:description" content="EagleOS 7.9-基于Centos 7.9深度定制优化，全程完全自动化无人值守安装。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://xmyy.com/article/EagleOS7-deeply-customized-and-optimized-based-on-Centos/EagleOS7-deeply-customized-and-optimized-based-on-Centos.png' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<header class="sticky-top bg-white border-bottom border-default">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-white">
+                    <a class="navbar-brand" href="/">
+                        <img class="img-fluid" width="150px" src="/images/logo.png" alt="虾米技术网">
+                    </a>
+                    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+                        <i class="ti-menu"></i>
+                    </button>
+                    <div class="collapse navbar-collapse text-center" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">首页</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/eagle/">雄鹰论文</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/CyberSecurity/">网络安全</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/system/">操作系统</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/DevOps/">运维开发</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false">友链 <i class="ti-angle-down ml-1"></i>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/links/">友链首页</a>
+                                    <a class="dropdown-item" href="https://ok118.com" target="_blank">Ok118网址导航 ok118.com</a>
+                                    <a class="dropdown-item" href="https://ip40.com" target="_blank">IP查询 ip40.com</a>
+                                    <a class="dropdown-item" href="https://xmfast.com" target="_blank">Skating网址导航 xmfast.com</a>
+                                </div>
+                            </li>
+                        </ul>
+
+
+
+
+                        <div class="m-2 border-0" id="dark-mode-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"/>
+                                <circle cx="8" cy="12" r="2" />
+                                <rect x="2" y="6" width="20" height="12" rx="6" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"/>
+                                <circle cx="16" cy="12" r="2" />
+                                <rect x="2" y="6" width="20" height="12" rx="6" />
+                            </svg>
+                        </div>
+                        <div class="search px-4">
+                            <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+                            <div class="search-wrapper">
+                                <form action="/search/" class="h-100">
+                                    <input class="search-box pl-4" id="search-query" name="keyword" type="search" placeholder="Type &amp; Hit Enter...">
+                                </form>
+                                <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="container main-container flex on-phone--column extended">
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#eagleos系统iso文件下载">EagleOS系统iso文件下载</a></li>
+    <li><a href="#eagleos系统安装方式">EagleOS系统安装方式</a></li>
+    <li><a href="#eagleos系统安装步骤">EagleOS系统安装步骤</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/article/EagleOS7-deeply-customized-and-optimized-based-on-Centos/">
+                <img src="/article/EagleOS7-deeply-customized-and-optimized-based-on-Centos/_hu61c4a54282b6a8633461609b806dcc04_47385_004e3b0cfacdd13e3d2035b39762c5b4.png"
+                        srcset="/article/EagleOS7-deeply-customized-and-optimized-based-on-Centos/_hu61c4a54282b6a8633461609b806dcc04_47385_004e3b0cfacdd13e3d2035b39762c5b4.png 800w, /article/EagleOS7-deeply-customized-and-optimized-based-on-Centos/_hu61c4a54282b6a8633461609b806dcc04_47385_36b932d47a5e7346622f1ddad75e864a.png 1600w"
+                        width="800"
+                        height="215"
+                        loading="lazy"
+                        alt="Featured image of post EagleOS 7.9-基于Centos 7.9深度定制优化" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/system/" style="background-color: #d7b64d; color: #fff;">
+                操作系统
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/article/EagleOS7-deeply-customized-and-optimized-based-on-Centos/">EagleOS 7.9-基于Centos 7.9深度定制优化</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            EagleOS 7.9-基于Centos 7.9深度定制优化，全程完全自动化无人值守安装。
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+
+    
+    <footer class="article-time">
+        <span class="post-meta-item">
+          <i class="fas fa-pen"></i>
+          
+            <span class="article-type" style="color: white; font-size: 14px; background: #bf59f3; padding: 0 5px 1px 5px; margin-right: 5px; border-radius: 2px;">原创</span>
+          
+        </span>
+        
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+            <div class="post-author">
+                作者：童建平
+
+            </div>
+        </div>
+        
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">
+2021-05-23 16:05</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><span class="nowrap"><span class="emojify">💁🏻‍♂️</span> <a href="https://github.com/eagleos/eagleos7" target="_blank">Github</a> 2021-05-23 《EagleOS 7.9-基于Centos 7.9深度定制优化》 童建平</span></p>
+<p>EagleOS 7.9 说明文档</p>
+<h1 id="一系统简介">一、系统简介
+</h1><p>EagleOS 7.9基于CentOS 7.9进行深度定制优化。</p>
+<p>EagleOS 7.9根据CentOS 7.9的Everything版本进行精简，全程完全自动化无人值守安装，支持大于2TB磁盘自动分区，集成安装568个软件包，包含了常用的工具及依赖库等，使装机效率更高效。</p>
+<p>EagleOS 7.9安装后自动进行主要如下几项系统优化：</p>
+<p>(1)禁用selinux</p>
+<p>(2)禁用ipv6</p>
+<p>(3)一些服务的禁用、内核参数等优化</p>
+<p>(4)集成epel源，更改系统默认yum源为163源，epel源为aliyun源</p>
+<p>(5)集成安装unrar、p7zip、pip等软件包</p>
+<p>(6)升級系統openssl版本至1.1.1b</p>
+<p>安装完成后，ssh端口：49156，默认ip：192.168.0.157，系统超级用户名：root，密码：www.ip40.com</p>
+<h1 id="二系统安装说明">二、系统安装说明
+</h1><h2 id="eagleos系统iso文件下载">EagleOS系统iso文件下载
+</h2><p>请到天翼云盘高速下载eagleos7.6.iso：</p>
+<p><a class="link" href="https://cloud.189.cn/t/22uiyazYrQzq"  target="_blank" rel="noopener"
+    >https://cloud.189.cn/t/22uiyazYrQzq</a></p>
+<p>(访问码:0zra)</p>
+<p>本iso由于版本较旧，上述下载地址已失效。</p>
+<h2 id="eagleos系统安装方式">EagleOS系统安装方式
+</h2><ul>
+<li>
+<p>光盘安装:请将eagleos7.9.iso刻录成光盘，目标服务器设置从光驱启动进行安装。</p>
+</li>
+<li>
+<p>PXE网络安装（Linux）: 在Linux上安装syslinux，拷贝/usr/share/syslinux/pxelinux.0到tftp根目录下，其余略。</p>
+</li>
+<li>
+<p>PXE网络安装（Windows）:</p>
+<p>(1)将本光盘目录/images/pxeboot拷贝到windows系统任意目录下，直接双击本目录下的tftpd64.exe，即自动启动pxe服务器（含dhcp,tftp等服务），可修改相关配置，直接生效。</p>
+<p>(2)在windows系统下自建web服务，如win2019系统安装自带iis中的web角色，在web根目录如D:\web\pxe下建立如eagleos7.9子目录，将eagleos7.9.iso解压到此eagleos7.9子目录下，修改D:\web\pxe\eagleos7.9\images\pxeboot中10个eagleos7.9*.cfg及D:\web\pxe\eagleos7.9\images\pxeboot\pxelinux.cfg\default中的192.168.0.185为您的web服务器IP。</p>
+<p>(3)将如下代码存为web.config，保存于web根目录如D:\web\pxe下，以确保安装过程中能正常下载安装文件。</p>
+<p>(4)目标服务器设置从网络启动进行安装，即可开始从PXE安装EagleOS 7.9，当然目标服务器与您的web服务器必须网络是相通的。</p>
+</li>
+</ul>
+<p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;Start of web.config&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;configuration&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;system.webServer&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;directoryBrowse</span> <span class="na">enabled=</span><span class="s">&#34;true&#34;</span> <span class="nt">&gt;&lt;/directoryBrowse&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;staticContent&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;mimeMap</span> <span class="na">fileExtension=</span><span class="s">&#34;.cfg&#34;</span> <span class="na">mimeType=</span><span class="s">&#34;application/octet-stream&#34;</span> <span class="nt">&gt;&lt;/mimeMap&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;mimeMap</span> <span class="na">fileExtension=</span><span class="s">&#34;.img&#34;</span> <span class="na">mimeType=</span><span class="s">&#34;application/octet-stream&#34;</span> <span class="nt">&gt;&lt;/mimeMap&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;mimeMap</span> <span class="na">fileExtension=</span><span class="s">&#34;.bz2&#34;</span> <span class="na">mimeType=</span><span class="s">&#34;application/octet-stream&#34;</span> <span class="nt">&gt;&lt;/mimeMap&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/staticContent&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;security&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;requestFiltering</span> <span class="na">allowDoubleEscaping=</span><span class="s">&#34;true&#34;</span><span class="nt">&gt;&lt;/requestFiltering&gt;</span>      
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/security&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/system.webServer&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/configuration&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;End of web.config&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</p>
+<h2 id="eagleos系统安装步骤">EagleOS系统安装步骤
+</h2><p>(1)	请先确定目标服务器已经配置好raid等磁盘配置，后续安装过程将清空硬盘数据并进行自动化分区，请确定目标服务器目标磁盘上如有重要数据已经备份到其他服务器!!!</p>
+<p>(2)	安装过程将自动配置有连接网络(只要物理联通即可)的网卡，所以建议将网线接到第一网卡进行操作，特别是在PXE安装情况下，否则安装后您得手工编辑配置网络。</p>
+<p>(3)	成功从光盘或pxe网络引导启动目标服务器后，您将看到如下的系统安装界面 (进入此界面时，请快速随意按下键盘方向键上下键，避免安装界面短暂的6秒延时超过而自动开始系统安装) :</p>
+<p><img src="/article/EagleOS7-deeply-customized-and-optimized-based-on-Centos/eagleos7.9-1.jpg"
+	width="640"
+	height="480"
+	srcset="/article/EagleOS7-deeply-customized-and-optimized-based-on-Centos/eagleos7.9-1_hu56934bd8522b28b585d2217419053d50_366586_480x0_resize_q75_box.jpg 480w, /article/EagleOS7-deeply-customized-and-optimized-based-on-Centos/eagleos7.9-1_hu56934bd8522b28b585d2217419053d50_366586_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="eagleos7.9安装菜单界面"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="133"
+		data-flex-basis="320px"
+	
+></p>
+<p>安装启动界面安装选项说明：</p>
+<p>①第一项是“Auto Install EagleOS System By <a class="link" href="https://www.xmyy.com"  target="_blank" rel="noopener"
+    >www.xmyy.com</a>”，安装过程中只需要您手工进行硬盘分区，格式化完成后的界面中指定好引导启动的硬盘，之后都是自动化无人值守安装操作。</p>
+<p>②第二项是“Auto Install EagleOS and !Auto Partition! on sda”，在/dev/sda上进行系统安装。</p>
+<p>③第三项是“Auto Install EagleOS and !Auto Partition! on sdb”，在/dev/sdb上进行系统安装。</p>
+<p>④第四项是“Auto Install EagleOS and !Auto Partition! on vda”，在/dev/vda上进行系统安装。</p>
+<p>⑤第五项是“Auto Install EagleOS and !Auto Partition! on vdb”，在/dev/vdb上进行系统安装。</p>
+<p>⑥第六项是“Auto Install EagleOS with nginx By xmyy.com”，安装过程中只需要您手工进行硬盘分区，格式化完成后的界面中指定好引导启动的硬盘，之后都是自动化无人值守安装操作，安装完成后自动启动nginx服务。</p>
+<p>⑦第七项是“Auto Install EagleOS,nginx and !Auto Partition! on sda”，在/dev/sda上进行系统安装，安装完成后自动启动nginx服务。</p>
+<p>⑧第八项是“Auto Install EagleOS,nginx and !Auto Partition! on sdb”，在/dev/sdb上进行系统安装，安装完成后自动启动nginx服务。</p>
+<p>⑨第九项是“Auto Install EagleOS,nginx and !Auto Partition! on vda”，在/dev/vda上进行系统安装，安装完成后自动启动nginx服务。</p>
+<p>⑩第十项是“Auto Install EagleOS,nginx and !Auto Partition! on vdb”，在/dev/vdb上进行系统安装，安装完成后自动启动nginx服务。</p>
+<p>备注:第(6)-(10)项，自动安装nginx，相关软件包是经手工编译优化安装的，对应软件包及版本为:openssl 1.1.1b、jemalloc 5.2.0、pcre 8.43、tengine 2.3.2。</p>
+<p>(4)	安装界面默认停留在上面第一项。可根据需要选择相应安装选项按回车后开始安装。视硬件配置不同，安装过程15-30分钟左右。</p>
+<p>(5)	自动化安装过程中将会出现这种界面:</p>
+<p><img src="/article/EagleOS7-deeply-customized-and-optimized-based-on-Centos/eagleos7.9-2.jpg"
+	width="800"
+	height="600"
+	srcset="/article/EagleOS7-deeply-customized-and-optimized-based-on-Centos/eagleos7.9-2_hu8e6ce6fd0431e0f09ce59387979e3e5e_164173_480x0_resize_q75_box.jpg 480w, /article/EagleOS7-deeply-customized-and-optimized-based-on-Centos/eagleos7.9-2_hu8e6ce6fd0431e0f09ce59387979e3e5e_164173_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="eagleos7.9安装过程界面"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="133"
+		data-flex-basis="320px"
+	
+></p>
+<p>直到最后出现黑色的登录界面，此时系统即成功安装完毕!</p>
+<p>(6)	在登录界面中，输入用户名:root，密码: <a class="link" href="https://www.ip40.com"  target="_blank" rel="noopener"
+    >www.ip40.com</a>，即可登录系统，然后修改网卡配置，假设您的内网IP是:192.168.29.100,网关是:192.168.29.254, 则可执行如下命令(注意您的服务器网卡名称如果不一样，需要修改如下红色网卡名称em1为您的服务器网卡名称)修改:</p>
+<p>vi /etc/sysconfig/network-scripts/ifcfg-em1</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Generated by parse-kickstart
+</span></span><span class="line"><span class="cl">UUID=&#34;dfd48d4c-06d9-412a-9f1b-a67f2fa1f964&#34;
+</span></span><span class="line"><span class="cl">DNS2=&#34;218.85.157.99&#34;
+</span></span><span class="line"><span class="cl">DNS1=&#34;119.29.29.29&#34;
+</span></span><span class="line"><span class="cl">IPADDR=&#34;192.168.29.100&#34;
+</span></span><span class="line"><span class="cl">GATEWAY=&#34;192.168.29.254&#34;
+</span></span><span class="line"><span class="cl">NETMASK=&#34;255.255.255.0&#34;
+</span></span><span class="line"><span class="cl">BOOTPROTO=&#34;static&#34;
+</span></span><span class="line"><span class="cl">DEVICE=&#34;em1&#34;
+</span></span><span class="line"><span class="cl">ONBOOT=&#34;yes&#34;
+</span></span><span class="line"><span class="cl">IPV6INIT=&#34;no&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>需要修改的即为如上红色字样内容(UUID一行不同服务器是不同的值，此行保留不变或删除即可)，然后按键盘ESC键退出编辑状态，再输入:wq保存即可退出，然后执行命令: systemctl restart network重启网络服务即可。您就可以在本机电脑上通过SecureCRT或Xshell等远程登录软件进行远程登录此台服务器了!</p>
+<p>感谢您的使用!</p>
+<p>By the way，EagleOS 7.6基于Centos 7.6深度定制优化，发布于两年前的：2019.05.29</p>
+<p>By Eagle</p>
+<p>技术支持：www.xmyy.com</p>
+<p>2021.05.23</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/EagleOS/">EagleOS</a>
+        
+            <a href="/tags/AlmaLinux/">AlmaLinux</a>
+        
+            <a href="/tags/Centos/">Centos</a>
+        
+            <a href="/tags/RedHat/">RedHat</a>
+        
+            <a href="/tags/%E5%AE%9A%E5%88%B6/">定制</a>
+        
+            <a href="/tags/%E4%BC%98%E5%8C%96/">优化</a>
+        
+            <a href="/tags/%E6%97%A0%E4%BA%BA%E5%80%BC%E5%AE%88/">无人值守</a>
+        
+            <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">自动化</a>
+        
+            <a href="/tags/%E6%97%A0%E4%BA%BA%E5%8F%82%E4%B8%8E/">无人参与</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/">
+        
+        
+            <div class="article-image">
+                <img src="/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/_hu22610833e332bcee47fc25cd9fe58b20_144072_d47b6d3e3776603f969773a458da4d78.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post EagleOS 9.5-基于AlmaLinux 9.5深度定制优化"
+                        data-key="EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux" 
+                        data-hash="md5-Q6Deysu4/9nHhAQrg9c&#43;iA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">EagleOS 9.5-基于AlmaLinux 9.5深度定制优化</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/Installing-Centos-on-Windows-10-using-WSL/">
+        
+        
+            <div class="article-image">
+                <img src="/article/Installing-Centos-on-Windows-10-using-WSL/_hu042130161c2b6c330ef21e4d39f984aa_520402_8e2ef752b1c06421b9d6f4d8910361d6.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 在Windows 10上使用WSL安装Centos"
+                        data-key="Installing-Centos-on-Windows-10-using-WSL" 
+                        data-hash="md5-JsZY30jdV5q2M8&#43;4yDwixw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">在Windows 10上使用WSL安装Centos</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/3-Steps-to-Reset-Windows-10-Password/">
+        
+        
+            <div class="article-image">
+                <img src="/article/3-Steps-to-Reset-Windows-10-Password/_hub078c052602c7a69a5f8dc45425068e8_23093_bacedcd08965f7e7b480dad35af32e87.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Win10忘记密码怎么办？3步教您重置Windows10密码"
+                        data-key="3-Steps-to-Reset-Windows-10-Password" 
+                        data-hash="md5-3&#43;41h847aZXNX5sxrTDISw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Win10忘记密码怎么办？3步教您重置Windows10密码</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/How-to-Change-Copy-Paste-and-Other-Shortcuts-in-macOS/">
+        
+        
+            <div class="article-image">
+                <img src="/article/How-to-Change-Copy-Paste-and-Other-Shortcuts-in-macOS/_huc799b94b0f12bd48b3d8df6731ada197_113588_8cbad3a8672e2c6adf7c5eeb36f277ce.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 如何在MacOS下更改复制、粘贴等快捷键 以适应Windows下使用习惯（视频）"
+                        data-key="How-to-Change-Copy-Paste-and-Other-Shortcuts-in-macOS" 
+                        data-hash="md5-qiy&#43;UmzL7GuJfh/P781&#43;JQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何在MacOS下更改复制、粘贴等快捷键 以适应Windows下使用习惯（视频）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/">
+        
+        
+            <div class="article-image">
+                <img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huc4978c463cf56c0c7430dc851005064f_13142_2a7b6ef8e6e22051180146f1b6cd9366.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 漫谈在Windows Server 2019中安装使用WSL"
+                        data-key="Rambling-about-installing-and-using-WSL-on-Windows-Server-2019" 
+                        data-hash="md5-QliXRIHcJva7dsA&#43;wUYhTQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">漫谈在Windows Server 2019中安装使用WSL</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;  2000 -  2025 <a href="https://xmyy.com/" target="_blank">虾米技术网 xmyy.com</a>
+    </section>
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 ，主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+<script src="/plugins/jQuery/jquery.min.js"></script>
+<script src="/plugins/bootstrap/bootstrap.min.js" async></script>
+<script src="/plugins/slick/slick.min.js"></script>
+<script src="/js/script.js"></script>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+            </main>
+        </div>
+        <script type="text/javascript" src="/ts/main.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://xmyy.com/css/googleapis-css2.css">
+
+    </body>
+</html>
