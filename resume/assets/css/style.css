@@ -242,6 +242,7 @@ body {
     background-color: #4682bf;
     color: #FFF;
     padding: 40px 20px;
+    padding-top: 10px;
     /*height: 1125px;*/
     height: 1525px;
   }
@@ -281,7 +282,7 @@ body {
           height: 25px;
           text-align: center; }
       .profile-box .left-side .contact-box .detail {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         margin: auto 0; }
     .profile-box .left-side .pb0 {
       padding-bottom: 0px; }
@@ -479,7 +480,7 @@ body {
 }
 .pb-5,
 .py-5 {
-  padding-bottom: 3rem !important;
+  padding-bottom: 1rem !important;
 }
 .mb-2,
 .my-2 {
@@ -695,8 +696,14 @@ body {
     background-color: #4682bf;
     color: #FFF;
     padding: 40px 20px;
+    padding-top: 10px;
     /*height: 1125px;*/
     height: 1525px;
+  }
+
+  .pb-5,
+  .py-5 {
+    padding-bottom: 1rem !important;
   }
 
   .profile-box .left-side .article-cov {

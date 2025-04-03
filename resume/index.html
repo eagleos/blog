@@ -13,7 +13,7 @@
 <meta name="twitter:title" content="童建平-运维工程师-简历">
 <meta name="twitter:description" content="这是童建平的最新个人简历,雄鹰的伯乐在哪里?黑客,网络安全,美亚柏科,网宿科技,东南融通,商务中国,商中在线,盛世网络,成世网络,厦门小鱼,三五互联,中国频道,数字引擎,中资源,厦门门户网,厦门网,综合性门户网站,厦门导航网,厦门便民网,厦门在线">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/fontawsom-all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
@@ -50,11 +50,17 @@
                         </div>
                         <div class="detail"><a href="mailto:oktjp@163.com" target="_blank">oktjp@163.com</a></div>
                     </div>
-                    <div class="contact-box">
+                    <div class="contact-box pb0">
                         <div class="icon">
                             <i class="fas fa-home"></i>
                         </div>
                         <div class="detail"><a href="https://xmyy.com" target="_blank">xmyy.com</a></div>
+                    </div>
+                    <div class="contact-box pb0">
+                        <div class="icon">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                        <div class="detail"><a href="https://github.com/eagleos" target="_blank">github.com/eagleos</a></div>
                     </div>
                     <h4 class="ltitle"><i class="fas fa-address-card"></i> 个人信息</h4>
                     <div class="refer-cov">
@@ -157,6 +163,48 @@
                     <div class="service no-margin">
                         <div class="resume-timeline-item-header mb-2">
                             <div class="d-flex flex-column flex-md-row">
+                                <h3 class="resume-position-title font-weight-bold mb-1">基于Kubernetes的微服务架构环境部署与运维</h3>
+                                <div class="resume-company-name ml-auto">屯粮积草、联生活</div>
+                            </div>
+                        </div>
+                        <div class="resume-timeline-item-desc">
+                            <ul>
+                                <li><i class="fas fa-street-view"></i> 项目描述：该项目旨在为公司核心业务系统构建高可用、可扩展的微服务架构，基于Kubernetes实现容器化部署与自动化运维。</li>
+                                <li><i class="fas fa-street-view"></i> 主要职责：
+<br>★Kubernetes集群搭建与维护：
+<br>● 使用kubeadm部署并管理多节点Kubernetes集群，包括Master节点和Worker节点。
+<br>● 配置高可用集群，使用etcd集群和负载均衡器确保集群的稳定性。
+<br>★环境部署与优化：
+<br>● 使用Helm Chart管理微服务的部署模板，实现一键部署和版本回滚。
+<br>● 配置Resource Quota、Limit Range和HPA（Horizontal Pod Autoscaler），优化资源利用率并实现自动扩缩容。
+<br>● 通过Ingress Controller实现外部流量的负载均衡和SSL终止。
+<br>★监控与日志管理：
+<br>● 部署Prometheus和Grafana监控集群状态、节点资源使用率及Pod性能指标。
+<br>● 使用EFK（Elasticsearch、Fluentd、Kibana）栈集中管理容器日志，实现日志的实时查询与分析。
+<br>● 设置告警规则，及时发现并处理集群异常。
+<br>★安全与权限管理：
+<br>● 配置RBAC（Role-Based Access Control）实现细粒度的权限控制。
+<br>● 使用Network Policies限制Pod之间的网络通信，提升集群安全性。
+<br>● 定期进行安全扫描，修复镜像漏洞。
+<br>★故障排查与性能优化：
+<br>● 解决因资源竞争、网络延迟等导致的性能问题。
+<br>● 使用kubectl、kubectl logs、kubectl describe等工具快速定位并修复Pod启动失败、服务不可用等问题。
+<br>● 优化Pod调度策略，减少节点资源碎片化。
+                                </li>
+                                <li><i class="fas fa-street-view"></i> 技术栈：
+<br>● Kubernetes、Docker、Helm、Prometheus、Grafana、EFK、Ingress Nginx、RBAC、Network Policies
+                                </li>
+                                <li><i class="fas fa-street-view"></i> 项目成果：
+<br>● 成功将公司核心业务系统迁移至Kubernetes平台，系统可用性提升至99.9%。
+<br>● 通过自动化运维和资源优化，运维成本降低30%。
+<br>● 建立了完善的监控和告警体系，故障平均恢复时间（MTTR）缩短50%。
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service no-margin">
+                        <div class="resume-timeline-item-header mb-2">
+                            <div class="d-flex flex-column flex-md-row">
                                 <h3 class="resume-position-title font-weight-bold mb-1">从0到1部署私有云平台</h3>
                                 <div class="resume-company-name ml-auto">屯粮积草、联生活、海西医药</div>
                             </div>
@@ -165,13 +213,18 @@
                             <ul>
                                 <li><i class="fas fa-street-view"></i> 项目描述：公司业务发展，需要搭建稳定、高效的私有云平台以满足日益增长的业务需求，实现资源的高效分配和灵活调度，并建立完善的运维管理体系，搭建CI/CD平台实现运维流程自动化，保障开发团队的基础设施服务稳定。</li>
                                 <li><i class="fas fa-street-view"></i> 主要职责：
-<br>（1）选型及采购华为企业级路由器、博科光纤交换机等网络设备、Dell或浪潮或曙光等服务器、UPS等，自行完成网络设备zone等配置，完成服务器raid、存储等软硬件配置，定制操作系统无人值守自动化安装iso，集成硬件驱动、系统补丁、安全基线安全加固优化等配置，结合Cobbler等实现批量装机，完成搭建公司内网vcenter私有云平台。
-<br>（2）搭建gitlab、jenkins、confluence、禅道、openldap、openvpn、nextcloud、Phabricator、SonarQube、showdoc、yapi、nexus、npm、Archery/Yearning、jumpserver、syspass等系统，且各系统集成ldap统一账号登录，并自编php程序实现短信服务自助重置ldap账号密码功能。
-<br>（3）搭建基于jenkins+ansible的ci/cd持续交付发布系统，按需结合nacos实现灰度发布等流程。
-<br>（4）搭建zabbix、prometheus、grafana监控系统并实现邮件、钉钉、短信报警通知功能。
-<br>（5）强化DevOPS，结合shell、python、go等脚本，实现日常运维工作自动化，如调用阿里云、腾讯云SDK实现自助增、删、改域名解析等功能，并使用terraform高效地配置和管理内网vcenter及公有云资源。
-<br>（6）同时增加市电断电监控脚本，有利保障公司内网机房安全。搭建内网dns解决测试人员手机调试APP问题。</li>
-                                <li><i class="fas fa-street-view"></i> 项目成果：成功搭建内网私有云平台，节省了约30%的云服务租赁成本，实现了业务系统的快速部署和迭代，软件交付周期缩短了约60%；通过完善的监控和报警体系，系统故障响应时间缩短至5分钟以内，有效保障了业务的连续性；使用堡垒机审计并管理开发人员对数据库、服务器的相关访问，有效确保了数据的安全性。</li>
+<br>● 选型及采购华为企业级路由器、博科光纤交换机等网络设备、Dell或浪潮或曙光等服务器、UPS等，自行完成网络设备zone等配置，完成服务器raid、存储等软硬件配置，定制操作系统无人值守自动化安装iso，集成硬件驱动、系统补丁、安全基线安全加固优化等配置，结合Cobbler等实现批量装机，完成搭建公司内网vcenter私有云平台。
+<br>● 搭建gitlab、jenkins、confluence、禅道、openldap、openvpn、nextcloud、Phabricator、SonarQube、showdoc、yapi、nexus、npm、Archery/Yearning、jumpserver、syspass等系统，且各系统集成ldap统一账号登录，并自编php程序实现短信服务自助重置ldap账号密码功能。
+<br>● 搭建基于jenkins+ansible的ci/cd持续交付发布系统，按需结合nacos实现灰度发布等流程。
+<br>● 搭建zabbix、prometheus、grafana监控系统并实现邮件、钉钉、短信报警通知功能。
+<br>● 强化DevOPS，结合shell、python、go等脚本，实现日常运维工作自动化，如调用阿里云、腾讯云SDK实现自助增、删、改域名解析等功能，并使用terraform高效地配置和管理内网vcenter及公有云资源。
+<br>● 同时增加市电断电监控脚本，有利保障公司内网机房安全。搭建内网dns解决测试人员手机调试APP问题。
+                                </li>
+                                <li><i class="fas fa-street-view"></i> 项目成果：
+<br>● 成功搭建内网私有云平台，节省了约30%的云服务租赁成本，实现了业务系统的快速部署和迭代，软件交付周期缩短了约60%；
+<br>● 通过完善的监控和报警体系，系统故障响应时间缩短至5分钟以内，有效保障了业务的连续性；
+<br>● 使用堡垒机审计并管理开发人员对数据库、服务器的相关访问，有效确保了数据的安全性。
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -255,7 +308,7 @@
                                     <ul>
                                         <li><i class="far fa-check-square"></i> 负责公有云、私有云方案的前瞻性容量规划设计与实施、系统运维，包括系统架构支撑、系统监控、业务变更响应、问题处置、安装部署、性能调优、容灾备份管理、数据迁移、日志分析等，保障各业务环境7×24小时稳定安全运行。</li>
                                         <li><i class="far fa-check-square"></i> 负责公司各项目各云平台SpringCloud微服务运维工作，搭建及运维管理mysql、nginx、redis、nacos、seata、rocketmq、skywalking、xxljob、sentinel、php、uniapp、vue等业务系统组件，建立CI/CD运维自动化体系并实现线上业务的灰度发布，建立并完善zabbix、prometheus、grafana监控系统，实现对业务系统等多维度的告警预警，持续mysql慢查询优化，保障线上业务的稳定运行。</li>
-                                        <li><i class="far fa-check-square"></i> 主导公司业务系统的容器化转型，负责架构设计及Docker容器镜像的Dockerfle编排工作，搭建Habor、Rancher等平台，成功将业务系统迁移至Kubernetes平台，在测试环境中实现了平稳过渡与高效运行，验证了架构的可行性和可靠性。</li>
+                                        <li><i class="far fa-check-square"></i> 主导公司业务系统的容器化转型，负责架构设计及Docker容器镜像的Dockerfle编排工作，搭建Habor、Rancher等平台，成功将业务系统迁移至Kubernetes平台，实现了平稳过渡与高效运行，验证了架构的可行性和可靠性。</li>
                                         <li><i class="far fa-check-square"></i> 负责公司送水平台小程序等多个基于php+mysql的业务系统的选型、开发和维护工作。</li>
                                     </ul>
                                 </div>
