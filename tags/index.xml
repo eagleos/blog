@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>虾米技术网 xmyy.com</copyright>
-        <lastBuildDate>Tue, 11 Mar 2025 15:46:06 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 31 Mar 2025 23:59:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>AlmaLinux</title>
         <link>https://xmyy.com/tags/AlmaLinux/</link>
-        <pubDate>Tue, 11 Mar 2025 15:46:06 +0800</pubDate>
+        <pubDate>Mon, 31 Mar 2025 23:59:00 +0800</pubDate>
         
         <guid>https://xmyy.com/tags/AlmaLinux/</guid>
         <description></description>
@@ -18,9 +18,89 @@
         <item>
         <title>Centos</title>
         <link>https://xmyy.com/tags/Centos/</link>
-        <pubDate>Tue, 11 Mar 2025 15:46:06 +0800</pubDate>
+        <pubDate>Mon, 31 Mar 2025 23:59:00 +0800</pubDate>
         
         <guid>https://xmyy.com/tags/Centos/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>HTTP</title>
+        <link>https://xmyy.com/tags/HTTP/</link>
+        <pubDate>Mon, 31 Mar 2025 23:59:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/HTTP/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Nginx</title>
+        <link>https://xmyy.com/tags/nginx/</link>
+        <pubDate>Mon, 31 Mar 2025 23:59:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/nginx/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>RedHat</title>
+        <link>https://xmyy.com/tags/RedHat/</link>
+        <pubDate>Mon, 31 Mar 2025 23:59:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/RedHat/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Rocky</title>
+        <link>https://xmyy.com/tags/Rocky/</link>
+        <pubDate>Mon, 31 Mar 2025 23:59:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/Rocky/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Rpm</title>
+        <link>https://xmyy.com/tags/rpm/</link>
+        <pubDate>Mon, 31 Mar 2025 23:59:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/rpm/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Tengine</title>
+        <link>https://xmyy.com/tags/tengine/</link>
+        <pubDate>Mon, 31 Mar 2025 23:59:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/tengine/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Tengine-Rpm</title>
+        <link>https://xmyy.com/tags/tengine-rpm/</link>
+        <pubDate>Mon, 31 Mar 2025 23:59:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/tengine-rpm/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>定制</title>
+        <link>https://xmyy.com/tags/%E5%AE%9A%E5%88%B6/</link>
+        <pubDate>Mon, 31 Mar 2025 23:59:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/%E5%AE%9A%E5%88%B6/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>反向代理</title>
+        <link>https://xmyy.com/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</link>
+        <pubDate>Mon, 31 Mar 2025 23:59:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>优化</title>
+        <link>https://xmyy.com/tags/%E4%BC%98%E5%8C%96/</link>
+        <pubDate>Mon, 31 Mar 2025 23:59:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/tags/%E4%BC%98%E5%8C%96/</guid>
         <description></description>
         </item>
         <item>
@@ -29,22 +109,6 @@
         <pubDate>Tue, 11 Mar 2025 15:46:06 +0800</pubDate>
         
         <guid>https://xmyy.com/tags/EagleOS/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>RedHat</title>
-        <link>https://xmyy.com/tags/RedHat/</link>
-        <pubDate>Tue, 11 Mar 2025 15:46:06 +0800</pubDate>
-        
-        <guid>https://xmyy.com/tags/RedHat/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>定制</title>
-        <link>https://xmyy.com/tags/%E5%AE%9A%E5%88%B6/</link>
-        <pubDate>Tue, 11 Mar 2025 15:46:06 +0800</pubDate>
-        
-        <guid>https://xmyy.com/tags/%E5%AE%9A%E5%88%B6/</guid>
         <description></description>
         </item>
         <item>
@@ -61,14 +125,6 @@
         <pubDate>Tue, 11 Mar 2025 15:46:06 +0800</pubDate>
         
         <guid>https://xmyy.com/tags/%E6%97%A0%E4%BA%BA%E5%80%BC%E5%AE%88/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>优化</title>
-        <link>https://xmyy.com/tags/%E4%BC%98%E5%8C%96/</link>
-        <pubDate>Tue, 11 Mar 2025 15:46:06 +0800</pubDate>
-        
-        <guid>https://xmyy.com/tags/%E4%BC%98%E5%8C%96/</guid>
         <description></description>
         </item>
         <item>
