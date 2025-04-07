@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Tengine是一个具有一些高级功能的 Nginx 发行版。作为一款高性能的HTTP和反向代理web服务器，Tengine官方没有提供RPM包，这里提供非官方的经过优化编译并集成LuaJIT、ModSecurity、geoip2等多种常用模块的Tengine RPM包，方便用户在目标服务器上快速安装配置web服务器。">
+<title>Tengine-rpm 基于Tengine 3.1深度定制优化</title>
+
+<link rel='canonical' href='https://xmyy.com/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/'>
+
+<link rel="stylesheet" href="/scss/style.min.b1ee696470c26668a16cfa814cde453da11a905817be39639788d15e9984714a.css">
+<link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="/plugins/themify-icons/themify-icons.css">
+
+<link rel="stylesheet" href="/css/style.css"><meta property='og:title' content="Tengine-rpm 基于Tengine 3.1深度定制优化">
+<meta property='og:description' content="Tengine是一个具有一些高级功能的 Nginx 发行版。作为一款高性能的HTTP和反向代理web服务器，Tengine官方没有提供RPM包，这里提供非官方的经过优化编译并集成LuaJIT、ModSecurity、geoip2等多种常用模块的Tengine RPM包，方便用户在目标服务器上快速安装配置web服务器。">
+<meta property='og:url' content='https://xmyy.com/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/'>
+<meta property='og:site_name' content='虾米技术网'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='tengine' /><meta property='article:tag' content='rpm' /><meta property='article:tag' content='tengine-rpm' /><meta property='article:tag' content='nginx' /><meta property='article:tag' content='反向代理' /><meta property='article:tag' content='HTTP' /><meta property='article:tag' content='AlmaLinux' /><meta property='article:tag' content='Centos' /><meta property='article:tag' content='RedHat' /><meta property='article:tag' content='Rocky' /><meta property='article:tag' content='定制' /><meta property='article:tag' content='优化' /><meta property='article:published_time' content='2025-03-31T23:59:00&#43;08:00'/><meta property='article:modified_time' content='2025-03-31T23:59:00&#43;08:00'/><meta property='og:image' content='https://xmyy.com/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine.png' />
+<meta name="twitter:title" content="Tengine-rpm 基于Tengine 3.1深度定制优化">
+<meta name="twitter:description" content="Tengine是一个具有一些高级功能的 Nginx 发行版。作为一款高性能的HTTP和反向代理web服务器，Tengine官方没有提供RPM包，这里提供非官方的经过优化编译并集成LuaJIT、ModSecurity、geoip2等多种常用模块的Tengine RPM包，方便用户在目标服务器上快速安装配置web服务器。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://xmyy.com/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine.png' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<header class="sticky-top bg-white border-bottom border-default">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-white">
+                    <a class="navbar-brand" href="/">
+                        <img class="img-fluid" width="150px" src="/images/logo.png" alt="虾米技术网">
+                    </a>
+                    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+                        <i class="ti-menu"></i>
+                    </button>
+                    <div class="collapse navbar-collapse text-center" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">首页</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/eagle/">雄鹰论文</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/CyberSecurity/">网络安全</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/system/">操作系统</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/DevOps/">运维开发</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false">友链 <i class="ti-angle-down ml-1"></i>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/links/">友链首页</a>
+                                    <a class="dropdown-item" href="https://ok118.com" target="_blank">Ok118网址导航 ok118.com</a>
+                                    <a class="dropdown-item" href="https://ip40.com" target="_blank">IP查询 ip40.com</a>
+                                    <a class="dropdown-item" href="https://xmfast.com" target="_blank">Skating网址导航 xmfast.com</a>
+                                </div>
+                            </li>
+                        </ul>
+
+
+
+
+                        <div class="m-2 border-0" id="dark-mode-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"/>
+                                <circle cx="8" cy="12" r="2" />
+                                <rect x="2" y="6" width="20" height="12" rx="6" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"/>
+                                <circle cx="16" cy="12" r="2" />
+                                <rect x="2" y="6" width="20" height="12" rx="6" />
+                            </svg>
+                        </div>
+                        <div class="search px-4">
+                            <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+                            <div class="search-wrapper">
+                                <form action="/search/" class="h-100">
+                                    <input class="search-box pl-4" id="search-query" name="keyword" type="search" placeholder="Type &amp; Hit Enter...">
+                                </form>
+                                <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="container main-container flex on-phone--column extended">
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#tengine-rpm-说明文档"><strong>Tengine RPM 说明文档</strong></a></li>
+    <li><a href="#如何下载"><strong>如何下载？</strong></a></li>
+    <li><a href="#如何安装"><strong>如何安装？</strong></a></li>
+    <li><a href="#安装依赖"><strong>安装依赖</strong></a></li>
+    <li><a href="#支持的发行版"><strong>支持的发行版</strong></a></li>
+    <li><a href="#配置说明"><strong>配置说明</strong></a></li>
+    <li><a href="#faq"><strong>FAQ</strong></a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/">
+                <img src="/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/_hub6ad84b234d951f3ea5b70f97fa3d7ed_207895_423c142acd3f46cec4d08553663a1534.png"
+                        srcset="/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/_hub6ad84b234d951f3ea5b70f97fa3d7ed_207895_423c142acd3f46cec4d08553663a1534.png 800w, /article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/_hub6ad84b234d951f3ea5b70f97fa3d7ed_207895_349a94427c5f7f85b19b6f57bbb5781c.png 1600w"
+                        width="800"
+                        height="183"
+                        loading="lazy"
+                        alt="Featured image of post Tengine-rpm 基于Tengine 3.1深度定制优化" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/DevOps/" style="background-color: #a4a6c1; color: #fff;">
+                运维开发
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/">Tengine-rpm 基于Tengine 3.1深度定制优化</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Tengine是一个具有一些高级功能的 Nginx 发行版。作为一款高性能的HTTP和反向代理web服务器，Tengine官方没有提供RPM包，这里提供非官方的经过优化编译并集成LuaJIT、ModSecurity、geoip2等多种常用模块的Tengine RPM包，方便用户在目标服务器上快速安装配置web服务器。
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+
+    
+    <footer class="article-time">
+        <span class="post-meta-item">
+          <i class="fas fa-pen"></i>
+          
+            <span class="article-type" style="color: white; font-size: 14px; background: #bf59f3; padding: 0 5px 1px 5px; margin-right: 5px; border-radius: 2px;">原创</span>
+          
+        </span>
+        
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+            <div class="post-author">
+                作者：童建平
+
+            </div>
+        </div>
+        
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">
+2025-03-31 23:59</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 3 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><span class="nowrap"><span class="emojify">💁🏻‍♂️</span> <a href="https://tengine-rpm.sourceforge.io" target="_blank">sourceforge.net</a> 2025-03-31 《Tengine-rpm 基于Tengine 3.1深度定制优化》 童建平</span></p>
+<h2 id="tengine-rpm-说明文档"><strong>Tengine RPM 说明文档</strong>
+</h2><p>Tengine是亚洲最大的电子商务网站淘宝网推出的高性能的HTTP和反向代理web服务器。它基于 Nginx HTTP 服务器，拥有许多高级功能。事实证明，Tengine 在淘宝网、天猫、优酷、阿里速卖通和阿里云等世界前100强网站上非常稳定、高效。</p>
+<p>简言之，Tengine是一个具有一些高级功能的 Nginx 发行版。Tengine官方没有提供RPM包，这里提供非官方的经过优化编译并集成LuaJIT、ModSecurity、geoip2等多种常用模块的Tengine RPM包，方便用户在目标服务器上快速安装配置web服务器。</p>
+<p>这是基于官方包https://tengine.taobao.org/download/tengine-3.1.0.tar.gz 制作的rpm包，您可免费下载并安装使用。</p>
+<p>目前仅先推出基于almalinux 9.5的rpm包，同样可用于Red Hat Enterprise Linux (RHEL) 及其衍生产品，如CentOS Linux、Rocky Linux。</p>
+<h2 id="如何下载"><strong>如何下载？</strong>
+</h2><p><a class="link" href="https://github.com/eagleos/tengine-rpm/releases"  target="_blank" rel="noopener"
+    >https://github.com/eagleos/tengine-rpm/releases</a></p>
+<p><a class="link" href="https://tengine-rpm.sourceforge.io"  target="_blank" rel="noopener"
+    >https://tengine-rpm.sourceforge.io</a></p>
+<h2 id="如何安装"><strong>如何安装？</strong>
+</h2><ul>
+<li><strong>手工安装</strong></li>
+</ul>
+<p>rpm -Uvh tengine-3.1.0-1.el9.x86_64.rpm</p>
+<p>如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@EagleOS ~<span class="o">]</span><span class="c1"># rpm -ivh tengine-3.1.0-1.el9.x86_64.rpm</span>
+</span></span><span class="line"><span class="cl">错误：依赖检测失败：
+</span></span><span class="line"><span class="cl">geolite2-city &lt; <span class="m">20250331</span> 被 tengine-3.1.0-1.el9.x86_64 取代
+</span></span><span class="line"><span class="cl">geolite2-country &lt; <span class="m">20250331</span> 被 tengine-3.1.0-1.el9.x86_64 取代
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@EagleOS ~<span class="o">]</span><span class="c1"># rpm -Uvh tengine-3.1.0-1.el9.x86_64.rpm</span>
+</span></span><span class="line"><span class="cl">Verifying...                          <span class="c1">################################# [100%]</span>
+</span></span><span class="line"><span class="cl">准备中...                          <span class="c1">################################# [100%]</span>
+</span></span><span class="line"><span class="cl">正在升级/安装...
+</span></span><span class="line"><span class="cl">1:tengine-3.1.0-1.el9              <span class="c1">################################# [ 33%]</span>
+</span></span><span class="line"><span class="cl">正在清理/删除...
+</span></span><span class="line"><span class="cl">2:geolite2-country-20191217-6.el9  <span class="c1">################################# [ 67%]</span>
+</span></span><span class="line"><span class="cl">3:geolite2-city-20191217-6.el9     <span class="c1">################################# [100%]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如下图所示：</p>
+<p><img src="/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/tengine-rpm.png"
+	width="603"
+	height="239"
+	srcset="/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/tengine-rpm_hu5c9c999d8c29633056a13e1c8eec688a_71481_480x0_resize_box_3.png 480w, /article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/tengine-rpm_hu5c9c999d8c29633056a13e1c8eec688a_71481_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="如何安装tengine-rpm"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="252"
+		data-flex-basis="605px"
+	
+></p>
+<ul>
+<li><strong>在线安装</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dnf copr <span class="nb">enable</span> xmdoor/tengine-rpm
+</span></span><span class="line"><span class="cl">dnf -y install tengine
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如下图所示：</p>
+<p><img src="/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/copr.jpg"
+	width="1920"
+	height="1040"
+	srcset="/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/copr_hudd8c6127f4550e57c8a67dd8b54b43cf_432664_480x0_resize_q75_box.jpg 480w, /article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/copr_hudd8c6127f4550e57c8a67dd8b54b43cf_432664_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="copr安装tengine-rpm"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="184"
+		data-flex-basis="443px"
+	
+></p>
+<h2 id="安装依赖"><strong>安装依赖</strong>
+</h2><p>如果您安装时提示类似如下信息：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@EagleOS ~<span class="o">]</span><span class="c1"># rpm -ivh tengine-3.1.0-1.el9.x86_64.rpm </span>
+</span></span><span class="line"><span class="cl">错误：依赖检测失败：
+</span></span><span class="line"><span class="cl">        apr &gt;<span class="o">=</span> 1.7.0 被 tengine-3.1.0-1.el9.x86_64 需要
+</span></span><span class="line"><span class="cl">        apr-util &gt;<span class="o">=</span> 1.6.1 被 tengine-3.1.0-1.el9.x86_64 需要
+</span></span><span class="line"><span class="cl">        jemalloc &gt;<span class="o">=</span> 5.2.1 被 tengine-3.1.0-1.el9.x86_64 需要
+</span></span><span class="line"><span class="cl">        jemalloc-devel &gt;<span class="o">=</span> 5.2.1 被 tengine-3.1.0-1.el9.x86_64 需要
+</span></span><span class="line"><span class="cl">        libluajit-5.1.so.2<span class="o">()(</span>64bit<span class="o">)</span> 被 tengine-3.1.0-1.el9.x86_64 需要
+</span></span><span class="line"><span class="cl">        libmaxminddb-devel &gt;<span class="o">=</span> 1.5.2 被 tengine-3.1.0-1.el9.x86_64 需要
+</span></span><span class="line"><span class="cl">        libmodsecurity &gt;<span class="o">=</span> 3.0.12 被 tengine-3.1.0-1.el9.x86_64 需要
+</span></span><span class="line"><span class="cl">        libmodsecurity-devel &gt;<span class="o">=</span> 3.0.12 被 tengine-3.1.0-1.el9.x86_64 需要
+</span></span><span class="line"><span class="cl">        libmodsecurity.so.3<span class="o">()(</span>64bit<span class="o">)</span> 被 tengine-3.1.0-1.el9.x86_64 需要
+</span></span><span class="line"><span class="cl">        lmdb &gt;<span class="o">=</span> 0.9.29 被 tengine-3.1.0-1.el9.x86_64 需要
+</span></span><span class="line"><span class="cl">        lmdb-devel &gt;<span class="o">=</span> 0.9.29 被 tengine-3.1.0-1.el9.x86_64 需要
+</span></span><span class="line"><span class="cl">        lua-devel &gt;<span class="o">=</span> 5.4.4 被 tengine-3.1.0-1.el9.x86_64 需要
+</span></span><span class="line"><span class="cl">        luajit &gt;<span class="o">=</span> 2.1.0 被 tengine-3.1.0-1.el9.x86_64 需要
+</span></span><span class="line"><span class="cl">        luajit-devel &gt;<span class="o">=</span> 2.1.0 被 tengine-3.1.0-1.el9.x86_64 需要
+</span></span><span class="line"><span class="cl">        geolite2-city &lt; <span class="m">20250331</span> 被 tengine-3.1.0-1.el9.x86_64 取代
+</span></span><span class="line"><span class="cl">        geolite2-country &lt; <span class="m">20250331</span> 被 tengine-3.1.0-1.el9.x86_64 取代
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>请先下载相关依赖包：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/apr-1.7.0-12.el9_3.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/apr-util-1.6.1-23.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/apr-util-bdb-1.6.1-23.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/CRB/x86_64/os/Packages/libmaxminddb-devel-1.5.2-4.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/CRB/x86_64/os/Packages/lmdb-0.9.29-3.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/CRB/x86_64/os/Packages/lmdb-devel-0.9.29-3.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/CRB/x86_64/os/Packages/lua-devel-5.4.4-4.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/lua-rpm-macros-1-6.el9.noarch.rpm
+</span></span><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/devel/x86_64/os/Packages/lua-static-5.4.4-4.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/devel/x86_64/os/Packages/pcre2-static-10.40-6.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/l/libmodsecurity-3.0.12-1.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/l/libmodsecurity-devel-3.0.12-1.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/l/libmodsecurity-static-3.0.12-1.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/s/ssdeep-libs-2.14.1-11.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/j/jemalloc-5.2.1-2.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/j/jemalloc-devel-5.2.1-2.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/l/luajit-2.1.0-0.23beta3.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/l/luajit-devel-2.1.0-0.23beta3.el9.x86_64.rpm
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>再安装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">rpm -ivh apr-util-bdb-1.6.1-23.el9.x86_64.rpm apr-1.7.0-12.el9_3.x86_64.rpm apr-util-1.6.1-23.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">rpm -ivh libmaxminddb-devel-1.5.2-4.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">rpm -ivh lmdb-0.9.29-3.el9.x86_64.rpm lmdb-devel-0.9.29-3.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">rpm -ivh lua-rpm-macros-1-6.el9.noarch.rpm lua-devel-5.4.4-4.el9.x86_64.rpm lua-static-5.4.4-4.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">rpm -ivh pcre2-static-10.40-6.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">rpm -ivh ssdeep-libs-2.14.1-11.el9.x86_64.rpm libmodsecurity-3.0.12-1.el9.x86_64.rpm libmodsecurity-devel-3.0.12-1.el9.x86_64.rpm libmodsecurity-static-3.0.12-1.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">rpm -ivh jemalloc-5.2.1-2.el9.x86_64.rpm jemalloc-devel-5.2.1-2.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">rpm -ivh luajit-2.1.0-0.23beta3.el9.x86_64.rpm luajit-devel-2.1.0-0.23beta3.el9.x86_64.rpm
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="支持的发行版"><strong>支持的发行版</strong>
+</h2><p>如下发行版测试通过：</p>
+<p>Almalinux 9.5 x86_64</p>
+<p>兼容如下发行版，未经测试：</p>
+<p>Red Hat Enterprise Linux 9.x x86_64</p>
+<p>CentOS Linux 9.x x86_64</p>
+<p>Rocky Linux 9.x x86_64</p>
+<h2 id="配置说明"><strong>配置说明</strong>
+</h2><ul>
+<li>nginx配置文件位于：/app/nginx/conf</li>
+<li>安装后会自动启动nginx服务，手工重启服务命令：systemctl restart nginx，重载配置命令：systemctl reload nginx</li>
+<li>安装rpm包过程中，会自动检测目标服务器cpu核数，对nginx配置进行自动优化配置处理</li>
+<li>对于目标服务器默认站点，在nginx.conf中对境外服务器默认禁止访问，以节省服务器相关访问资源。您如果需要开放此访问，可更改此文件，删除如下配置语句即可：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">  <span class="k">if</span> <span class="o">(</span><span class="nv">$ip_deny</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> 503<span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>支持lua语法，相关测试语句请查看nginx.conf中配置，可修改相关配置进行测试</li>
+<li>vhost.conf为站点配置示例，默认未加载，可仿之修改并启动</li>
+<li>本rpm包编译参数如下：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@EagleOS ~<span class="o">]</span><span class="c1"># nginx -V</span>
+</span></span><span class="line"><span class="cl">Tengine version: Microsoft-IIS/3.1.0
+</span></span><span class="line"><span class="cl">nginx version: Microsoft-IIS/8.5/1.24.0
+</span></span><span class="line"><span class="cl">built by gcc 11.5.0 <span class="m">20240719</span> <span class="o">(</span>Red Hat 11.5.0-5<span class="o">)</span> <span class="o">(</span>GCC<span class="o">)</span>
+</span></span><span class="line"><span class="cl">built with OpenSSL 3.2.2 <span class="m">4</span> Jun <span class="m">2024</span>
+</span></span><span class="line"><span class="cl">TLS SNI support enabled
+</span></span><span class="line"><span class="cl">configure arguments: --prefix<span class="o">=</span>/app/nginx --sbin-path<span class="o">=</span>/usr/sbin/nginx --with-http_ssl_module --with-ld-opt<span class="o">=</span>-lpcre --with-http_stub_status_module --with-http_gzip_static_module --with-http_realip_module --with-ld-opt<span class="o">=</span>-ljemalloc --with-jemalloc --with-stream --with-stream_ssl_module --with-stream_realip_module --with-stream_ssl_preread_module --with-debug --with-compat --with-file-aio --with-mail --with-mail_ssl_module --with-pcre --with-pcre-jit --with-threads --with-http_auth_request_module --with-http_dav_module --with-http_degradation_module --with-http_flv_module --with-http_gunzip_module --with-http_image_filter_module --with-http_mp4_module --with-http_random_index_module --with-http_secure_link_module --with-http_sub_module --with-http_v2_module --with-http_addition_module --with-luajit-inc<span class="o">=</span>/usr/include/luajit-2.1 --with-luajit-lib<span class="o">=</span>/usr/lib64 --without-http_upstream_keepalive_module --add-module<span class="o">=</span>modules/ngx_backtrace_module --add-module<span class="o">=</span>modules/ngx_debug_pool --add-module<span class="o">=</span>modules/ngx_debug_timer --add-module<span class="o">=</span>modules/ngx_http_concat_module --add-module<span class="o">=</span>modules/ngx_http_footer_filter_module --add-module<span class="o">=</span>modules/ngx_http_reqstat_module --add-module<span class="o">=</span>modules/ngx_http_slice_module --add-module<span class="o">=</span>modules/ngx_http_trim_filter_module --add-module<span class="o">=</span>modules/ngx_http_upstream_check_module --add-module<span class="o">=</span>modules/ngx_http_upstream_dynamic_module --add-module<span class="o">=</span>modules/ngx_http_upstream_dyups_module --add-module<span class="o">=</span>modules/ngx_http_upstream_keepalive_module --add-module<span class="o">=</span>modules/ngx_http_upstream_session_sticky_module --add-module<span class="o">=</span>modules/ngx_http_upstream_vnswrr_module --add-module<span class="o">=</span>modules/ngx_http_user_agent_module --add-module<span class="o">=</span>modules/ngx_multi_upstream_module --add-module<span class="o">=</span>modules/ngx_slab_stat --add-module<span class="o">=</span>../ngx_cache_purge-2.5.3 --add-module<span class="o">=</span>../ngx_brotli --add-module<span class="o">=</span>../nginx-module-vts-0.2.4 --add-module<span class="o">=</span>../ngx_http_geoip2_module --add-module<span class="o">=</span>../lua-nginx-module-0.10.28 --add-module<span class="o">=</span>../ModSecurity-nginx-master --with-cc-opt<span class="o">=</span><span class="s1">&#39;-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64-v2 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection&#39;</span> --with-ld-opt<span class="o">=</span><span class="s1">&#39;-Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -Wl,-E&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="faq"><strong>FAQ</strong>
+</h2><ul>
+<li><strong>1.为何使用<code>rpm -Uvh</code>而不是<code>rpm -ivh</code>？</strong></li>
+</ul>
+<p>答：如果目标服务器已经安装了系统默认的geolite2-city和geolite2-country，则其中的IP数据库文件是2019年过旧的数据库，本rpm包中包含同样路径及名称的IP数据库文件（2025.03.31官方maxmind.com最新数据库），会覆盖安装，所以需要使用<code>rpm -Uvh</code>进行升级安装。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/tengine/">Tengine</a>
+        
+            <a href="/tags/rpm/">Rpm</a>
+        
+            <a href="/tags/tengine-rpm/">Tengine-Rpm</a>
+        
+            <a href="/tags/nginx/">Nginx</a>
+        
+            <a href="/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/">反向代理</a>
+        
+            <a href="/tags/HTTP/">HTTP</a>
+        
+            <a href="/tags/AlmaLinux/">AlmaLinux</a>
+        
+            <a href="/tags/Centos/">Centos</a>
+        
+            <a href="/tags/RedHat/">RedHat</a>
+        
+            <a href="/tags/Rocky/">Rocky</a>
+        
+            <a href="/tags/%E5%AE%9A%E5%88%B6/">定制</a>
+        
+            <a href="/tags/%E4%BC%98%E5%8C%96/">优化</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/">
+        
+        
+            <div class="article-image">
+                <img src="/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/_hu22610833e332bcee47fc25cd9fe58b20_144072_d47b6d3e3776603f969773a458da4d78.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post EagleOS 9.5-基于AlmaLinux 9.5深度定制优化"
+                        data-key="EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux" 
+                        data-hash="md5-Q6Deysu4/9nHhAQrg9c&#43;iA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">EagleOS 9.5-基于AlmaLinux 9.5深度定制优化</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/EagleOS7-deeply-customized-and-optimized-based-on-Centos/">
+        
+        
+            <div class="article-image">
+                <img src="/article/EagleOS7-deeply-customized-and-optimized-based-on-Centos/_hu61c4a54282b6a8633461609b806dcc04_47385_94cb9d700ad3bfb6226877fbba229209.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post EagleOS 7.9-基于Centos 7.9深度定制优化"
+                        data-key="EagleOS7-deeply-customized-and-optimized-based-on-Centos" 
+                        data-hash="md5-OyBD0zOp7Mz8&#43;xiDIsZ0ug==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">EagleOS 7.9-基于Centos 7.9深度定制优化</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/IPCDump-For-tracking-inter-process-communication-on-Linux/">
+        
+        
+            <div class="article-image">
+                <img src="/article/IPCDump-For-tracking-inter-process-communication-on-Linux/_huc2ca345ead1bb033a38c44f0c9746f5c_15326_c0e35fb0a9021b9d594aa5369245e040.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 新开源工具IPCDump：用于在Linux上跟踪进程间通信"
+                        data-key="IPCDump-For-tracking-inter-process-communication-on-Linux" 
+                        data-hash="md5-PhfhWRTITh3Sxzfl3vgz/g==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">新开源工具IPCDump：用于在Linux上跟踪进程间通信</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login/">
+        
+        
+            <div class="article-image">
+                <img src="/article/How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login/_hu9222065cc0cbf3ee20c6c8b156c95081_108455_a5b3d348e76ba76f1416d48f029d3a48.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 如何通过ssh远程登录给esxi主机防火墙添加允许ip列表（视频）"
+                        data-key="How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login" 
+                        data-hash="md5-25v2SYfczMFGuCR2VnaJgA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何通过ssh远程登录给esxi主机防火墙添加允许ip列表（视频）</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;  2000 -  2025 <a href="https://xmyy.com/" target="_blank">虾米技术网 xmyy.com</a>
+    </section>
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 ，主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+<script src="/plugins/jQuery/jquery.min.js"></script>
+<script src="/plugins/bootstrap/bootstrap.min.js" async></script>
+<script src="/plugins/slick/slick.min.js"></script>
+<script src="/js/script.js"></script>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+            </main>
+        </div>
+        <script type="text/javascript" src="/ts/main.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://xmyy.com/css/googleapis-css2.css">
+
+    </body>
+</html>
