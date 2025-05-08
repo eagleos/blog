@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="SikkerBox-手机上的网络瑞士军刀，目前实现了安全的双因素认证（2FA），可为您的在线账户生成基于时间的一次性密码（TOTP），为您的数字生活提供了一个强大且用户友好的额外安全层解决方案。">
+<title>SikkerBox-手机上的网络瑞士军刀</title>
+
+<link rel='canonical' href='https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/'>
+
+<link rel="stylesheet" href="/scss/style.min.b1ee696470c26668a16cfa814cde453da11a905817be39639788d15e9984714a.css">
+<link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="/plugins/themify-icons/themify-icons.css">
+
+<link rel="stylesheet" href="/css/style.css"><meta property='og:title' content="SikkerBox-手机上的网络瑞士军刀">
+<meta property='og:description' content="SikkerBox-手机上的网络瑞士军刀，目前实现了安全的双因素认证（2FA），可为您的在线账户生成基于时间的一次性密码（TOTP），为您的数字生活提供了一个强大且用户友好的额外安全层解决方案。">
+<meta property='og:url' content='https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/'>
+<meta property='og:site_name' content='虾米技术网'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='SikkerBox' /><meta property='article:tag' content='瑞士军刀' /><meta property='article:tag' content='网络工具包' /><meta property='article:tag' content='2FA' /><meta property='article:published_time' content='2025-05-05T13:06:00&#43;08:00'/><meta property='article:modified_time' content='2025-05-05T13:06:00&#43;08:00'/><meta property='og:image' content='https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone.jpg' />
+<meta name="twitter:title" content="SikkerBox-手机上的网络瑞士军刀">
+<meta name="twitter:description" content="SikkerBox-手机上的网络瑞士军刀，目前实现了安全的双因素认证（2FA），可为您的在线账户生成基于时间的一次性密码（TOTP），为您的数字生活提供了一个强大且用户友好的额外安全层解决方案。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone.jpg' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<header class="sticky-top bg-white border-bottom border-default">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-white">
+                    <a class="navbar-brand" href="/">
+                        <img class="img-fluid" width="150px" src="/images/logo.png" alt="虾米技术网">
+                    </a>
+                    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+                        <i class="ti-menu"></i>
+                    </button>
+                    <div class="collapse navbar-collapse text-center" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">首页</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/eagle/">雄鹰论文</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/CyberSecurity/">网络安全</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/system/">操作系统</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/DevOps/">运维开发</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false">友链 <i class="ti-angle-down ml-1"></i>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/links/">友链首页</a>
+                                    <a class="dropdown-item" href="https://ok118.com" target="_blank">Ok118网址导航 ok118.com</a>
+                                    <a class="dropdown-item" href="https://ip40.com" target="_blank">IP查询 ip40.com</a>
+                                    <a class="dropdown-item" href="https://xmfast.com" target="_blank">Skating网址导航 xmfast.com</a>
+                                </div>
+                            </li>
+                        </ul>
+
+
+
+
+                        <div class="m-2 border-0" id="dark-mode-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"/>
+                                <circle cx="8" cy="12" r="2" />
+                                <rect x="2" y="6" width="20" height="12" rx="6" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"/>
+                                <circle cx="16" cy="12" r="2" />
+                                <rect x="2" y="6" width="20" height="12" rx="6" />
+                            </svg>
+                        </div>
+                        <div class="search px-4">
+                            <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+                            <div class="search-wrapper">
+                                <form action="/search/" class="h-100">
+                                    <input class="search-box pl-4" id="search-query" name="keyword" type="search" placeholder="Type &amp; Hit Enter...">
+                                </form>
+                                <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="container main-container flex on-phone--column extended">
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#概述">概述</a></li>
+    <li><a href="#2fa-功能特点">2FA 功能特点</a></li>
+    <li><a href="#2fa-技术细节">2FA 技术细节</a></li>
+    <li><a href="#开始使用">开始使用</a>
+      <ol>
+        <li><a href="#安装">安装</a></li>
+      </ol>
+    </li>
+    <li><a href="#致谢">致谢</a></li>
+    <li><a href="#github-开启配置更换-two-factor-authentication-2fa-双因素认证">Github 开启/配置/更换 two-factor authentication (2FA) 双因素认证</a>
+      <ol>
+        <li><a href="#未开启2fa">未开启2FA</a></li>
+        <li><a href="#更换2fa-app">更换2FA app</a></li>
+      </ol>
+    </li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/">
+                <img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone_hu5bcd832e666cfa0f766cae5380719b77_964485_800x0_resize_q75_box.jpg"
+                        srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone_hu5bcd832e666cfa0f766cae5380719b77_964485_800x0_resize_q75_box.jpg 800w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone_hu5bcd832e666cfa0f766cae5380719b77_964485_1600x0_resize_q75_box.jpg 1600w"
+                        width="800"
+                        height="289"
+                        loading="lazy"
+                        alt="Featured image of post SikkerBox-手机上的网络瑞士军刀" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/DevOps/" style="background-color: #a4a6c1; color: #fff;">
+                运维开发
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/">SikkerBox-手机上的网络瑞士军刀</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            SikkerBox-手机上的网络瑞士军刀，目前实现了安全的双因素认证（2FA），可为您的在线账户生成基于时间的一次性密码（TOTP），为您的数字生活提供了一个强大且用户友好的额外安全层解决方案。
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+
+    
+    <footer class="article-time">
+        <span class="post-meta-item">
+          <i class="fas fa-pen"></i>
+          
+            <span class="article-type" style="color: white; font-size: 14px; background: #bf59f3; padding: 0 5px 1px 5px; margin-right: 5px; border-radius: 2px;">原创</span>
+          
+        </span>
+        
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+            <div class="post-author">
+                作者：童建平
+
+            </div>
+        </div>
+        
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">
+2025-05-05 13:06</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><span class="nowrap"><span class="emojify">💁🏻‍♂️</span> <a href="https://sikkerbox.sourceforge.io" target="_blank">sourceforge.net</a> 2025-05-05 《SikkerBox-手机上的网络瑞士军刀》 童建平</span></p>
+<h2 id="概述">概述
+</h2><p>SikkerBox 是一个同时支持安卓端、ios端、macos端、windows端访问的跨平台多平台网络工具包，将实现如下功能：</p>
+<p>（1）Microsoft Authenticator身份验证类APP的2FA认证功能，允许添加github等信息实现2FA认证。</p>
+<p>（2）根据用户输入域名或IP进行Ping诊断功能。</p>
+<p>（3）域名whois查询功能。</p>
+<p>（4）DNS反查功能。</p>
+<p>（5）IP计算器功能。</p>
+<p>（6）Virtual Hosts功能，根据用户从本设备选择hosts文件，或编辑hosts文件，并设置开关开启功能，实现网络访问时优先读取此hosts文件。</p>
+<p>等等。</p>
+<p>目前已实现上述第（1）点功能，即实现了安全的双因素认证（2FA），可为您的在线账户生成基于时间的一次性密码（TOTP），为您的数字生活提供了一个强大且用户友好的额外安全层解决方案。</p>
+<h2 id="2fa-功能特点">2FA 功能特点
+</h2><ul>
+<li><strong>安全存储</strong>：所有账户密钥均使用 Hive 数据库进行加密和安全存储</li>
+<li><strong>二维码扫描</strong>：通过扫描二维码轻松添加账户</li>
+<li><strong>手动输入</strong>：支持手动输入账户信息</li>
+<li><strong>基于时间的 OTP</strong>：生成符合 RFC 6238 标准的基于时间的一次性密码</li>
+<li><strong>离线访问</strong>：设置完成后完全离线工作</li>
+<li><strong>多平台支持</strong>：适用于 Android、iOS、Windows、macOS、Linux 和 Web</li>
+<li><strong>复制到剪贴板</strong>：快速复制功能，方便输入验证码</li>
+<li><strong>错误处理</strong>：具有详细日志记录的强大错误处理机制</li>
+<li><strong>极简界面</strong>：干净、直观的界面，注重易用性</li>
+</ul>
+<h2 id="2fa-技术细节">2FA 技术细节
+</h2><p>SikkerBox 使用 Flutter 构建，遵循以下关键原则：</p>
+<ul>
+<li><strong>安全第一</strong>：不向任何服务器传输数据；所有数据保留在您的设备上</li>
+<li><strong>注重隐私</strong>：无分析或跟踪</li>
+<li><strong>开源</strong>：透明的代码库可供审查</li>
+<li><strong>现代架构</strong>：使用 Provider 模式进行状态管理</li>
+<li><strong>整洁代码</strong>：结构良好的代码库，关注点分离清晰</li>
+</ul>
+<h2 id="开始使用">开始使用
+</h2><h3 id="安装">安装
+</h3><p>目前暂时提供安卓端apk安装包，直接下载apk安装即可。</p>
+<p>下载地址：</p>
+<p><a class="link" href="https://xmyy.com/soft/sikkerbox-1.0.0.apk"  target="_blank" rel="noopener"
+    >https://xmyy.com/soft/sikkerbox-1.0.0.apk</a></p>
+<p><a class="link" href="https://sikkerbox.sourceforge.io"  target="_blank" rel="noopener"
+    >https://sikkerbox.sourceforge.io</a></p>
+<p><a class="link" href="https://github.com/eagleos/sikkerbox"  target="_blank" rel="noopener"
+    >https://github.com/eagleos/sikkerbox</a></p>
+<h2 id="致谢">致谢
+</h2><ul>
+<li>Flutter 团队提供的优秀框架</li>
+<li>所有使本项目成为可能的软件包维护者</li>
+</ul>
+<h2 id="github-开启配置更换-two-factor-authentication-2fa-双因素认证">Github 开启/配置/更换 two-factor authentication (2FA) 双因素认证
+</h2><h3 id="未开启2fa">未开启2FA
+</h3><ol>
+<li>
+<p>下载并安装SikkerBox。</p>
+</li>
+<li>
+<p>登录Github后，点击页面最右上角的头像，再点击Settings进入设置页面。</p>
+</li>
+<li>
+<p>再在左侧Access菜单中点击Password and authentication，然后在【Two-factor authentication】区域点击Enable two-factor authentication（启用双重身份验证）按钮。</p>
+</li>
+<li>
+<p>打开SikkerBox，直接点击app右下角的扫描图标，对准上述Github出现的二维码。扫描成功后自动添加到主界面的账户列表中。</p>
+</li>
+<li>
+<p>在SikkerBox主界面账户列表中点击对应的Github账号，进去可查看到一次性密码，返回Github页面在二维码下面的Verify the code from the app方框中输入此一次性密码，验证通过后会自动跳转到Download your recovery codes页面，务必下载并将恢复码保存在安全的地方。</p>
+</li>
+<li>
+<p>然后，点击I have saved my recovery codes按钮，在出现的另一页面中点击Done按钮，即完成开启2FA。</p>
+</li>
+<li>
+<p>下次如果重新登录Github，或者在另外设备上登录Github要求输入2FA认证吗时，打开SikkerBox，在SikkerBox主界面账户列表中点击对应的Github账号，进去可查看到一次性密码，输入此一次性密码即可登录成功。</p>
+</li>
+</ol>
+<h3 id="更换2fa-app">更换2FA app
+</h3><ol>
+<li>
+<p>下载并安装SikkerBox。</p>
+</li>
+<li>
+<p>使用原有2FA app成功登录Github后，点击页面最右上角的头像，再点击Settings进入设置页面。</p>
+</li>
+<li>
+<p>再在左侧Access菜单中点击Password and authentication，然后在【Two-factor authentication】的Two-factor methods区域，点击Authenticator ap(Configured)右边的Edit按钮。</p>
+</li>
+<li>
+<p>打开SikkerBox，直接点击app右下角的扫描图标，对准上述Github出现的二维码。扫描成功后自动添加到主界面的账户列表中。</p>
+</li>
+<li>
+<p>在SikkerBox主界面账户列表中点击对应的Github账号，进去可查看到一次性密码，返回Github页面在二维码下面的Verify the code from the app方框中输入此一次性密码，验证通过后点击Save保存按钮即可完成2FA app替换。</p>
+</li>
+</ol>
+<h2 id="faq">FAQ
+</h2><ol>
+<li>在SikkerBox中不小心删除账户，无法进行2FA认证登录Github，怎么办？</li>
+</ol>
+<p>答：使用Github恢复码成功登录Github，然后使用上述更换2FA app步骤重新绑定SikkerBox即可。</p>
+<p><img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox1.jpg"
+	width="1080"
+	height="2408"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox1_hue9d1f60ef453f1446ec273f1e90e70b1_119588_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox1_hue9d1f60ef453f1446ec273f1e90e70b1_119588_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="sikkerbox app 软件截图1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="44"
+		data-flex-basis="107px"
+	
+>
+<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox2.jpg"
+	width="1080"
+	height="2408"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox2_hu5a3e535a31a2be5fd4e6324e1ae15e96_177953_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox2_hu5a3e535a31a2be5fd4e6324e1ae15e96_177953_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="sikkerbox app 软件截图2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="44"
+		data-flex-basis="107px"
+	
+>
+<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox3.jpg"
+	width="1080"
+	height="2408"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox3_hu9b1cb734bc1e7fe94f6ab8bfdb7655b6_159555_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox3_hu9b1cb734bc1e7fe94f6ab8bfdb7655b6_159555_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="sikkerbox app 软件截图3"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="44"
+		data-flex-basis="107px"
+	
+>
+<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox4.jpg"
+	width="1080"
+	height="2408"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox4_huaeb62f7fbcbd2686ce632062a414cd0a_90529_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox4_huaeb62f7fbcbd2686ce632062a414cd0a_90529_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="sikkerbox app 软件截图4"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="44"
+		data-flex-basis="107px"
+	
+>
+<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox5.jpg"
+	width="1080"
+	height="2408"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox5_hud7b40fd1c28063258dfe31f867e7cba5_118267_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox5_hud7b40fd1c28063258dfe31f867e7cba5_118267_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="sikkerbox app 软件截图5"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="44"
+		data-flex-basis="107px"
+	
+>
+<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox6.jpg"
+	width="1080"
+	height="2408"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox6_hu9c46c8652e655afc3809247419a057d9_99937_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox6_hu9c46c8652e655afc3809247419a057d9_99937_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="sikkerbox app 软件截图6"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="44"
+		data-flex-basis="107px"
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/SikkerBox/">SikkerBox</a>
+        
+            <a href="/tags/%E7%91%9E%E5%A3%AB%E5%86%9B%E5%88%80/">瑞士军刀</a>
+        
+            <a href="/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7%E5%8C%85/">网络工具包</a>
+        
+            <a href="/tags/2FA/">2FA</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/">
+        
+        
+            <div class="article-image">
+                <img src="/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/_hub6ad84b234d951f3ea5b70f97fa3d7ed_207895_b3f10a99a4a7aa9cd0067b69f51b7d91.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Tengine-rpm 基于Tengine 3.1深度定制优化"
+                        data-key="tengine-rpm-deeply-customized-and-optimized-based-on-Tengine" 
+                        data-hash="md5-Nop1AGTSb96hu1Jhd6iUyw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Tengine-rpm 基于Tengine 3.1深度定制优化</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/IPCDump-For-tracking-inter-process-communication-on-Linux/">
+        
+        
+            <div class="article-image">
+                <img src="/article/IPCDump-For-tracking-inter-process-communication-on-Linux/_huc2ca345ead1bb033a38c44f0c9746f5c_15326_c0e35fb0a9021b9d594aa5369245e040.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 新开源工具IPCDump：用于在Linux上跟踪进程间通信"
+                        data-key="IPCDump-For-tracking-inter-process-communication-on-Linux" 
+                        data-hash="md5-PhfhWRTITh3Sxzfl3vgz/g==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">新开源工具IPCDump：用于在Linux上跟踪进程间通信</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/article/How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login/">
+        
+        
+            <div class="article-image">
+                <img src="/article/How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login/_hu9222065cc0cbf3ee20c6c8b156c95081_108455_a5b3d348e76ba76f1416d48f029d3a48.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 如何通过ssh远程登录给esxi主机防火墙添加允许ip列表（视频）"
+                        data-key="How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login" 
+                        data-hash="md5-25v2SYfczMFGuCR2VnaJgA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何通过ssh远程登录给esxi主机防火墙添加允许ip列表（视频）</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;  2000 -  2025 <a href="https://xmyy.com/" target="_blank">虾米技术网 xmyy.com</a>
+    </section>
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 ，主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+<script src="/plugins/jQuery/jquery.min.js"></script>
+<script src="/plugins/bootstrap/bootstrap.min.js" async></script>
+<script src="/plugins/slick/slick.min.js"></script>
+<script src="/js/script.js"></script>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+            </main>
+        </div>
+        <script type="text/javascript" src="/ts/main.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://xmyy.com/css/googleapis-css2.css">
+
+    </body>
+</html>

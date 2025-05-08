@@ -7,7 +7,194 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>虾米技术网 xmyy.com</copyright>
-        <lastBuildDate>Mon, 31 Mar 2025 23:59:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/categories/DevOps/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 05 May 2025 13:06:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/categories/DevOps/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>SikkerBox-手机上的网络瑞士军刀</title>
+        <link>https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/</link>
+        <pubDate>Mon, 05 May 2025 13:06:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/</guid>
+        <description>&lt;img src="https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone.jpg" alt="Featured image of post SikkerBox-手机上的网络瑞士军刀" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;💁🏻‍♂️&lt;/span&gt; &lt;a href=&#34;https://sikkerbox.sourceforge.io&#34; target=&#34;_blank&#34;&gt;sourceforge.net&lt;/a&gt; 2025-05-05 《SikkerBox-手机上的网络瑞士军刀》 童建平&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;概述&#34;&gt;概述
+&lt;/h2&gt;&lt;p&gt;SikkerBox 是一个同时支持安卓端、ios端、macos端、windows端访问的跨平台多平台网络工具包，将实现如下功能：&lt;/p&gt;
+&lt;p&gt;（1）Microsoft Authenticator身份验证类APP的2FA认证功能，允许添加github等信息实现2FA认证。&lt;/p&gt;
+&lt;p&gt;（2）根据用户输入域名或IP进行Ping诊断功能。&lt;/p&gt;
+&lt;p&gt;（3）域名whois查询功能。&lt;/p&gt;
+&lt;p&gt;（4）DNS反查功能。&lt;/p&gt;
+&lt;p&gt;（5）IP计算器功能。&lt;/p&gt;
+&lt;p&gt;（6）Virtual Hosts功能，根据用户从本设备选择hosts文件，或编辑hosts文件，并设置开关开启功能，实现网络访问时优先读取此hosts文件。&lt;/p&gt;
+&lt;p&gt;等等。&lt;/p&gt;
+&lt;p&gt;目前已实现上述第（1）点功能，即实现了安全的双因素认证（2FA），可为您的在线账户生成基于时间的一次性密码（TOTP），为您的数字生活提供了一个强大且用户友好的额外安全层解决方案。&lt;/p&gt;
+&lt;h2 id=&#34;2fa-功能特点&#34;&gt;2FA 功能特点
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;安全存储&lt;/strong&gt;：所有账户密钥均使用 Hive 数据库进行加密和安全存储&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;二维码扫描&lt;/strong&gt;：通过扫描二维码轻松添加账户&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;手动输入&lt;/strong&gt;：支持手动输入账户信息&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;基于时间的 OTP&lt;/strong&gt;：生成符合 RFC 6238 标准的基于时间的一次性密码&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;离线访问&lt;/strong&gt;：设置完成后完全离线工作&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多平台支持&lt;/strong&gt;：适用于 Android、iOS、Windows、macOS、Linux 和 Web&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;复制到剪贴板&lt;/strong&gt;：快速复制功能，方便输入验证码&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;错误处理&lt;/strong&gt;：具有详细日志记录的强大错误处理机制&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;极简界面&lt;/strong&gt;：干净、直观的界面，注重易用性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2fa-技术细节&#34;&gt;2FA 技术细节
+&lt;/h2&gt;&lt;p&gt;SikkerBox 使用 Flutter 构建，遵循以下关键原则：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;安全第一&lt;/strong&gt;：不向任何服务器传输数据；所有数据保留在您的设备上&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;注重隐私&lt;/strong&gt;：无分析或跟踪&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;开源&lt;/strong&gt;：透明的代码库可供审查&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;现代架构&lt;/strong&gt;：使用 Provider 模式进行状态管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;整洁代码&lt;/strong&gt;：结构良好的代码库，关注点分离清晰&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;开始使用&#34;&gt;开始使用
+&lt;/h2&gt;&lt;h3 id=&#34;安装&#34;&gt;安装
+&lt;/h3&gt;&lt;p&gt;目前暂时提供安卓端apk安装包，直接下载apk安装即可。&lt;/p&gt;
+&lt;p&gt;下载地址：&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://xmyy.com/soft/sikkerbox-1.0.0.apk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://xmyy.com/soft/sikkerbox-1.0.0.apk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://sikkerbox.sourceforge.io&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://sikkerbox.sourceforge.io&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/eagleos/sikkerbox&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/eagleos/sikkerbox&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;致谢&#34;&gt;致谢
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Flutter 团队提供的优秀框架&lt;/li&gt;
+&lt;li&gt;所有使本项目成为可能的软件包维护者&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;github-开启配置更换-two-factor-authentication-2fa-双因素认证&#34;&gt;Github 开启/配置/更换 two-factor authentication (2FA) 双因素认证
+&lt;/h2&gt;&lt;h3 id=&#34;未开启2fa&#34;&gt;未开启2FA
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;下载并安装SikkerBox。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;登录Github后，点击页面最右上角的头像，再点击Settings进入设置页面。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;再在左侧Access菜单中点击Password and authentication，然后在【Two-factor authentication】区域点击Enable two-factor authentication（启用双重身份验证）按钮。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打开SikkerBox，直接点击app右下角的扫描图标，对准上述Github出现的二维码。扫描成功后自动添加到主界面的账户列表中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在SikkerBox主界面账户列表中点击对应的Github账号，进去可查看到一次性密码，返回Github页面在二维码下面的Verify the code from the app方框中输入此一次性密码，验证通过后会自动跳转到Download your recovery codes页面，务必下载并将恢复码保存在安全的地方。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后，点击I have saved my recovery codes按钮，在出现的另一页面中点击Done按钮，即完成开启2FA。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下次如果重新登录Github，或者在另外设备上登录Github要求输入2FA认证吗时，打开SikkerBox，在SikkerBox主界面账户列表中点击对应的Github账号，进去可查看到一次性密码，输入此一次性密码即可登录成功。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;更换2fa-app&#34;&gt;更换2FA app
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;下载并安装SikkerBox。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用原有2FA app成功登录Github后，点击页面最右上角的头像，再点击Settings进入设置页面。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;再在左侧Access菜单中点击Password and authentication，然后在【Two-factor authentication】的Two-factor methods区域，点击Authenticator ap(Configured)右边的Edit按钮。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打开SikkerBox，直接点击app右下角的扫描图标，对准上述Github出现的二维码。扫描成功后自动添加到主界面的账户列表中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在SikkerBox主界面账户列表中点击对应的Github账号，进去可查看到一次性密码，返回Github页面在二维码下面的Verify the code from the app方框中输入此一次性密码，验证通过后点击Save保存按钮即可完成2FA app替换。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;faq&#34;&gt;FAQ
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;在SikkerBox中不小心删除账户，无法进行2FA认证登录Github，怎么办？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;答：使用Github恢复码成功登录Github，然后使用上述更换2FA app步骤重新绑定SikkerBox即可。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox1.jpg&#34;
+	width=&#34;1080&#34;
+	height=&#34;2408&#34;
+	srcset=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox1_hue9d1f60ef453f1446ec273f1e90e70b1_119588_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox1_hue9d1f60ef453f1446ec273f1e90e70b1_119588_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;sikkerbox app 软件截图1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;44&#34;
+		data-flex-basis=&#34;107px&#34;
+	
+&gt;
+&lt;img src=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox2.jpg&#34;
+	width=&#34;1080&#34;
+	height=&#34;2408&#34;
+	srcset=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox2_hu5a3e535a31a2be5fd4e6324e1ae15e96_177953_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox2_hu5a3e535a31a2be5fd4e6324e1ae15e96_177953_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;sikkerbox app 软件截图2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;44&#34;
+		data-flex-basis=&#34;107px&#34;
+	
+&gt;
+&lt;img src=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox3.jpg&#34;
+	width=&#34;1080&#34;
+	height=&#34;2408&#34;
+	srcset=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox3_hu9b1cb734bc1e7fe94f6ab8bfdb7655b6_159555_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox3_hu9b1cb734bc1e7fe94f6ab8bfdb7655b6_159555_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;sikkerbox app 软件截图3&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;44&#34;
+		data-flex-basis=&#34;107px&#34;
+	
+&gt;
+&lt;img src=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox4.jpg&#34;
+	width=&#34;1080&#34;
+	height=&#34;2408&#34;
+	srcset=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox4_huaeb62f7fbcbd2686ce632062a414cd0a_90529_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox4_huaeb62f7fbcbd2686ce632062a414cd0a_90529_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;sikkerbox app 软件截图4&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;44&#34;
+		data-flex-basis=&#34;107px&#34;
+	
+&gt;
+&lt;img src=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox5.jpg&#34;
+	width=&#34;1080&#34;
+	height=&#34;2408&#34;
+	srcset=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox5_hud7b40fd1c28063258dfe31f867e7cba5_118267_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox5_hud7b40fd1c28063258dfe31f867e7cba5_118267_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;sikkerbox app 软件截图5&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;44&#34;
+		data-flex-basis=&#34;107px&#34;
+	
+&gt;
+&lt;img src=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox6.jpg&#34;
+	width=&#34;1080&#34;
+	height=&#34;2408&#34;
+	srcset=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox6_hu9c46c8652e655afc3809247419a057d9_99937_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox6_hu9c46c8652e655afc3809247419a057d9_99937_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;sikkerbox app 软件截图6&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;44&#34;
+		data-flex-basis=&#34;107px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Tengine-rpm 基于Tengine 3.1深度定制优化</title>
         <link>https://xmyy.com/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/</link>
         <pubDate>Mon, 31 Mar 2025 23:59:00 +0800</pubDate>
