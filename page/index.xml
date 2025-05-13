@@ -7,7 +7,20 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>虾米技术网 xmyy.com</copyright>
-        <lastBuildDate>Wed, 04 Sep 2024 08:36:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 10 May 2025 09:00:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>捐赠支持</title>
+        <link>https://xmyy.com/donate/</link>
+        <pubDate>Sat, 10 May 2025 09:00:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/donate/</guid>
+        <description>&lt;h1 id=&#34;捐赠支持&#34;&gt;捐赠支持
+&lt;/h1&gt;&lt;p&gt;Donate&lt;/p&gt;
+&lt;p&gt;如果您觉得这个项目帮助到了您，您可以请作者喝杯咖啡表示鼓励 ☕️&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;weixin.png&#34; alt=&#34;donate-by-weixin&#34; width=200&gt;                
+&lt;img src=&#34;alipay.jpg&#34; alt=&#34;donate-by-alipay&#34; width=200&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>童建平-运维工程师-简历</title>
         <link>https://xmyy.com/resume/</link>
         <pubDate>Wed, 04 Sep 2024 08:36:00 +0800</pubDate>
