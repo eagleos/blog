@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>虾米技术网 xmyy.com</copyright>
-        <lastBuildDate>Mon, 05 May 2025 13:06:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/2FA/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 15 May 2025 13:06:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/2FA/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>SikkerBox-手机上的网络瑞士军刀</title>
         <link>https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/</link>
-        <pubDate>Mon, 05 May 2025 13:06:00 +0800</pubDate>
+        <pubDate>Thu, 15 May 2025 13:06:00 +0800</pubDate>
         
         <guid>https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/</guid>
         <description>&lt;img src="https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone.jpg" alt="Featured image of post SikkerBox-手机上的网络瑞士军刀" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;💁🏻‍♂️&lt;/span&gt; &lt;a href=&#34;https://sikkerbox.sourceforge.io&#34; target=&#34;_blank&#34;&gt;sourceforge.net&lt;/a&gt; 2025-05-05 《SikkerBox-手机上的网络瑞士军刀》 童建平&lt;/span&gt;&lt;/p&gt;
@@ -55,6 +55,8 @@
     &gt;https://sikkerbox.sourceforge.io&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/eagleos/sikkerbox&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/eagleos/sikkerbox&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.pgyer.com/VT9KrSgd&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.pgyer.com/VT9KrSgd&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;致谢&#34;&gt;致谢
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Flutter 团队提供的优秀框架&lt;/li&gt;
@@ -108,13 +110,42 @@
 &lt;li&gt;在SikkerBox中不小心删除账户，无法进行2FA认证登录Github，怎么办？&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;答：使用Github恢复码成功登录Github，然后使用上述更换2FA app步骤重新绑定SikkerBox即可。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox1.jpg&#34;
+&lt;h2 id=&#34;贡献者&#34;&gt;贡献者
+&lt;/h2&gt;&lt;p&gt;欢迎参与本app测试，参与者将会在下面表格中列出以示感谢！&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;手机机型&lt;/th&gt;
+&lt;th&gt;测试版本&lt;/th&gt;
+&lt;th&gt;测试结果&lt;/th&gt;
+&lt;th&gt;最新测试时间&lt;/th&gt;
+&lt;th&gt;测试者&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;vivo IQOO Neo5&lt;/td&gt;
+&lt;td&gt;1.0.0&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;2025.05.14&lt;/td&gt;
+&lt;td&gt;eagle&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;vivo IQOO Neo5 活力版&lt;/td&gt;
+&lt;td&gt;1.0.0&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;2025.05.14&lt;/td&gt;
+&lt;td&gt;eagle&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox7.jpg&#34;
 	width=&#34;1080&#34;
 	height=&#34;2408&#34;
-	srcset=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox1_hue9d1f60ef453f1446ec273f1e90e70b1_119588_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox1_hue9d1f60ef453f1446ec273f1e90e70b1_119588_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox7_hu3056310d7e94902d9d131705a267fd94_107277_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox7_hu3056310d7e94902d9d131705a267fd94_107277_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;sikkerbox app 软件截图1&#34;
+		alt=&#34;sikkerbox app 软件截图7&#34;
 	
 	
 		class=&#34;gallery-image&#34; 
@@ -122,13 +153,13 @@
 		data-flex-basis=&#34;107px&#34;
 	
 &gt;
-&lt;img src=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox2.jpg&#34;
+&lt;img src=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox8.jpg&#34;
 	width=&#34;1080&#34;
 	height=&#34;2408&#34;
-	srcset=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox2_hu5a3e535a31a2be5fd4e6324e1ae15e96_177953_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox2_hu5a3e535a31a2be5fd4e6324e1ae15e96_177953_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox8_huf6ce9d87e98406fa0a2e0478a4126d9c_128213_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox8_huf6ce9d87e98406fa0a2e0478a4126d9c_128213_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;sikkerbox app 软件截图2&#34;
+		alt=&#34;sikkerbox app 软件截图8&#34;
 	
 	
 		class=&#34;gallery-image&#34; 
@@ -136,13 +167,13 @@
 		data-flex-basis=&#34;107px&#34;
 	
 &gt;
-&lt;img src=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox3.jpg&#34;
+&lt;img src=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox9.jpg&#34;
 	width=&#34;1080&#34;
 	height=&#34;2408&#34;
-	srcset=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox3_hu9b1cb734bc1e7fe94f6ab8bfdb7655b6_159555_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox3_hu9b1cb734bc1e7fe94f6ab8bfdb7655b6_159555_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox9_hud5af2144362f5fcad6fa35fdf55cd611_108965_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox9_hud5af2144362f5fcad6fa35fdf55cd611_108965_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;sikkerbox app 软件截图3&#34;
+		alt=&#34;sikkerbox app 软件截图9&#34;
 	
 	
 		class=&#34;gallery-image&#34; 
@@ -150,13 +181,13 @@
 		data-flex-basis=&#34;107px&#34;
 	
 &gt;
-&lt;img src=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox4.jpg&#34;
+&lt;img src=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox10.jpg&#34;
 	width=&#34;1080&#34;
 	height=&#34;2408&#34;
-	srcset=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox4_huaeb62f7fbcbd2686ce632062a414cd0a_90529_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox4_huaeb62f7fbcbd2686ce632062a414cd0a_90529_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox10_hu9e1d7577b218b31fba8406ae98ea6953_100331_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox10_hu9e1d7577b218b31fba8406ae98ea6953_100331_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;sikkerbox app 软件截图4&#34;
+		alt=&#34;sikkerbox app 软件截图10&#34;
 	
 	
 		class=&#34;gallery-image&#34; 
@@ -164,13 +195,13 @@
 		data-flex-basis=&#34;107px&#34;
 	
 &gt;
-&lt;img src=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox5.jpg&#34;
+&lt;img src=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox11.jpg&#34;
 	width=&#34;1080&#34;
 	height=&#34;2408&#34;
-	srcset=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox5_hud7b40fd1c28063258dfe31f867e7cba5_118267_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox5_hud7b40fd1c28063258dfe31f867e7cba5_118267_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox11_hu81ca419e1cced9fd5a6d9ef0fe1e5090_158714_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox11_hu81ca419e1cced9fd5a6d9ef0fe1e5090_158714_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;sikkerbox app 软件截图5&#34;
+		alt=&#34;sikkerbox app 软件截图11&#34;
 	
 	
 		class=&#34;gallery-image&#34; 
@@ -178,13 +209,27 @@
 		data-flex-basis=&#34;107px&#34;
 	
 &gt;
-&lt;img src=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox6.jpg&#34;
+&lt;img src=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox12.jpg&#34;
 	width=&#34;1080&#34;
 	height=&#34;2408&#34;
-	srcset=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox6_hu9c46c8652e655afc3809247419a057d9_99937_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox6_hu9c46c8652e655afc3809247419a057d9_99937_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox12_hudea6aca5fa01370dbe75d907673b078d_91310_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox12_hudea6aca5fa01370dbe75d907673b078d_91310_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;sikkerbox app 软件截图6&#34;
+		alt=&#34;sikkerbox app 软件截图12&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;44&#34;
+		data-flex-basis=&#34;107px&#34;
+	
+&gt;
+&lt;img src=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox13.jpg&#34;
+	width=&#34;1080&#34;
+	height=&#34;2408&#34;
+	srcset=&#34;https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox13_hu693c6ef41b7f4517ce10349eff6ac18f_241380_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox13_hu693c6ef41b7f4517ce10349eff6ac18f_241380_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;sikkerbox app 软件截图13&#34;
 	
 	
 		class=&#34;gallery-image&#34; 
