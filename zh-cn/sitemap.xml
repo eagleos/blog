@@ -17,6 +17,16 @@
   </url><url>
     <loc>https://xmyy.com/tags/2FA/</loc>
     <lastmod>2025-05-15T13:06:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/tags/2FA/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/tags/2FA/"
+                />
   </url><url>
     <loc>https://xmyy.com/categories/</loc>
     <lastmod>2025-05-15T13:06:00+08:00</lastmod>
@@ -33,12 +43,42 @@
   </url><url>
     <loc>https://xmyy.com/post/</loc>
     <lastmod>2025-05-15T13:06:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/post/"
+                />
   </url><url>
     <loc>https://xmyy.com/tags/SikkerBox/</loc>
     <lastmod>2025-05-15T13:06:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/tags/SikkerBox/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/tags/SikkerBox/"
+                />
   </url><url>
     <loc>https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/</loc>
     <lastmod>2025-05-15T13:06:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/"
+                />
   </url><url>
     <loc>https://xmyy.com/tags/</loc>
     <lastmod>2025-05-15T13:06:00+08:00</lastmod>
@@ -61,6 +101,16 @@
   </url><url>
     <loc>https://xmyy.com/categories/DevOps/</loc>
     <lastmod>2025-05-15T13:06:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/categories/DevOps/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/categories/DevOps/"
+                />
   </url><url>
     <loc>https://xmyy.com/page/</loc>
     <lastmod>2025-05-10T09:00:00+08:00</lastmod>
@@ -70,45 +120,185 @@
   </url><url>
     <loc>https://xmyy.com/tags/AlmaLinux/</loc>
     <lastmod>2025-03-31T23:59:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/tags/AlmaLinux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/tags/AlmaLinux/"
+                />
   </url><url>
     <loc>https://xmyy.com/tags/Centos/</loc>
     <lastmod>2025-03-31T23:59:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/tags/Centos/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/tags/Centos/"
+                />
   </url><url>
     <loc>https://xmyy.com/tags/GnuPG/</loc>
     <lastmod>2025-03-31T23:59:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/tags/GnuPG/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/tags/GnuPG/"
+                />
   </url><url>
     <loc>https://xmyy.com/tags/gpg/</loc>
     <lastmod>2025-03-31T23:59:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/tags/gpg/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/tags/gpg/"
+                />
   </url><url>
     <loc>https://xmyy.com/tags/HTTP/</loc>
     <lastmod>2025-03-31T23:59:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/tags/HTTP/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/tags/HTTP/"
+                />
   </url><url>
     <loc>https://xmyy.com/tags/nginx/</loc>
     <lastmod>2025-03-31T23:59:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/tags/nginx/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/tags/nginx/"
+                />
   </url><url>
     <loc>https://xmyy.com/tags/RedHat/</loc>
     <lastmod>2025-03-31T23:59:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/tags/RedHat/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/tags/RedHat/"
+                />
   </url><url>
     <loc>https://xmyy.com/tags/Rocky/</loc>
     <lastmod>2025-03-31T23:59:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/tags/Rocky/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/tags/Rocky/"
+                />
   </url><url>
     <loc>https://xmyy.com/tags/rpm/</loc>
     <lastmod>2025-03-31T23:59:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/tags/rpm/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/tags/rpm/"
+                />
   </url><url>
     <loc>https://xmyy.com/tags/RSA/</loc>
     <lastmod>2025-03-31T23:59:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/tags/RSA/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/tags/RSA/"
+                />
   </url><url>
     <loc>https://xmyy.com/tags/tengine/</loc>
     <lastmod>2025-03-31T23:59:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/tags/tengine/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/tags/tengine/"
+                />
   </url><url>
     <loc>https://xmyy.com/tags/tengine-rpm/</loc>
     <lastmod>2025-03-31T23:59:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/tags/tengine-rpm/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/tags/tengine-rpm/"
+                />
   </url><url>
     <loc>https://xmyy.com/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/</loc>
     <lastmod>2025-03-31T23:59:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/"
+                />
   </url><url>
     <loc>https://xmyy.com/tags/WAF/</loc>
     <lastmod>2025-03-31T23:59:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/tags/WAF/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/tags/WAF/"
+                />
   </url><url>
     <loc>https://xmyy.com/tags/%E5%AE%9A%E5%88%B6/</loc>
     <lastmod>2025-03-31T23:59:00+08:00</lastmod>
@@ -127,12 +317,42 @@
   </url><url>
     <loc>https://xmyy.com/tags/EagleOS/</loc>
     <lastmod>2025-03-11T15:46:06+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/tags/EagleOS/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/tags/EagleOS/"
+                />
   </url><url>
     <loc>https://xmyy.com/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/</loc>
     <lastmod>2025-03-11T15:46:06+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/"
+                />
   </url><url>
     <loc>https://xmyy.com/categories/system/</loc>
     <lastmod>2025-03-11T15:46:06+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/categories/system/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/categories/system/"
+                />
   </url><url>
     <loc>https://xmyy.com/tags/%E6%97%A0%E4%BA%BA%E5%8F%82%E4%B8%8E/</loc>
     <lastmod>2025-03-11T15:46:06+08:00</lastmod>

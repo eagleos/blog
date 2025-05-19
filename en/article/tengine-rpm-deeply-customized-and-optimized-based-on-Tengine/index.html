@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Tengine is a distribution of Nginx with some advanced features.Tengine does not provide official RPM packages, here to provide unofficial optimized compilation and integration of LuaJIT, ModSecurity, geoip2, and other commonly used modules of the Tengine RPM packages, to facilitate the user to quickly install and configure the web server on the target server.">
+<title>Tengine-rpm deeply customized and optimized based on Tengine</title>
+
+<link rel='canonical' href='https://xmyy.com/en/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/'>
+
+<link rel="stylesheet" href="/scss/style.min.b1ee696470c26668a16cfa814cde453da11a905817be39639788d15e9984714a.css">
+<link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="/plugins/themify-icons/themify-icons.css">
+
+<link rel="stylesheet" href="/css/style.css"><meta property='og:title' content="Tengine-rpm deeply customized and optimized based on Tengine">
+<meta property='og:description' content="Tengine is a distribution of Nginx with some advanced features.Tengine does not provide official RPM packages, here to provide unofficial optimized compilation and integration of LuaJIT, ModSecurity, geoip2, and other commonly used modules of the Tengine RPM packages, to facilitate the user to quickly install and configure the web server on the target server.">
+<meta property='og:url' content='https://xmyy.com/en/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/'>
+<meta property='og:site_name' content='Xmyy Tech Site'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='tengine' /><meta property='article:tag' content='rpm' /><meta property='article:tag' content='tengine-rpm' /><meta property='article:tag' content='nginx' /><meta property='article:tag' content='reverse proxy' /><meta property='article:tag' content='HTTP' /><meta property='article:tag' content='AlmaLinux' /><meta property='article:tag' content='Centos' /><meta property='article:tag' content='RedHat' /><meta property='article:tag' content='Rocky' /><meta property='article:tag' content='customize' /><meta property='article:tag' content='optimize' /><meta property='article:tag' content='WAF' /><meta property='article:tag' content='anti-attack' /><meta property='article:tag' content='GnuPG' /><meta property='article:tag' content='gpg' /><meta property='article:tag' content='public key' /><meta property='article:tag' content='RSA' /><meta property='article:published_time' content='2025-03-31T23:59:00&#43;08:00'/><meta property='article:modified_time' content='2025-03-31T23:59:00&#43;08:00'/><meta property='og:image' content='https://xmyy.com/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine.png' />
+<meta name="twitter:title" content="Tengine-rpm deeply customized and optimized based on Tengine">
+<meta name="twitter:description" content="Tengine is a distribution of Nginx with some advanced features.Tengine does not provide official RPM packages, here to provide unofficial optimized compilation and integration of LuaJIT, ModSecurity, geoip2, and other commonly used modules of the Tengine RPM packages, to facilitate the user to quickly install and configure the web server on the target server."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://xmyy.com/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine.png' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<header class="sticky-top bg-white border-bottom border-default">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-white">
+                    <a class="navbar-brand" href="/en">
+                        <img class="img-fluid" width="150px" src="/images/logo.png" alt="Xmyy Tech Site">
+                    </a>
+                    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+                        <i class="ti-menu"></i>
+                    </button>
+                    <div class="collapse navbar-collapse text-center" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/en">首页</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/eagle/">雄鹰论文</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/CyberSecurity/">网络安全</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/system/">操作系统</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/DevOps/">运维开发</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/donate/">捐赠</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false">友链 <i class="ti-angle-down ml-1"></i>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/links/">友链首页</a>
+                                    <a class="dropdown-item" href="https://ok118.com" target="_blank">Ok118网址导航 ok118.com</a>
+                                    <a class="dropdown-item" href="https://ip40.com" target="_blank">IP查询 ip40.com</a>
+                                    <a class="dropdown-item" href="https://xmfast.com" target="_blank">Skating网址导航 xmfast.com</a>
+                                </div>
+                            </li>
+                        </ul>
+
+
+
+
+                        <div class="m-2 border-0" id="dark-mode-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"/>
+                                <circle cx="8" cy="12" r="2" />
+                                <rect x="2" y="6" width="20" height="12" rx="6" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"/>
+                                <circle cx="16" cy="12" r="2" />
+                                <rect x="2" y="6" width="20" height="12" rx="6" />
+                            </svg>
+                        </div>
+                        <div class="search px-4">
+                            <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+                            <div class="search-wrapper">
+                                <form action="/search/" class="h-100">
+                                    <input class="search-box pl-4" id="search-query" name="keyword" type="search" placeholder="Type &amp; Hit Enter...">
+                                </form>
+                                <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="container main-container flex on-phone--column extended">
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#tengine-rpm-readme"><strong>Tengine RPM Readme</strong></a></li>
+    <li><a href="#how-to-download"><strong>How to download?</strong></a></li>
+    <li><a href="#how-to-install"><strong>How to install?</strong></a></li>
+    <li><a href="#requirements"><strong>Requirements</strong></a></li>
+    <li><a href="#distro-support"><strong>Distro support</strong></a></li>
+    <li><a href="#configuration"><strong>Configuration</strong></a></li>
+    <li><a href="#faq"><strong>FAQ</strong></a></li>
+    <li><a href="#rpm-public-key"><strong>RPM public key</strong></a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/en/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/">
+                <img src="/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/_hub6ad84b234d951f3ea5b70f97fa3d7ed_207895_423c142acd3f46cec4d08553663a1534.png"
+                        srcset="/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/_hub6ad84b234d951f3ea5b70f97fa3d7ed_207895_423c142acd3f46cec4d08553663a1534.png 800w, /article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/_hub6ad84b234d951f3ea5b70f97fa3d7ed_207895_349a94427c5f7f85b19b6f57bbb5781c.png 1600w"
+                        width="800"
+                        height="183"
+                        loading="lazy"
+                        alt="Featured image of post Tengine-rpm deeply customized and optimized based on Tengine" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/en/categories/DevOps/" >
+                DevOps
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/">Tengine-rpm deeply customized and optimized based on Tengine</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Tengine is a distribution of Nginx with some advanced features.Tengine does not provide official RPM packages, here to provide unofficial optimized compilation and integration of LuaJIT, ModSecurity, geoip2, and other commonly used modules of the Tengine RPM packages, to facilitate the user to quickly install and configure the web server on the target server.
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+
+    
+    <footer class="article-time">
+        <span class="post-meta-item">
+          <i class="fas fa-pen"></i>
+          
+            <span class="article-type" style="color: white; font-size: 14px; background: #bf59f3; padding: 0 5px 1px 5px; margin-right: 5px; border-radius: 2px;">原创</span>
+          
+        </span>
+        
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+            <div class="post-author">
+                作者：eagle
+
+            </div>
+        </div>
+        
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">
+2025-03-31 23:59</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    5 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="https://xmyy.com/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/" class="link">中文</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><span class="nowrap"><span class="emojify">💁🏻‍♂️</span> <a href="https://tengine-rpm.sourceforge.io" target="_blank">sourceforge.net</a> 2025-03-31 《Tengine-rpm 基于Tengine 3.1深度定制优化》 童建平</span></p>
+<h2 id="tengine-rpm-readme"><strong>Tengine RPM Readme</strong>
+</h2><p>Tengine is a high-performance HTTP and reverse proxy web server originated by Taobao, the largest e-commerce website in Asia. It is based on the Nginx HTTP server and has many advanced features. Tengine has proven to be very stable and efficient on some of the top 100 websites in the world, including Taobao.com, Tmall.com, Youku, AliExpress and Alibaba Cloud.</p>
+<p>In short, Tengine is a distribution of Nginx with some advanced features.Tengine does not provide official RPM packages, here to provide unofficial optimized compilation and integration of LuaJIT, ModSecurity, geoip2, and other commonly used modules of the Tengine RPM packages, to facilitate the user to quickly install and configure the web server on the target server.</p>
+<p>This is a rpm package based on the official package <a class="link" href="https://tengine.taobao.org/download/tengine-3.1.0.tar.gz"  target="_blank" rel="noopener"
+    >https://tengine.taobao.org/download/tengine-3.1.0.tar.gz</a>, which is easy to install and use, you can download and install it for free.</p>
+<p>Only the almalinux 9.5-based rpm package is available first, which can also be used for Red Hat Enterprise Linux (RHEL) and its derivatives, such as CentOS Linux and Rocky Linux.</p>
+<h2 id="how-to-download"><strong>How to download?</strong>
+</h2><p><a class="link" href="https://github.com/eagleos/tengine-rpm/releases"  target="_blank" rel="noopener"
+    >https://github.com/eagleos/tengine-rpm/releases</a></p>
+<p><a class="link" href="https://tengine-rpm.sourceforge.io"  target="_blank" rel="noopener"
+    >https://tengine-rpm.sourceforge.io</a></p>
+<h2 id="how-to-install"><strong>How to install?</strong>
+</h2><ul>
+<li><strong>manual installation</strong></li>
+</ul>
+<p>rpm -Uvh tengine-3.1.0-1.el9.x86_64.rpm</p>
+<p>As shown below:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@EagleOS ~<span class="o">]</span><span class="c1"># rpm -ivh tengine-3.1.0-1.el9.x86_64.rpm</span>
+</span></span><span class="line"><span class="cl">Error: dependency detection failed:
+</span></span><span class="line"><span class="cl">geolite2-city &lt; <span class="m">20250331</span> is replaced by tengine-3.1.0-1.el9.x86_64
+</span></span><span class="line"><span class="cl">geolite2-country &lt; <span class="m">20250331</span> is replaced by tengine-3.1.0-1.el9.x86_64
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@EagleOS ~<span class="o">]</span><span class="c1"># rpm -Uvh tengine-3.1.0-1.el9.x86_64.rpm</span>
+</span></span><span class="line"><span class="cl">Verifying...                          <span class="c1">################################# [100%]</span>
+</span></span><span class="line"><span class="cl">Preparing...                          <span class="c1">################################# [100%]</span>
+</span></span><span class="line"><span class="cl">Upgrading/installing...
+</span></span><span class="line"><span class="cl">1:tengine-3.1.0-1.el9              <span class="c1">################################# [ 33%]</span>
+</span></span><span class="line"><span class="cl">Cleaning/deleting...
+</span></span><span class="line"><span class="cl">2:geolite2-country-20191217-6.el9  <span class="c1">################################# [ 67%]</span>
+</span></span><span class="line"><span class="cl">3:geolite2-city-20191217-6.el9     <span class="c1">################################# [100%]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>As shown in the image below:</p>
+<p><img src="/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/tengine-rpm.png"
+	width="603"
+	height="239"
+	srcset="/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/tengine-rpm_hu5c9c999d8c29633056a13e1c8eec688a_71481_480x0_resize_box_3.png 480w, /article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/tengine-rpm_hu5c9c999d8c29633056a13e1c8eec688a_71481_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="how to install tengine-rpm"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="252"
+		data-flex-basis="605px"
+	
+></p>
+<ul>
+<li><strong>Online Installation</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dnf copr <span class="nb">enable</span> xmdoor/tengine-rpm
+</span></span><span class="line"><span class="cl">dnf -y install tengine
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>As shown in the image below:</p>
+<p><img src="/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/copr.jpg"
+	width="1920"
+	height="1040"
+	srcset="/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/copr_hudd8c6127f4550e57c8a67dd8b54b43cf_432664_480x0_resize_q75_box.jpg 480w, /article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/copr_hudd8c6127f4550e57c8a67dd8b54b43cf_432664_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="how to install tengine-rpm using copr"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="184"
+		data-flex-basis="443px"
+	
+></p>
+<h2 id="requirements"><strong>Requirements</strong>
+</h2><p>If you are prompted with a message similar to the following during installation:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@EagleOS ~<span class="o">]</span><span class="c1"># rpm -ivh tengine-3.1.0-1.el9.x86_64.rpm </span>
+</span></span><span class="line"><span class="cl">Error: dependency detection failed:
+</span></span><span class="line"><span class="cl">        apr &gt;<span class="o">=</span> 1.7.0 is required by tengine-3.1.0-1.el9.x86_64
+</span></span><span class="line"><span class="cl">        apr-util &gt;<span class="o">=</span> 1.6.1 is required by tengine-3.1.0-1.el9.x86_64
+</span></span><span class="line"><span class="cl">        jemalloc &gt;<span class="o">=</span> 5.2.1 is required by tengine-3.1.0-1.el9.x86_64
+</span></span><span class="line"><span class="cl">        jemalloc-devel &gt;<span class="o">=</span> 5.2.1 is required by tengine-3.1.0-1.el9.x86_64
+</span></span><span class="line"><span class="cl">        libluajit-5.1.so.2<span class="o">()(</span>64bit<span class="o">)</span> is required by tengine-3.1.0-1.el9.x86_64
+</span></span><span class="line"><span class="cl">        libmaxminddb-devel &gt;<span class="o">=</span> 1.5.2 is required by tengine-3.1.0-1.el9.x86_64
+</span></span><span class="line"><span class="cl">        libmodsecurity &gt;<span class="o">=</span> 3.0.12 is required by tengine-3.1.0-1.el9.x86_64
+</span></span><span class="line"><span class="cl">        libmodsecurity-devel &gt;<span class="o">=</span> 3.0.12 is required by tengine-3.1.0-1.el9.x86_64
+</span></span><span class="line"><span class="cl">        libmodsecurity.so.3<span class="o">()(</span>64bit<span class="o">)</span> is required by tengine-3.1.0-1.el9.x86_64
+</span></span><span class="line"><span class="cl">        lmdb &gt;<span class="o">=</span> 0.9.29 is required by tengine-3.1.0-1.el9.x86_64
+</span></span><span class="line"><span class="cl">        lmdb-devel &gt;<span class="o">=</span> 0.9.29 is required by tengine-3.1.0-1.el9.x86_64
+</span></span><span class="line"><span class="cl">        lua-devel &gt;<span class="o">=</span> 5.4.4 is required by tengine-3.1.0-1.el9.x86_64
+</span></span><span class="line"><span class="cl">        luajit &gt;<span class="o">=</span> 2.1.0 is required by tengine-3.1.0-1.el9.x86_64
+</span></span><span class="line"><span class="cl">        luajit-devel &gt;<span class="o">=</span> 2.1.0 is required by tengine-3.1.0-1.el9.x86_64
+</span></span><span class="line"><span class="cl">        geolite2-city &lt; <span class="m">20250331</span> is replaced by tengine-3.1.0-1.el9.x86_64
+</span></span><span class="line"><span class="cl">        geolite2-country &lt; <span class="m">20250331</span> is replaced by tengine-3.1.0-1.el9.x86_64
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Please download the relevant dependency packages first:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/apr-1.7.0-12.el9_3.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/apr-util-1.6.1-23.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/apr-util-bdb-1.6.1-23.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/CRB/x86_64/os/Packages/libmaxminddb-devel-1.5.2-4.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/CRB/x86_64/os/Packages/lmdb-0.9.29-3.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/CRB/x86_64/os/Packages/lmdb-devel-0.9.29-3.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/CRB/x86_64/os/Packages/lua-devel-5.4.4-4.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/lua-rpm-macros-1-6.el9.noarch.rpm
+</span></span><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/devel/x86_64/os/Packages/lua-static-5.4.4-4.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://repo.almalinux.org/almalinux/9/devel/x86_64/os/Packages/pcre2-static-10.40-6.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/l/libmodsecurity-3.0.12-1.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/l/libmodsecurity-devel-3.0.12-1.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/l/libmodsecurity-static-3.0.12-1.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/s/ssdeep-libs-2.14.1-11.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/j/jemalloc-5.2.1-2.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/j/jemalloc-devel-5.2.1-2.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/l/luajit-2.1.0-0.23beta3.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/l/luajit-devel-2.1.0-0.23beta3.el9.x86_64.rpm
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Then install it:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">rpm -ivh apr-util-bdb-1.6.1-23.el9.x86_64.rpm apr-1.7.0-12.el9_3.x86_64.rpm apr-util-1.6.1-23.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">rpm -ivh libmaxminddb-devel-1.5.2-4.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">rpm -ivh lmdb-0.9.29-3.el9.x86_64.rpm lmdb-devel-0.9.29-3.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">rpm -ivh lua-rpm-macros-1-6.el9.noarch.rpm lua-devel-5.4.4-4.el9.x86_64.rpm lua-static-5.4.4-4.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">rpm -ivh pcre2-static-10.40-6.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">rpm -ivh ssdeep-libs-2.14.1-11.el9.x86_64.rpm libmodsecurity-3.0.12-1.el9.x86_64.rpm libmodsecurity-devel-3.0.12-1.el9.x86_64.rpm libmodsecurity-static-3.0.12-1.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">rpm -ivh jemalloc-5.2.1-2.el9.x86_64.rpm jemalloc-devel-5.2.1-2.el9.x86_64.rpm
+</span></span><span class="line"><span class="cl">rpm -ivh luajit-2.1.0-0.23beta3.el9.x86_64.rpm luajit-devel-2.1.0-0.23beta3.el9.x86_64.rpm
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="distro-support"><strong>Distro support</strong>
+</h2><p>The following distribution was tested and passed:</p>
+<p>Almalinux 9.5 x86_64</p>
+<p>Compatible with the following releases, untested:</p>
+<p>Red Hat Enterprise Linux 9.x x86_64</p>
+<p>CentOS Linux 9.x x86_64</p>
+<p>Rocky Linux 9.x x86_64</p>
+<h2 id="configuration"><strong>Configuration</strong>
+</h2><ul>
+<li>The nginx configuration file is located at: /app/nginx/conf</li>
+<li>After installation will automatically start nginx service, manual restart service command: systemctl restart nginx, reload configuration command: systemctl reload nginx</li>
+<li>In the process of installing the rpm package, the number of cpu cores of the target server will be automatically detected, and the nginx configuration will be automatically optimized for the configuration process</li>
+<li>For the target server default site, access to the offshore server is disabled by default in nginx.conf to save server-related access resources. If you need to open this access, you can change this file by removing the following configuration statement:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">  <span class="k">if</span> <span class="o">(</span><span class="nv">$ip_deny</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> 503<span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Support for lua syntax, the relevant test statements, please see the configuration of nginx.conf, you can modify the relevant configuration for the test</li>
+<li>vhost.conf is an example of a site configuration that is not loaded by default, but can be modified and started by imitating it.</li>
+<li>The modsecurity anti-attack module, i.e. Web Application Firewall (WAF), is enabled by default in vhost.conf, the configuration file is located at: <code>/app/nginx/conf/modsecurity</code>, and the logs are located at: <code>/app/nginx/logs/modsec_audit.log</code></li>
+<li>The compilation parameters for this rpm package are as follows:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@EagleOS ~<span class="o">]</span><span class="c1"># nginx -V</span>
+</span></span><span class="line"><span class="cl">Tengine version: Microsoft-IIS/3.1.0
+</span></span><span class="line"><span class="cl">nginx version: Microsoft-IIS/8.5/1.24.0
+</span></span><span class="line"><span class="cl">built by gcc 11.5.0 <span class="m">20240719</span> <span class="o">(</span>Red Hat 11.5.0-5<span class="o">)</span> <span class="o">(</span>GCC<span class="o">)</span>
+</span></span><span class="line"><span class="cl">built with OpenSSL 3.2.2 <span class="m">4</span> Jun <span class="m">2024</span>
+</span></span><span class="line"><span class="cl">TLS SNI support enabled
+</span></span><span class="line"><span class="cl">configure arguments: --prefix<span class="o">=</span>/app/nginx --sbin-path<span class="o">=</span>/usr/sbin/nginx --with-http_ssl_module --with-ld-opt<span class="o">=</span>-lpcre --with-http_stub_status_module --with-http_gzip_static_module --with-http_realip_module --with-ld-opt<span class="o">=</span>-ljemalloc --with-jemalloc --with-stream --with-stream_ssl_module --with-stream_realip_module --with-stream_ssl_preread_module --with-debug --with-compat --with-file-aio --with-mail --with-mail_ssl_module --with-pcre --with-pcre-jit --with-threads --with-http_auth_request_module --with-http_dav_module --with-http_degradation_module --with-http_flv_module --with-http_gunzip_module --with-http_image_filter_module --with-http_mp4_module --with-http_random_index_module --with-http_secure_link_module --with-http_sub_module --with-http_v2_module --with-http_addition_module --with-luajit-inc<span class="o">=</span>/usr/include/luajit-2.1 --with-luajit-lib<span class="o">=</span>/usr/lib64 --without-http_upstream_keepalive_module --add-module<span class="o">=</span>modules/ngx_backtrace_module --add-module<span class="o">=</span>modules/ngx_debug_pool --add-module<span class="o">=</span>modules/ngx_debug_timer --add-module<span class="o">=</span>modules/ngx_http_concat_module --add-module<span class="o">=</span>modules/ngx_http_footer_filter_module --add-module<span class="o">=</span>modules/ngx_http_reqstat_module --add-module<span class="o">=</span>modules/ngx_http_slice_module --add-module<span class="o">=</span>modules/ngx_http_trim_filter_module --add-module<span class="o">=</span>modules/ngx_http_upstream_check_module --add-module<span class="o">=</span>modules/ngx_http_upstream_dynamic_module --add-module<span class="o">=</span>modules/ngx_http_upstream_dyups_module --add-module<span class="o">=</span>modules/ngx_http_upstream_keepalive_module --add-module<span class="o">=</span>modules/ngx_http_upstream_session_sticky_module --add-module<span class="o">=</span>modules/ngx_http_upstream_vnswrr_module --add-module<span class="o">=</span>modules/ngx_http_user_agent_module --add-module<span class="o">=</span>modules/ngx_multi_upstream_module --add-module<span class="o">=</span>modules/ngx_slab_stat --add-module<span class="o">=</span>../ngx_cache_purge-2.5.3 --add-module<span class="o">=</span>../ngx_brotli --add-module<span class="o">=</span>../nginx-module-vts-0.2.4 --add-module<span class="o">=</span>../ngx_http_geoip2_module --add-module<span class="o">=</span>../lua-nginx-module-0.10.28 --add-module<span class="o">=</span>../ModSecurity-nginx-master --with-cc-opt<span class="o">=</span><span class="s1">&#39;-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64-v2 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection&#39;</span> --with-ld-opt<span class="o">=</span><span class="s1">&#39;-Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -Wl,-E&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="faq"><strong>FAQ</strong>
+</h2><ul>
+<li><strong>1.Why use <code>rpm -Uvh</code> instead of <code>rpm -ivh</code>?</strong></li>
+</ul>
+<p>A: If the target server has already installed the system default geolite2-city and geolite2-country, the IP database file in it is the database that is too old in 2019, this rpm package contains the IP database file with the same path and name (2025.03.31 maxmind.com official latest database), which will be overwrite the installation, so you need to use <code>rpm -Uvh</code> to upgrade the installation.</p>
+<h2 id="rpm-public-key"><strong>RPM public key</strong>
+</h2><ul>
+<li>During the production process of this RPM package, the official source code file tengine-3.1.0.tar.gz is verified and signed with an RSA 4096-bit key (the highest strength) to ensure the integrity of the source code. The GPG public key for my chunk is as follows:</li>
+</ul>
+<p><a class="link" href="https://xmyy.com/keys/eagle-public-key1.asc"  target="_blank" rel="noopener"
+    >https://xmyy.com/keys/eagle-public-key1.asc</a></p>
+<p><a class="link" href="https://xmyy.com/keys/eagle-public-key2.asc"  target="_blank" rel="noopener"
+    >https://xmyy.com/keys/eagle-public-key2.asc</a></p>
+<p><a class="link" href="https://xmyy.com/keys/eagle-public-key3.asc"  target="_blank" rel="noopener"
+    >https://xmyy.com/keys/eagle-public-key3.asc</a></p>
+<ul>
+<li>The complete GPG public key after the merge of the above chunks is as follows:</li>
+</ul>
+<p><a class="link" href="https://xmyy.com/keys/eagle-master-public-key.asc"  target="_blank" rel="noopener"
+    >https://xmyy.com/keys/eagle-master-public-key.asc</a></p>
+<ul>
+<li>My public key includes signature and encryption functions, and you can (optionally) trust and import my public key</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/tengine/">Tengine</a>
+        
+            <a href="/en/tags/rpm/">Rpm</a>
+        
+            <a href="/en/tags/tengine-rpm/">Tengine-Rpm</a>
+        
+            <a href="/en/tags/nginx/">Nginx</a>
+        
+            <a href="/en/tags/reverse-proxy/">Reverse Proxy</a>
+        
+            <a href="/en/tags/HTTP/">HTTP</a>
+        
+            <a href="/en/tags/AlmaLinux/">AlmaLinux</a>
+        
+            <a href="/en/tags/Centos/">Centos</a>
+        
+            <a href="/en/tags/RedHat/">RedHat</a>
+        
+            <a href="/en/tags/Rocky/">Rocky</a>
+        
+            <a href="/en/tags/customize/">Customize</a>
+        
+            <a href="/en/tags/optimize/">Optimize</a>
+        
+            <a href="/en/tags/WAF/">WAF</a>
+        
+            <a href="/en/tags/anti-attack/">Anti-Attack</a>
+        
+            <a href="/en/tags/GnuPG/">GnuPG</a>
+        
+            <a href="/en/tags/gpg/">Gpg</a>
+        
+            <a href="/en/tags/public-key/">Public Key</a>
+        
+            <a href="/en/tags/RSA/">RSA</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/en/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/">
+        
+        
+            <div class="article-image">
+                <img src="/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/_hu22610833e332bcee47fc25cd9fe58b20_144072_d47b6d3e3776603f969773a458da4d78.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post EagleOS 9.5-deeply customized and optimized based on AlmaLinux 9.5"
+                        data-key="EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux" 
+                        data-hash="md5-Q6Deysu4/9nHhAQrg9c&#43;iA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">EagleOS 9.5-deeply customized and optimized based on AlmaLinux 9.5</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/en/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/">
+        
+        
+            <div class="article-image">
+                <img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/_hu5bcd832e666cfa0f766cae5380719b77_964485_92c58d417b299aab3f5a267c9c3e9e24.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post SikkerBox-Cyber Swiss Army Knife on your cell phone"
+                        data-key="SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone" 
+                        data-hash="md5-KG07EUNgNkF5YxabwofAgg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">SikkerBox-Cyber Swiss Army Knife on your cell phone</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;  2000 -  2025 <a href="https://xmyy.com/" target="_blank">虾米技术网 xmyy.com</a>
+    </section>
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> ，Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<script src="/plugins/jQuery/jquery.min.js"></script>
+<script src="/plugins/bootstrap/bootstrap.min.js" async></script>
+<script src="/plugins/slick/slick.min.js"></script>
+<script src="/js/script.js"></script>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+            </main>
+        </div>
+        <script type="text/javascript" src="/ts/main.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://xmyy.com/css/googleapis-css2.css">
+
+    </body>
+</html>

@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Rocky on Xmyy Tech Site</title>
+        <link>https://xmyy.com/en/tags/Rocky/</link>
+        <description>Recent content in Rocky on Xmyy Tech Site</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>虾米技术网 xmyy.com</copyright>
+        <lastBuildDate>Mon, 31 Mar 2025 23:59:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/en/tags/Rocky/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Tengine-rpm deeply customized and optimized based on Tengine</title>
+        <link>https://xmyy.com/en/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/</link>
+        <pubDate>Mon, 31 Mar 2025 23:59:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/en/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/</guid>
+        <description>&lt;img src="https://xmyy.com/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine.png" alt="Featured image of post Tengine-rpm deeply customized and optimized based on Tengine" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;💁🏻‍♂️&lt;/span&gt; &lt;a href=&#34;https://tengine-rpm.sourceforge.io&#34; target=&#34;_blank&#34;&gt;sourceforge.net&lt;/a&gt; 2025-03-31 《Tengine-rpm 基于Tengine 3.1深度定制优化》 童建平&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;tengine-rpm-readme&#34;&gt;&lt;strong&gt;Tengine RPM Readme&lt;/strong&gt;
+&lt;/h2&gt;&lt;p&gt;Tengine is a high-performance HTTP and reverse proxy web server originated by Taobao, the largest e-commerce website in Asia. It is based on the Nginx HTTP server and has many advanced features. Tengine has proven to be very stable and efficient on some of the top 100 websites in the world, including Taobao.com, Tmall.com, Youku, AliExpress and Alibaba Cloud.&lt;/p&gt;
+&lt;p&gt;In short, Tengine is a distribution of Nginx with some advanced features.Tengine does not provide official RPM packages, here to provide unofficial optimized compilation and integration of LuaJIT, ModSecurity, geoip2, and other commonly used modules of the Tengine RPM packages, to facilitate the user to quickly install and configure the web server on the target server.&lt;/p&gt;
+&lt;p&gt;This is a rpm package based on the official package &lt;a class=&#34;link&#34; href=&#34;https://tengine.taobao.org/download/tengine-3.1.0.tar.gz&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://tengine.taobao.org/download/tengine-3.1.0.tar.gz&lt;/a&gt;, which is easy to install and use, you can download and install it for free.&lt;/p&gt;
+&lt;p&gt;Only the almalinux 9.5-based rpm package is available first, which can also be used for Red Hat Enterprise Linux (RHEL) and its derivatives, such as CentOS Linux and Rocky Linux.&lt;/p&gt;
+&lt;h2 id=&#34;how-to-download&#34;&gt;&lt;strong&gt;How to download?&lt;/strong&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/eagleos/tengine-rpm/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/eagleos/tengine-rpm/releases&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://tengine-rpm.sourceforge.io&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://tengine-rpm.sourceforge.io&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;how-to-install&#34;&gt;&lt;strong&gt;How to install?&lt;/strong&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;manual installation&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;rpm -Uvh tengine-3.1.0-1.el9.x86_64.rpm&lt;/p&gt;
+&lt;p&gt;As shown below:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@EagleOS ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# rpm -ivh tengine-3.1.0-1.el9.x86_64.rpm&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Error: dependency detection failed:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;geolite2-city &amp;lt; &lt;span class=&#34;m&#34;&gt;20250331&lt;/span&gt; is replaced by tengine-3.1.0-1.el9.x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;geolite2-country &amp;lt; &lt;span class=&#34;m&#34;&gt;20250331&lt;/span&gt; is replaced by tengine-3.1.0-1.el9.x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@EagleOS ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# rpm -Uvh tengine-3.1.0-1.el9.x86_64.rpm&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Verifying...                          &lt;span class=&#34;c1&#34;&gt;################################# [100%]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Preparing...                          &lt;span class=&#34;c1&#34;&gt;################################# [100%]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Upgrading/installing...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1:tengine-3.1.0-1.el9              &lt;span class=&#34;c1&#34;&gt;################################# [ 33%]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Cleaning/deleting...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2:geolite2-country-20191217-6.el9  &lt;span class=&#34;c1&#34;&gt;################################# [ 67%]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3:geolite2-city-20191217-6.el9     &lt;span class=&#34;c1&#34;&gt;################################# [100%]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;As shown in the image below:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/tengine-rpm.png&#34;
+	width=&#34;603&#34;
+	height=&#34;239&#34;
+	srcset=&#34;https://xmyy.com/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/tengine-rpm_hu5c9c999d8c29633056a13e1c8eec688a_71481_480x0_resize_box_3.png 480w, https://xmyy.com/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/tengine-rpm_hu5c9c999d8c29633056a13e1c8eec688a_71481_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;how to install tengine-rpm&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;252&#34;
+		data-flex-basis=&#34;605px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Online Installation&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dnf copr &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; xmdoor/tengine-rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dnf -y install tengine
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;As shown in the image below:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/copr.jpg&#34;
+	width=&#34;1920&#34;
+	height=&#34;1040&#34;
+	srcset=&#34;https://xmyy.com/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/copr_hudd8c6127f4550e57c8a67dd8b54b43cf_432664_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/copr_hudd8c6127f4550e57c8a67dd8b54b43cf_432664_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;how to install tengine-rpm using copr&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;184&#34;
+		data-flex-basis=&#34;443px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;requirements&#34;&gt;&lt;strong&gt;Requirements&lt;/strong&gt;
+&lt;/h2&gt;&lt;p&gt;If you are prompted with a message similar to the following during installation:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@EagleOS ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# rpm -ivh tengine-3.1.0-1.el9.x86_64.rpm &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Error: dependency detection failed:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        apr &amp;gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 1.7.0 is required by tengine-3.1.0-1.el9.x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        apr-util &amp;gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 1.6.1 is required by tengine-3.1.0-1.el9.x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        jemalloc &amp;gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 5.2.1 is required by tengine-3.1.0-1.el9.x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        jemalloc-devel &amp;gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 5.2.1 is required by tengine-3.1.0-1.el9.x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        libluajit-5.1.so.2&lt;span class=&#34;o&#34;&gt;()(&lt;/span&gt;64bit&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; is required by tengine-3.1.0-1.el9.x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        libmaxminddb-devel &amp;gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 1.5.2 is required by tengine-3.1.0-1.el9.x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        libmodsecurity &amp;gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 3.0.12 is required by tengine-3.1.0-1.el9.x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        libmodsecurity-devel &amp;gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 3.0.12 is required by tengine-3.1.0-1.el9.x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        libmodsecurity.so.3&lt;span class=&#34;o&#34;&gt;()(&lt;/span&gt;64bit&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; is required by tengine-3.1.0-1.el9.x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        lmdb &amp;gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 0.9.29 is required by tengine-3.1.0-1.el9.x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        lmdb-devel &amp;gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 0.9.29 is required by tengine-3.1.0-1.el9.x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        lua-devel &amp;gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 5.4.4 is required by tengine-3.1.0-1.el9.x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        luajit &amp;gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 2.1.0 is required by tengine-3.1.0-1.el9.x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        luajit-devel &amp;gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 2.1.0 is required by tengine-3.1.0-1.el9.x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        geolite2-city &amp;lt; &lt;span class=&#34;m&#34;&gt;20250331&lt;/span&gt; is replaced by tengine-3.1.0-1.el9.x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        geolite2-country &amp;lt; &lt;span class=&#34;m&#34;&gt;20250331&lt;/span&gt; is replaced by tengine-3.1.0-1.el9.x86_64
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Please download the relevant dependency packages first:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/apr-1.7.0-12.el9_3.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/apr-util-1.6.1-23.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/apr-util-bdb-1.6.1-23.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://repo.almalinux.org/almalinux/9/CRB/x86_64/os/Packages/libmaxminddb-devel-1.5.2-4.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://repo.almalinux.org/almalinux/9/CRB/x86_64/os/Packages/lmdb-0.9.29-3.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://repo.almalinux.org/almalinux/9/CRB/x86_64/os/Packages/lmdb-devel-0.9.29-3.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://repo.almalinux.org/almalinux/9/CRB/x86_64/os/Packages/lua-devel-5.4.4-4.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/lua-rpm-macros-1-6.el9.noarch.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://repo.almalinux.org/almalinux/9/devel/x86_64/os/Packages/lua-static-5.4.4-4.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://repo.almalinux.org/almalinux/9/devel/x86_64/os/Packages/pcre2-static-10.40-6.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/l/libmodsecurity-3.0.12-1.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/l/libmodsecurity-devel-3.0.12-1.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/l/libmodsecurity-static-3.0.12-1.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/s/ssdeep-libs-2.14.1-11.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/j/jemalloc-5.2.1-2.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/j/jemalloc-devel-5.2.1-2.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/l/luajit-2.1.0-0.23beta3.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://dl.fedoraproject.org/pub/epel/9/Everything/x86_64/Packages/l/luajit-devel-2.1.0-0.23beta3.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Then install it:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rpm -ivh apr-util-bdb-1.6.1-23.el9.x86_64.rpm apr-1.7.0-12.el9_3.x86_64.rpm apr-util-1.6.1-23.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rpm -ivh libmaxminddb-devel-1.5.2-4.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rpm -ivh lmdb-0.9.29-3.el9.x86_64.rpm lmdb-devel-0.9.29-3.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rpm -ivh lua-rpm-macros-1-6.el9.noarch.rpm lua-devel-5.4.4-4.el9.x86_64.rpm lua-static-5.4.4-4.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rpm -ivh pcre2-static-10.40-6.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rpm -ivh ssdeep-libs-2.14.1-11.el9.x86_64.rpm libmodsecurity-3.0.12-1.el9.x86_64.rpm libmodsecurity-devel-3.0.12-1.el9.x86_64.rpm libmodsecurity-static-3.0.12-1.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rpm -ivh jemalloc-5.2.1-2.el9.x86_64.rpm jemalloc-devel-5.2.1-2.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rpm -ivh luajit-2.1.0-0.23beta3.el9.x86_64.rpm luajit-devel-2.1.0-0.23beta3.el9.x86_64.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;distro-support&#34;&gt;&lt;strong&gt;Distro support&lt;/strong&gt;
+&lt;/h2&gt;&lt;p&gt;The following distribution was tested and passed:&lt;/p&gt;
+&lt;p&gt;Almalinux 9.5 x86_64&lt;/p&gt;
+&lt;p&gt;Compatible with the following releases, untested:&lt;/p&gt;
+&lt;p&gt;Red Hat Enterprise Linux 9.x x86_64&lt;/p&gt;
+&lt;p&gt;CentOS Linux 9.x x86_64&lt;/p&gt;
+&lt;p&gt;Rocky Linux 9.x x86_64&lt;/p&gt;
+&lt;h2 id=&#34;configuration&#34;&gt;&lt;strong&gt;Configuration&lt;/strong&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;The nginx configuration file is located at: /app/nginx/conf&lt;/li&gt;
+&lt;li&gt;After installation will automatically start nginx service, manual restart service command: systemctl restart nginx, reload configuration command: systemctl reload nginx&lt;/li&gt;
+&lt;li&gt;In the process of installing the rpm package, the number of cpu cores of the target server will be automatically detected, and the nginx configuration will be automatically optimized for the configuration process&lt;/li&gt;
+&lt;li&gt;For the target server default site, access to the offshore server is disabled by default in nginx.conf to save server-related access resources. If you need to open this access, you can change this file by removing the following configuration statement:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$ip_deny&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; 503&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Support for lua syntax, the relevant test statements, please see the configuration of nginx.conf, you can modify the relevant configuration for the test&lt;/li&gt;
+&lt;li&gt;vhost.conf is an example of a site configuration that is not loaded by default, but can be modified and started by imitating it.&lt;/li&gt;
+&lt;li&gt;The modsecurity anti-attack module, i.e. Web Application Firewall (WAF), is enabled by default in vhost.conf, the configuration file is located at: &lt;code&gt;/app/nginx/conf/modsecurity&lt;/code&gt;, and the logs are located at: &lt;code&gt;/app/nginx/logs/modsec_audit.log&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The compilation parameters for this rpm package are as follows:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@EagleOS ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# nginx -V&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Tengine version: Microsoft-IIS/3.1.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nginx version: Microsoft-IIS/8.5/1.24.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;built by gcc 11.5.0 &lt;span class=&#34;m&#34;&gt;20240719&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Red Hat 11.5.0-5&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;GCC&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;built with OpenSSL 3.2.2 &lt;span class=&#34;m&#34;&gt;4&lt;/span&gt; Jun &lt;span class=&#34;m&#34;&gt;2024&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;TLS SNI support enabled
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;configure arguments: --prefix&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/app/nginx --sbin-path&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/usr/sbin/nginx --with-http_ssl_module --with-ld-opt&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-lpcre --with-http_stub_status_module --with-http_gzip_static_module --with-http_realip_module --with-ld-opt&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-ljemalloc --with-jemalloc --with-stream --with-stream_ssl_module --with-stream_realip_module --with-stream_ssl_preread_module --with-debug --with-compat --with-file-aio --with-mail --with-mail_ssl_module --with-pcre --with-pcre-jit --with-threads --with-http_auth_request_module --with-http_dav_module --with-http_degradation_module --with-http_flv_module --with-http_gunzip_module --with-http_image_filter_module --with-http_mp4_module --with-http_random_index_module --with-http_secure_link_module --with-http_sub_module --with-http_v2_module --with-http_addition_module --with-luajit-inc&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/usr/include/luajit-2.1 --with-luajit-lib&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/usr/lib64 --without-http_upstream_keepalive_module --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;modules/ngx_backtrace_module --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;modules/ngx_debug_pool --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;modules/ngx_debug_timer --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;modules/ngx_http_concat_module --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;modules/ngx_http_footer_filter_module --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;modules/ngx_http_reqstat_module --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;modules/ngx_http_slice_module --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;modules/ngx_http_trim_filter_module --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;modules/ngx_http_upstream_check_module --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;modules/ngx_http_upstream_dynamic_module --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;modules/ngx_http_upstream_dyups_module --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;modules/ngx_http_upstream_keepalive_module --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;modules/ngx_http_upstream_session_sticky_module --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;modules/ngx_http_upstream_vnswrr_module --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;modules/ngx_http_user_agent_module --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;modules/ngx_multi_upstream_module --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;modules/ngx_slab_stat --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;../ngx_cache_purge-2.5.3 --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;../ngx_brotli --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;../nginx-module-vts-0.2.4 --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;../ngx_http_geoip2_module --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;../lua-nginx-module-0.10.28 --add-module&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;../ModSecurity-nginx-master --with-cc-opt&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64-v2 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection&amp;#39;&lt;/span&gt; --with-ld-opt&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;-Wl,-z,relro -Wl,--as-needed -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -Wl,-E&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;faq&#34;&gt;&lt;strong&gt;FAQ&lt;/strong&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;1.Why use &lt;code&gt;rpm -Uvh&lt;/code&gt; instead of &lt;code&gt;rpm -ivh&lt;/code&gt;?&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A: If the target server has already installed the system default geolite2-city and geolite2-country, the IP database file in it is the database that is too old in 2019, this rpm package contains the IP database file with the same path and name (2025.03.31 maxmind.com official latest database), which will be overwrite the installation, so you need to use &lt;code&gt;rpm -Uvh&lt;/code&gt; to upgrade the installation.&lt;/p&gt;
+&lt;h2 id=&#34;rpm-public-key&#34;&gt;&lt;strong&gt;RPM public key&lt;/strong&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;During the production process of this RPM package, the official source code file tengine-3.1.0.tar.gz is verified and signed with an RSA 4096-bit key (the highest strength) to ensure the integrity of the source code. The GPG public key for my chunk is as follows:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://xmyy.com/keys/eagle-public-key1.asc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://xmyy.com/keys/eagle-public-key1.asc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://xmyy.com/keys/eagle-public-key2.asc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://xmyy.com/keys/eagle-public-key2.asc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://xmyy.com/keys/eagle-public-key3.asc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://xmyy.com/keys/eagle-public-key3.asc&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The complete GPG public key after the merge of the above chunks is as follows:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://xmyy.com/keys/eagle-master-public-key.asc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://xmyy.com/keys/eagle-master-public-key.asc&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;My public key includes signature and encryption functions, and you can (optionally) trust and import my public key&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

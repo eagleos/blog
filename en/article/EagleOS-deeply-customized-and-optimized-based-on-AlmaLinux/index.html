@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="EagleOS 9.5-deeply customized and optimized based on AlmaLinux 9.5, automatically performs the following system optimizations during the installation process.">
+<title>EagleOS 9.5-deeply customized and optimized based on AlmaLinux 9.5</title>
+
+<link rel='canonical' href='https://xmyy.com/en/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/'>
+
+<link rel="stylesheet" href="/scss/style.min.b1ee696470c26668a16cfa814cde453da11a905817be39639788d15e9984714a.css">
+<link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="/plugins/themify-icons/themify-icons.css">
+
+<link rel="stylesheet" href="/css/style.css"><meta property='og:title' content="EagleOS 9.5-deeply customized and optimized based on AlmaLinux 9.5">
+<meta property='og:description' content="EagleOS 9.5-deeply customized and optimized based on AlmaLinux 9.5, automatically performs the following system optimizations during the installation process.">
+<meta property='og:url' content='https://xmyy.com/en/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/'>
+<meta property='og:site_name' content='Xmyy Tech Site'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='EagleOS' /><meta property='article:tag' content='AlmaLinux' /><meta property='article:tag' content='Centos' /><meta property='article:tag' content='RedHat' /><meta property='article:tag' content='customize' /><meta property='article:tag' content='optimize' /><meta property='article:tag' content='unattended' /><meta property='article:tag' content='automatically' /><meta property='article:tag' content='non-participation' /><meta property='article:published_time' content='2025-03-11T15:46:06&#43;08:00'/><meta property='article:modified_time' content='2025-03-11T15:46:06&#43;08:00'/><meta property='og:image' content='https://xmyy.com/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux.png' />
+<meta name="twitter:title" content="EagleOS 9.5-deeply customized and optimized based on AlmaLinux 9.5">
+<meta name="twitter:description" content="EagleOS 9.5-deeply customized and optimized based on AlmaLinux 9.5, automatically performs the following system optimizations during the installation process."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://xmyy.com/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux.png' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<header class="sticky-top bg-white border-bottom border-default">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-white">
+                    <a class="navbar-brand" href="/en">
+                        <img class="img-fluid" width="150px" src="/images/logo.png" alt="Xmyy Tech Site">
+                    </a>
+                    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+                        <i class="ti-menu"></i>
+                    </button>
+                    <div class="collapse navbar-collapse text-center" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/en">首页</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/eagle/">雄鹰论文</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/CyberSecurity/">网络安全</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/system/">操作系统</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/categories/DevOps/">运维开发</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/donate/">捐赠</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false">友链 <i class="ti-angle-down ml-1"></i>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/links/">友链首页</a>
+                                    <a class="dropdown-item" href="https://ok118.com" target="_blank">Ok118网址导航 ok118.com</a>
+                                    <a class="dropdown-item" href="https://ip40.com" target="_blank">IP查询 ip40.com</a>
+                                    <a class="dropdown-item" href="https://xmfast.com" target="_blank">Skating网址导航 xmfast.com</a>
+                                </div>
+                            </li>
+                        </ul>
+
+
+
+
+                        <div class="m-2 border-0" id="dark-mode-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"/>
+                                <circle cx="8" cy="12" r="2" />
+                                <rect x="2" y="6" width="20" height="12" rx="6" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z"/>
+                                <circle cx="16" cy="12" r="2" />
+                                <rect x="2" y="6" width="20" height="12" rx="6" />
+                            </svg>
+                        </div>
+                        <div class="search px-4">
+                            <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+                            <div class="search-wrapper">
+                                <form action="/search/" class="h-100">
+                                    <input class="search-box pl-4" id="search-query" name="keyword" type="search" placeholder="Type &amp; Hit Enter...">
+                                </form>
+                                <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="container main-container flex on-phone--column extended">
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#eagleos-system-iso-file-download">EagleOS system iso file download</a></li>
+    <li><a href="#eagleos-system-installation-method">EagleOS system installation method</a></li>
+    <li><a href="#eagleos-system-installation-steps">EagleOS system installation steps</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/en/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/">
+                <img src="/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/_hu22610833e332bcee47fc25cd9fe58b20_144072_a6979e6667083641f3aee80317539f9c.png"
+                        srcset="/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/_hu22610833e332bcee47fc25cd9fe58b20_144072_a6979e6667083641f3aee80317539f9c.png 800w, /article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/_hu22610833e332bcee47fc25cd9fe58b20_144072_4d5b67c1b68dad84b323f4d10f02812f.png 1600w"
+                        width="800"
+                        height="219"
+                        loading="lazy"
+                        alt="Featured image of post EagleOS 9.5-deeply customized and optimized based on AlmaLinux 9.5" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/en/categories/system/" >
+                System
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/">EagleOS 9.5-deeply customized and optimized based on AlmaLinux 9.5</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            EagleOS 9.5-deeply customized and optimized based on AlmaLinux 9.5, automatically performs the following system optimizations during the installation process.
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+
+    
+    <footer class="article-time">
+        <span class="post-meta-item">
+          <i class="fas fa-pen"></i>
+          
+            <span class="article-type" style="color: white; font-size: 14px; background: #bf59f3; padding: 0 5px 1px 5px; margin-right: 5px; border-radius: 2px;">原创</span>
+          
+        </span>
+        
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+            <div class="post-author">
+                作者：eagle
+
+            </div>
+        </div>
+        
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">
+2025-03-11 15:46</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    6 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="https://xmyy.com/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/" class="link">中文</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><span class="nowrap"><span class="emojify">💁🏻‍♂️</span> <a href="https://eagleos.sourceforge.io" target="_blank">sourceforge.net</a> 2025-03-11 《EagleOS 9.5-基于AlmaLinux 9.5深度定制优化》 童建平</span></p>
+<p>EagleOS 9.5 Documentation</p>
+<h1 id="i-system-introduction">I. System Introduction
+</h1><p>EagleOS 9.5 is deeply customized and optimized based on AlmaLinux 9.5.</p>
+<p>EagleOS 9.5 according to AlmaLinux 9.5 official AlmaLinux-9.5-x86_64-dvd.iso streamlining, the whole process of fully automated and unattended installation, support for more than 2TB disk automatic partitioning, integrated installation of 1151 software packages, including commonly used tools and libraries and other dependencies, iso file size from the official 10.6G The iso file size from the official 10.6G to less than 2.6G, so that the installation efficiency more efficient.</p>
+<p>EagleOS 9.5 automatically performs the following system optimizations during the installation process:</p>
+<p>(1) Disable selinux</p>
+<p>(2) Disable NetworkManager and use traditional network instead.</p>
+<p>(3) Optimize the disabling of some services and kernel parameters.</p>
+<p>(4) integrated epel, elrepo source, and change the use of domestic sources</p>
+<p>(5) integrated installation of unrar, p7zip and other commonly used packages</p>
+<p>After the installation is completed, ssh port: 49156, default ip: 192.168.0.205, system super user name: root, password: <a class="link" href="https://www.ip40.com"  target="_blank" rel="noopener"
+    >www.ip40.com</a></p>
+<h1 id="ii-system-installation-instructions">II. System installation instructions
+</h1><h2 id="eagleos-system-iso-file-download">EagleOS system iso file download
+</h2><p>Please go to sky cloud disk to download eagleos9.5.iso at high speed:</p>
+<p><a class="link" href="https://eagleos.sourceforge.io"  target="_blank" rel="noopener"
+    >https://eagleos.sourceforge.io</a></p>
+<p><a class="link" href="https://cloud.189.cn/t/JjiqyeqQ7Fri"  target="_blank" rel="noopener"
+    >https://cloud.189.cn/t/JjiqyeqQ7Fri</a></p>
+<p>(Access Code: 2zkf)</p>
+<h2 id="eagleos-system-installation-method">EagleOS system installation method
+</h2><ul>
+<li>CD-ROM installation</li>
+</ul>
+<p>Please burn eagleos9.5.iso to CD-ROM and set the target server to boot from CD-ROM drive for installation.</p>
+<ul>
+<li>U disk installation</li>
+</ul>
+<p>Support 2 ways to install:</p>
+<p>(1) Burn to a USB flash drive as a cdrom, and set the target server to boot from the USB flash drive for installation.</p>
+<p>(2) Use Ventoy or other tools to create a USB flash drive bootable boot, copy eagleos9.5.iso to the USB flash drive, set the target server to boot from the USB flash drive for installation, and directly select eagleos9.5.iso for bootable installation.</p>
+<ul>
+<li>PXE Network Installation (Linux)</li>
+</ul>
+<p>Install syslinux on Linux, copy /usr/share/syslinux/pxelinux.0 to tftp root directory, the rest is omitted.</p>
+<ul>
+<li>PXE network installation (Windows)</li>
+</ul>
+<p>(1) the CD-ROM directory / images / pxeboot copied to any directory of the windows system, directly double-click the directory under the tftpd64.exe, that is, automatically start the pxe server (including dhcp, tftp and other services), you can modify the relevant configurations, directly effective.</p>
+<p>(2) in the windows system using nginx, apache httpd or install windows system comes with the iis web role to create web services, the following iis as an example of the relevant configuration:</p>
+<p>(3) in the iis site web root directory such as D:\web\pxe under the establishment of such as eagleos9.5 subdirectory, eagleos9.5.iso extracted to this eagleos9.5 subdirectory, modify D:\web\pxe\eagleos9.5\images\pxeboot in the two eagleos9 *. cfg file and D:\web\pxe\eagleos9.5\images\pxeboot. cfg file and 192.168.246.1 in D:\web\pxe\eagleos9.5\images\pxeboot\pxelinux.cfg\default as your web server IP.</p>
+<p>(4) Save the following code as web.config in the web root directory such as D:\web\pxe to ensure that the installation files can be downloaded properly during the installation process.</p>
+<p>(5) Set the target server to start the installation from the network, you can start to install EagleOS 9.5 from PXE, of course, the target server and your web server must be connected to the network.</p>
+<p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;Start of web.config&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;configuration&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;system.webServer&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;directoryBrowse</span> <span class="na">enabled=</span><span class="s">&#34;true&#34;</span> <span class="nt">&gt;&lt;/directoryBrowse&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;staticContent&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;mimeMap</span> <span class="na">fileExtension=</span><span class="s">&#34;.cfg&#34;</span> <span class="na">mimeType=</span><span class="s">&#34;application/octet-stream&#34;</span> <span class="nt">&gt;&lt;/mimeMap&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;mimeMap</span> <span class="na">fileExtension=</span><span class="s">&#34;.img&#34;</span> <span class="na">mimeType=</span><span class="s">&#34;application/octet-stream&#34;</span> <span class="nt">&gt;&lt;/mimeMap&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;mimeMap</span> <span class="na">fileExtension=</span><span class="s">&#34;.bz2&#34;</span> <span class="na">mimeType=</span><span class="s">&#34;application/octet-stream&#34;</span> <span class="nt">&gt;&lt;/mimeMap&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/staticContent&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;security&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;requestFiltering</span> <span class="na">allowDoubleEscaping=</span><span class="s">&#34;true&#34;</span><span class="nt">&gt;&lt;/requestFiltering&gt;</span>      
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/security&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/system.webServer&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/configuration&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;End of web.config&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</p>
+<h2 id="eagleos-system-installation-steps">EagleOS system installation steps
+</h2><p>(1) Please make sure that the target server has been configured raid and other disk configurations, the subsequent installation process will clear the hard disk data and automated partitioning, please make sure that the target server on the target disk, such as important data has been backed up to other servers!</p>
+<p>(2) The installation process will automatically configure the network card with a connection to the network (as long as the physical connection can be), so it is recommended to connect the network cable to the first network card to operate, especially in the case of PXE installation, otherwise you will have to manually edit the configuration of the network after installation.</p>
+<p>(3) After successfully booting the target server from the CD-ROM or PXE network, you will see the following system installation interface (when entering this interface, please press the keyboard arrow keys up and down quickly and randomly, to avoid the short 6-second delay in the installation interface and automatically start the system installation).</p>
+<p>The boot screen for CD-ROM installation:</p>
+<p><img src="/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/cdrom.png"
+	width="640"
+	height="480"
+	srcset="/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/cdrom_hu3f8332712239843ba7283cf9054d7ed3_387454_480x0_resize_box_3.png 480w, /article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/cdrom_hu3f8332712239843ba7283cf9054d7ed3_387454_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="The boot screen for CD-ROM installation"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="133"
+		data-flex-basis="320px"
+	
+></p>
+<p>The boot screen for the PXE network installation method:</p>
+<p><img src="/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/pxe.png"
+	width="640"
+	height="480"
+	srcset="/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/pxe_hu8f83316860d21173e9a18495c60cd5be_377170_480x0_resize_box_3.png 480w, /article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/pxe_hu8f83316860d21173e9a18495c60cd5be_377170_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="The boot screen for the PXE network installation method"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="133"
+		data-flex-basis="320px"
+	
+></p>
+<p>Installation startup interface installation options:</p>
+<p>The first option is “Automatically install EagleOS”, which requires you to manually partition your hard disk during the installation process, and specify the bootable hard disk in the interface after the formatting is completed, after which the installation is automated and unattended.</p>
+<p>The second item is “Automatically partition and install EagleOS on nvme”, to automate partitioning and system installation on /dev/nvme0n1.</p>
+<p>(4) The installation interface stays at the first item above by default. You can select the corresponding installation options and press Enter to start the installation. Depending on the hardware configuration, the installation process will take about 15-30 minutes.</p>
+<p>(5) After the installation is completed, you will automatically enter the system (PXE mode may require modification of cmos boot depending on the hardware). In the login screen, enter username: root, password: <a class="link" href="https://www.ip40.com"  target="_blank" rel="noopener"
+    >www.ip40.com</a> to log in to the system via the console.</p>
+<p>(6) Usually, your network segment configuration is different from the default IP segment configured by eagleos9.5.iso, so you need to modify the network IP and other information in the console after installation:</p>
+<p>Modify the network card configuration file /etc/sysconfig/network-scripts/ifcfg-ens160 via vim command, modify the relevant information therein and save and exit, then execute the command: <code>systemctl restart network</code> to restart the network service.</p>
+<p>You can now log in to the server remotely from your local computer using SecureCRT or other remote login software!</p>
+<p>Thank you for your use!</p>
+<p>Feel free to give feedback to Eagle with any suggestions and comments: <a class="link" href="mailto:www@xmyy.com" >www@xmyy.com</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span></span><span class="line"><span class="cl">@@+<span class="o">===========</span>-<span class="o">=</span>@@@@@@@@@@@@@@@@@@@@@@@@@@@@%<span class="o">=</span>:. <span class="o">=</span>@@@@@@@@@@@@@@@@@@@%+<span class="o">==</span>++<span class="o">=</span>--<span class="o">=</span>*%@@@@@@@%+-<span class="o">=</span>++<span class="o">===</span><span class="c1">#@@</span>
+</span></span><span class="line"><span class="cl">@@@%.   <span class="c1">######* #@@@@@@@@@@@@@@@@@@@@@@@@@@@@%:  =@@@@@@@@@@@@@@@@@+. =#@@@@%*:  :*@@@@+  +@@@%+ :@@</span>
+</span></span><span class="line"><span class="cl">@@@@-  .@@@@@@@%@@@@@@%##@@@@@@@@@@%##%@@@@@@@<span class="o">=</span>  <span class="o">=</span>@@@@@@%##%@@@@@@.  *@@@@@@@@@+   +@@@:  .+#@@@@*@@
+</span></span><span class="line"><span class="cl">@@@@-   *****<span class="o">=</span> @@@@*: +*<span class="o">=</span> :+@@@@#-.-++:.::: <span class="c1">#@-  =@@@@=:=+= .+@@@-   @@@@@@@@@@@.   %@@@=.   .-*@@@@</span>
+</span></span><span class="line"><span class="cl">@@@@-   <span class="o">=====</span>: @@@@<span class="o">==</span>*@@*   <span class="c1">#@@%   @@@%   %%@@-  =@@%. .%%%.  =@@.   %@@@@@@@@@@-   %@@@@@#=:    -@@</span>
+</span></span><span class="line"><span class="cl">@@@@-  .@@@@@@#@@@@@*<span class="o">==</span>+*   <span class="c1">#@@@+: -*#= .+@@@@-  =@@*   *#**##*@@*   =@@@@@@@@@@.  +@@@*@@@@@%+   -@</span>
+</span></span><span class="line"><span class="cl">@@@@:  .@@@@@@@* @@   %@%   *@@@*--<span class="o">=</span><span class="c1">###@@@@@@@-  =@@%   -%@@%+%@@@*.  -%@@@@@@%: .*@@@@..#@@@@@:  +@</span>
+</span></span><span class="line"><span class="cl">@#+<span class="o">=</span>....-------.:@@+:.-+*<span class="o">=</span>..<span class="o">=</span><span class="c1">#@%.  ::::::-+%%*:..:*@@%=: .:=+#@@@@@@#+::-+**+=-=#@@@@@@*:-=++=::=#@@</span>
+</span></span><span class="line"><span class="cl">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%*:<span class="o">=</span>*+++++. :@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%@@@@@@@@@@@@@@@@%%@@@@@@
+</span></span><span class="line"><span class="cl">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+  -#%@@%#--%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span></span><span class="line"><span class="cl">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%*<span class="o">===</span>++**%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                                                                                                                                            
+</span></span><span class="line"><span class="cl">  mmmmmmmmmmmm++                            .*@@@#                     :*@@@@*:          .+@@%+...  
+</span></span><span class="line"><span class="cl">   .@@@@:::::.<span class="o">=</span>@:                            .*@@#                 :%@%:    .-@@@#.    :@@<span class="o">=</span>   .+@*  
+</span></span><span class="line"><span class="cl">    <span class="c1">#@@@       -:                             +@@#                #@@*        .%@@@-   @@@#.    :#  </span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#@@@     .@     .*@@@@=.    ..*@@@@#.:*@- +@@#    .=@@@@+.   +@@@.         .@@@@.  :@@@@@#.     </span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#@@@@@@@@@@   .@@@. .@@@:  .%@@.  -@@@:=: +@@#   +@@.  %@@.  @@@@.          %@@@:    -@@@@@@%.  </span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#@@@     .@       .+%@@@:  .@@@.  .@@@.   +@@#  :@@@###@@@%. %@@@-          %@@%.       :#@@@@= </span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#@@@       .: .=@@= .@@@:   .+%@@%@@+     +@@#  =@@@.         @@@%.        .@@@:  .@:     .@@@% </span>
+</span></span><span class="line"><span class="cl">    %@@%       *@ .@@@: .@@@:  :@@#.          +@@#   <span class="c1">#@@@+. -@.    +@@@-      -@@+.    #@=    .@@@: </span>
+</span></span><span class="line"><span class="cl"> <span class="o">=</span><span class="c1">##############*  .+%#+.-##=. .#@@@@@@@@@@::######.  .+#%#=.        .-+#%@%#+-.       :==*#%@%*:.  </span>
+</span></span><span class="line"><span class="cl">                               .*@:     .#@@                                                        
+</span></span><span class="line"><span class="cl">                               +@@@.    :@@.                                                        
+</span></span><span class="line"><span class="cl">                                ..@#####@.                                                                                                                                                                                                                                                                 
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/EagleOS/">EagleOS</a>
+        
+            <a href="/en/tags/AlmaLinux/">AlmaLinux</a>
+        
+            <a href="/en/tags/Centos/">Centos</a>
+        
+            <a href="/en/tags/RedHat/">RedHat</a>
+        
+            <a href="/en/tags/customize/">Customize</a>
+        
+            <a href="/en/tags/optimize/">Optimize</a>
+        
+            <a href="/en/tags/unattended/">Unattended</a>
+        
+            <a href="/en/tags/automatically/">Automatically</a>
+        
+            <a href="/en/tags/non-participation/">Non-Participation</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/en/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/">
+        
+        
+            <div class="article-image">
+                <img src="/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/_hub6ad84b234d951f3ea5b70f97fa3d7ed_207895_b3f10a99a4a7aa9cd0067b69f51b7d91.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Tengine-rpm deeply customized and optimized based on Tengine"
+                        data-key="tengine-rpm-deeply-customized-and-optimized-based-on-Tengine" 
+                        data-hash="md5-Nop1AGTSb96hu1Jhd6iUyw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Tengine-rpm deeply customized and optimized based on Tengine</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy;  2000 -  2025 <a href="https://xmyy.com/" target="_blank">虾米技术网 xmyy.com</a>
+    </section>
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> ，Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<script src="/plugins/jQuery/jquery.min.js"></script>
+<script src="/plugins/bootstrap/bootstrap.min.js" async></script>
+<script src="/plugins/slick/slick.min.js"></script>
+<script src="/js/script.js"></script>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+            </main>
+        </div>
+        <script type="text/javascript" src="/ts/main.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://xmyy.com/css/googleapis-css2.css">
+
+    </body>
+</html>
