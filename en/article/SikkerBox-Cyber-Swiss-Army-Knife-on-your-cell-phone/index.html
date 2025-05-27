@@ -141,9 +141,17 @@
             <nav id="TableOfContents">
   <ol>
     <li><a href="#overview">Overview</a></li>
-    <li><a href="#2fa-features">2FA Features</a></li>
-    <li><a href="#port-check-features">Port Check Features</a></li>
-    <li><a href="#ip-address-location-query-features">IP Address Location Query Features</a></li>
+    <li><a href="#key-features">Key Features</a>
+      <ol>
+        <li><a href="#two-factor-authentication-2fa">Two-Factor Authentication (2FA)</a></li>
+        <li><a href="#network-diagnostic-tools">Network Diagnostic Tools</a></li>
+      </ol>
+    </li>
+    <li><a href="#user-experience">User Experience</a></li>
+    <li><a href="#technical-details">Technical Details</a></li>
+    <li><a href="#privacy-and-security">Privacy and Security</a></li>
+    <li><a href="#use-cases">Use Cases</a></li>
+    <li><a href="#requirements">Requirements</a></li>
     <li><a href="#getting-started">Getting Started</a>
       <ol>
         <li><a href="#installation">Installation</a></li>
@@ -299,49 +307,67 @@
     
     <p><span class="nowrap"><span class="emojify">💁🏻‍♂️</span> <a href="https://sikkerbox.sourceforge.io" target="_blank">sourceforge.net</a> 2025-05-05 《SikkerBox-手机上的网络瑞士军刀》 童建平</span></p>
 <h2 id="overview">Overview
-</h2><p>SikkerBox is a cross-platform multi-platform network toolkit that supports Android, ios, macos and windows access at the same time.</p>
+</h2><p>SikkerBox is a comprehensive security and network utility application designed to provide users with essential security tools and network diagnostics in one convenient package.</p>
 <p><code>Sikker</code> comes from the Norwegian word meaning <code>security</code> and <code>Box</code> stands for toolbox.</p>
+<p>With cross-platform compatibility, SikkerBox combines two-factor authentication (2FA) management with a robust suite of network diagnostic tools.</p>
 <p>With a modern and clear UI layout and instructions, SikkerBox is designed to be the Swiss Army Knife of networking on your phone, providing a powerful and user-friendly security layer solution for your digital life.</p>
-<p>SikkerBox currently implements the following features:</p>
-<p>(1) Highly secure and reliable two-factor authentication (2FA), supporting more than 1000 websites and online apps that provide two-factor authentication, including github and gitlab.</p>
-<p>(2) Port detection, supporting the detection of user&rsquo;s local public IP and Internet server port opening.</p>
-<p>(3) IP address localization query, supporting the user&rsquo;s local public IP and Internet IP address localization query.</p>
-<p>(4) Internationalized language support, complete support for Chinese and English interface switching, all tips and error messages have been internationalized.</p>
-<p>SikkerBox will realize the following functions in the future:</p>
-<p>(1) Wifi scanner.</p>
-<p>(2) Ping diagnostic function according to user input domain name or IP.</p>
-<p>(3) Domain name whois query function.</p>
-<p>(4) DNS reverse lookup function.</p>
-<p>(5) IP calculator function.</p>
-<p>(6) Virtual Hosts function, according to the user from the device to select the hosts file, or edit the hosts file, and set the switch to turn on the function, to realize the network access priority read this hosts file.</p>
-<h2 id="2fa-features">2FA Features
-</h2><ul>
-<li><strong>Secure storage</strong>: all account keys are encrypted and securely stored using a local Hive database, no data is transferred to any servers and all data remains on your device</li>
-<li><strong>Privacy-focused</strong>: no analytics or tracking</li>
-<li><strong>QR code scanning</strong>: Easily add accounts by scanning QR codes</li>
-<li><strong>Manual Entry</strong>: Supports manual entry of account information</li>
-<li><strong>Time-based OTP</strong>: Generate RFC 6238-compliant time-based one-time passwords (TOTP)/two-factor codes (2FA codes), with authentication codes automatically updated every 30 seconds.</li>
+<h2 id="key-features">Key Features
+</h2><h3 id="two-factor-authentication-2fa">Two-Factor Authentication (2FA)
+</h3><p>Highly secure and reliable two-factor authentication (2FA), supporting more than 1000 websites and online apps that provide two-factor authentication, including github, gitlab, google, etc. .</p>
+<ul>
+<li><strong>Secure Account Management</strong>: Store and manage your 2FA accounts securely with encryption</li>
+<li><strong>QR Code Scanning</strong>: Easily add new accounts by scanning QR codes</li>
+<li><strong>Manual Entry Support</strong>: Supports manual entry of account information</li>
+<li><strong>Time-Based One-Time Passwords (TOTP)</strong>: Generate secure, RFC 6238-compliant, time-based one-time passwords (TOTP)/two-factor codes (2FA codes), with authentication codes automatically updated every 30 seconds.</li>
 <li><strong>Offline access</strong>: works completely offline after setup is complete</li>
-<li><strong>Multi-platform support</strong>: for Android, iOS, Windows, macOS, Linux and Web</li>
-<li><strong>Copy to Clipboard</strong>: Quick copy function for easy CAPTCHA entry</li>
-<li><strong>Minimalist interface</strong>: clean, intuitive modern style interface with a focus on ease of use</li>
+<li><strong>Visual Customization</strong>: Accounts display with service favicons for easy identification</li>
 </ul>
-<h2 id="port-check-features">Port Check Features
-</h2><ul>
-<li>Includes the function of automatically obtaining the user&rsquo;s public IP</li>
-<li>Provides a list of commonly used ports for quick one-click selection.</li>
-<li>Support detecting any port of any IP address</li>
-<li>Port detection results are displayed in different colors (open, closed, error), providing clear open/closed status feedback.</li>
-<li>Provide friendly loading indicators and error alerts.</li>
+<h3 id="network-diagnostic-tools">Network Diagnostic Tools
+</h3><p>SikkerBox includes a comprehensive suite of network utilities:</p>
+<ul>
+<li><strong>Port Checker</strong>: Verify if specific ports are open or closed on any IP address, provides a list of commonly used ports for quick one-click selection.</li>
+<li><strong>IP Location Lookup</strong>: Determine the geographical location of any IP address, includes the function of automatically obtaining the user&rsquo;s public IP</li>
+<li><strong>WiFi Scanner</strong>: Analyze nearby WiFi networks, including signal strength, channels, and security information</li>
+<li><strong>Ping Diagnostic</strong>: Test connectivity to domains or IP addresses</li>
+<li><strong>Whois Lookup</strong>: Query registration information for any domain name</li>
+<li><strong>DNS Reverse Lookup</strong>: Find hostnames associated with IP addresses</li>
+<li><strong>More features</strong>：Stay tuned for more features</li>
 </ul>
-<h2 id="ip-address-location-query-features">IP Address Location Query Features
+<h2 id="user-experience">User Experience
 </h2><ul>
-<li>Realizes the function of automatically obtaining the user&rsquo;s public IP address.</li>
-<li>Supports users to input any IP address and query its attribution.</li>
-<li>The top area displays the user&rsquo;s current IP address and attribute.</li>
-<li>The middle area provides query form, input box with search icon and query button.</li>
-<li>The query result area clearly shows the queried IP and attribute information.</li>
-<li>Use different colors to indicate success and error status</li>
+<li><strong>Multi-language Support</strong>: Complete support for Chinese and English interface switching, all tips and error messages have been internationalized</li>
+<li><strong>Modern Material Design</strong>: Clean, intuitive modern style interface with Material Design 3, and a focus on ease of use</li>
+<li><strong>Responsive Layout</strong>: Optimized for various screen sizes</li>
+<li><strong>Clipboard Integration</strong>: Most features support copy and paste to clipboard</li>
+<li><strong>Dark Mode Support</strong>: Comfortable viewing in low-light environments</li>
+<li><strong>Friendly reminder</strong>: Most pages provide friendly loading indicators and error alerts.</li>
+</ul>
+<h2 id="technical-details">Technical Details
+</h2><ul>
+<li><strong>Cross-Platform support</strong>: for Android, iOS, Windows, macOS, Linux and Web</li>
+<li><strong>Secure Storage</strong>: all account keys are encrypted and securely stored using a local Hive database, no data is transferred to any servers and all sensitive data remains on your device</li>
+<li><strong>Low Resource Usage</strong>: Optimized for minimal battery and memory consumption</li>
+</ul>
+<h2 id="privacy-and-security">Privacy and Security
+</h2><p>SikkerBox prioritizes your privacy and security:</p>
+<ul>
+<li><strong>No Account Required</strong>: Use all features without creating an account</li>
+<li><strong>Privacy-focused</strong>: no analytics or tracking</li>
+<li><strong>No Data Collection</strong>: Your 2FA secrets and network diagnostics remain on your device</li>
+<li><strong>Open Network APIs</strong>: Network tools use open APIs for diagnostics without compromising privacy</li>
+</ul>
+<h2 id="use-cases">Use Cases
+</h2><ul>
+<li><strong>Security Professionals</strong>: Validate network configurations and security settings</li>
+<li><strong>IT Administrators</strong>: Diagnose network issues and verify server configurations</li>
+<li><strong>Developers</strong>: Test application connectivity and network functionality</li>
+<li><strong>Privacy-Conscious Users</strong>: Manage 2FA accounts without relying on third-party services</li>
+</ul>
+<h2 id="requirements">Requirements
+</h2><ul>
+<li>Android 5.0 (Lollipop) or higher</li>
+<li>iOS 11.0 or higher</li>
+<li>For desktop: Windows 10+, macOS 10.14+, or Linux with GTK 3</li>
 </ul>
 <h2 id="getting-started">Getting Started
 </h2><h3 id="installation">Installation
@@ -421,28 +447,28 @@
 <tbody>
 <tr>
 <td>vivo IQOO Neo5</td>
-<td>1.0.1</td>
+<td>1.0.2</td>
 <td>✅</td>
-<td>2025.05.19</td>
+<td>2025.05.27</td>
 <td>eagle</td>
 </tr>
 <tr>
 <td>vivo IQOO Neo5 活力版</td>
-<td>1.0.1</td>
+<td>1.0.2</td>
 <td>✅</td>
-<td>2025.05.19</td>
+<td>2025.05.27</td>
 <td>eagle</td>
 </tr>
 </tbody>
 </table></div>
 <p>We are always trying to improve our app! Let us know if you have any suggestions or feedback - we&rsquo;d love to hear from you!</p>
-<p><img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox26.jpg"
+<p><img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox41.jpg"
 	width="1080"
 	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox26_hudd4ccbb55f776c37b76269f60013f070_135677_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox26_hudd4ccbb55f776c37b76269f60013f070_135677_1024x0_resize_q75_box.jpg 1024w"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox41_hu3d07f3f666baa8b6276e415a2829cece_207851_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox41_hu3d07f3f666baa8b6276e415a2829cece_207851_1024x0_resize_q75_box.jpg 1024w"
 	loading="lazy"
 	
-		alt="sikkerbox app software screenshots 26"
+		alt="sikkerbox app software screenshots 41"
 	
 	
 		class="gallery-image" 
@@ -450,13 +476,13 @@
 		data-flex-basis="107px"
 	
 >
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox15.jpg"
+<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox42.jpg"
 	width="1080"
 	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox15_hu14f75662ef88af35478ca8e2550bb964_137357_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox15_hu14f75662ef88af35478ca8e2550bb964_137357_1024x0_resize_q75_box.jpg 1024w"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox42_hu19dd228a3386852410e5aee060c02e8a_396733_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox42_hu19dd228a3386852410e5aee060c02e8a_396733_1024x0_resize_q75_box.jpg 1024w"
 	loading="lazy"
 	
-		alt="sikkerbox app software screenshots 15"
+		alt="sikkerbox app software screenshots 42"
 	
 	
 		class="gallery-image" 
@@ -464,13 +490,13 @@
 		data-flex-basis="107px"
 	
 >
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox16.jpg"
+<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox43.jpg"
 	width="1080"
 	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox16_hu939e64211d4f6511971ca8ee3537c4b1_113172_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox16_hu939e64211d4f6511971ca8ee3537c4b1_113172_1024x0_resize_q75_box.jpg 1024w"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox43_hu623b5768840da95188df4cff7ddf67f5_291288_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox43_hu623b5768840da95188df4cff7ddf67f5_291288_1024x0_resize_q75_box.jpg 1024w"
 	loading="lazy"
 	
-		alt="sikkerbox app software screenshots 16"
+		alt="sikkerbox app software screenshots 43"
 	
 	
 		class="gallery-image" 
@@ -478,13 +504,13 @@
 		data-flex-basis="107px"
 	
 >
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox17.jpg"
+<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox44.jpg"
 	width="1080"
 	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox17_hu67fd7b5c6e66ab22002b4190383b146a_118867_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox17_hu67fd7b5c6e66ab22002b4190383b146a_118867_1024x0_resize_q75_box.jpg 1024w"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox44_huf54988cf261a34219483be4f3b6ecac9_396005_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox44_huf54988cf261a34219483be4f3b6ecac9_396005_1024x0_resize_q75_box.jpg 1024w"
 	loading="lazy"
 	
-		alt="sikkerbox app software screenshots 17"
+		alt="sikkerbox app software screenshots 44"
 	
 	
 		class="gallery-image" 
@@ -492,13 +518,13 @@
 		data-flex-basis="107px"
 	
 >
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox18.jpg"
+<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox45.jpg"
 	width="1080"
 	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox18_hu18d59f67021a83d948708fa787ecd1e4_174390_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox18_hu18d59f67021a83d948708fa787ecd1e4_174390_1024x0_resize_q75_box.jpg 1024w"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox45_hub384adc184664d3ae06a7f0534ee9da4_229969_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox45_hub384adc184664d3ae06a7f0534ee9da4_229969_1024x0_resize_q75_box.jpg 1024w"
 	loading="lazy"
 	
-		alt="sikkerbox app software screenshots 18"
+		alt="sikkerbox app software screenshots 45"
 	
 	
 		class="gallery-image" 
@@ -506,13 +532,13 @@
 		data-flex-basis="107px"
 	
 >
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox19.jpg"
+<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox46.jpg"
 	width="1080"
 	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox19_hu8ad8b28e07cc9902bd8bc3fa65cd59c8_112567_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox19_hu8ad8b28e07cc9902bd8bc3fa65cd59c8_112567_1024x0_resize_q75_box.jpg 1024w"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox46_huc6864c7182ba51bc14f7be428eaef705_265425_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox46_huc6864c7182ba51bc14f7be428eaef705_265425_1024x0_resize_q75_box.jpg 1024w"
 	loading="lazy"
 	
-		alt="sikkerbox app software screenshots 19"
+		alt="sikkerbox app software screenshots 46"
 	
 	
 		class="gallery-image" 
@@ -520,13 +546,13 @@
 		data-flex-basis="107px"
 	
 >
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox27.jpg"
+<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox47.jpg"
 	width="1080"
 	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox27_hud7cc854cf71f69a67605a5ef9ae5dea4_373773_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox27_hud7cc854cf71f69a67605a5ef9ae5dea4_373773_1024x0_resize_q75_box.jpg 1024w"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox47_hu74c1ebce0c46c8fa5a4a662e5afe069a_306431_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox47_hu74c1ebce0c46c8fa5a4a662e5afe069a_306431_1024x0_resize_q75_box.jpg 1024w"
 	loading="lazy"
 	
-		alt="sikkerbox app software screenshots 27"
+		alt="sikkerbox app software screenshots 47"
 	
 	
 		class="gallery-image" 
@@ -534,55 +560,13 @@
 		data-flex-basis="107px"
 	
 >
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox28.jpg"
+<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox48.jpg"
 	width="1080"
 	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox28_hu367203db57a25ef95119cebf8ce81e18_265540_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox28_hu367203db57a25ef95119cebf8ce81e18_265540_1024x0_resize_q75_box.jpg 1024w"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox48_hu6ef0a16dfec0615facfdc9555918ee66_265328_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox48_hu6ef0a16dfec0615facfdc9555918ee66_265328_1024x0_resize_q75_box.jpg 1024w"
 	loading="lazy"
 	
-		alt="sikkerbox app software screenshots 28"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="44"
-		data-flex-basis="107px"
-	
->
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox29.jpg"
-	width="1080"
-	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox29_huf94648488c472700cbf87ca8b08a5e60_272117_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox29_huf94648488c472700cbf87ca8b08a5e60_272117_1024x0_resize_q75_box.jpg 1024w"
-	loading="lazy"
-	
-		alt="sikkerbox app software screenshots 29"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="44"
-		data-flex-basis="107px"
-	
->
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox30.jpg"
-	width="1080"
-	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox30_hu0bc1bdf6d23d5b90c295468e24268d1c_359482_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox30_hu0bc1bdf6d23d5b90c295468e24268d1c_359482_1024x0_resize_q75_box.jpg 1024w"
-	loading="lazy"
-	
-		alt="sikkerbox app software screenshots 30"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="44"
-		data-flex-basis="107px"
-	
->
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox32.jpg"
-	width="1080"
-	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox32_hu809f2a6befa2b875751954d8f20a9547_243788_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox32_hu809f2a6befa2b875751954d8f20a9547_243788_1024x0_resize_q75_box.jpg 1024w"
-	loading="lazy"
-	
-		alt="sikkerbox app software screenshots 32"
+		alt="sikkerbox app software screenshots 48"
 	
 	
 		class="gallery-image" 

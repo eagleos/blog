@@ -141,10 +141,18 @@
             <nav id="TableOfContents">
   <ol>
     <li><a href="#概述">概述</a></li>
-    <li><a href="#2fa-功能特点">2FA 功能特点</a></li>
-    <li><a href="#端口检测-功能特点">端口检测 功能特点</a></li>
-    <li><a href="#ip地址归属地查询-功能特点">IP地址归属地查询 功能特点</a></li>
-    <li><a href="#开始使用">开始使用</a>
+    <li><a href="#主要功能">主要功能</a>
+      <ol>
+        <li><a href="#两因素认证2fa">两因素认证(2FA)</a></li>
+        <li><a href="#网络诊断工具">网络诊断工具</a></li>
+      </ol>
+    </li>
+    <li><a href="#用户体验">用户体验</a></li>
+    <li><a href="#技术细节">技术细节</a></li>
+    <li><a href="#隐私和安全">隐私和安全</a></li>
+    <li><a href="#使用场景">使用场景</a></li>
+    <li><a href="#系统要求">系统要求</a></li>
+    <li><a href="#使用指南">使用指南</a>
       <ol>
         <li><a href="#安装">安装</a></li>
       </ol>
@@ -299,51 +307,69 @@
     
     <p><span class="nowrap"><span class="emojify">💁🏻‍♂️</span> <a href="https://sikkerbox.sourceforge.io" target="_blank">sourceforge.net</a> 2025-05-05 《SikkerBox-手机上的网络瑞士军刀》 童建平</span></p>
 <h2 id="概述">概述
-</h2><p>SikkerBox 是一个同时支持安卓端、ios端、macos端、windows端访问的跨平台多平台网络工具包。</p>
+</h2><p>SikkerBox 是一款综合性安全和网络工具应用，旨在为用户提供一站式的安全工具和网络诊断服务。</p>
 <p><code>Sikker</code>源于挪威语，意为<code>安全</code>，<code>Box</code>代表工具箱。</p>
+<p>SikkerBox 具有跨平台兼容性，将两因素认证(2FA)管理与强大的网络诊断工具套件结合在一起。</p>
 <p>SikkerBox 采用现代、清晰的UI界面布局和指示，旨在打造成手机上的网络瑞士军刀，为您的数字生活提供一个功能强大且用户友好的安全层解决方案。</p>
-<p>SikkerBox 目前已实现如下功能：</p>
-<p>（1）高度安全可靠的双因素身份验证 (2FA)，支持包括github、gitlab在内的超过 1000 多种提供双因素身份登录验证的网站和在线App。</p>
-<p>（2）端口检测，支持用户本机公网IP及互联网服务器端口开放检测。</p>
-<p>（3）IP地址归属地查询，支持用户本机公网IP及互联网IP地址归属地查询。</p>
-<p>（4）国际化语言支持，完整支持中英文界面切换，所有提示和错误信息均已国际化。</p>
-<p>SikkerBox 未来将实现如下功能：</p>
-<p>（1）Wifi扫描器。</p>
-<p>（2）根据用户输入域名或IP进行Ping诊断功能。</p>
-<p>（3）域名whois查询功能。</p>
-<p>（4）DNS反查功能。</p>
-<p>（5）IP计算器功能。</p>
-<p>（6）Virtual Hosts功能，根据用户从本设备选择hosts文件，或编辑hosts文件，并设置开关开启功能，实现网络访问时优先读取此hosts文件。</p>
-<h2 id="2fa-功能特点">2FA 功能特点
-</h2><ul>
-<li><strong>安全存储</strong>：所有账户密钥均使用本地 Hive 数据库进行加密和安全存储，不向任何服务器传输数据，所有数据保留在您的设备上</li>
-<li><strong>注重隐私</strong>：无分析或跟踪</li>
-<li><strong>二维码扫描</strong>：通过扫描二维码轻松添加账户</li>
-<li><strong>手动输入</strong>：支持手动输入账户信息</li>
-<li><strong>基于时间的 OTP</strong>：生成符合 RFC 6238 标准的基于时间的一次性密码（TOTP）/双因素代码 (2FA 代码)，验证码每 30 秒自动更新一次。</li>
+<h2 id="主要功能">主要功能
+</h2><h3 id="两因素认证2fa">两因素认证(2FA)
+</h3><p>高度安全可靠的双因素身份验证 (2FA)，支持包括github、gitlab、google等在内的超过 1000 多种提供双因素身份登录验证的网站和在线App。</p>
+<ul>
+<li><strong>安全账户管理</strong>：通过加密方式安全地存储和管理您的2FA账户</li>
+<li><strong>二维码扫描</strong>：通过扫描二维码轻松添加新账户</li>
+<li><strong>手动输入支持</strong>：支持手工输入账户信息</li>
+<li><strong>基于时间的一次性密码(TOTP)</strong>：生成安全的、符合 RFC 6238 标准的、基于时间的一次性密码（TOTP）/双因素代码 (2FA 代码)，验证码每 30 秒自动更新一次。</li>
 <li><strong>离线访问</strong>：设置完成后完全离线工作</li>
-<li><strong>多平台支持</strong>：适用于 Android、iOS、Windows、macOS、Linux 和 Web</li>
-<li><strong>复制到剪贴板</strong>：快速复制功能，方便输入验证码</li>
-<li><strong>极简界面</strong>：干净、直观的现代风格界面，注重易用性</li>
+<li><strong>视觉定制</strong>：账户显示服务网站图标，便于识别</li>
 </ul>
-<h2 id="端口检测-功能特点">端口检测 功能特点
+<h3 id="网络诊断工具">网络诊断工具
+</h3><p>SikkerBox包含一套全面的网络工具：</p>
+<ul>
+<li><strong>端口检测</strong>：验证任何IP地址上特定端口是否开放或关闭，提供常用端口列表供用户快速一键选择</li>
+<li><strong>IP地址归属地查询</strong>：确定任何IP地址的地理位置，包含自动获取用户公网IP的功能</li>
+<li><strong>WiFi扫描器</strong>：分析附近的WiFi网络，包括信号强度、信道和安全信息</li>
+<li><strong>Ping诊断</strong>：测试到域名或IP地址的连通性</li>
+<li><strong>Whois查询</strong>：查询任何域名的注册信息</li>
+<li><strong>DNS反向查询</strong>：查找与IP地址关联的主机名</li>
+<li><strong>更多功能</strong>：更多功能敬请期待</li>
+</ul>
+<h2 id="用户体验">用户体验
 </h2><ul>
-<li>包含自动获取用户公网IP的功能</li>
-<li>提供常用端口列表供用户快速一键选择</li>
-<li>支持检测任意IP地址的任意端口</li>
-<li>端口检测结果使用不同颜色进行显示（开放、关闭、错误），提供明确的开放/关闭状态反馈</li>
-<li>提供友好的加载指示器和错误提示</li>
+<li><strong>多语言支持</strong>：完整支持中英文界面切换，所有提示和错误信息均已国际化</li>
+<li><strong>现代Material设计</strong>：采用Material Design 3的清晰、直观的现代风格界面，注重易用性</li>
+<li><strong>响应式布局</strong>：针对各种屏幕尺寸进行优化</li>
+<li><strong>剪贴板集成</strong>：多数功能支持复制粘贴到剪贴板</li>
+<li><strong>深色模式支持</strong>：在低光环境下舒适查看</li>
+<li><strong>友好提示</strong>：多数页面提供友好的加载指示器和错误提示</li>
 </ul>
-<h2 id="ip地址归属地查询-功能特点">IP地址归属地查询 功能特点
+<h2 id="技术细节">技术细节
 </h2><ul>
-<li>实现了自动获取用户公网IP地址的功能</li>
-<li>支持用户输入任意IP地址并查询其归属地</li>
-<li>顶部区域显示用户当前IP和归属地</li>
-<li>中间区域提供查询表单，带搜索图标的输入框和查询按钮</li>
-<li>查询结果区域清晰展示所查询的IP和归属地信息</li>
-<li>使用不同颜色提示成功和错误状态</li>
+<li><strong>跨平台支持</strong>：适用于 Android、iOS、Windows、macOS、Linux 和 Web</li>
+<li><strong>安全存储</strong>：所有账户密钥均使用本地 Hive 数据库进行加密和安全存储，不向任何服务器传输数据，所有敏感数据保留在您的设备上</li>
+<li><strong>低资源占用</strong>：优化电池和内存消耗</li>
 </ul>
-<h2 id="开始使用">开始使用
+<h2 id="隐私和安全">隐私和安全
+</h2><p>SikkerBox优先考虑您的隐私和安全：</p>
+<ul>
+<li><strong>无需账户</strong>：无需创建账户即可使用所有功能</li>
+<li><strong>注重隐私</strong>：无分析或跟踪</li>
+<li><strong>不收集数据</strong>：您的2FA密钥和网络诊断结果保留在您的设备上</li>
+<li><strong>开放网络API</strong>：网络工具使用开放API进行诊断，不会损害隐私</li>
+</ul>
+<h2 id="使用场景">使用场景
+</h2><ul>
+<li><strong>安全专业人员</strong>：验证网络配置和安全设置</li>
+<li><strong>IT管理员</strong>：诊断网络问题和验证服务器配置</li>
+<li><strong>开发人员</strong>：测试应用程序连接和网络功能</li>
+<li><strong>注重隐私的用户</strong>：管理2FA账户，无需依赖第三方服务</li>
+</ul>
+<h2 id="系统要求">系统要求
+</h2><ul>
+<li>Android 5.0 (Lollipop)或更高版本</li>
+<li>iOS 11.0或更高版本</li>
+<li>桌面版：Windows 10+、macOS 10.14+或带有GTK 3的Linux</li>
+</ul>
+<h2 id="使用指南">使用指南
 </h2><h3 id="安装">安装
 </h3><p>目前暂时提供安卓端apk安装包，直接下载apk安装即可。</p>
 <p>下载地址：</p>
@@ -421,28 +447,28 @@
 <tbody>
 <tr>
 <td>vivo IQOO Neo5</td>
-<td>1.0.1</td>
+<td>1.0.2</td>
 <td>✅</td>
-<td>2025.05.19</td>
+<td>2025.05.27</td>
 <td>eagle</td>
 </tr>
 <tr>
 <td>vivo IQOO Neo5 活力版</td>
-<td>1.0.1</td>
+<td>1.0.2</td>
 <td>✅</td>
-<td>2025.05.19</td>
+<td>2025.05.27</td>
 <td>eagle</td>
 </tr>
 </tbody>
 </table></div>
 <p>我们一直在努力改进我们的应用！有任何建议或反馈，请告诉我们——我们很乐意听取您的意见！</p>
-<p><img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox21.jpg"
+<p><img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox33.jpg"
 	width="1080"
 	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox21_hub94f9c071c6fa02e2e6a77a2caaa54d2_138045_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox21_hub94f9c071c6fa02e2e6a77a2caaa54d2_138045_1024x0_resize_q75_box.jpg 1024w"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox33_hue5a4f44c513ba29c3fa45d33265d515b_211461_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox33_hue5a4f44c513ba29c3fa45d33265d515b_211461_1024x0_resize_q75_box.jpg 1024w"
 	loading="lazy"
 	
-		alt="sikkerbox app 软件截图21"
+		alt="sikkerbox app 软件截图33"
 	
 	
 		class="gallery-image" 
@@ -450,13 +476,13 @@
 		data-flex-basis="107px"
 	
 >
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox8.jpg"
+<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox34.jpg"
 	width="1080"
 	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox8_huf6ce9d87e98406fa0a2e0478a4126d9c_128213_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox8_huf6ce9d87e98406fa0a2e0478a4126d9c_128213_1024x0_resize_q75_box.jpg 1024w"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox34_hubb93c4e1204d8331a13f8e5785577b0b_397535_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox34_hubb93c4e1204d8331a13f8e5785577b0b_397535_1024x0_resize_q75_box.jpg 1024w"
 	loading="lazy"
 	
-		alt="sikkerbox app 软件截图8"
+		alt="sikkerbox app 软件截图34"
 	
 	
 		class="gallery-image" 
@@ -464,13 +490,13 @@
 		data-flex-basis="107px"
 	
 >
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox9.jpg"
+<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox35.jpg"
 	width="1080"
 	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox9_hud5af2144362f5fcad6fa35fdf55cd611_108965_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox9_hud5af2144362f5fcad6fa35fdf55cd611_108965_1024x0_resize_q75_box.jpg 1024w"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox35_hufc7562b412ff32e78d185abed90edae0_287103_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox35_hufc7562b412ff32e78d185abed90edae0_287103_1024x0_resize_q75_box.jpg 1024w"
 	loading="lazy"
 	
-		alt="sikkerbox app 软件截图9"
+		alt="sikkerbox app 软件截图35"
 	
 	
 		class="gallery-image" 
@@ -478,13 +504,13 @@
 		data-flex-basis="107px"
 	
 >
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox10.jpg"
+<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox36.jpg"
 	width="1080"
 	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox10_hu9e1d7577b218b31fba8406ae98ea6953_100331_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox10_hu9e1d7577b218b31fba8406ae98ea6953_100331_1024x0_resize_q75_box.jpg 1024w"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox36_hu7011002bdd0fbc20d4ce3816ae382187_392236_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox36_hu7011002bdd0fbc20d4ce3816ae382187_392236_1024x0_resize_q75_box.jpg 1024w"
 	loading="lazy"
 	
-		alt="sikkerbox app 软件截图10"
+		alt="sikkerbox app 软件截图36"
 	
 	
 		class="gallery-image" 
@@ -492,13 +518,13 @@
 		data-flex-basis="107px"
 	
 >
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox11.jpg"
+<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox37.jpg"
 	width="1080"
 	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox11_hu81ca419e1cced9fd5a6d9ef0fe1e5090_158714_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox11_hu81ca419e1cced9fd5a6d9ef0fe1e5090_158714_1024x0_resize_q75_box.jpg 1024w"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox37_huc24b1705d8bb3e3d2675c8de15917462_208115_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox37_huc24b1705d8bb3e3d2675c8de15917462_208115_1024x0_resize_q75_box.jpg 1024w"
 	loading="lazy"
 	
-		alt="sikkerbox app 软件截图11"
+		alt="sikkerbox app 软件截图37"
 	
 	
 		class="gallery-image" 
@@ -506,13 +532,13 @@
 		data-flex-basis="107px"
 	
 >
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox12.jpg"
+<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox38.jpg"
 	width="1080"
 	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox12_hudea6aca5fa01370dbe75d907673b078d_91310_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox12_hudea6aca5fa01370dbe75d907673b078d_91310_1024x0_resize_q75_box.jpg 1024w"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox38_huc3a2fa7b658cfc67f8c7a73ccddb3a56_222337_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox38_huc3a2fa7b658cfc67f8c7a73ccddb3a56_222337_1024x0_resize_q75_box.jpg 1024w"
 	loading="lazy"
 	
-		alt="sikkerbox app 软件截图12"
+		alt="sikkerbox app 软件截图38"
 	
 	
 		class="gallery-image" 
@@ -520,13 +546,13 @@
 		data-flex-basis="107px"
 	
 >
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox22.jpg"
+<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox39.jpg"
 	width="1080"
 	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox22_hu4b36265d599965f0ad3c63f628a7cd8e_371579_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox22_hu4b36265d599965f0ad3c63f628a7cd8e_371579_1024x0_resize_q75_box.jpg 1024w"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox39_hu9c394b88d9bc7e7bd87b84bb1d75d4f8_276489_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox39_hu9c394b88d9bc7e7bd87b84bb1d75d4f8_276489_1024x0_resize_q75_box.jpg 1024w"
 	loading="lazy"
 	
-		alt="sikkerbox app 软件截图22"
+		alt="sikkerbox app 软件截图39"
 	
 	
 		class="gallery-image" 
@@ -534,55 +560,13 @@
 		data-flex-basis="107px"
 	
 >
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox23.jpg"
+<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox40.jpg"
 	width="1080"
 	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox23_hu0201351bf08fd6380d935f1aecdc5011_261411_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox23_hu0201351bf08fd6380d935f1aecdc5011_261411_1024x0_resize_q75_box.jpg 1024w"
+	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox40_hu14e03346fe5f4bd042ec61f32a2cad08_263333_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox40_hu14e03346fe5f4bd042ec61f32a2cad08_263333_1024x0_resize_q75_box.jpg 1024w"
 	loading="lazy"
 	
-		alt="sikkerbox app 软件截图23"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="44"
-		data-flex-basis="107px"
-	
->
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox24.jpg"
-	width="1080"
-	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox24_huc6831d00f0b491853b97d646a87a7370_267544_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox24_huc6831d00f0b491853b97d646a87a7370_267544_1024x0_resize_q75_box.jpg 1024w"
-	loading="lazy"
-	
-		alt="sikkerbox app 软件截图24"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="44"
-		data-flex-basis="107px"
-	
->
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox25.jpg"
-	width="1080"
-	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox25_hu78f2d7abbefe20cd2aa44085fac96765_347448_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox25_hu78f2d7abbefe20cd2aa44085fac96765_347448_1024x0_resize_q75_box.jpg 1024w"
-	loading="lazy"
-	
-		alt="sikkerbox app 软件截图25"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="44"
-		data-flex-basis="107px"
-	
->
-<img src="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox31.jpg"
-	width="1080"
-	height="2408"
-	srcset="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox31_hu9d31213cfcb7ff0b41ffc39a1dde6da5_240224_480x0_resize_q75_box.jpg 480w, /article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/sikkerbox31_hu9d31213cfcb7ff0b41ffc39a1dde6da5_240224_1024x0_resize_q75_box.jpg 1024w"
-	loading="lazy"
-	
-		alt="sikkerbox app 软件截图31"
+		alt="sikkerbox app 软件截图40"
 	
 	
 		class="gallery-image" 
