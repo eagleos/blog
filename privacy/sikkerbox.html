@@ -2,12 +2,26 @@
 <html>
 <head>
 <meta charset='utf-8'>
-<meta name='viewport' content='width=device-width'>
-<title>SikkerBox Privacy Policy</title>
-<style> body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding:1em; } </style>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="livelink.css"/>
+<meta property="og:title" content="Privacy Policy for SikkerBox" />
+<meta property="og:image:width" content="1280" />
+<meta property="og:image:height" content="720" />
+<title>Privacy Policy for SikkerBox</title>
 </head>
 <body>
-<strong>SikkerBox Privacy Policy</strong>
+<div class="page">
+    <div class="header">
+        <div class="container">
+            <p class="title">Privacy Policy for SikkerBox</p>
+        </div>
+    </div>
+    <div class="translations-content-container">
+        <div class="container">
+            <div class="tab-content translations-content-item en visible" id="en">
+<h1>SikkerBox Privacy Policy</h1>
+<p>Last updated: June 05, 2025</p>
 <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
 <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. </p>
 <h2>Interpretation and Definitions</h2>
@@ -152,10 +166,11 @@
 <h2>Contact Us</h2>
 <p>If you have any questions about this Privacy Policy, You can contact us:</p>
 <ul>
-<li>By email: <a href="mailto:www@xmyy.com" target="_blank">www@xmyy.com</a></li>
+<li>By email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="394e4e4e7941544040175a5654">[email&#160;protected]</a></li>
 </ul>
 <p>This privacy policy is effective as of 2025-06-05</p>
-<strong>SikkerBox隐私政策</strong>
+<h1>SikkerBox隐私政策</h1>
+<p>最后更新时间： June 05, 2025</p>
 <p>本隐私政策描述了我们在您使用服务时收集、使用和披露您的信息的政策和程序，并告知您您的隐私权利以及法律如何保护您。</p>
 <p>我们使用您的个人数据来提供和改进服务。使用本服务即表示您同意我们根据本隐私政策收集和使用信息。</p>
 <h2>解释和定义</h2>
@@ -300,9 +315,63 @@
 <h2>联系我们</h2>
 <p>如果您对本隐私政策有任何疑问，您可以联系我们：</p>
 <ul>
-<li>通过电子邮件： <a href="mailto:www@xmyy.com" target="_blank">www@xmyy.com</a></li>
+<li>通过电子邮件： <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="394e4e4e7941544040175a5654">[email&#160;protected]</a></li>
 </ul>
 <p>本隐私政策自 2025-06-05 起生效</p>
-    </body>
-    </html>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script data-cfasync="false" src="email-decode.min.js"></script><script type="text/javascript">
+    const tabLinks = Array.from(document.querySelectorAll(".tab-link"));
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabLinks.forEach(function(tabLink) {
+        tabLink.addEventListener("click", toggleTab);
+    });
+
+    let priorActiveTab = null;
+
+    function toggleTab(event) {
+        tabLinks.forEach(function(tabLink, index){
+            tabLink.classList.remove("active");
+            tabLink.classList.add("inactive");
+
+            tabContents[index].classList.remove("visible");
+            tabContents[index].classList.add("hidden");
+        });
+
+        if(priorActiveTab === this) {
+            this.classList.remove("active");
+            this.classList.add("inactive");
+
+            tabContents[tabLinks.indexOf(this)].classList.remove("visible");
+            tabContents[tabLinks.indexOf(this)].classList.add("hidden");
+
+            priorActiveTab = null;
+        } else {
+            this.classList.remove("inactive");
+            this.classList.add("active");
+
+            tabContents[tabLinks.indexOf(this)].classList.remove("hidden");
+            tabContents[tabLinks.indexOf(this)].classList.add("visible");
+
+            priorActiveTab = this;
+        }
+
+        if (priorActiveTab === null) {
+            this.classList.remove("inactive");
+            this.classList.add("active");
+
+            tabContents[tabLinks.indexOf(this)].classList.remove("hidden");
+            tabContents[tabLinks.indexOf(this)].classList.add("visible");
+        }
+
+        event.preventDefault();
+    }
+</script>
+</body>
+</html>
       
