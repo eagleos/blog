@@ -1001,7 +1001,7 @@
                     &lt;div class=&#34;refer-cov&#34;&gt;
                         &lt;b&gt;福建农林大学&lt;/b&gt;
                         &lt;p&gt;毕业&amp;nbsp;年份：&amp;nbsp;2002年&lt;/p&gt;
-                        &lt;p&gt;学&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;历：&amp;nbsp;全日制本科&lt;/p&gt;
+                        &lt;p&gt;学&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;历：&amp;nbsp;&lt;a href=&#34;https://www.chsi.com.cn/xlcx/bg.do?vcode=A3GVG6D8NKE2B91Q&amp;trnd=43042997773701829793299244292901&amp;srcid=archive&#34; target=&#34;_blank&#34;&gt;全日制本科&lt;/a&gt;&lt;/p&gt;
                         &lt;p&gt;专&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;业：&amp;nbsp;&lt;a href=&#34;assets/images/education.jpg&#34; target=&#34;_blank&#34;&gt;林学&lt;/a&gt;&lt;/p&gt;
                         &lt;p&gt;英语等级：&amp;nbsp;&amp;nbsp;&lt;a href=&#34;assets/images/cet4.jpg&#34; target=&#34;_blank&#34;&gt;CET4&lt;/a&gt;&lt;/p&gt;
                     &lt;/div&gt;
@@ -1038,48 +1038,48 @@
                     &lt;div class=&#34;about&#34;&gt;
                         &lt;ul&gt;
                             &lt;li&gt;23年资深服务器运维，专长于云计算、自动化运维、数据库管理及k8s等容器化技术，致力于打造高效、稳定、安全的运维环境。除运维本职工作外，还能胜任app（安卓/ios）开发、php开发、python开发、go开发等岗位。&lt;/li&gt;
-                            &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt;丰富的实践经验：拥有从零构建私有云平台的完整经验，熟悉主流公有云平台的管理和优化，具备大规模服务器集群运维经验。&lt;/li&gt;
-                            &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt;高效的自动化实践者：擅长利用自动化工具提升运维效率，实现CI/CD流水线自动化，规范化运维管理。&lt;/li&gt;
-                            &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt;持续学习进取：密切关注行业动态和技术进步，不断更新自身知识体系以适应快速变化的技术领域。 &lt;/li&gt;
+                            &lt;li&gt; 🚀丰富的实践经验：拥有从零构建私有云平台的完整经验，熟悉主流公有云平台的管理和优化，具备大规模服务器集群运维经验。&lt;/li&gt;
+                            &lt;li&gt; 🚀高效的自动化实践者：擅长利用自动化工具提升运维效率，实现CI/CD流水线自动化，规范化运维管理。&lt;/li&gt;
+                            &lt;li&gt; 🚀持续学习进取：密切关注行业动态和技术进步，不断更新自身知识体系以适应快速变化的技术领域。 &lt;/li&gt;
                         &lt;/ul&gt;
                     &lt;/div&gt;
                     &lt;h2 class=&#34;rit-titl&#34;&gt;&lt;i class=&#34;fas fa-wrench&#34;&gt;&lt;/i&gt; 专业技能&lt;/h2&gt;
                     &lt;div class=&#34;work-exp&#34;&gt;
                         &lt;h6 style=&#34;color: #4682BF; &#34;&gt;【云计算与自动化运维】&lt;/h6&gt;
                         &lt;ul&gt;
-                            &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt;私有云：熟练掌握VMware vCenter、OpenStack及H3C CAS虚拟化平台的部署与运维，具备开源系统（GitLab、Confluence等）的集成能力，支持OpenLDAP统一认证。&lt;/li&gt;
-                            &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt;公有云：熟练掌握阿里云、腾讯云、华为云、AWS、Azure及Cloudflare等公有云服务，能够结合Terraform高效运用ECS、RDS、SLB等资源，实现业务快速部署、弹性扩展与无缝迁移，并通过自研脚本调用云平台SDK优化运维流程。&lt;/li&gt;
-                            &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt;自动化运维：深入理解CI/CD流水线设计，熟练配置Jenkins、Maven、Nexus、Npm、Nacos等工具，结合Ansible、SaltStack、Puppet编写自动化Playbook，实现SpringCloud微服务的全流程自动化（构建、灰度发布、回滚），覆盖基础设施管理、配置部署、代码审查及监控告警。&lt;/li&gt;
+                            &lt;li&gt;✅私有云：熟练掌握VMware vCenter、OpenStack及H3C CAS虚拟化平台的部署与运维，具备开源系统（GitLab、Confluence等）的集成能力，支持OpenLDAP统一认证。&lt;/li&gt;
+                            &lt;li&gt;✅公有云：熟练掌握阿里云、腾讯云、华为云、AWS、Azure及Cloudflare等公有云服务，能够结合Terraform高效运用ECS、RDS、SLB等资源，实现业务快速部署、弹性扩展与无缝迁移，并通过自研脚本调用云平台SDK优化运维流程。&lt;/li&gt;
+                            &lt;li&gt;✅自动化运维：深入理解CI/CD流水线设计，熟练配置Jenkins、Maven、Nexus、Npm、Nacos等工具，结合Ansible、SaltStack、Puppet编写自动化Playbook，实现SpringCloud微服务的全流程自动化（构建、灰度发布、回滚），覆盖基础设施管理、配置部署、代码审查及监控告警。&lt;/li&gt;
                         &lt;/ul&gt;
                     &lt;/div&gt;
                     &lt;div class=&#34;work-exp&#34;&gt;
                         &lt;h6 style=&#34;color: #4682BF; &#34;&gt;【容器化与云原生技术】&lt;/h6&gt;
                         &lt;ul&gt;
-                            &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt;熟练运用Docker容器技术，包括镜像构建（Dockerfile）、服务编排（docker-compose）及日常运维。&lt;/li&gt;
-                            &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt;具备Kubernetes集群的独立部署能力，成功主导SpringCloud微服务架构向Kubernetes平台的迁移与适配。&lt;/li&gt;
+                            &lt;li&gt;✅熟练运用Docker容器技术，包括镜像构建（Dockerfile）、服务编排（docker-compose）及日常运维。&lt;/li&gt;
+                            &lt;li&gt;✅具备Kubernetes集群的独立部署能力，成功主导SpringCloud微服务架构向Kubernetes平台的迁移与适配。&lt;/li&gt;
                         &lt;/ul&gt;
                     &lt;/div&gt;
                     &lt;div class=&#34;work-exp&#34;&gt;
                         &lt;h6 style=&#34;color: #4682BF; &#34;&gt;【服务器与中间件运维】&lt;/h6&gt;
                         &lt;ul&gt;
-                            &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt;熟悉Linux环境下高可用架构的部署与优化，涵盖Web服务（Apache、Nginx）、数据库（MySQL/MariaDB、PostgreSQL、MongoDB）、缓存（Redis/Codis）、消息队列（Rabbimq、Rocketmq）及负载均衡（HAProxy、LVS）。&lt;/li&gt;
-                            &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt;熟悉MySQL/Mariadb、Oracle、SQLServer等数据库的安装部署、主从复制读写分离配置、性能调优、SQL优化、MHA高可用、容灾备份恢复、异地同步、数据迁移、安全防护等。&lt;/li&gt;
-                            &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt;熟练搭建Zabbix、Prometheus、Grafana等监控体系，集成ELK日志分析平台，实现多通道告警（邮件/短信/钉钉），熟悉APM工具（SkyWalking、Pinpoint）的配置与性能分析。&lt;/li&gt;
-                            &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt;具备系统级故障诊断能力，熟练使用sar/vmstat/iostat等工具进行性能分析，掌握Java应用问题排查工具（jstack/jmap）。&lt;/li&gt;
-                            &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt;熟练使用Go、Python、Shell编写运维脚本，结合grep/sed/awk等工具实现复杂运维场景的自动化，提升DevOps流程效率。&lt;/li&gt;
+                            &lt;li&gt;✅熟悉Linux环境下高可用架构的部署与优化，涵盖Web服务（Apache、Nginx）、数据库（MySQL/MariaDB、PostgreSQL、MongoDB）、缓存（Redis/Codis）、消息队列（Rabbimq、Rocketmq）及负载均衡（HAProxy、LVS）。&lt;/li&gt;
+                            &lt;li&gt;✅熟悉MySQL/Mariadb、Oracle、SQLServer等数据库的安装部署、主从复制读写分离配置、性能调优、SQL优化、MHA高可用、容灾备份恢复、异地同步、数据迁移、安全防护等。&lt;/li&gt;
+                            &lt;li&gt;✅熟练搭建Zabbix、Prometheus、Grafana等监控体系，集成ELK日志分析平台，实现多通道告警（邮件/短信/钉钉），熟悉APM工具（SkyWalking、Pinpoint）的配置与性能分析。&lt;/li&gt;
+                            &lt;li&gt;✅具备系统级故障诊断能力，熟练使用sar/vmstat/iostat等工具进行性能分析，掌握Java应用问题排查工具（jstack/jmap）。&lt;/li&gt;
+                            &lt;li&gt;✅熟练使用Go、Python、Shell编写运维脚本，结合grep/sed/awk等工具实现复杂运维场景的自动化，提升DevOps流程效率。&lt;/li&gt;
                          &lt;/ul&gt;
                     &lt;/div&gt;
                     &lt;div class=&#34;work-exp&#34;&gt;
                         &lt;h6 style=&#34;color: #4682BF; &#34;&gt;【网络/安全】&lt;/h6&gt;
                         &lt;ul&gt;
-                            &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt;熟悉企业级网络设备（华为/H3C路由器交换机、山石防火墙、博科光纤交换机）的配置与管理，能够独立完成局域网架构设计与实施，熟悉ZONE、LUN、VPN等网络技术。&lt;/li&gt;
-                            &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt;掌握Tcpdump/Wireshark等抓包分析工具，熟悉网络安全攻防技术（SQL注入/XSS/CSRF），具备漏洞扫描（Nessus、Acunetix、AWVS、ZAP）、渗透测试（Kali、Burp Suite）及安全加固经验。&lt;/li&gt;
+                            &lt;li&gt;✅熟悉企业级网络设备（华为/H3C路由器交换机、山石防火墙、博科光纤交换机）的配置与管理，能够独立完成局域网架构设计与实施，熟悉ZONE、LUN、VPN等网络技术。&lt;/li&gt;
+                            &lt;li&gt;✅掌握Tcpdump/Wireshark等抓包分析工具，熟悉网络安全攻防技术（SQL注入/XSS/CSRF），具备漏洞扫描（Nessus、Acunetix、AWVS、ZAP）、渗透测试（Kali、Burp Suite）及安全加固经验。&lt;/li&gt;
                         &lt;/ul&gt;
                     &lt;/div&gt;
                     &lt;div class=&#34;work-exp&#34;&gt;
                         &lt;h6 style=&#34;color: #4682BF; &#34;&gt;【AI/全栈开发】&lt;/h6&gt;
                         &lt;ul&gt;
-                            &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt;熟悉Deepseek等AI本地化部署及企业知识库、客服系统的部署。具备全栈开发能力，涵盖网站开发、Android/iOS移动应用开发，以及PHP、Python、Go后端开发，可独立完成多端项目架构与实现。&lt;/li&gt;
+                            &lt;li&gt;✅熟悉Deepseek等AI本地化部署及企业知识库、客服系统的部署。具备全栈开发能力，涵盖网站开发、Android/iOS移动应用开发，以及PHP、Python、Go后端开发，可独立完成多端项目架构与实现。&lt;/li&gt;
                         &lt;/ul&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -1092,14 +1092,29 @@
                     &lt;div class=&#34;service no-margin&#34;&gt;
                         &lt;div class=&#34;resume-timeline-item-header mb-2&#34;&gt;
                             &lt;div class=&#34;d-flex flex-column flex-md-row&#34;&gt;
+                                &lt;h3 class=&#34;resume-position-title font-weight-bold mb-1&#34;&gt;App开发-SikkerBox-手机上的网络瑞士军刀&lt;/h3&gt;
+                                &lt;div class=&#34;resume-company-name ml-auto&#34;&gt;自由职业者&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&#34;resume-timeline-item-desc&#34;&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 项目描述：采用现代、清晰的UI界面布局和指示，旨在打造成手机上的网络瑞士军刀，为用户的数字生活提供一个功能强大且用户友好的安全层解决方案。&lt;/li&gt;
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 主要职责：基于Flutter（Dart语言）跨平台独立开发，采用模块化架构设计，主要包含两因素认证（2FA）管理和网络诊断工具两大核心功能模块。应用采用Provider模式进行状态管理，使用Hive数据库进行本地数据存储，并集成多种网络API实现各种网络诊断功能。&lt;/li&gt;
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 项目成果：成功开发并上架Google Play商店等平台，各搜索引擎搜索“sikkerbox”即可查看下载。&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&#34;service no-margin&#34;&gt;
+                        &lt;div class=&#34;resume-timeline-item-header mb-2&#34;&gt;
+                            &lt;div class=&#34;d-flex flex-column flex-md-row&#34;&gt;
                                 &lt;h3 class=&#34;resume-position-title font-weight-bold mb-1&#34;&gt;基于Kubernetes的微服务架构环境部署与运维&lt;/h3&gt;
                                 &lt;div class=&#34;resume-company-name ml-auto&#34;&gt;屯粮积草、联生活&lt;/div&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;div class=&#34;resume-timeline-item-desc&#34;&gt;
                             &lt;ul&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 项目描述：该项目旨在为公司核心业务系统构建高可用、可扩展的微服务架构，基于Kubernetes实现容器化部署与自动化运维。&lt;/li&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 主要职责：
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 项目描述：该项目旨在为公司核心业务系统构建高可用、可扩展的微服务架构，基于Kubernetes实现容器化部署与自动化运维。&lt;/li&gt;
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 主要职责：
 &lt;br&gt;★Kubernetes集群搭建与维护：
 &lt;br&gt;● 使用kubeadm部署并管理多节点Kubernetes集群，包括Master节点和Worker节点。
 &lt;br&gt;● 配置高可用集群，使用etcd集群和负载均衡器确保集群的稳定性。
@@ -1120,10 +1135,10 @@
 &lt;br&gt;● 使用kubectl、kubectl logs、kubectl describe等工具快速定位并修复Pod启动失败、服务不可用等问题。
 &lt;br&gt;● 优化Pod调度策略，减少节点资源碎片化。
                                 &lt;/li&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 技术栈：
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 技术栈：
 &lt;br&gt;● Kubernetes、Docker、Helm、Prometheus、Grafana、EFK、Ingress Nginx、RBAC、Network Policies
                                 &lt;/li&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 项目成果：
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 项目成果：
 &lt;br&gt;● 成功将公司核心业务系统迁移至Kubernetes平台，系统可用性提升至99.9%。
 &lt;br&gt;● 通过自动化运维和资源优化，运维成本降低30%。
 &lt;br&gt;● 建立了完善的监控和告警体系，故障平均恢复时间（MTTR）缩短50%。
@@ -1140,8 +1155,8 @@
                         &lt;/div&gt;
                         &lt;div class=&#34;resume-timeline-item-desc&#34;&gt;
                             &lt;ul&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 项目描述：公司业务发展，需要搭建稳定、高效的私有云平台以满足日益增长的业务需求，实现资源的高效分配和灵活调度，并建立完善的运维管理体系，搭建CI/CD平台实现运维流程自动化，保障开发团队的基础设施服务稳定。&lt;/li&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 主要职责：
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 项目描述：需要搭建稳定高效的私有云平台以满足公司日益增长的业务需求，实现资源的高效分配和灵活调度，并建立完善的运维管理体系，搭建CI/CD平台实现运维流程自动化，保障基础设施稳定。&lt;/li&gt;
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 主要职责：
 &lt;br&gt;● 选型及采购华为企业级路由器、博科光纤交换机等网络设备、Dell或浪潮或曙光等服务器、UPS等，自行完成网络设备zone等配置，完成服务器raid、存储等软硬件配置，定制操作系统无人值守自动化安装iso，集成硬件驱动、系统补丁、安全基线安全加固优化等配置，结合Cobbler等实现批量装机，完成搭建公司内网vcenter私有云平台。
 &lt;br&gt;● 搭建gitlab、jenkins、confluence、禅道、openldap、openvpn、nextcloud、Phabricator、SonarQube、showdoc、yapi、nexus、npm、Archery/Yearning、jumpserver、syspass等系统，且各系统集成ldap统一账号登录，并自编php程序实现短信服务自助重置ldap账号密码功能。
 &lt;br&gt;● 搭建基于jenkins+ansible的ci/cd持续交付发布系统，按需结合nacos实现灰度发布等流程。
@@ -1149,7 +1164,7 @@
 &lt;br&gt;● 强化DevOPS，结合shell、python、go等脚本，实现日常运维工作自动化，如调用阿里云、腾讯云SDK实现自助增、删、改域名解析等功能，并使用terraform高效地配置和管理内网vcenter及公有云资源。
 &lt;br&gt;● 同时增加市电断电监控脚本，有利保障公司内网机房安全。搭建内网dns解决测试人员手机调试APP问题。
                                 &lt;/li&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 项目成果：
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 项目成果：
 &lt;br&gt;● 成功搭建内网私有云平台，节省了约30%的云服务租赁成本，实现了业务系统的快速部署和迭代，软件交付周期缩短了约60%；
 &lt;br&gt;● 通过完善的监控和报警体系，系统故障响应时间缩短至5分钟以内，有效保障了业务的连续性；
 &lt;br&gt;● 使用堡垒机审计并管理开发人员对数据库、服务器的相关访问，有效确保了数据的安全性。
@@ -1166,9 +1181,9 @@
                         &lt;/div&gt;
                         &lt;div class=&#34;resume-timeline-item-desc&#34;&gt;
                             &lt;ul&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 项目描述：公司业务系统生产库需要一个能在微信上收到通知并简单操作审核的高效SQL审核平台来规范数据库操作，保障数据安全，实现SQL语句提交、审核流程自动化。&lt;/li&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 主要职责：基于php+mysql独立开发，前后端分离、支持手机移动端响应式设计，攻克mysql原生api对部分功能支持度不佳的难题，确保平台的高效运行和良好的用户体验，开发与企业微信的集成功能，实现审核通知的实时推送。&lt;/li&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 项目成果：成功开发并上线SQL审核平台，审核效率提升了约70%，减少人工错误，后续开发api提供给公司业务系统进行对接，进一步提升了业务流程的自动化程度。&lt;/li&gt;
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 项目描述：为规范数据库操作、保障业务系统生产库数据安全，需要开发一套支持微信通知接收、简易审核操作等功能、实现SQL语句提交与审核流程自动化管理的SQL审核平台。&lt;/li&gt;
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 主要职责：基于php+mysql独立开发，前后端分离、支持手机移动端响应式设计，确保平台的高效运行和良好的用户体验，开发与企业微信的集成功能，实现审核通知的实时推送。&lt;/li&gt;
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 项目成果：成功上线后审核效率提升了约70%，开发api与业务系统对接，提升了业务流程自动化。&lt;/li&gt;
                             &lt;/ul&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
@@ -1181,9 +1196,9 @@
                         &lt;/div&gt;
                         &lt;div class=&#34;resume-timeline-item-desc&#34;&gt;
                             &lt;ul&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 项目描述：员工通过远程桌面登录相同外网服务器访问互联网，现有上网行为管理软硬件无法审计具体员工上网行为，公司需要对员工上网行为进行有效管理和审计。&lt;/li&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 主要职责：基于php+mysql独立开发，设计系统架构，实现对员工上网行为数据的采集、存储和分析，并开发web管理后台，方便管理人员查看和管理员工上网行为记录。&lt;/li&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 项目成果：成功开发并上线员工上网行为管理系统，及时有效地监控了员工上网行为，极大简化员工上网行为审计工作，为公司每年节省成本逾10万元。&lt;/li&gt;
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 项目描述：员工通过远程桌面登录相同外网服务器访问互联网，现有上网行为管理软硬件无法审计具体员工上网行为，公司需要对员工上网行为进行有效管理和审计。&lt;/li&gt;
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 主要职责：基于php+mysql独立开发，设计系统架构，实现对员工上网行为数据的采集、存储和分析，并开发web管理后台，方便管理人员查看和管理员工上网行为记录。&lt;/li&gt;
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 项目成果：成功开发并上线员工上网行为管理系统，及时有效地监控了员工上网行为，极大简化员工上网行为审计工作，为公司每年节省成本逾10万元。&lt;/li&gt;
                             &lt;/ul&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
@@ -1196,9 +1211,9 @@
                         &lt;/div&gt;
                         &lt;div class=&#34;resume-timeline-item-desc&#34;&gt;
                             &lt;ul&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 项目描述：2009年国庆期间，公司业务DNS服务器遭受重大DDOS攻击，攻击流量罕见，影响全国四分之一网站访问，国家网络应急中心无法处置。需要快速解决DDOS攻击问题，恢复DNS服务器正常运行，减少公司经济损失。&lt;/li&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 主要职责：分析攻击情况，将原单节点的每组dns服务器进行重构，实施分布式部署，并编写shell脚本进行相关数据实时同步。&lt;/li&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-street-view&#34;&gt;&lt;/i&gt; 项目成果：完美解决ddos攻击，效果立竿见影，dns服务恢复正常，同时提升了dns解析服务质量，为公司减少经济损失损失逾400万元，获得东南融通集团全集团通报表扬。&lt;/li&gt;
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 项目描述：2009年国庆期间，公司业务DNS服务器遭受重大DDOS攻击，攻击流量罕见，影响全国四分之一网站访问，需要快速解决DDOS攻击问题，恢复DNS服务器正常运行，减少公司经济损失。&lt;/li&gt;
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 主要职责：分析攻击情况，将原单节点的每组dns服务器进行重构，实施分布式部署，并编写shell脚本进行相关数据实时同步。&lt;/li&gt;
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 项目成果：完美解决ddos攻击，效果立竿见影，dns服务恢复正常，同时提升了dns解析服务质量，为公司减少经济损失损失逾400万元，获得东南融通集团全集团通报表扬。&lt;/li&gt;
                             &lt;/ul&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
@@ -5440,7 +5455,7 @@
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;language&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;JavaScript&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&amp;lt;!--&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;input_onFocus&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;theForm&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;input_onFocus&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;heForm&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;theForm&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;emailname&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
