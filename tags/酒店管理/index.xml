@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>酒店管理 on 虾米技术网</title>
+        <link>https://xmyy.com/tags/%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86/</link>
+        <description>Recent content in 酒店管理 on 虾米技术网</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>虾米技术网 xmyy.com</copyright>
+        <lastBuildDate>Thu, 17 Jul 2025 21:35:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>微信小程序：酒店预订管理系统</title>
+        <link>https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/</link>
+        <pubDate>Thu, 17 Jul 2025 21:35:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/</guid>
+        <description>&lt;img src="https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/WeChat-Mini-Program-Hotel-Reservation-Management-System.jpg" alt="Featured image of post 微信小程序：酒店预订管理系统" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;💁🏻‍♂️&lt;/span&gt; &lt;a href=&#34;https://github.com/eagleos/hotel&#34; target=&#34;_blank&#34;&gt;github.com&lt;/a&gt; 2025-07-17 《微信小程序：酒店预订管理系统》 童建平&lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&#34;-现代化酒店管理系统&#34;&gt;🏨 现代化酒店管理系统
+&lt;/h1&gt;&lt;h2 id=&#34;项目概述&#34;&gt;项目概述
+&lt;/h2&gt;&lt;p&gt;这是一个基于现代Web技术栈构建的全栈酒店管理系统，旨在为酒店行业提供完整的数字化解决方案，通过技术创新提升酒店运营效率和客户体验。系统采用前后端分离架构，结合了成熟的企业级框架和现代化的用户界面设计，为酒店运营管理和客户服务提供了强有力的技术支撑。&lt;/p&gt;
+&lt;h2 id=&#34;-核心特性&#34;&gt;🎯 核心特性
+&lt;/h2&gt;&lt;h3 id=&#34;业务功能&#34;&gt;业务功能
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;客房管理&lt;/strong&gt; - 房型配置、房间状态管理、价格策略&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;预订系统&lt;/strong&gt; - 在线预订、订单管理、支付集成&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;会员体系&lt;/strong&gt; - 用户注册、会员等级、积分系统&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;优惠券系统&lt;/strong&gt; - 优惠券发放、使用跟踪、营销活动&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;积分商城&lt;/strong&gt; - 积分兑换、商品管理、订单处理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;系统管理&lt;/strong&gt; - 用户权限、数据统计、系统配置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;技术特色&#34;&gt;技术特色
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;响应式设计&lt;/strong&gt; - 完美适配PC端、平板和移动设备&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;现代化UI&lt;/strong&gt; - 采用豪华酒店主题的视觉设计语言&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高性能&lt;/strong&gt; - 优化的数据库查询和前端渲染&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;安全可靠&lt;/strong&gt; - 完善的权限控制和数据加密&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;易于扩展&lt;/strong&gt; - 模块化架构，支持功能定制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-技术架构&#34;&gt;🛠️ 技术架构
+&lt;/h2&gt;&lt;h3 id=&#34;后端技术栈&#34;&gt;后端技术栈
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;框架&lt;/strong&gt;: Spring Boot + RuoYi框架&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据库&lt;/strong&gt;: MySQL 8.0&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;安全&lt;/strong&gt;: Apache Shiro权限框架&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;构建工具&lt;/strong&gt;: Maven&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;开发语言&lt;/strong&gt;: Java 11+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;前端技术栈&#34;&gt;前端技术栈
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;框架&lt;/strong&gt;: Vue.js 3 + UniApp&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;状态管理&lt;/strong&gt;: Pinia&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;样式&lt;/strong&gt;: SCSS + 响应式设计&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;构建工具&lt;/strong&gt;: Vite&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UI组件&lt;/strong&gt;: 自定义组件库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;部署架构&#34;&gt;部署架构
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;应用服务器&lt;/strong&gt;: Spring Boot内嵌Tomcat&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据库&lt;/strong&gt;: MySQL主从复制&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;前端部署&lt;/strong&gt;: 静态资源CDN分发&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;API网关&lt;/strong&gt;: 统一接口管理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-设计理念&#34;&gt;🎨 设计理念
+&lt;/h2&gt;&lt;h3 id=&#34;视觉设计&#34;&gt;视觉设计
+&lt;/h3&gt;&lt;p&gt;系统采用现代化的酒店行业设计语言，以金色为主色调，营造奢华专业的品牌形象：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;色彩方案&lt;/strong&gt;: 金色(#D4AF37) + 深灰(#1a1a1a) + 蓝色(#2c5aa0)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;设计风格&lt;/strong&gt;: 现代简约 + 豪华质感&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;交互体验&lt;/strong&gt;: 流畅动画 + 即时反馈&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;布局结构&lt;/strong&gt;: 响应式网格 + 卡片式设计&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;用户体验&#34;&gt;用户体验
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;直观导航&lt;/strong&gt; - 清晰的信息架构和导航逻辑&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;快速操作&lt;/strong&gt; - 简化的操作流程和智能表单&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;个性化&lt;/strong&gt; - 基于用户行为的个性化推荐&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多端一致&lt;/strong&gt; - 跨平台的统一用户体验&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-功能模块&#34;&gt;📱 功能模块
+&lt;/h2&gt;&lt;h3 id=&#34;客户端功能&#34;&gt;客户端功能
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;首页展示&lt;/strong&gt; - 酒店介绍、特色服务、推荐房型&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;房型浏览&lt;/strong&gt; - 房型列表、详情查看、实时价格&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;在线预订&lt;/strong&gt; - 日期选择、房型预订、支付处理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;个人中心&lt;/strong&gt; - 订单管理、会员信息、积分查询&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;优惠活动&lt;/strong&gt; - 优惠券领取、特价房型、会员专享&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;管理后台&#34;&gt;管理后台
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;数据看板&lt;/strong&gt; - 经营数据统计、趋势分析&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;房间管理&lt;/strong&gt; - 房型配置、房间状态、价格管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;订单管理&lt;/strong&gt; - 预订处理、入住登记、账单管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;会员管理&lt;/strong&gt; - 用户信息、等级管理、积分操作&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;营销管理&lt;/strong&gt; - 优惠券配置、活动管理、数据分析&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;系统设置&lt;/strong&gt; - 权限配置、参数设置、日志管理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-快速开始&#34;&gt;🚀 快速开始
+&lt;/h2&gt;&lt;h3 id=&#34;环境要求&#34;&gt;环境要求
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Java 8 或更高版本&lt;/li&gt;
+&lt;li&gt;MySQL 8.0+&lt;/li&gt;
+&lt;li&gt;Node.js 16+&lt;/li&gt;
+&lt;li&gt;Maven 3.6+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;后端部署&#34;&gt;后端部署
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 进入后端目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; RuoYi-4.8.1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 配置数据库&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 修改 application.yml 中的数据库连接信息&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 导入数据库&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mysql -u root -p &amp;lt; sql/ry_20250416.sql
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 编译运行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvn clean compile
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvn spring-boot:run
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;前端部署&#34;&gt;前端部署
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 进入前端目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; frontend
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 安装依赖&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm install
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 开发模式&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm run dev
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 生产构建&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm run build
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;-项目结构&#34;&gt;📊 项目结构
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hotel-management-system/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── RuoYi-4.8.1/                  # 后端项目
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── ruoyi-admin/              # 管理后台模块
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── ruoyi-common/             # 通用工具模块
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── ruoyi-framework/          # 框架核心模块
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── ruoyi-hotel/              # 酒店业务模块
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   └── sql/                      # 数据库脚本
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── frontend/                     # 前端项目
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   ├── src/                      # 源代码
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   │   ├── pages/                # 页面组件
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   │   ├── stores/               # 状态管理
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   │   └── utils/                # 工具函数
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   └── styles/                   # 样式文件
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;-开发指南&#34;&gt;🔧 开发指南
+&lt;/h2&gt;&lt;h3 id=&#34;代码规范&#34;&gt;代码规范
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Java&lt;/strong&gt;: 遵循阿里巴巴Java开发规范&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;JavaScript&lt;/strong&gt;: 使用ESLint + Prettier&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CSS&lt;/strong&gt;: BEM命名规范 + SCSS预处理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Git&lt;/strong&gt;: 语义化提交信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;数据库设计&#34;&gt;数据库设计
+&lt;/h3&gt;&lt;p&gt;系统采用规范化的数据库设计，主要包含以下核心表：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用户管理: sys_user, sys_role, sys_menu&lt;/li&gt;
+&lt;li&gt;酒店业务: hotel_room, hotel_booking, hotel_member&lt;/li&gt;
+&lt;li&gt;营销系统: hotel_coupon, hotel_product, hotel_order&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;api设计&#34;&gt;API设计
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;RESTful风格&lt;/strong&gt; - 统一的API设计规范&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;统一响应格式&lt;/strong&gt; - 标准化的数据返回格式&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;错误处理&lt;/strong&gt; - 完善的异常处理机制&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;接口文档&lt;/strong&gt; - 详细的API文档说明&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-安全特性&#34;&gt;🔒 安全特性
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;身份认证&lt;/strong&gt; - 基于Token的用户认证机制&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;权限控制&lt;/strong&gt; - 细粒度的角色权限管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据加密&lt;/strong&gt; - 敏感数据加密存储&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SQL注入防护&lt;/strong&gt; - 参数化查询防止SQL注入&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;XSS防护&lt;/strong&gt; - 输入输出过滤防止跨站脚本攻击&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-性能优化&#34;&gt;📈 性能优化
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;数据库优化&lt;/strong&gt; - 索引优化、查询优化&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;缓存策略&lt;/strong&gt; - Redis缓存热点数据&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;前端优化&lt;/strong&gt; - 代码分割、懒加载、CDN加速&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;接口优化&lt;/strong&gt; - 分页查询、数据压缩&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-技术支持&#34;&gt;📞 技术支持
+&lt;/h2&gt;&lt;p&gt;如需购买及定制本系统或其它微信小程序、app开发（Android/iOS），欢迎通过以下方式联系：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;微信号: xmdoor&lt;/li&gt;
+&lt;li&gt;邮箱: &lt;a class=&#34;link&#34; href=&#34;mailto:www@xmyy.com&#34; &gt;www@xmyy.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-致谢&#34;&gt;🙏 致谢
+&lt;/h2&gt;&lt;p&gt;感谢以下开源项目为本系统提供的技术支持：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/yangzongzhuan/RuoYi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RuoYi&lt;/a&gt; - 后端管理框架&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://vuejs.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Vue.js&lt;/a&gt; - 前端框架&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://uniapp.dcloud.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;UniApp&lt;/a&gt; - 跨平台开发框架&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://element-plus.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Element Plus&lt;/a&gt; - UI组件库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-项目预览&#34;&gt;💻 项目预览
+&lt;/h2&gt;&lt;h3 id=&#34;前端界面-微信小程序&#34;&gt;前端界面 微信小程序
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel1.jpg&#34;
+	width=&#34;393&#34;
+	height=&#34;822&#34;
+	srcset=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel1_huf550875e76405dba4683596196fa85e4_236909_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel1_huf550875e76405dba4683596196fa85e4_236909_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;首页&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;47&#34;
+		data-flex-basis=&#34;114px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel2.jpg&#34;
+	width=&#34;393&#34;
+	height=&#34;823&#34;
+	srcset=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel2_hu1b2583a2382fc519da08b869387931ae_177988_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel2_hu1b2583a2382fc519da08b869387931ae_177988_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;客房&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;47&#34;
+		data-flex-basis=&#34;114px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel3.jpg&#34;
+	width=&#34;389&#34;
+	height=&#34;823&#34;
+	srcset=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel3_hua065989262e6c529e9053613ed3c4415_180187_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel3_hua065989262e6c529e9053613ed3c4415_180187_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;客房详情&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;47&#34;
+		data-flex-basis=&#34;113px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel4.jpg&#34;
+	width=&#34;392&#34;
+	height=&#34;823&#34;
+	srcset=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel4_hu652c380d03fb7fb6f323691fd4fe316f_94107_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel4_hu652c380d03fb7fb6f323691fd4fe316f_94107_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;我的&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;47&#34;
+		data-flex-basis=&#34;114px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel5.jpg&#34;
+	width=&#34;391&#34;
+	height=&#34;823&#34;
+	srcset=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel5_hu8a8cc702406b7dc398a31135b42d4d81_169152_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel5_hu8a8cc702406b7dc398a31135b42d4d81_169152_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;前端登录&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;47&#34;
+		data-flex-basis=&#34;114px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel6.jpg&#34;
+	width=&#34;394&#34;
+	height=&#34;820&#34;
+	srcset=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel6_huc9e4c1b232b70c64d8cdd1ecef212759_100040_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel6_huc9e4c1b232b70c64d8cdd1ecef212759_100040_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;前羰登录成功&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;48&#34;
+		data-flex-basis=&#34;115px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel7.jpg&#34;
+	width=&#34;393&#34;
+	height=&#34;822&#34;
+	srcset=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel7_hu91685657563247f59d68c5718bd7d229_162062_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel7_hu91685657563247f59d68c5718bd7d229_162062_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;订单&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;47&#34;
+		data-flex-basis=&#34;114px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;后端界面-管理功能&#34;&gt;后端界面 管理功能
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/WeChat-Mini-Program-Hotel-Reservation-Management-System.jpg&#34;
+	width=&#34;1666&#34;
+	height=&#34;884&#34;
+	srcset=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/_hub7d4f2c05c22b4476f007bfc898292c7_762469_2914133cf70fd6dabe3b0a24f378c078.jpg 480w, https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/_hub7d4f2c05c22b4476f007bfc898292c7_762469_5958755aa9c7961cdfa927a3141359fe.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;后台登录&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;188&#34;
+		data-flex-basis=&#34;452px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel8.jpg&#34;
+	width=&#34;1662&#34;
+	height=&#34;852&#34;
+	srcset=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel8_hu4c9d5775b54085ce530933d7998c220b_329309_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel8_hu4c9d5775b54085ce530933d7998c220b_329309_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;用户管理&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;195&#34;
+		data-flex-basis=&#34;468px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel9.jpg&#34;
+	width=&#34;1680&#34;
+	height=&#34;855&#34;
+	srcset=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel9_hufaa0e393631b8d89c0efd1b76517b340_314735_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel9_hufaa0e393631b8d89c0efd1b76517b340_314735_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;房间管理&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;196&#34;
+		data-flex-basis=&#34;471px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel10.jpg&#34;
+	width=&#34;1678&#34;
+	height=&#34;852&#34;
+	srcset=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel10_hue6440b0fdb83f76ca8faf15694870d5f_403399_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel10_hue6440b0fdb83f76ca8faf15694870d5f_403399_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;预订管理&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;196&#34;
+		data-flex-basis=&#34;472px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel11.jpg&#34;
+	width=&#34;1677&#34;
+	height=&#34;854&#34;
+	srcset=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel11_hudcfba84e371dc8ef0f524d11de692d81_358844_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel11_hudcfba84e371dc8ef0f524d11de692d81_358844_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;优惠券管理&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;196&#34;
+		data-flex-basis=&#34;471px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel12.jpg&#34;
+	width=&#34;1677&#34;
+	height=&#34;855&#34;
+	srcset=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel12_hu940eafa6609e1c2d5eda889ecf8529bc_331863_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel12_hu940eafa6609e1c2d5eda889ecf8529bc_331863_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;会员优惠券&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;196&#34;
+		data-flex-basis=&#34;470px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel13.jpg&#34;
+	width=&#34;1680&#34;
+	height=&#34;858&#34;
+	srcset=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel13_hu9fa5d86dcc5e27dfb65f0a0927d40196_361097_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel13_hu9fa5d86dcc5e27dfb65f0a0927d40196_361097_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;积分商品&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;195&#34;
+		data-flex-basis=&#34;469px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel14.jpg&#34;
+	width=&#34;1677&#34;
+	height=&#34;855&#34;
+	srcset=&#34;https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel14_hua581dde2534cff4c65b5f013789e1137_336775_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System/hotel14_hua581dde2534cff4c65b5f013789e1137_336775_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;商品订单&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;196&#34;
+		data-flex-basis=&#34;470px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
