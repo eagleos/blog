@@ -88,8 +88,10 @@
                     &lt;h4 class=&#34;ltitle&#34;&gt;&lt;i class=&#34;fas fa-trophy&#34;&gt;&lt;/i&gt; 证书荣誉&lt;/h4&gt;
                     &lt;div class=&#34;refer-cov&#34;&gt;
                         &lt;b&gt;网络工程师&lt;/b&gt;
-                        &lt;p&gt;全国计算机软件资格考试&lt;a href=&#34;assets/images/examrank.jpg&#34; target=&#34;_blank&#34;&gt;&lt;span&gt;(全省第15名)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-                        &lt;p&gt;&lt;a href=&#34;assets/images/network.jpg&#34; target=&#34;_blank&#34;&gt;中级职称证书管理号: 08224350143&lt;/a&gt;&lt;/p&gt;
+                        &lt;!-- &lt;p&gt;全国计算机软件资格考试&lt;a href=&#34;assets/images/examrank.jpg&#34; target=&#34;_blank&#34;&gt;&lt;span&gt;(全省第15名)&lt;/span&gt;&lt;/a&gt;&lt;/p&gt; --&gt;
+                        &lt;p&gt;&lt;a href=&#34;assets/images/network.jpg&#34; target=&#34;_blank&#34;&gt;全国计算机软考中级职称&lt;!--: 08224350143--&gt;&lt;/a&gt;&lt;/p&gt;
+                        &lt;b&gt;软件著作权&lt;/b&gt;
+                        &lt;p&gt;&lt;a href=&#34;assets/images/sikkerbox.jpg&#34; target=&#34;_blank&#34;&gt;SikkerBox 1.0.2&lt;/a&gt;&lt;/p&gt;
                     &lt;/div&gt;
                     &lt;h4 class=&#34;ltitle&#34;&gt;&lt;i class=&#34;fas fa-newspaper&#34;&gt;&lt;/i&gt; 论文发表&lt;/h4&gt;
                     &lt;div class=&#34;article-cov&#34;&gt;
@@ -180,7 +182,7 @@
                             &lt;ul&gt;
                                 &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 项目描述：采用现代、清晰的UI界面布局和指示，旨在打造成手机上的网络瑞士军刀，为用户的数字生活提供一个功能强大且用户友好的安全层解决方案。&lt;/li&gt;
                                 &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 主要职责：基于Flutter（Dart语言）跨平台独立开发，采用模块化架构设计，主要包含两因素认证（2FA）管理和网络诊断工具两大核心功能模块。应用采用Provider模式进行状态管理，使用Hive数据库进行本地数据存储，并集成多种网络API实现各种网络诊断功能。&lt;/li&gt;
-                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 项目成果：成功开发并上架Google Play商店等平台，各搜索引擎搜索“sikkerbox”即可查看下载。&lt;/li&gt;
+                                &lt;li&gt;&lt;i class=&#34;fas fa-cog fa-spin&#34;&gt;&lt;/i&gt; 项目成果：成功上架Google Play等，必应等搜索“sikkerbox”即可查看下载，已取得软件著作权。&lt;/li&gt;
                             &lt;/ul&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
