@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://xmyy.com/</loc>
-    <lastmod>2025-07-17T21:35:00+08:00</lastmod>
+    <lastmod>2025-08-04T22:08:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://xmyy.com/categories/</loc>
-    <lastmod>2025-07-17T21:35:00+08:00</lastmod>
+    <lastmod>2025-08-04T22:08:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -28,11 +28,20 @@
                 href="https://xmyy.com/categories/"
                 />
   </url><url>
-    <loc>https://xmyy.com/tags/hotel/</loc>
-    <lastmod>2025-07-17T21:35:00+08:00</lastmod>
+    <loc>https://xmyy.com/tags/control/</loc>
+    <lastmod>2025-08-04T22:08:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/tags/EagleDesk/</loc>
+    <lastmod>2025-08-04T22:08:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/</loc>
+    <lastmod>2025-08-04T22:08:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/tags/flutter/</loc>
+    <lastmod>2025-08-04T22:08:00+08:00</lastmod>
   </url><url>
     <loc>https://xmyy.com/post/</loc>
-    <lastmod>2025-07-17T21:35:00+08:00</lastmod>
+    <lastmod>2025-08-04T22:08:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -44,11 +53,11 @@
                 href="https://xmyy.com/post/"
                 />
   </url><url>
-    <loc>https://xmyy.com/tags/Reservation/</loc>
-    <lastmod>2025-07-17T21:35:00+08:00</lastmod>
+    <loc>https://xmyy.com/tags/remote/</loc>
+    <lastmod>2025-08-04T22:08:00+08:00</lastmod>
   </url><url>
     <loc>https://xmyy.com/tags/</loc>
-    <lastmod>2025-07-17T21:35:00+08:00</lastmod>
+    <lastmod>2025-08-04T22:08:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -59,6 +68,34 @@
                 hreflang="zh-cn"
                 href="https://xmyy.com/tags/"
                 />
+  </url><url>
+    <loc>https://xmyy.com/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/</loc>
+    <lastmod>2025-08-04T22:08:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/tags/%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6/</loc>
+    <lastmod>2025-08-04T22:08:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/tags/%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</loc>
+    <lastmod>2025-08-04T22:08:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/categories/DevOps/</loc>
+    <lastmod>2025-08-04T22:08:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://xmyy.com/en/categories/DevOps/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://xmyy.com/categories/DevOps/"
+                />
+  </url><url>
+    <loc>https://xmyy.com/tags/hotel/</loc>
+    <lastmod>2025-07-17T21:35:00+08:00</lastmod>
+  </url><url>
+    <loc>https://xmyy.com/tags/Reservation/</loc>
+    <lastmod>2025-07-17T21:35:00+08:00</lastmod>
   </url><url>
     <loc>https://xmyy.com/tags/%E9%85%92%E5%BA%97/</loc>
     <lastmod>2025-07-17T21:35:00+08:00</lastmod>
@@ -80,19 +117,6 @@
   </url><url>
     <loc>https://xmyy.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
     <lastmod>2025-07-17T21:35:00+08:00</lastmod>
-  </url><url>
-    <loc>https://xmyy.com/categories/DevOps/</loc>
-    <lastmod>2025-07-17T21:35:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://xmyy.com/en/categories/DevOps/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://xmyy.com/categories/DevOps/"
-                />
   </url><url>
     <loc>https://xmyy.com/tags/2FA/</loc>
     <lastmod>2025-05-15T13:06:00+08:00</lastmod>

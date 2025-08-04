@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>远程控制 on 虾米技术网</title>
+        <link>https://xmyy.com/tags/%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6/</link>
+        <description>Recent content in 远程控制 on 虾米技术网</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>虾米技术网 xmyy.com</copyright>
+        <lastBuildDate>Mon, 04 Aug 2025 22:08:00 +0800</lastBuildDate><atom:link href="https://xmyy.com/tags/%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>EagleDesk - 跨平台远程控制软件 - 现代化跨平台远程控制解决方案</title>
+        <link>https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/</link>
+        <pubDate>Mon, 04 Aug 2025 22:08:00 +0800</pubDate>
+        
+        <guid>https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/</guid>
+        <description>&lt;img src="https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/EagleDesk-cross-platform-remote-control-software.jpg" alt="Featured image of post EagleDesk - 跨平台远程控制软件 - 现代化跨平台远程控制解决方案" /&gt;&lt;p&gt;&lt;span class=&#34;nowrap&#34;&gt;&lt;span class=&#34;emojify&#34;&gt;💁🏻‍♂️&lt;/span&gt; &lt;a href=&#34;https://github.com/eagleos/eagledesk&#34; target=&#34;_blank&#34;&gt;github.com&lt;/a&gt; 2025-08-04 《EagleDesk-跨平台远程控制软件》 童建平&lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&#34;eagledesk---跨平台远程控制软件&#34;&gt;EagleDesk - 跨平台远程控制软件
+&lt;/h1&gt;&lt;p&gt;EagleDesk是一款基于Flutter开发的跨平台远程控制软件，支持Android、iOS、macOS、Windows等多个平台。&lt;/p&gt;
+&lt;h2 id=&#34;-功能特性&#34;&gt;✨ 功能特性
+&lt;/h2&gt;&lt;h3 id=&#34;核心功能&#34;&gt;核心功能
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;远程桌面控制&lt;/strong&gt;: 实时控制远程设备的桌面&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;屏幕查看&lt;/strong&gt;: 仅查看远程屏幕，不进行控制&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;文件传输&lt;/strong&gt;: 在设备间安全传输文件&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多平台支持&lt;/strong&gt;: Android、iOS、macOS、Windows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-核心特性&#34;&gt;🎯 核心特性
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;🌐 真正的跨平台支持&lt;/strong&gt; - 一套代码，支持Windows、Android、iOS、macOS、Linux&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;🚀 现代化UI设计&lt;/strong&gt; - 采用Material 3设计语言，科技感十足的渐变配色&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;⚡ 高性能屏幕共享&lt;/strong&gt; - 实时屏幕录制与传输，支持30FPS高帧率&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;🔒 企业级安全&lt;/strong&gt; - 端到端加密，设备码+临时密码双重验证&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;🎮 完整远程控制&lt;/strong&gt; - 支持鼠标、键盘、触摸等全方位远程操作&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;📁 智能文件传输&lt;/strong&gt; - 拖拽式文件传输，支持大文件断点续传&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;🔍 智能设备发现&lt;/strong&gt; - 局域网自动发现，支持P2P直连和中继模式&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;P2P直连&lt;/strong&gt;: 优先使用点对点连接，减少延迟&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;中继服务器&lt;/strong&gt;: P2P失败时自动切换到中继模式&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;端到端加密&lt;/strong&gt;: 使用AES-256加密保护数据传输&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NAT穿透&lt;/strong&gt;: 支持STUN/TURN协议进行网络穿透&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;动态码率&lt;/strong&gt;: 根据网络状况自动调整视频质量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-技术架构&#34;&gt;🛠️ 技术架构
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;┌─────────────────────────────────────────────────────────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│                    EagleDesk 架构图                          │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├─────────────────────────────────────────────────────────────┤
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  UI层 (Flutter)                                            │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  ├── 现代化Material 3界面                                   │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  ├── 响应式布局设计                                         │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  └── 跨平台适配组件                                         │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├─────────────────────────────────────────────────────────────┤
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  业务逻辑层                                                 │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  ├── 设备发现服务 (UDP广播)                                │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  ├── 连接管理服务 (P2P/中继)                               │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  ├── 屏幕捕获服务 (MediaProjection)                        │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  ├── 输入控制服务 (鼠标/键盘)                              │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  ├── 文件传输服务 (TCP/WebSocket)                          │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  └── 权限管理服务                                          │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├─────────────────────────────────────────────────────────────┤
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  平台适配层                                                 │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  ├── Android (Kotlin插件)                                  │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  ├── Windows (C++插件)                                     │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  ├── iOS/macOS (Swift插件)                                 │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  └── Linux (C++插件)                                       │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├─────────────────────────────────────────────────────────────┤
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  网络通信层                                                 │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  ├── WebSocket实时通信                                     │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  ├── TCP可靠传输                                           │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  ├── UDP设备发现                                           │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  └── HTTP RESTful API                                      │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└─────────────────────────────────────────────────────────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;项目结构&#34;&gt;项目结构
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;lib&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;core&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;                   &lt;span class=&#34;c1&#34;&gt;# 核心业务逻辑&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;models&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;            &lt;span class=&#34;c1&#34;&gt;# 数据模型&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;device&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;# 设备模型&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;└──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;connection&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 连接模型&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;services&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;          &lt;span class=&#34;c1&#34;&gt;# 业务服务&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;auth_service&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt;      &lt;span class=&#34;c1&#34;&gt;# 认证服务&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;device_service&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;# 设备管理服务&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;connection_service&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 连接管理服务&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;settings_service&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 设置服务&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;crypto_service&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;# 加密服务&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;└──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;p2p_service&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt;       &lt;span class=&#34;c1&#34;&gt;# P2P网络服务&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;└──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt;           &lt;span class=&#34;c1&#34;&gt;# 应用入口&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ui&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;                    &lt;span class=&#34;c1&#34;&gt;# 用户界面&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;screens&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;          &lt;span class=&#34;c1&#34;&gt;# 页面&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;login_screen&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt;         &lt;span class=&#34;c1&#34;&gt;# 登录页面&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;home_screen&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt;          &lt;span class=&#34;c1&#34;&gt;# 主页面&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;settings_screen&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt;      &lt;span class=&#34;c1&#34;&gt;# 设置页面&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;└──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;remote_control_screen&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 远程控制页面&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;widgets&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;          &lt;span class=&#34;c1&#34;&gt;# 组件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;device_card&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt;          &lt;span class=&#34;c1&#34;&gt;# 设备卡片&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;connection_status_card&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 连接状态卡片&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;custom_text_field&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;# 自定义输入框&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;└──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;loading_button&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt;       &lt;span class=&#34;c1&#34;&gt;# 加载按钮&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;└──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;theme&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;            &lt;span class=&#34;c1&#34;&gt;# 主题&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;       &lt;span class=&#34;err&#34;&gt;└──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app_theme&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 应用主题&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;└──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt;             &lt;span class=&#34;c1&#34;&gt;# 应用启动入口&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;技术细节&#34;&gt;技术细节
+&lt;/h2&gt;&lt;h3 id=&#34;网络协议&#34;&gt;网络协议
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;设备发现&lt;/strong&gt;: UDP广播发现局域网内的设备&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;连接建立&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;优先尝试P2P直连&lt;/li&gt;
+&lt;li&gt;失败时使用中继服务器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据传输&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;屏幕数据: H.264/H.265编码 + UDP传输&lt;/li&gt;
+&lt;li&gt;控制指令: TCP可靠传输&lt;/li&gt;
+&lt;li&gt;文件传输: TCP + 断点续传&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;安全机制&#34;&gt;安全机制
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;密钥交换&lt;/strong&gt;: RSA非对称加密交换会话密钥&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据加密&lt;/strong&gt;: AES-256对称加密&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;身份认证&lt;/strong&gt;: 基于JWT的用户认证&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;双因素认证&lt;/strong&gt;: 支持TOTP二次验证&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;性能优化&#34;&gt;性能优化
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;动态码率&lt;/strong&gt;: 根据网络状况调整视频质量&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;区域更新&lt;/strong&gt;: 仅传输屏幕变化区域&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;硬件加速&lt;/strong&gt;: 利用GPU进行视频编解码&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多路径&lt;/strong&gt;: 同时尝试多种连接路径&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;-功能细节&#34;&gt;🚀 功能细节
+&lt;/h2&gt;&lt;h3 id=&#34;-远程控制功能&#34;&gt;📱 远程控制功能
+&lt;/h3&gt;&lt;h4 id=&#34;-屏幕共享&#34;&gt;🎥 屏幕共享
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;实时屏幕录制&lt;/strong&gt; - 支持高清屏幕捕获，最高支持4K分辨率&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自适应帧率&lt;/strong&gt; - 根据网络状况自动调整帧率(15-60FPS)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;智能压缩&lt;/strong&gt; - H.264硬件编码，减少带宽占用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多显示器支持&lt;/strong&gt; - 支持多屏幕环境下的屏幕选择&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;-远程操作&#34;&gt;🎮 远程操作
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;精准鼠标控制&lt;/strong&gt; - 支持左键、右键、滚轮、拖拽操作&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;完整键盘支持&lt;/strong&gt; - 支持所有按键组合，包括快捷键&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;触摸手势&lt;/strong&gt; - 移动端支持多点触控手势&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;剪贴板同步&lt;/strong&gt; - 跨设备剪贴板内容同步&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;-文件传输&#34;&gt;📁 文件传输
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;拖拽传输&lt;/strong&gt; - 简单拖拽即可传输文件&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;批量传输&lt;/strong&gt; - 支持多文件、文件夹批量传输&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;断点续传&lt;/strong&gt; - 网络中断后自动续传&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;传输加密&lt;/strong&gt; - 文件传输过程全程加密&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-安全特性&#34;&gt;🔐 安全特性
+&lt;/h3&gt;&lt;h4 id=&#34;-多重验证&#34;&gt;🛡️ 多重验证
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;设备码验证&lt;/strong&gt; - 6位数字设备码，定期自动更新&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;临时密码&lt;/strong&gt; - 6位随机密码，每次连接后失效&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;权限控制&lt;/strong&gt; - 细粒度权限管理，用户可控制访问范围&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;-数据加密&#34;&gt;🔒 数据加密
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;端到端加密&lt;/strong&gt; - 使用AES-256加密所有传输数据&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;密钥交换&lt;/strong&gt; - 基于RSA的安全密钥交换机制&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;会话保护&lt;/strong&gt; - 每个会话使用独立的加密密钥&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-网络连接&#34;&gt;🌐 网络连接
+&lt;/h3&gt;&lt;h4 id=&#34;-智能发现&#34;&gt;🔍 智能发现
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;局域网扫描&lt;/strong&gt; - 自动发现同网段设备&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;设备码连接&lt;/strong&gt; - 通过设备码快速连接&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;历史记录&lt;/strong&gt; - 保存常用设备连接信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;-连接模式&#34;&gt;🚀 连接模式
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;P2P直连&lt;/strong&gt; - 局域网内直接连接，低延迟&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;中继模式&lt;/strong&gt; - 跨网络环境通过服务器中继&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自动切换&lt;/strong&gt; - 根据网络环境自动选择最佳连接方式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-界面设计&#34;&gt;🎨 界面设计
+&lt;/h2&gt;&lt;h3 id=&#34;-现代化设计语言&#34;&gt;🌈 现代化设计语言
+&lt;/h3&gt;&lt;p&gt;EagleDesk采用最新的Material 3设计规范，结合科技感的配色方案：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;主色调&lt;/strong&gt;: 现代紫色 (#6366F1) - 科技感与专业性的完美结合&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;辅助色&lt;/strong&gt;: 科技绿 (#10B981) - 代表连接状态和成功操作&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;强调色&lt;/strong&gt;: 青色 (#06B6D4) - 突出重要信息和交互元素&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-深色浅色主题&#34;&gt;🎭 深色/浅色主题
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;自适应主题&lt;/strong&gt; - 跟随系统主题自动切换&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;护眼设计&lt;/strong&gt; - 深色主题减少眼部疲劳&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高对比度&lt;/strong&gt; - 确保在各种环境下的可读性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-响应式布局&#34;&gt;📱 响应式布局
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;移动端优化&lt;/strong&gt; - 针对手机屏幕优化的纵向布局&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;平板适配&lt;/strong&gt; - 充分利用平板的大屏幕空间&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;桌面端体验&lt;/strong&gt; - 侧边栏导航，多窗口支持&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-技术实现&#34;&gt;🔧 技术实现
+&lt;/h2&gt;&lt;h3 id=&#34;-核心技术栈&#34;&gt;📚 核心技术栈
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;前端框架&lt;/strong&gt;: Flutter 3.x&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;状态管理&lt;/strong&gt;: Provider + ChangeNotifier&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;本地存储&lt;/strong&gt;: Hive (轻量级NoSQL数据库)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;网络通信&lt;/strong&gt;: WebSocket + TCP + UDP&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;图像处理&lt;/strong&gt;: Flutter Image + 原生编解码&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;权限管理&lt;/strong&gt;: permission_handler + 原生权限API&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-架构模式&#34;&gt;🏗️ 架构模式
+&lt;/h3&gt;&lt;p&gt;采用分层架构设计，确保代码的可维护性和扩展性：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-dart&#34; data-lang=&#34;dart&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;lib&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;core&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;                    &lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;核心业务逻辑&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;models&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;             &lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;数据模型&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;services&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;           &lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;业务服务&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;└──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt;           &lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;应用入口&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ui&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;                     &lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;用户界面&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;screens&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;           &lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;页面组件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;├──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;widgets&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;           &lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;通用组件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;│&lt;/span&gt;   &lt;span class=&#34;err&#34;&gt;└──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;theme&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;             &lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;主题配置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;└──&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dart&lt;/span&gt;              &lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;应用启动&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;-平台集成&#34;&gt;🔌 平台集成
+&lt;/h3&gt;&lt;h4 id=&#34;android平台&#34;&gt;Android平台
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Kotlin插件&lt;/strong&gt; - 处理屏幕录制、权限管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MediaProjection API&lt;/strong&gt; - 实现屏幕捕获&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AccessibilityService&lt;/strong&gt; - 实现远程控制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;windows平台&#34;&gt;Windows平台
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;C++插件&lt;/strong&gt; - 系统级API调用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DirectX&lt;/strong&gt; - 高性能屏幕捕获&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windows API&lt;/strong&gt; - 鼠标键盘模拟&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;iosmacos平台&#34;&gt;iOS/macOS平台
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Swift插件&lt;/strong&gt; - 原生功能封装&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ReplayKit&lt;/strong&gt; - 屏幕录制框架&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Core Graphics&lt;/strong&gt; - 图像处理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-平台支持&#34;&gt;📱 平台支持
+&lt;/h2&gt;&lt;h3 id=&#34;-已支持平台&#34;&gt;✅ 已支持平台
+&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;平台&lt;/th&gt;
+&lt;th&gt;状态&lt;/th&gt;
+&lt;th&gt;功能完整度&lt;/th&gt;
+&lt;th&gt;备注&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;🤖 Android&lt;/td&gt;
+&lt;td&gt;✅ 完全支持&lt;/td&gt;
+&lt;td&gt;100%&lt;/td&gt;
+&lt;td&gt;包含vivo等厂商适配&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;🪟 Windows&lt;/td&gt;
+&lt;td&gt;✅ 完全支持&lt;/td&gt;
+&lt;td&gt;100%&lt;/td&gt;
+&lt;td&gt;Win10/11完全兼容&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;🍎 iOS&lt;/td&gt;
+&lt;td&gt;✅ 基础支持&lt;/td&gt;
+&lt;td&gt;80%&lt;/td&gt;
+&lt;td&gt;受系统限制部分功能&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;🍎 macOS&lt;/td&gt;
+&lt;td&gt;✅ 基础支持&lt;/td&gt;
+&lt;td&gt;85%&lt;/td&gt;
+&lt;td&gt;权限管理需优化&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;🐧 Linux&lt;/td&gt;
+&lt;td&gt;✅ 基础支持&lt;/td&gt;
+&lt;td&gt;75%&lt;/td&gt;
+&lt;td&gt;主流发行版支持&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;-兼容性测试&#34;&gt;🔄 兼容性测试
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Android&lt;/strong&gt;: API 21+ (Android 5.0+)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;iOS&lt;/strong&gt;: iOS 12.0+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windows&lt;/strong&gt;: Windows 10 1903+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;macOS&lt;/strong&gt;: macOS 10.15+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Linux&lt;/strong&gt;: Ubuntu 18.04+, CentOS 7+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-使用场景&#34;&gt;🎯 使用场景
+&lt;/h2&gt;&lt;h3 id=&#34;-商业应用&#34;&gt;💼 商业应用
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;远程办公&lt;/strong&gt; - 居家办公时访问公司电脑&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;技术支持&lt;/strong&gt; - IT人员远程解决技术问题&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;演示培训&lt;/strong&gt; - 远程演示软件操作和培训&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;协同工作&lt;/strong&gt; - 团队成员之间的屏幕共享协作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-个人使用&#34;&gt;🏠 个人使用
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;文件访问&lt;/strong&gt; - 外出时访问家中电脑文件&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;游戏娱乐&lt;/strong&gt; - 在移动设备上操作电脑游戏&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;媒体控制&lt;/strong&gt; - 手机控制电脑播放媒体内容&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;学习辅助&lt;/strong&gt; - 学生远程访问学校电脑资源&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-专业领域&#34;&gt;🏥 专业领域
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;医疗诊断&lt;/strong&gt; - 医生远程查看医疗设备数据&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工业控制&lt;/strong&gt; - 远程监控和控制工业设备&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;教育培训&lt;/strong&gt; - 在线教学和远程实验指导&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;金融服务&lt;/strong&gt; - 安全的远程金融系统访问&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-安全说明&#34;&gt;🔒 安全说明
+&lt;/h2&gt;&lt;h3 id=&#34;-隐私保护&#34;&gt;🛡️ 隐私保护
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;本地优先&lt;/strong&gt; - 优先使用P2P直连，数据不经过第三方服务器&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;临时连接&lt;/strong&gt; - 连接密码定期更新，防止长期暴露&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;权限最小化&lt;/strong&gt; - 只申请必要权限，用户可随时撤销&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据不存储&lt;/strong&gt; - 不在服务器存储用户数据和连接记录&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-安全建议&#34;&gt;🔐 安全建议
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;定期更新&lt;/strong&gt; - 及时更新应用版本，获取最新安全补丁&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;网络安全&lt;/strong&gt; - 在可信网络环境下使用，避免公共WiFi&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;权限管理&lt;/strong&gt; - 定期检查和管理应用权限&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;密码保护&lt;/strong&gt; - 不要将设备码和密码分享给不信任的人&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;使用说明&#34;&gt;使用说明
+&lt;/h2&gt;&lt;h3 id=&#34;首次使用&#34;&gt;首次使用
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;注册账号或登录现有账号&lt;/li&gt;
+&lt;li&gt;应用会自动生成设备ID并注册到服务器&lt;/li&gt;
+&lt;li&gt;在设置中配置网络参数（如需要）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;连接设备&#34;&gt;连接设备
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;确保设备在同一网络或可通过互联网访问&lt;/li&gt;
+&lt;li&gt;在主页面查看发现的设备&lt;/li&gt;
+&lt;li&gt;点击&amp;quot;远程控制&amp;quot;建立连接&lt;/li&gt;
+&lt;li&gt;连接成功后即可控制远程设备&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;功能使用&#34;&gt;功能使用
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;远程控制&lt;/strong&gt;: 直接在屏幕上操作，支持鼠标和键盘&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;虚拟键盘&lt;/strong&gt;: 点击键盘按钮使用虚拟键盘&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;缩放&lt;/strong&gt;: 使用手势或工具栏按钮缩放屏幕&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;文件传输&lt;/strong&gt;: 通过菜单访问文件传输功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;开发计划&#34;&gt;开发计划
+&lt;/h2&gt;&lt;h3 id=&#34;已完成&#34;&gt;已完成
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 基础架构搭建&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 用户界面设计&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 设备发现机制&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 连接管理&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 基础加密功能&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 屏幕捕获和显示&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 输入事件处理&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; P2P网络实现&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 服务器端开发&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;计划中&#34;&gt;计划中
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 文件传输功能&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 音频传输&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 移动端优化&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 性能优化&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 多语言支持&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;: 这是一个演示项目，部分功能仍在开发中。&lt;/p&gt;
+&lt;h2 id=&#34;-技术支持&#34;&gt;📞 技术支持
+&lt;/h2&gt;&lt;p&gt;如有问题或建议，请通过以下方式联系：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提交GitHub Issue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如需购买及定制本系统或其它程序软件、app开发（Android/iOS），欢迎通过以下方式联系：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;微信号: xmdoor&lt;/li&gt;
+&lt;li&gt;邮箱: &lt;a class=&#34;link&#34; href=&#34;mailto:www@xmyy.com&#34; &gt;www@xmyy.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-致谢&#34;&gt;🙏 致谢
+&lt;/h2&gt;&lt;p&gt;感谢以下开源项目和技术社区的支持：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Flutter Team&lt;/strong&gt; - 提供优秀的跨平台开发框架&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Material Design&lt;/strong&gt; - 现代化的设计语言&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dart Community&lt;/strong&gt; - 活跃的开发者社区&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;所有贡献者&lt;/strong&gt; - 每一个贡献都让EagleDesk变得更好&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;⭐ 如果这个项目对你有帮助，请给我们一个Star！⭐&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;让远程控制变得简单，让协作变得高效&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;EagleDesk - 连接无界，控制无限&lt;/strong&gt; 🦅&lt;/p&gt;
+&lt;h2 id=&#34;-项目预览&#34;&gt;💻 项目预览
+&lt;/h2&gt;&lt;h3 id=&#34;windows端界面&#34;&gt;Windows端界面
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/EagleDesk-cross-platform-remote-control-software.jpg&#34;
+	width=&#34;1120&#34;
+	height=&#34;780&#34;
+	srcset=&#34;https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/EagleDesk-cross-platform-remote-control-software_huf7e5c738edd240a68deab3a41230c235_266921_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/EagleDesk-cross-platform-remote-control-software_huf7e5c738edd240a68deab3a41230c235_266921_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;首页&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;143&#34;
+		data-flex-basis=&#34;344px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk2.jpg&#34;
+	width=&#34;1120&#34;
+	height=&#34;780&#34;
+	srcset=&#34;https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk2_hua48eae006670da5f80ba9f365a83efd5_149511_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk2_hua48eae006670da5f80ba9f365a83efd5_149511_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;高级设置&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;143&#34;
+		data-flex-basis=&#34;344px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk3.jpg&#34;
+	width=&#34;1120&#34;
+	height=&#34;780&#34;
+	srcset=&#34;https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk3_hu1331f4de35166d7e18576f07370aefb9_177356_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk3_hu1331f4de35166d7e18576f07370aefb9_177356_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;调试工具&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;143&#34;
+		data-flex-basis=&#34;344px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk4.jpg&#34;
+	width=&#34;1120&#34;
+	height=&#34;780&#34;
+	srcset=&#34;https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk4_hu81066ffe77a4f6c64ca8e7bcc28e040b_204474_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk4_hu81066ffe77a4f6c64ca8e7bcc28e040b_204474_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;性能监控&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;143&#34;
+		data-flex-basis=&#34;344px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk5.jpg&#34;
+	width=&#34;1120&#34;
+	height=&#34;780&#34;
+	srcset=&#34;https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk5_hu54293e21cf2aa2703ed7d198aee67420_191268_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk5_hu54293e21cf2aa2703ed7d198aee67420_191268_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;网络诊断&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;143&#34;
+		data-flex-basis=&#34;344px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk6.jpg&#34;
+	width=&#34;1120&#34;
+	height=&#34;780&#34;
+	srcset=&#34;https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk6_hu4702099859f15a73dd8f701785bcdddd_238448_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk6_hu4702099859f15a73dd8f701785bcdddd_238448_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;功能演示&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;143&#34;
+		data-flex-basis=&#34;344px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk7.jpg&#34;
+	width=&#34;1120&#34;
+	height=&#34;780&#34;
+	srcset=&#34;https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk7_hu918d1f1f6f5477a2d8c10e445c780608_208768_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk7_hu918d1f1f6f5477a2d8c10e445c780608_208768_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;连接演示&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;143&#34;
+		data-flex-basis=&#34;344px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;手机移动端界面&#34;&gt;手机移动端界面
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk-index-mobile.jpg&#34;
+	width=&#34;2408&#34;
+	height=&#34;1080&#34;
+	srcset=&#34;https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk-index-mobile_hu4ad1bc0b1498a88b5415105948a4095f_697284_480x0_resize_q75_box.jpg 480w, https://xmyy.com/article/EagleDesk-cross-platform-remote-control-software/eagledesk-index-mobile_hu4ad1bc0b1498a88b5415105948a4095f_697284_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;手机首页&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;222&#34;
+		data-flex-basis=&#34;535px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
