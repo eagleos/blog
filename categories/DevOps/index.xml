@@ -1185,6 +1185,9 @@
 &lt;li&gt;在SikkerBox中不小心删除账户，无法进行2FA认证登录Github，怎么办？&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;答：使用Github恢复码成功登录Github，然后使用上述更换2FA app步骤重新绑定SikkerBox即可。&lt;/p&gt;
+&lt;h2 id=&#34;2fa-在线验证码生成器-time-based-one-time-password-totp-generator&#34;&gt;2FA 在线验证码生成器 Time-based One-Time Password (TOTP) Generator
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://xmyy.com/2fa/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://xmyy.com/2fa/&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;贡献者&#34;&gt;贡献者
 &lt;/h2&gt;&lt;p&gt;欢迎参与本app测试，参与者将会在下面表格中列出以示感谢！&lt;/p&gt;
 &lt;table&gt;

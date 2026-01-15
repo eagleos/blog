@@ -142,6 +142,9 @@
 &lt;li&gt;I accidentally deleted my account in SikkerBox and can&amp;rsquo;t login to Github with 2FA authentication, what should I do?&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;A: Use the Github recovery code to successfully log in to Github, and then use the above steps to replace the 2FA app to rebind SikkerBox.&lt;/p&gt;
+&lt;h2 id=&#34;2fa-time-based-one-time-password-totp-generator&#34;&gt;2FA Time-based One-Time Password (TOTP) Generator
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://xmyy.com/2fa/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://xmyy.com/2fa/&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;contributors&#34;&gt;Contributors
 &lt;/h2&gt;&lt;p&gt;Contributors are welcome to participate in the testing of this app and will be listed in the table below as a token of our appreciation!&lt;/p&gt;
 &lt;table&gt;
