@@ -78,7 +78,7 @@ function getWeatherIcon(code) {
 }
 
 
-fetch("http://ip-api.com/json/")
+fetch("https://ip-api.com/json/")
   .then(res => res.json())
   .then(loc => {
     const city = loc.city;
@@ -336,7 +336,7 @@ function getWeatherIcon(code) {
 }
 
 
-fetch("http://ip-api.com/json/")
+fetch("https://ip-api.com/json/")
   .then(res => res.json())
   .then(loc => {
     const city = loc.city;
