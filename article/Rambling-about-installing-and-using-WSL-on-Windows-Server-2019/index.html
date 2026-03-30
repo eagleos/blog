@@ -1,256 +1,2546 @@
-<!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="《漫谈在Windows Server 2019中安装使用WSL》发表于《今日头条》,Rambling about installing and using WSL on Windows Server 2019">
-<title>漫谈在Windows Server 2019中安装使用WSL</title>
+<!DOCTYPE html><html lang="en"><head>
+    <title>漫谈在Windows Server 2019中安装使用WSL - 虾米网</title>
+    
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1/"/>
+    <meta name="keywords" content="WSL,Windows Server,Win2019,ubuntu/"/>
+    <meta name="description" content="《漫谈在Windows Server 2019中安装使用WSL》发表于《今日头条》,Rambling about installing and using WSL on Windows Server 2019/"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml"/>
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="../../atom.xml"/>
+    
+    <link rel="stylesheet" type="text/css" href="../../themes/magnews2/vendor/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/magnews2/fonts/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/magnews2/fonts/fontawesome-5.0.8/css/fontawesome-all.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/magnews2/fonts/iconic/css/material-design-iconic-font.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/magnews2/vendor/animate/animate.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/magnews2/vendor/css-hamburgers/hamburgers.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/magnews2/vendor/animsition/css/animsition.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/magnews2/css/util.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/magnews2/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="../../themes/magnews2/css/xmyy.com.css"/>
+    
+    
+        
+    <meta property="og:description" content="虾米网,虾米技术网,原名-厦门门户网,xmyy,xmyy.com,amoy,xmdoor,童建平,雄鹰,黑客,网络安全,美亚柏科,网宿科技,东南融通,商务中国,商中在线,盛世网络,成世网络,厦门小鱼,三五互联,中国频道,数字引擎,中资源,厦门网,综合性门户网站,厦门导航网,厦门便民网,厦门在线/"/>
+<meta property="og:url" content="../../"/>
+<meta property="og:site_name" content="虾米网/"/>
+<meta property="og:type" content="website/"/>
+<meta property="og:updated_time" content="2026-03-29T22:08:00+08:00"/>
+<meta name="twitter:title" content="虾米网/"/>
+<meta name="twitter:description" content="虾米网,虾米技术网,原名-厦门门户网,xmyy,xmyy.com,amoy,xmdoor,童建平,雄鹰,黑客,网络安全,美亚柏科,网宿科技,东南融通,商务中国,商中在线,盛世网络,成世网络,厦门小鱼,三五互联,中国频道,数字引擎,中资源,厦门网,综合性门户网站,厦门导航网,厦门便民网,厦门在线/"/>
 
-<link rel='canonical' href='https://xmyy.com/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/'>
+        
+    
+        
+    
 
-<link rel="stylesheet" href="/scss/style.min.b1ee696470c26668a16cfa814cde453da11a905817be39639788d15e9984714a.css">
-<link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="/plugins/themify-icons/themify-icons.css">
-
-<link rel="stylesheet" href="/css/style.css"><meta property='og:title' content="漫谈在Windows Server 2019中安装使用WSL">
-<meta property='og:description' content="《漫谈在Windows Server 2019中安装使用WSL》发表于《今日头条》,Rambling about installing and using WSL on Windows Server 2019">
-<meta property='og:url' content='https://xmyy.com/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/'>
-<meta property='og:site_name' content='虾米技术网'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='WSL' /><meta property='article:tag' content='Windows Server' /><meta property='article:tag' content='Win2019' /><meta property='article:tag' content='ubuntu' /><meta property='article:published_time' content='2020-11-02T15:22:00&#43;08:00'/><meta property='article:modified_time' content='2020-11-02T15:22:00&#43;08:00'/><meta property='og:image' content='https://xmyy.com/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019.jpg' />
-<meta name="twitter:title" content="漫谈在Windows Server 2019中安装使用WSL">
-<meta name="twitter:description" content="《漫谈在Windows Server 2019中安装使用WSL》发表于《今日头条》,Rambling about installing and using WSL on Windows Server 2019"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://xmyy.com/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019.jpg' />
-  
+        
+    
+        <link rel="shortcut icon" type="images/x-icon" href="../../themes/magnews2/images/favicon.ico"/>
+    
 
 
-    </head>
-    <body class="
-    article-page
-    ">
-    <script>
-        (function() {
-            const colorSchemeKey = 'StackColorScheme';
-            if(!localStorage.getItem(colorSchemeKey)){
-                localStorage.setItem(colorSchemeKey, "auto");
-            }
-        })();
-    </script><script>
-    (function() {
-        const colorSchemeKey = 'StackColorScheme';
-        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
-        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+</head>
 
-        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
-            
+<body class="animsition">
 
-            document.documentElement.dataset.scheme = 'dark';
-        } else {
-            document.documentElement.dataset.scheme = 'light';
-        }
-    })();
+    
+    <header>
+        <div class="container-menu-desktop">
+            <div class="topbar">
+                <div class="content-topbar container h-100">
+                    <div class="left-topbar">
+                        <span class="left-topbar-item">
+<style>
+#weatherBox {
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.weather-icon {
+  font-size: 18px;
+}
+</style>
+<div id="weatherBox" class="left-topbar-item flex-wr-s-c">
+  🌍 获取天气中...
+</div>
+<script>
+
+function getWeatherIcon(code) {
+  if (code === 0) return "☀️";
+  if (code <= 3) return "⛅";
+  if (code <= 48) return "☁️";
+  if (code <= 67) return "🌧️";
+  if (code <= 77) return "❄️";
+  if (code <= 82) return "🌦️";
+  if (code <= 99) return "⛈️";
+  return "🌈";
+}
+
+
+fetch("http://ip-api.com/json/")
+  .then(res => res.json())
+  .then(loc => {
+    const city = loc.city;
+    const lat = loc.lat;
+    const lon = loc.lon;
+
+    
+    return fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`)
+      .then(res => res.json())
+      .then(weather => {
+        const temp = weather.current_weather.temperature;
+        const code = weather.current_weather.weathercode;
+        const icon = getWeatherIcon(code);
+
+        document.getElementById("weatherBox").innerHTML =
+          `<span class="weather-icon">${icon}</span> ${city} ${temp}°C`;
+      });
+  })
+  .catch(err => {
+    document.getElementById("weatherBox").innerText = "天气获取失败";
+    console.error(err);
+  });
 </script>
-<header class="sticky-top bg-white border-bottom border-default">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-white">
-                    <a class="navbar-brand" href="/">
-                        <img class="img-fluid" width="150px" src="/images/logo.png" alt="虾米技术网">
-                    </a>
-                    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
-                        <i class="ti-menu"></i>
-                    </button>
-                    <div class="collapse navbar-collapse text-center" id="navigation">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/">首页</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/categories/eagle/">雄鹰论文</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/categories/CyberSecurity/">网络安全</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/categories/system/">操作系统</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/categories/DevOps/">运维开发</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/2fa/" target="_blank">在线2FA</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/donate/">捐赠</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">友链 <i class="ti-angle-down ml-1"></i>
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="/links/">友链首页</a>
-                                    <a class="dropdown-item" href="https://ok118.com" target="_blank">Ok118网址导航 ok118.com</a>
-                                    <a class="dropdown-item" href="https://ip40.com" target="_blank">IP查询 ip40.com</a>
-                                    <a class="dropdown-item" href="https://xmfast.com" target="_blank">Skating网址导航 xmfast.com</a>
-                                </div>
-                            </li>
-                        </ul>
-
-
-
-
-                        <div class="m-2 border-0" id="dark-mode-toggle">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z"/>
-                                <circle cx="8" cy="12" r="2" />
-                                <rect x="2" y="6" width="20" height="12" rx="6" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z"/>
-                                <circle cx="16" cy="12" r="2" />
-                                <rect x="2" y="6" width="20" height="12" rx="6" />
-                            </svg>
-                        </div>
-                        <div class="search px-4">
-                            <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
-                            <div class="search-wrapper">
-                                <form action="/search/" class="h-100">
-                                    <input class="search-box pl-4" id="search-query" name="keyword" type="search" placeholder="Type &amp; Hit Enter...">
-                                </form>
-                                <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
-                            </div>
-                        </div>
+</span>
+                        <a href="../../2fa/" class="left-topbar-item">在线2FA</a>
+                        <a href="https://ip40.com" class="left-topbar-item" target="_blank">IP查询</a>
+                        <a href="../../links/" class="left-topbar-item">友情链接</a>
                     </div>
-                </nav>
-            </div>
-        </header>
-        <div class="container main-container flex on-phone--column extended">
-    
+                    <div class="right-topbar">
+<style>
+.share-container {
+  position: relative;
+  display: inline-block;
+}
 
-            <main class="main full-width">
-    <article class="has-image main-article">
-    <header class="article-header">
-        <div class="article-image">
-            <a href="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/">
-                <img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huc4978c463cf56c0c7430dc851005064f_13142_e394e3447f767f44af874a6377671e04.jpg"
-                        srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huc4978c463cf56c0c7430dc851005064f_13142_e394e3447f767f44af874a6377671e04.jpg 800w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huc4978c463cf56c0c7430dc851005064f_13142_53be9bd9705144747bd1b16f03ab512c.jpg 1600w"
-                        width="800"
-                        height="457"
-                        loading="lazy"
-                        alt="Featured image of post 漫谈在Windows Server 2019中安装使用WSL" />
-                
-            </a>
-        </div>
-    
+.share-btn {
+  background: #1677ff;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
 
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/system/" style="background-color: #d7b64d; color: #fff;">
-                操作系统
-            </a>
-        
-    </header>
-    
+.share-panel {
+  display: none;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 10px;
+  width: 260px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  z-index: 9999;
+}
 
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/">漫谈在Windows Server 2019中安装使用WSL</a>
-        </h2>
+.share-panel.active {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.share-item {
+  width: 25%;
+  text-align: center;
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.share-item svg {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 5px;
+}
+
+.share-item:hover {
+  opacity: 0.7;
+}
+</style>
+
+
+<div class="share-container">
+  <div class="share-btn" onclick="toggleShare()">🔗 分享</div>
+
+  <div class="share-panel" id="sharePanel">
     
-        
-        <h3 class="article-subtitle">
-            《漫谈在Windows Server 2019中安装使用WSL》发表于《今日头条》,Rambling about installing and using WSL on Windows Server 2019
-        </h3>
-        
+    
+    <div class="share-item" onclick="shareWeChat()">
+      <svg viewBox="0 0 1024 1024"><path fill="#07C160" d="M512 128c-212 0-384 137-384 306 0 95 57 180 147 237l-47 129 143-71c44 12 91 18 141 18 212 0 384-137 384-306S724 128 512 128z"></path></svg>
+      微信
     </div>
 
     
-    
-    
-    
+    <div class="share-item" onclick="openShare(&#39;weibo&#39;)">
+      <svg viewBox="0 0 1024 1024"><path fill="#E6162D" d="M512 256c-141 0-256 91-256 203s115 203 256 203 256-91 256-203S653 256 512 256z"></path></svg>
+      微博
+    </div>
 
     
-    <footer class="article-time">
-        <span class="post-meta-item">
-          <i class="fas fa-pen"></i>
-          
-            <span class="article-type" style="color: white; font-size: 14px; background: #bf59f3; padding: 0 5px 1px 5px; margin-right: 5px; border-radius: 2px;">原创</span>
-          
-        </span>
-        
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="7" r="4" />
-  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-</svg>
-
-
-
-            <div class="post-author">
-                作者：童建平
-
-            </div>
-        </div>
-        
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">
-2020-11-02 15:22</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 2 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
+    <div class="share-item" onclick="openShare(&#39;qq&#39;)">
+      <svg viewBox="0 0 1024 1024"><path fill="#12B7F5" d="M512 128c-141 0-256 115-256 256 0 97 54 181 134 224-16 57-54 103-54 103s78-12 128-60c29 7 59 11 92 11 141 0 256-115 256-256S653 128 512 128z"></path></svg>
+      QQ
+    </div>
 
     
+    <div class="share-item" onclick="openShare(&#39;twitter&#39;)">
+      <svg viewBox="0 0 1024 1024"><path fill="#1DA1F2" d="M1024 194c-38 17-78 28-120 33 43-26 76-67 91-116-40 24-84 41-131 50C826 118 772 96 713 96c-113 0-204 91-204 204 0 16 2 31 5 46-170-9-321-90-422-214-18 30-28 65-28 102 0 71 36 134 90 171-33-1-64-10-91-25v3c0 99 70 181 163 200-17 5-35 7-53 7-13 0-26-1-38-4 26 81 101 140 190 142-70 55-158 87-254 87-17 0-34-1-50-3 90 58 197 92 312 92 374 0 579-310 579-579v-26c40-29 75-65 103-106z"></path></svg>
+      X
+    </div>
+
+    
+    <div class="share-item" onclick="openShare(&#39;facebook&#39;)">
+      <svg viewBox="0 0 1024 1024"><path fill="#1877F2" d="M576 1024V560h152l24-176H576V272c0-51 14-86 86-86h92V24c-16-2-72-6-136-6-135 0-228 82-228 233v133H256v176h134v464h186z"></path></svg>
+      Facebook
+    </div>
+
+    
+    <div class="share-item" onclick="openShare(&#39;telegram&#39;)">
+      <svg viewBox="0 0 1024 1024"><path fill="#0088CC" d="M512 0C229 0 0 229 0 512s229 512 512 512 512-229 512-512S795 0 512 0z"></path></svg>
+      Telegram
+    </div>
+
+    
+    <div class="share-item" onclick="openShare(&#39;whatsapp&#39;)">
+      <svg viewBox="0 0 1024 1024"><path fill="#25D366" d="M512 0C229 0 0 229 0 512c0 90 24 176 66 252L0 1024l269-64c73 40 157 64 243 64 283 0 512-229 512-512S795 0 512 0z"></path></svg>
+      WhatsApp
+    </div>
+
+    
+    <div class="share-item" onclick="openShare(&#39;linkedin&#39;)">
+      <svg viewBox="0 0 1024 1024"><path fill="#0A66C2" d="M128 384h192v512H128zM224 128c-64 0-96 32-96 96s32 96 96 96 96-32 96-96-32-96-96-96zM384 384h184v72h3c26-48 89-98 183-98 196 0 232 129 232 296v242H800V640c0-61-1-140-85-140-85 0-98 66-98 136v260H384z"></path></svg>
+      LinkedIn
+    </div>
+
+    
+    <div class="share-item" onclick="copyLink()">
+      📋<br/>复制
+    </div>
+
+  </div>
 </div>
 
-</header>
+<script>
+function toggleShare() {
+  document.getElementById('sharePanel').classList.toggle('active');
+}
 
-    <section class="article-content">
+function getShareData() {
+  return {
+    url: encodeURIComponent(location.href),
+    title: encodeURIComponent(document.title)
+  };
+}
+
+function openShare(type) {
+  const {url, title} = getShareData();
+  let link = '';
+
+  switch(type) {
+    case 'weibo':
+      link = `https://service.weibo.com/share/share.php?url=${url}&title=${title}`;
+      break;
+    case 'qq':
+      link = `https://connect.qq.com/widget/shareqq/index.html?url=${url}&title=${title}`;
+      break;
+    case 'twitter':
+      link = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+      break;
+    case 'facebook':
+      link = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+      break;
+    case 'telegram':
+      link = `https://t.me/share/url?url=${url}&text=${title}`;
+      break;
+    case 'whatsapp':
+      link = `https://api.whatsapp.com/send?text=${title}%20${url}`;
+      break;
+    case 'linkedin':
+      link = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+      break;
+  }
+
+  window.open(link, '_blank');
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(location.href);
+  alert('链接已复制');
+}
+
+
+function shareWeChat() {
+  alert('微信分享请使用浏览器右上角菜单或生成二维码');
+}
+
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.share-container')) {
+    document.getElementById('sharePanel').classList.remove('active');
+  }
+});
+</script>
+</div>
+                </div>
+            </div>
+
+            <div class="wrap-header-mobile">
+                <div class="logo-mobile">
+                    
+    
+        <a href="../../">
+            <img src="../../themes/magnews2/images/logo.png" alt="虾米网"/>
+        </a>
+    
+
+                </div>
+                <div class="btn-show-menu-mobile hamburger hamburger--squeeze m-r--8">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="menu-mobile">
+                <ul class="topbar-mobile">
+                    <li class="left-topbar"><span class="left-topbar-item">
+<style>
+#weatherBox {
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.weather-icon {
+  font-size: 18px;
+}
+</style>
+<div id="weatherBox" class="left-topbar-item flex-wr-s-c">
+  🌍 获取天气中...
+</div>
+<script>
+
+function getWeatherIcon(code) {
+  if (code === 0) return "☀️";
+  if (code <= 3) return "⛅";
+  if (code <= 48) return "☁️";
+  if (code <= 67) return "🌧️";
+  if (code <= 77) return "❄️";
+  if (code <= 82) return "🌦️";
+  if (code <= 99) return "⛈️";
+  return "🌈";
+}
+
+
+fetch("http://ip-api.com/json/")
+  .then(res => res.json())
+  .then(loc => {
+    const city = loc.city;
+    const lat = loc.lat;
+    const lon = loc.lon;
+
+    
+    return fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`)
+      .then(res => res.json())
+      .then(weather => {
+        const temp = weather.current_weather.temperature;
+        const code = weather.current_weather.weathercode;
+        const icon = getWeatherIcon(code);
+
+        document.getElementById("weatherBox").innerHTML =
+          `<span class="weather-icon">${icon}</span> ${city} ${temp}°C`;
+      });
+  })
+  .catch(err => {
+    document.getElementById("weatherBox").innerText = "天气获取失败";
+    console.error(err);
+  });
+</script>
+</span></li>
+                    <li class="right-topbar">
+<style>
+.share-container {
+  position: relative;
+  display: inline-block;
+}
+
+.share-btn {
+  background: #1677ff;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.share-panel {
+  display: none;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 10px;
+  width: 260px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  z-index: 9999;
+}
+
+.share-panel.active {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.share-item {
+  width: 25%;
+  text-align: center;
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.share-item svg {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 5px;
+}
+
+.share-item:hover {
+  opacity: 0.7;
+}
+</style>
+
+
+<div class="share-container">
+  <div class="share-btn" onclick="toggleShare()">🔗 分享</div>
+
+  <div class="share-panel" id="sharePanel">
     
     
-    <p><span class="nowrap"><span class="emojify">💁🏻‍♂️</span>《今日头条》 2020-11-02 《漫谈在Windows Server 2019中安装使用WSL》 童建平</span></p>
-<p>熟稔IT历史的朋友一定不会忘记98蓝屏事件：时任微软CEO的比尔·盖茨和助理 Chris Capossela在1998年春季计算机分销商展会（COMDEX ）现场演示Windows 98的&quot;即插即用&quot;（plug-and-play）新特性时，经历了演示计算机当场冷不丁甩出蓝屏死机（Blue Screen of Death，简称BSOD）界面的尴尬一幕：</p>
-<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-1.gif"
-	width="500"
-	height="373"
-	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu4b508fa5c6e1461cfd70b75b0fd58d5c_7187790_618eec0a13e15f167ceacbec2bd5220f.gif 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu4b508fa5c6e1461cfd70b75b0fd58d5c_7187790_0a2c709620c7267d490009bce526d8fe.gif 1024w"
-	loading="lazy"
-	
-		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="134"
-		data-flex-basis="321px"
-	
-></p>
+    <div class="share-item" onclick="shareWeChat()">
+      <svg viewBox="0 0 1024 1024"><path fill="#07C160" d="M512 128c-212 0-384 137-384 306 0 95 57 180 147 237l-47 129 143-71c44 12 91 18 141 18 212 0 384-137 384-306S724 128 512 128z"></path></svg>
+      微信
+    </div>
+
+    
+    <div class="share-item" onclick="openShare(&#39;weibo&#39;)">
+      <svg viewBox="0 0 1024 1024"><path fill="#E6162D" d="M512 256c-141 0-256 91-256 203s115 203 256 203 256-91 256-203S653 256 512 256z"></path></svg>
+      微博
+    </div>
+
+    
+    <div class="share-item" onclick="openShare(&#39;qq&#39;)">
+      <svg viewBox="0 0 1024 1024"><path fill="#12B7F5" d="M512 128c-141 0-256 115-256 256 0 97 54 181 134 224-16 57-54 103-54 103s78-12 128-60c29 7 59 11 92 11 141 0 256-115 256-256S653 128 512 128z"></path></svg>
+      QQ
+    </div>
+
+    
+    <div class="share-item" onclick="openShare(&#39;twitter&#39;)">
+      <svg viewBox="0 0 1024 1024"><path fill="#1DA1F2" d="M1024 194c-38 17-78 28-120 33 43-26 76-67 91-116-40 24-84 41-131 50C826 118 772 96 713 96c-113 0-204 91-204 204 0 16 2 31 5 46-170-9-321-90-422-214-18 30-28 65-28 102 0 71 36 134 90 171-33-1-64-10-91-25v3c0 99 70 181 163 200-17 5-35 7-53 7-13 0-26-1-38-4 26 81 101 140 190 142-70 55-158 87-254 87-17 0-34-1-50-3 90 58 197 92 312 92 374 0 579-310 579-579v-26c40-29 75-65 103-106z"></path></svg>
+      X
+    </div>
+
+    
+    <div class="share-item" onclick="openShare(&#39;facebook&#39;)">
+      <svg viewBox="0 0 1024 1024"><path fill="#1877F2" d="M576 1024V560h152l24-176H576V272c0-51 14-86 86-86h92V24c-16-2-72-6-136-6-135 0-228 82-228 233v133H256v176h134v464h186z"></path></svg>
+      Facebook
+    </div>
+
+    
+    <div class="share-item" onclick="openShare(&#39;telegram&#39;)">
+      <svg viewBox="0 0 1024 1024"><path fill="#0088CC" d="M512 0C229 0 0 229 0 512s229 512 512 512 512-229 512-512S795 0 512 0z"></path></svg>
+      Telegram
+    </div>
+
+    
+    <div class="share-item" onclick="openShare(&#39;whatsapp&#39;)">
+      <svg viewBox="0 0 1024 1024"><path fill="#25D366" d="M512 0C229 0 0 229 0 512c0 90 24 176 66 252L0 1024l269-64c73 40 157 64 243 64 283 0 512-229 512-512S795 0 512 0z"></path></svg>
+      WhatsApp
+    </div>
+
+    
+    <div class="share-item" onclick="openShare(&#39;linkedin&#39;)">
+      <svg viewBox="0 0 1024 1024"><path fill="#0A66C2" d="M128 384h192v512H128zM224 128c-64 0-96 32-96 96s32 96 96 96 96-32 96-96-32-96-96-96zM384 384h184v72h3c26-48 89-98 183-98 196 0 232 129 232 296v242H800V640c0-61-1-140-85-140-85 0-98 66-98 136v260H384z"></path></svg>
+      LinkedIn
+    </div>
+
+    
+    <div class="share-item" onclick="copyLink()">
+      📋<br/>复制
+    </div>
+
+  </div>
+</div>
+
+<script>
+function toggleShare() {
+  document.getElementById('sharePanel').classList.toggle('active');
+}
+
+function getShareData() {
+  return {
+    url: encodeURIComponent(location.href),
+    title: encodeURIComponent(document.title)
+  };
+}
+
+function openShare(type) {
+  const {url, title} = getShareData();
+  let link = '';
+
+  switch(type) {
+    case 'weibo':
+      link = `https://service.weibo.com/share/share.php?url=${url}&title=${title}`;
+      break;
+    case 'qq':
+      link = `https://connect.qq.com/widget/shareqq/index.html?url=${url}&title=${title}`;
+      break;
+    case 'twitter':
+      link = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+      break;
+    case 'facebook':
+      link = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+      break;
+    case 'telegram':
+      link = `https://t.me/share/url?url=${url}&text=${title}`;
+      break;
+    case 'whatsapp':
+      link = `https://api.whatsapp.com/send?text=${title}%20${url}`;
+      break;
+    case 'linkedin':
+      link = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+      break;
+  }
+
+  window.open(link, '_blank');
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(location.href);
+  alert('链接已复制');
+}
+
+
+function shareWeChat() {
+  alert('微信分享请使用浏览器右上角菜单或生成二维码');
+}
+
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.share-container')) {
+    document.getElementById('sharePanel').classList.remove('active');
+  }
+});
+</script>
+</li>
+                </ul>
+                <ul class="main-menu-m">
+                    <li>
+                        <a href="../../">首页</a>
+                    </li>
+                    
+                        <li>
+                            <a href="../../categories/CyberSecurity/">网络安全</a>
+                            
+                                <ul class="sub-menu-m">
+                                    <li><a href="../../categories/CyberSecurity/">All</a></li>
+                                    
+                                        <li><a href="../../categories/DataSecurity/">数据安全</a></li>
+                                    
+                                        <li><a href="../../categories/ApplicationSecurity/">应用安全</a></li>
+                                    
+                                </ul>
+                                <span class="arrow-main-menu-m">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </span>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="../../categories/SoftwareDevelopment/">软件开发</a>
+                            
+                                <ul class="sub-menu-m">
+                                    <li><a href="../../categories/SoftwareDevelopment/">All</a></li>
+                                    
+                                        <li><a href="../../categories/app/">APP开发</a></li>
+                                    
+                                        <li><a href="../../categories/mini/">小程序</a></li>
+                                    
+                                </ul>
+                                <span class="arrow-main-menu-m">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </span>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="../../categories/eagle/">雄鹰论文</a>
+                            
+                                <ul class="sub-menu-m">
+                                    <li><a href="../../categories/eagle/">All</a></li>
+                                    
+                                        <li><a href="../../categories/website/">网站建设</a></li>
+                                    
+                                        <li><a href="../../categories/math/">数学论文</a></li>
+                                    
+                                        <li><a href="../../categories/Chemical/">化学论文</a></li>
+                                    
+                                        <li><a href="../../categories/computer/">电脑科技</a></li>
+                                    
+                                </ul>
+                                <span class="arrow-main-menu-m">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </span>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="../../categories/system/">操作系统</a>
+                            
+                                <ul class="sub-menu-m">
+                                    <li><a href="../../categories/system/">All</a></li>
+                                    
+                                        <li><a href="../../categories/windows/">Windows</a></li>
+                                    
+                                        <li><a href="../../categories/linux/">Linux</a></li>
+                                    
+                                        <li><a href="../../categories/macos/">Macos</a></li>
+                                    
+                                        <li><a href="../../categories/Virtualization/">虚拟化</a></li>
+                                    
+                                </ul>
+                                <span class="arrow-main-menu-m">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </span>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+
+            <div class="wrap-logo container">
+                <div class="logo">
+                    
+    
+        <a href="../../">
+            <img src="../../themes/magnews2/images/logo.png" alt="虾米网"/>
+        </a>
+    
+
+                </div>
+                <div class="banner-header">
+                    <a href="../SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/">
+                        <img src="../../themes/magnews2/images/banner-01.jpg" alt="SikkerBox-手机上的网络瑞士军刀"/>
+                    </a>
+                </div>
+            </div>
+
+            <div class="wrap-main-nav">
+                <div class="main-nav">
+                    <div class="container">
+                        <nav class="menu-desktop">
+                            <a class="logo-stick" href="../../">
+                                
+                                    <img src="../../themes/magnews2/images/logo.png" alt="虾米网"/>
+                                
+                            </a>
+
+                            <ul class="main-menu">
+                                <li>
+                                    <a href="../../">首页</a>
+                                </li>
+
+                                
+                                    
+                                    <li class="mega-menu-item">
+                                        <a href="../../categories/CyberSecurity/">网络安全</a>
+
+                                        
+                                            <div class="sub-mega-menu">
+                                                <div class="nav flex-column nav-pills" role="tablist">
+                                                    <a class="nav-link active" data-toggle="pill" href="#mega-2-all" role="tab">All</a>
+                                                    
+                                                        <a class="nav-link" data-toggle="pill" href="#mega-2-6" role="tab">数据安全</a>
+                                                    
+                                                        <a class="nav-link" data-toggle="pill" href="#mega-2-7" role="tab">应用安全</a>
+                                                    
+                                                </div>
+
+                                                <div class="tab-content">
+                                                    <div class="tab-pane fade show active" id="mega-2-all" role="tabpanel">
+                                                        
+        <div class="row mn-mega-pane">
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms.jpg" alt="如何在MacOS上安装VeraCrypt以跨平台保护数据"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        如何在MacOS上安装VeraCrypt以跨平台保护数据
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/DataSecurity/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                数据安全
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2020-12-11
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../How-to-Protect-Sensitive-Files-on-PC-with-VeraCrypt/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/How-to-Protect-Sensitive-Files-on-PC-with-VeraCrypt.jpg" alt="如何使用VeraCrypt保护PC上的敏感文件"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../How-to-Protect-Sensitive-Files-on-PC-with-VeraCrypt/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        如何使用VeraCrypt保护PC上的敏感文件
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/DataSecurity/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                数据安全
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2020-12-06
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../Programming-Security-from-Playing-with-the-Target-DVWA/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/Programming-Security-from-Playing-with-the-Target-DVWA1.jpg" alt="从玩转靶机DVWA看程序设计安全"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../Programming-Security-from-Playing-with-the-Target-DVWA/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        从玩转靶机DVWA看程序设计安全
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/ApplicationSecurity/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                应用安全
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2020-11-16
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        </div>
+    
+
+                                                    </div>
+
+                                                    
+                                                        
+                                                        <div class="tab-pane fade" id="mega-2-6" role="tabpanel">
+                                                            
+        <div class="row mn-mega-pane">
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms.jpg" alt="如何在MacOS上安装VeraCrypt以跨平台保护数据"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        如何在MacOS上安装VeraCrypt以跨平台保护数据
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/DataSecurity/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                数据安全
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2020-12-11
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../How-to-Protect-Sensitive-Files-on-PC-with-VeraCrypt/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/How-to-Protect-Sensitive-Files-on-PC-with-VeraCrypt.jpg" alt="如何使用VeraCrypt保护PC上的敏感文件"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../How-to-Protect-Sensitive-Files-on-PC-with-VeraCrypt/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        如何使用VeraCrypt保护PC上的敏感文件
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/DataSecurity/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                数据安全
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2020-12-06
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        </div>
+    
+
+                                                        </div>
+                                                    
+                                                        
+                                                        <div class="tab-pane fade" id="mega-2-7" role="tabpanel">
+                                                            
+        <div class="row mn-mega-pane">
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../Programming-Security-from-Playing-with-the-Target-DVWA/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/Programming-Security-from-Playing-with-the-Target-DVWA1.jpg" alt="从玩转靶机DVWA看程序设计安全"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../Programming-Security-from-Playing-with-the-Target-DVWA/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        从玩转靶机DVWA看程序设计安全
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/ApplicationSecurity/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                应用安全
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2020-11-16
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        </div>
+    
+
+                                                        </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        
+                                    </li>
+                                
+                                    
+                                    <li class="mega-menu-item">
+                                        <a href="../../categories/SoftwareDevelopment/">软件开发</a>
+
+                                        
+                                            <div class="sub-mega-menu">
+                                                <div class="nav flex-column nav-pills" role="tablist">
+                                                    <a class="nav-link active" data-toggle="pill" href="#mega-3-all" role="tab">All</a>
+                                                    
+                                                        <a class="nav-link" data-toggle="pill" href="#mega-3-16" role="tab">APP开发</a>
+                                                    
+                                                        <a class="nav-link" data-toggle="pill" href="#mega-3-17" role="tab">小程序</a>
+                                                    
+                                                </div>
+
+                                                <div class="tab-content">
+                                                    <div class="tab-pane fade show active" id="mega-3-all" role="tabpanel">
+                                                        
+        <div class="row mn-mega-pane">
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../EagleDesk-cross-platform-remote-control-software/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/EagleDesk-cross-platform-remote-control-software.jpg" alt="EagleDesk - 跨平台远程控制软件 - 现代化跨平台远程控制解决方案"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../EagleDesk-cross-platform-remote-control-software/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        EagleDesk - 跨平台远程控制软件 - 现代化跨平台远程控制解决方案
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/app/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                APP开发
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2025-08-04
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../WeChat-Mini-Program-Hotel-Reservation-Management-System/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/WeChat-Mini-Program-Hotel-Reservation-Management-System.jpg" alt="微信小程序：酒店预订管理系统"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../WeChat-Mini-Program-Hotel-Reservation-Management-System/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        微信小程序：酒店预订管理系统
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/mini/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                小程序
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2025-07-17
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone.jpg" alt="SikkerBox-手机上的网络瑞士军刀"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        SikkerBox-手机上的网络瑞士军刀
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/app/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                APP开发
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2025-05-15
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        </div>
+    
+
+                                                    </div>
+
+                                                    
+                                                        
+                                                        <div class="tab-pane fade" id="mega-3-16" role="tabpanel">
+                                                            
+        <div class="row mn-mega-pane">
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../EagleDesk-cross-platform-remote-control-software/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/EagleDesk-cross-platform-remote-control-software.jpg" alt="EagleDesk - 跨平台远程控制软件 - 现代化跨平台远程控制解决方案"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../EagleDesk-cross-platform-remote-control-software/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        EagleDesk - 跨平台远程控制软件 - 现代化跨平台远程控制解决方案
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/app/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                APP开发
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2025-08-04
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone.jpg" alt="SikkerBox-手机上的网络瑞士军刀"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        SikkerBox-手机上的网络瑞士军刀
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/app/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                APP开发
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2025-05-15
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        </div>
+    
+
+                                                        </div>
+                                                    
+                                                        
+                                                        <div class="tab-pane fade" id="mega-3-17" role="tabpanel">
+                                                            
+        <div class="row mn-mega-pane">
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../WeChat-Mini-Program-Hotel-Reservation-Management-System/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/WeChat-Mini-Program-Hotel-Reservation-Management-System.jpg" alt="微信小程序：酒店预订管理系统"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../WeChat-Mini-Program-Hotel-Reservation-Management-System/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        微信小程序：酒店预订管理系统
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/mini/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                小程序
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2025-07-17
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        </div>
+    
+
+                                                        </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        
+                                    </li>
+                                
+                                    
+                                    <li class="mega-menu-item">
+                                        <a href="../../categories/eagle/">雄鹰论文</a>
+
+                                        
+                                            <div class="sub-mega-menu">
+                                                <div class="nav flex-column nav-pills" role="tablist">
+                                                    <a class="nav-link active" data-toggle="pill" href="#mega-4-all" role="tab">All</a>
+                                                    
+                                                        <a class="nav-link" data-toggle="pill" href="#mega-4-11" role="tab">网站建设</a>
+                                                    
+                                                        <a class="nav-link" data-toggle="pill" href="#mega-4-12" role="tab">数学论文</a>
+                                                    
+                                                        <a class="nav-link" data-toggle="pill" href="#mega-4-13" role="tab">化学论文</a>
+                                                    
+                                                        <a class="nav-link" data-toggle="pill" href="#mega-4-14" role="tab">电脑科技</a>
+                                                    
+                                                </div>
+
+                                                <div class="tab-content">
+                                                    <div class="tab-pane fade show active" id="mega-4-all" role="tabpanel">
+                                                        
+        <div class="row mn-mega-pane">
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../Full-guide-to-installing-Win2K-unattended/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/win2000.jpg" alt="无人参与安装Win2K全攻略"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../Full-guide-to-installing-Win2K-unattended/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        无人参与安装Win2K全攻略
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/computer/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                电脑科技
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2019-07-09
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../Linkbotpro-Good-tool-for-testing-homepage-links/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/Linkbot.jpg" alt="Linkbotpro--测试主页链接好工具"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../Linkbotpro-Good-tool-for-testing-homepage-links/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        Linkbotpro--测试主页链接好工具
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/website/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                网站建设
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2019-07-09
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../An-example-of-animation-using-DHTML/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="用DHTML制作动画一例"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../An-example-of-animation-using-DHTML/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        用DHTML制作动画一例
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/website/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                网站建设
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2019-07-09
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../Simple-implementation-of-web-search-function/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/web-search.jpg" alt="网页检索功能的简单实现"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../Simple-implementation-of-web-search-function/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        网页检索功能的简单实现
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/website/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                网站建设
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2019-07-09
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+    
+
+                                                    </div>
+
+                                                    
+                                                        
+                                                        <div class="tab-pane fade" id="mega-4-11" role="tabpanel">
+                                                            
+        <div class="row mn-mega-pane">
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../Linkbotpro-Good-tool-for-testing-homepage-links/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/Linkbot.jpg" alt="Linkbotpro--测试主页链接好工具"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../Linkbotpro-Good-tool-for-testing-homepage-links/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        Linkbotpro--测试主页链接好工具
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/website/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                网站建设
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2019-07-09
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../An-example-of-animation-using-DHTML/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="用DHTML制作动画一例"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../An-example-of-animation-using-DHTML/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        用DHTML制作动画一例
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/website/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                网站建设
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2019-07-09
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../Simple-implementation-of-web-search-function/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/web-search.jpg" alt="网页检索功能的简单实现"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../Simple-implementation-of-web-search-function/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        网页检索功能的简单实现
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/website/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                网站建设
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2019-07-09
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../Gleanings-from-homepage-creation-experience/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/luca-bravo-alS7ewQ41M8-unsplash.jpg" alt="主页制作经验拾遗"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../Gleanings-from-homepage-creation-experience/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        主页制作经验拾遗
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/website/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                网站建设
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2019-07-09
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+    
+
+                                                        </div>
+                                                    
+                                                        
+                                                        <div class="tab-pane fade" id="mega-4-12" role="tabpanel">
+                                                            
+        <div class="row mn-mega-pane">
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../A-short-proof-of-an-inequality-question/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/hudai-gayiran-3Od_VKcDEAA-unsplash.png" alt="一道不等式题的简证"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../A-short-proof-of-an-inequality-question/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        一道不等式题的简证
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/math/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                数学论文
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2019-07-08
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../Learn-a-little-about-determinants/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/matt-le-SJSpo9hQf7s-unsplash.png" alt="学一点“行列式”知识"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../Learn-a-little-about-determinants/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        学一点“行列式”知识
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/math/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                数学论文
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2019-07-08
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../Tribute-to-ChenJingrun/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/luca-bravo-alS7ewQ41M8-unsplash-1774771589604.jpg" alt="轸念陈景润"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../Tribute-to-ChenJingrun/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        轸念陈景润
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/math/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                数学论文
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2019-07-08
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../An-alternative-proof-of-a-math-competition-problem/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="一道数学赛题的别证"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../An-alternative-proof-of-a-math-competition-problem/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        一道数学赛题的别证
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/math/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                数学论文
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2019-07-08
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        </div>
+    
+
+                                                        </div>
+                                                    
+                                                        
+                                                        <div class="tab-pane fade" id="mega-4-13" role="tabpanel">
+                                                            
+        <div class="row mn-mega-pane">
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../knowing-in-exploration/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/pawel-czerwinski-8uZPynIu-rQ-unsplash-1774771596761.jpg" alt="求知贵探索"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../knowing-in-exploration/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        求知贵探索
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/Chemical/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                化学论文
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2019-07-08
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../Mathematical-solution-to-a-chemistry-problem/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/helena-hertz-wWZzXlDpMog-unsplash.png" alt="一道化学题的数学解法"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../Mathematical-solution-to-a-chemistry-problem/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        一道化学题的数学解法
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/Chemical/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                化学论文
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2019-07-08
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        </div>
+    
+
+                                                        </div>
+                                                    
+                                                        
+                                                        <div class="tab-pane fade" id="mega-4-14" role="tabpanel">
+                                                            
+        <div class="row mn-mega-pane">
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../Full-guide-to-installing-Win2K-unattended/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/win2000.jpg" alt="无人参与安装Win2K全攻略"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../Full-guide-to-installing-Win2K-unattended/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        无人参与安装Win2K全攻略
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/computer/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                电脑科技
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2019-07-09
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../DIY-Peer-to-Peer-Network-Setup/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/Peer-to-Peer.jpg" alt="组建对等网DIY"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../DIY-Peer-to-Peer-Network-Setup/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        组建对等网DIY
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/computer/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                电脑科技
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2019-07-09
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../WinImage-good-tool-for-making-images/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/WinImage.jpg" alt="winimage--制作镜像文件的好工具"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../WinImage-good-tool-for-making-images/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        winimage--制作镜像文件的好工具
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/computer/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                电脑科技
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2019-07-09
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        </div>
+    
+
+                                                        </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        
+                                    </li>
+                                
+                                    
+                                    <li class="mega-menu-item">
+                                        <a href="../../categories/system/">操作系统</a>
+
+                                        
+                                            <div class="sub-mega-menu">
+                                                <div class="nav flex-column nav-pills" role="tablist">
+                                                    <a class="nav-link active" data-toggle="pill" href="#mega-5-all" role="tab">All</a>
+                                                    
+                                                        <a class="nav-link" data-toggle="pill" href="#mega-5-8" role="tab">Windows</a>
+                                                    
+                                                        <a class="nav-link" data-toggle="pill" href="#mega-5-9" role="tab">Linux</a>
+                                                    
+                                                        <a class="nav-link" data-toggle="pill" href="#mega-5-10" role="tab">Macos</a>
+                                                    
+                                                        <a class="nav-link" data-toggle="pill" href="#mega-5-15" role="tab">虚拟化</a>
+                                                    
+                                                </div>
+
+                                                <div class="tab-content">
+                                                    <div class="tab-pane fade show active" id="mega-5-all" role="tabpanel">
+                                                        
+        <div class="row mn-mega-pane">
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine.png" alt="Tengine-rpm 基于Tengine 3.1深度定制优化"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        Tengine-rpm 基于Tengine 3.1深度定制优化
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/linux/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                Linux
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2025-03-31
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux.png" alt="EagleOS 9.5-基于AlmaLinux 9.5深度定制优化"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        EagleOS 9.5-基于AlmaLinux 9.5深度定制优化
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/linux/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                Linux
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2025-03-11
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../EagleOS7-deeply-customized-and-optimized-based-on-Centos/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/EagleOS7-deeply-customized-and-optimized-based-on-Centos.png" alt="EagleOS 7.9-基于Centos 7.9深度定制优化"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../EagleOS7-deeply-customized-and-optimized-based-on-Centos/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        EagleOS 7.9-基于Centos 7.9深度定制优化
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/linux/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                Linux
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2021-05-23
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../3-Steps-to-Reset-Windows-10-Password/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/3-Steps-to-Reset-Windows-10-Password.jpg" alt="Win10忘记密码怎么办？3步教您重置Windows10密码"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../3-Steps-to-Reset-Windows-10-Password/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        Win10忘记密码怎么办？3步教您重置Windows10密码
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/windows/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                Windows
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2021-03-27
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+    
+
+                                                    </div>
+
+                                                    
+                                                        
+                                                        <div class="tab-pane fade" id="mega-5-8" role="tabpanel">
+                                                            
+        <div class="row mn-mega-pane">
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../3-Steps-to-Reset-Windows-10-Password/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/3-Steps-to-Reset-Windows-10-Password.jpg" alt="Win10忘记密码怎么办？3步教您重置Windows10密码"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../3-Steps-to-Reset-Windows-10-Password/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        Win10忘记密码怎么办？3步教您重置Windows10密码
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/windows/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                Windows
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2021-03-27
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../Installing-Centos-on-Windows-10-using-WSL/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/Installing-Centos-on-Windows-10-using-WSL.jpg" alt="在Windows 10上使用WSL安装Centos"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../Installing-Centos-on-Windows-10-using-WSL/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        在Windows 10上使用WSL安装Centos
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/windows/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                Windows
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2020-11-03
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="./" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019.jpg" alt="漫谈在Windows Server 2019中安装使用WSL"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="./" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        漫谈在Windows Server 2019中安装使用WSL
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/windows/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                Windows
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2020-11-02
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        </div>
+    
+
+                                                        </div>
+                                                    
+                                                        
+                                                        <div class="tab-pane fade" id="mega-5-9" role="tabpanel">
+                                                            
+        <div class="row mn-mega-pane">
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine.png" alt="Tengine-rpm 基于Tengine 3.1深度定制优化"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        Tengine-rpm 基于Tengine 3.1深度定制优化
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/linux/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                Linux
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2025-03-31
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux.png" alt="EagleOS 9.5-基于AlmaLinux 9.5深度定制优化"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        EagleOS 9.5-基于AlmaLinux 9.5深度定制优化
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/linux/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                Linux
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2025-03-11
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../EagleOS7-deeply-customized-and-optimized-based-on-Centos/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/EagleOS7-deeply-customized-and-optimized-based-on-Centos.png" alt="EagleOS 7.9-基于Centos 7.9深度定制优化"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../EagleOS7-deeply-customized-and-optimized-based-on-Centos/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        EagleOS 7.9-基于Centos 7.9深度定制优化
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/linux/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                Linux
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2021-05-23
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../IPCDump-For-tracking-inter-process-communication-on-Linux/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/IPCDump-For-tracking-inter-process-communication-on-Linux.jpg" alt="新开源工具IPCDump：用于在Linux上跟踪进程间通信"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../IPCDump-For-tracking-inter-process-communication-on-Linux/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        新开源工具IPCDump：用于在Linux上跟踪进程间通信
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/linux/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                Linux
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2021-02-11
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        </div>
+    
+
+                                                        </div>
+                                                    
+                                                        
+                                                        <div class="tab-pane fade" id="mega-5-10" role="tabpanel">
+                                                            
+        <div class="row mn-mega-pane">
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../How-to-Change-Copy-Paste-and-Other-Shortcuts-in-macOS/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/How-to-Change-Copy-Paste-and-Other-Shortcuts-in-macOS.jpg" alt="如何在MacOS下更改复制、粘贴等快捷键 以适应Windows下使用习惯（视频）"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../How-to-Change-Copy-Paste-and-Other-Shortcuts-in-macOS/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        如何在MacOS下更改复制、粘贴等快捷键 以适应Windows下使用习惯（视频）
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/macos/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                Macos
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2021-01-10
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        </div>
+    
+
+                                                        </div>
+                                                    
+                                                        
+                                                        <div class="tab-pane fade" id="mega-5-15" role="tabpanel">
+                                                            
+        <div class="row mn-mega-pane">
+            
+                
+                    <div class="col-3">
+                        <div>
+                            <a href="../How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login/" class="wrap-pic-w hov1 trans-03">
+                                <img src="../../upload/2026/03/How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login.jpg" alt="如何通过ssh远程登录给esxi主机防火墙添加允许ip列表（视频）"/>
+                            </a>
+
+                            <div class="p-t-10">
+                                <h5 class="p-b-5">
+                                    <a href="../How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login/" class="f1-s-5 cl3 hov-cl10 trans-03">
+                                        如何通过ssh远程登录给esxi主机防火墙添加允许ip列表（视频）
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+                                    
+                                        
+                                            <a href="../../categories/Virtualization/" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                                虚拟化
+                                            </a>
+                                        
+                                    
+
+                                    <span class="f1-s-3 m-rl-3">
+                                        -
+                                    </span>
+
+                                    <span class="f1-s-3">
+                                        2021-01-07
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+            
+        </div>
+    
+
+                                                        </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        
+                                    </li>
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+<div class="container">
+        <div class="headline bg0 flex-wr-sb-c p-rl-20 p-tb-8">
+            <div class="f2-s-1 p-r-30 m-tb-6">
+                <a href="../../" class="breadcrumb-item f1-s-3 cl9">首页</a>
+                
+                    
+                        
+                            <a href="../../categories/windows/" class="breadcrumb-item f1-s-3 cl9">Windows</a>
+                        
+                    
+                
+                <span class="breadcrumb-item f1-s-3 cl9">漫谈在Windows Server 2019中安装使用WSL</span>
+            </div>
+
+            <form class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6" action="../../search/" method="get">
+                <input class="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="keyword" value="" placeholder="Search"/>
+                <button class="flex-c-c size-a-1 ab-t-r fs-20 cl2 hov-cl10 trans-03" type="submit">
+                    <i class="zmdi zmdi-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <section class="bg0 p-b-70 p-t-5">
+        <div class="mn-page-hero bg-img1 size-a-18 how-overlay1" style="background-image: url(&#39;../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019.jpg&#39;);">
+            <div class="container h-full flex-col-e-c p-b-58">
+                
+                    
+                        
+                            <a href="../../categories/windows/" class="f1-s-10 cl0 hov-cl10 trans-03 text-uppercase txt-center m-b-33">
+                                Windows
+                            </a>
+                        
+                    
+                
+
+                <h1 class="f1-l-5 cl0 p-b-16 txt-center respon2">漫谈在Windows Server 2019中安装使用WSL</h1>
+
+                
+                    <div class="flex-wr-c-s mn-page-meta">
+                        
+                            <span class="article-type" style="color: white; font-size: 14px; background: #bf59f3; padding: 0 5px 1px 5px; margin-right: 5px; border-radius: 2px;">原创</span>
+                        
+                        
+                            <span class="f1-s-3 cl8 m-rl-7 txt-center">
+                                <i class="fas fa-user"></i> 作者： 童建平
+                            </span>
+                        
+                        <span class="f1-s-3 cl8 m-rl-7 txt-center">
+                            <i class="far fa-calendar-alt"></i> 2020-11-02
+                        </span>
+                        
+                    </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+<main class="container p-b-40">
+    <div class="row">
+        <div class="col-lg-8">
+            <article class="mn-post-article">
+                <div class="mn-article-body">
+                    <div class="mn-prose">
+                        <p><span class="nowrap"><span class="emojify">💁🏻‍♂️</span>《今日头条》 2020-11-02 《漫谈在Windows Server 2019中安装使用WSL》 童建平</span></p>
+<p>熟稔IT历史的朋友一定不会忘记98蓝屏事件：时任微软CEO的比尔·盖茨和助理 Chris Capossela在1998年春季计算机分销商展会（COMDEX ）现场演示Windows 98的&#34;即插即用&#34;（plug-and-play）新特性时，经历了演示计算机当场冷不丁甩出蓝屏死机（Blue Screen of Death，简称BSOD）界面的尴尬一幕：</p>
+<p><img src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-1.gif" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"/></p>
 <p>尽管微软极力想要化解其中的尴尬，但该事件还是在该公司的历史上留下了难以抹去的一笔。蓝屏死机几乎已经成为了微软Windows操作系统的标志。</p>
-<p>那么，作为从业IT的您，如果是一名运维工程师，当你正在紧急处理线上故障时，突然办公电脑蓝屏死机了；又亦或您是一名程序猿，正在专注&quot;写bug&quot;时，也BSOD了，这是多么令人崩溃的事情啊。所以，拥有一个稳定的操作系统，是您的不二选择。</p>
+<p>那么，作为从业IT的您，如果是一名运维工程师，当你正在紧急处理线上故障时，突然办公电脑蓝屏死机了；又亦或您是一名程序猿，正在专注&#34;写bug&#34;时，也BSOD了，这是多么令人崩溃的事情啊。所以，拥有一个稳定的操作系统，是您的不二选择。</p>
 <p>笔者自从Windows Server 2000以来，一直用Windows Server系列产品作为办公操作系统，深谙其利：</p>
 <ul>
 <li>Windows Server系列一般基于同时期的Windows家庭版开发而来，拥有相同的内核，如Windows Server 2012就是一套基于Windows 8基础上开发出来的服务器版系统，Windows Server 2019则基于Windows 10。如果您细心，会注意到很多Windows Update更新文件，Windows Server系列与Windows家庭版系列其实是相同的文件。所以使用Windows Server系列不会对您的日常办公带来什么不便。</li>
@@ -277,656 +2567,670 @@
 </ul>
 <p>要在Windows Server 2019上使用WSL，首先需要确定您的系统版本大于1709，可按下面步骤确定您的操作系统版本：</p>
 <p>①在开始菜单中点击Windows Powershell进入，或者在开始菜单中磁性贴中点击Windows Powershell进入，如下图：</p>
-<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-2.jpg"
-	width="560"
-	height="609"
-	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu1e946754459ef454d2d3a95218bb62ff_41706_fa776c1c68e236f4473ba53974adef95.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu1e946754459ef454d2d3a95218bb62ff_41706_c411f8c4b0b800fdc6d2bf077c7987a9.jpg 1024w"
-	loading="lazy"
-	
-		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="91"
-		data-flex-basis="220px"
-	
-></p>
+<p><img src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-2.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"/></p>
 <p>②输入Powershell命令：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Get-ComputerInfo <span class="p">|</span> Select WindowsProductName, WindowsVersion, WindowsInstallationType, OsServerLevel, OsVersion, OsHardwareAbstractionLayer
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如下图：</p>
-<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-3.jpg"
-	width="747"
-	height="135"
-	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hube9b5ed2449f9d6a02a7546db3934817_20220_49d8c399d1a571497b2671151d6451e3.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hube9b5ed2449f9d6a02a7546db3934817_20220_f48fc44d4f38c7d04bb87210cf8291bf.jpg 1024w"
-	loading="lazy"
-	
-		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="553"
-		data-flex-basis="1328px"
-	
-></p>
+<pre><code class="language-shell">Get-ComputerInfo | Select WindowsProductName, WindowsVersion, WindowsInstallationType, OsServerLevel, OsVersion, OsHardwareAbstractionLayer
+</code></pre>
+<p>如下图：</p>
+<p><img src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-3.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"/></p>
 <p>③稍等几秒，系统输出结果，如：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">WindowsProductName : Windows Server <span class="m">2019</span> Datacenter
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">WindowsVersion : <span class="m">1809</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">WindowsInstallationType : Server
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">OsServerLevel : FullServer
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">OsVersion : 10.0.17763
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">OsHardwareAbstractionLayer : 10.0.17763.1131
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如下图：</p>
-<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-4.jpg"
-	width="748"
-	height="245"
-	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hube9b5ed2449f9d6a02a7546db3934817_31297_63086ed8655994964c066261cd31ef68.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hube9b5ed2449f9d6a02a7546db3934817_31297_94740ccd1cea1aba315032052c10a4c1.jpg 1024w"
-	loading="lazy"
-	
-		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="305"
-		data-flex-basis="732px"
-	
-></p>
+<pre><code class="language-shell">WindowsProductName : Windows Server 2019 Datacenter
+
+WindowsVersion : 1809
+
+WindowsInstallationType : Server
+
+OsServerLevel : FullServer
+
+OsVersion : 10.0.17763
+
+OsHardwareAbstractionLayer : 10.0.17763.1131
+</code></pre>
+<p>如下图：</p>
+<p><img src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-4.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"/></p>
 <p>上面的WindowsVersion的值即为您的系统版本。图中值为1809，满足WSL安装要求。</p>
 <p>然后继续在上面的Powershell窗口中输入如下命令启用WSL：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如下图：</p>
-<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-5.jpg"
-	width="750"
-	height="278"
-	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hud905d8570759aa23d45a6c411c00c16b_35212_2ef34ce185e0ead8193c29e98c9aa8e5.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hud905d8570759aa23d45a6c411c00c16b_35212_84fed2e5d88da4b797f9685bf204bec2.jpg 1024w"
-	loading="lazy"
-	
-		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="269"
-		data-flex-basis="647px"
-	
-></p>
+<pre><code class="language-shell">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+</code></pre>
+<p>如下图：</p>
+<p><img src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-5.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"/></p>
 <p>回车后， 稍等几秒，会提示您选择并重启计算机，如下图：</p>
-<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-6.jpg"
-	width="748"
-	height="276"
-	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu1305947a3f39938e32cd872d987e5aa1_38384_f4eecc270dee5a5ca8d369d5911b3618.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu1305947a3f39938e32cd872d987e5aa1_38384_6ac9fc3cd416a00be0a5a9ccab516138.jpg 1024w"
-	loading="lazy"
-	
-		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="271"
-		data-flex-basis="650px"
-	
-></p>
+<p><img src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-6.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"/></p>
 <p>输入y或直接回车，电脑立即重启。重启后即成功启用了WSL。</p>
 <p>接下来，就是选择下载并安装您喜欢的Linux发行版，在Windows 10下可以通过Microsoft Store应用直接下载安装，在Windows Server 2019中Microsoft Store应用不可用，可以通过以下网址来下载并手动安装Linux发行版：</p>
 <ul>
-<li>Ubuntu 20.04 <a class="link" href="https://aka.ms/wslubuntu2004"  target="_blank" rel="noopener"
-    >https://aka.ms/wslubuntu2004</a></li>
-<li>Ubuntu 20.04 ARM <a class="link" href="https://aka.ms/wslubuntu2004arm"  target="_blank" rel="noopener"
-    >https://aka.ms/wslubuntu2004arm</a></li>
-<li>Ubuntu 18.04 <a class="link" href="https://aka.ms/wsl-ubuntu-1804"  target="_blank" rel="noopener"
-    >https://aka.ms/wsl-ubuntu-1804</a></li>
-<li>Ubuntu 18.04 ARM <a class="link" href="https://aka.ms/wsl-ubuntu-1804-arm"  target="_blank" rel="noopener"
-    >https://aka.ms/wsl-ubuntu-1804-arm</a></li>
-<li>Ubuntu 16.04 <a class="link" href="https://aka.ms/wsl-ubuntu-1604"  target="_blank" rel="noopener"
-    >https://aka.ms/wsl-ubuntu-1604</a></li>
-<li>Debian GNU/Linux <a class="link" href="https://aka.ms/wsl-debian-gnulinux"  target="_blank" rel="noopener"
-    >https://aka.ms/wsl-debian-gnulinux</a></li>
-<li>Kali Linux <a class="link" href="https://aka.ms/wsl-kali-linux-new"  target="_blank" rel="noopener"
-    >https://aka.ms/wsl-kali-linux-new</a></li>
-<li>OpenSUSE Leap 42 <a class="link" href="https://aka.ms/wsl-opensuse-42"  target="_blank" rel="noopener"
-    >https://aka.ms/wsl-opensuse-42</a></li>
-<li>SUSE Linux Enterprise Server 12 <a class="link" href="https://aka.ms/wsl-sles-12"  target="_blank" rel="noopener"
-    >https://aka.ms/wsl-sles-12</a></li>
-<li>Fedora Remix for WSL <a class="link" href="https://github.com/WhitewaterFoundry/WSLFedoraRemix/releases/"  target="_blank" rel="noopener"
-    >https://github.com/WhitewaterFoundry/WSLFedoraRemix/releases/</a></li>
+<li>Ubuntu 20.04 <a href="https://aka.ms/wslubuntu2004">https://aka.ms/wslubuntu2004</a></li>
+<li>Ubuntu 20.04 ARM <a href="https://aka.ms/wslubuntu2004arm">https://aka.ms/wslubuntu2004arm</a></li>
+<li>Ubuntu 18.04 <a href="https://aka.ms/wsl-ubuntu-1804">https://aka.ms/wsl-ubuntu-1804</a></li>
+<li>Ubuntu 18.04 ARM <a href="https://aka.ms/wsl-ubuntu-1804-arm">https://aka.ms/wsl-ubuntu-1804-arm</a></li>
+<li>Ubuntu 16.04 <a href="https://aka.ms/wsl-ubuntu-1604">https://aka.ms/wsl-ubuntu-1604</a></li>
+<li>Debian GNU/Linux <a href="https://aka.ms/wsl-debian-gnulinux">https://aka.ms/wsl-debian-gnulinux</a></li>
+<li>Kali Linux <a href="https://aka.ms/wsl-kali-linux-new">https://aka.ms/wsl-kali-linux-new</a></li>
+<li>OpenSUSE Leap 42 <a href="https://aka.ms/wsl-opensuse-42">https://aka.ms/wsl-opensuse-42</a></li>
+<li>SUSE Linux Enterprise Server 12 <a href="https://aka.ms/wsl-sles-12">https://aka.ms/wsl-sles-12</a></li>
+<li>Fedora Remix for WSL <a href="https://github.com/WhitewaterFoundry/WSLFedoraRemix/releases/">https://github.com/WhitewaterFoundry/WSLFedoraRemix/releases/</a></li>
 </ul>
 <p>然而，需要注意的是，如上个别发行版如Kali Linux并不适合于Windows Server 2019，因为Kali Linux需要运行在WSL 2上面，而目前Windows Server 2019是运行在WSL上的，除非您安装使用Windows Server 2019 Insider Preview版本，才能支持WSL 2。WSL 2 是适用于Linux的Windows子系统体系结构的一个新版本，它支持适用于Linux的Windows子系统在Windows 运行ELF64 Linux二进制文件，WSL 2 仅适用于Windows 10 版本1903、内部版本18362或更高版本。如果您试图强制在Windows Server 2019上安装使用Kali Linux，将不幸遭遇本文文首所述的BSOD。</p>
 <p>现在，以Ubuntu 16.04为例，我们通过Powershell下载此发行版：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx –UseBasicParsing
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如下图：</p>
-<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-7.jpg"
-	width="764"
-	height="122"
-	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_16968_7689fe5efedf043ce85380b3e3f920c1.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_16968_d42b4bbb539744ebc766e3efe0a0c95a.jpg 1024w"
-	loading="lazy"
-	
-		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="626"
-		data-flex-basis="1502px"
-	
-></p>
+<pre><code class="language-shell">Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx –UseBasicParsing
+</code></pre>
+<p>如下图：</p>
+<p><img src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-7.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"/></p>
 <p>回车后开始下载，取决于您的下载速度，可能费时很长，如下图：</p>
-<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-8.jpg"
-	width="761"
-	height="164"
-	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_17632_c39536b1f7fb8894e83199d9a5e4cd5d.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_17632_09d7190da0764548c08c50818d142779.jpg 1024w"
-	loading="lazy"
-	
-		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="464"
-		data-flex-basis="1113px"
-	
-></p>
+<p><img src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-8.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"/></p>
 <p>有可能就遇到下载失败了，如下图：</p>
-<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-9.jpg"
-	width="761"
-	height="214"
-	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hue0466c4e96725c3e4dd24cd6a66feb73_30886_fbd678789cc44f00e4408415c37a4aba.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hue0466c4e96725c3e4dd24cd6a66feb73_30886_d3ec9a99a9583bc9037280a01497d2d0.jpg 1024w"
-	loading="lazy"
-	
-		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="355"
-		data-flex-basis="853px"
-	
-></p>
+<p><img src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-9.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"/></p>
 <p>这时候，为方便查看下载进度，我们改用curl命令进行下载：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl.exe -L -o ubuntu-1604.appx https://aka.ms/wsl-ubuntu-1604
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>也是失败，如下图：</p>
-<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-10.jpg"
-	width="762"
-	height="288"
-	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_45893_5f19cf7e74471ea257c2a4030461215f.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu17a3a5fe29d01d98df4e5859d21226f0_45893_27bab01c816e44c16b14d61de027790f.jpg 1024w"
-	loading="lazy"
-	
-		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="264"
-		data-flex-basis="635px"
-	
-></p>
+<pre><code class="language-shell">curl.exe -L -o ubuntu-1604.appx https://aka.ms/wsl-ubuntu-1604
+</code></pre>
+<p>也是失败，如下图：</p>
+<p><img src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-10.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"/></p>
 <p>于是再改成下载更新版本的ubuntu：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl.exe -L -o ubuntu-1804.appx https://aka.ms/wsl-ubuntu-1804
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>下载速度就很快了，5分钟左右就完成下载了，如下图：</p>
-<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-11.jpg"
-	width="747"
-	height="195"
-	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu02b37057b8984a33cb9a99c8ba004b6b_35788_410927c9e0933374a2f7fabf34b0eb09.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu02b37057b8984a33cb9a99c8ba004b6b_35788_fe3ba939dabdad6349e29ab36c563db5.jpg 1024w"
-	loading="lazy"
-	
-		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="383"
-		data-flex-basis="919px"
-	
-></p>
+<pre><code class="language-shell">curl.exe -L -o ubuntu-1804.appx https://aka.ms/wsl-ubuntu-1804
+</code></pre>
+<p>下载速度就很快了，5分钟左右就完成下载了，如下图：</p>
+<p><img src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-11.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"/></p>
 <p>然后对下载后ubuntu-1804.appx文件进行重命名，并解压到当前目录的ubuntu1804子目录下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Rename-Item ubuntu-1804.appx ubuntu-1804.zip
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Expand-Archive ubuntu-1804.zip ubuntu1804
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如下图：</p>
-<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-12.jpg"
-	width="747"
-	height="215"
-	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu8b1eebfbcb23ea73c6e10b2915810fa4_41576_6a3a5cc7627a7eef4e9a7c8a87eb496e.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu8b1eebfbcb23ea73c6e10b2915810fa4_41576_cbad2b4f1c04c0c4057451eb13fd4659.jpg 1024w"
-	loading="lazy"
-	
-		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="347"
-		data-flex-basis="833px"
-	
-></p>
+<pre><code class="language-shell">Rename-Item ubuntu-1804.appx ubuntu-1804.zip
+
+Expand-Archive ubuntu-1804.zip ubuntu1804
+</code></pre>
+<p>如下图：</p>
+<p><img src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-12.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"/></p>
 <p>然后继续输入下面命令切换到解压后的目录，并启动运行ubuntu：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> ubuntu1804
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">ubuntu1804.exe
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如下图：</p>
-<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-13.jpg"
-	width="747"
-	height="460"
-	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu8b1eebfbcb23ea73c6e10b2915810fa4_67920_7d69a49c7cacfe7567d02b1677d4120f.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu8b1eebfbcb23ea73c6e10b2915810fa4_67920_0365b56d3080ba09b2ee360b4c6b9dfb.jpg 1024w"
-	loading="lazy"
-	
-		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="162"
-		data-flex-basis="389px"
-	
-></p>
+<pre><code class="language-shell">cd ubuntu1804
+
+ubuntu1804.exe
+</code></pre>
+<p>如下图：</p>
+<p><img src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-13.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"/></p>
 <p>很不幸，您将看到如下错误提示：</p>
-<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-14.jpg"
-	width="748"
-	height="225"
-	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huac1f5a2b590cbbe8b50212f07fd4795c_36001_f4c271fef8fc62c838c624d2158f49c6.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_huac1f5a2b590cbbe8b50212f07fd4795c_36001_cadd3de95229c60f237702e41949d97b.jpg 1024w"
-	loading="lazy"
-	
-		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="332"
-		data-flex-basis="797px"
-	
-></p>
-<p>解决的方法有2个，1个是按照错误提示中所述手工键入&quot;.\ubuntu1804.exe&quot;，或键入字母&quot;u&quot;再按Tab键也会自动填充&quot;.\ubuntu1804.exe&quot;命令。</p>
+<p><img src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-14.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"/></p>
+<p>解决的方法有2个，1个是按照错误提示中所述手工键入&#34;.\ubuntu1804.exe&#34;，或键入字母&#34;u&#34;再按Tab键也会自动填充&#34;.\ubuntu1804.exe&#34;命令。</p>
 <p>另1个方法是使用如下PowerShell命令将您的分发版路径添加到Windows环境路径（在本例中为 C:\Users\Administrator\Ubuntu1804）中：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">$userenv</span> <span class="o">=</span> <span class="o">[</span>System.Environment<span class="o">]</span>::GetEnvironmentVariable<span class="o">(</span><span class="s2">&#34;Path&#34;</span>, <span class="s2">&#34;User&#34;</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>System.Environment<span class="o">]</span>::SetEnvironmentVariable<span class="o">(</span><span class="s2">&#34;PATH&#34;</span>, <span class="nv">$userenv</span> + <span class="s2">&#34;;C:\Users\Administrator\Ubuntu1804&#34;</span>, <span class="s2">&#34;User&#34;</span><span class="o">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如下图：</p>
-<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-15.jpg"
-	width="748"
-	height="247"
-	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu6a68093c74ac925dbfd00dad3940b7d7_43937_b6e1a87343431e6d48ff1bd6b7b3e2a5.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu6a68093c74ac925dbfd00dad3940b7d7_43937_877470b48f957bb183a0183e2fbc0b0b.jpg 1024w"
-	loading="lazy"
-	
-		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="302"
-		data-flex-basis="726px"
-	
-></p>
-<p>只是，第2个方法因为是修改系统变量，需要关闭原有窗口并重新启动PowerShell或者重启下计算机。重启后，就可以在任意路径下直接通过键入&quot;.\ubuntu1804.exe&quot;命令启动您的分发版，然后稍等片刻等待系统完成初始化。如下图：</p>
-<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-16.jpg"
-	width="748"
-	height="126"
-	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu723377c76fe549e65c764685d19a69cb_15900_3e9b815010784e8a5fbe06309b91184d.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hu723377c76fe549e65c764685d19a69cb_15900_4099311e56c36a7110db638bb1f3e35a.jpg 1024w"
-	loading="lazy"
-	
-		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="593"
-		data-flex-basis="1424px"
-	
-></p>
+<pre><code class="language-shell">$userenv = [System.Environment]::GetEnvironmentVariable(&#34;Path&#34;, &#34;User&#34;)
+
+[System.Environment]::SetEnvironmentVariable(&#34;PATH&#34;, $userenv + &#34;;C:\Users\Administrator\Ubuntu1804&#34;, &#34;User&#34;)
+</code></pre>
+<p>如下图：</p>
+<p><img src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-15.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"/></p>
+<p>只是，第2个方法因为是修改系统变量，需要关闭原有窗口并重新启动PowerShell或者重启下计算机。重启后，就可以在任意路径下直接通过键入&#34;.\ubuntu1804.exe&#34;命令启动您的分发版，然后稍等片刻等待系统完成初始化。如下图：</p>
+<p><img src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-16.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"/></p>
 <p>之后，按照提示输入要创建的用户名和密码，即成功登录ubuntu系统，如下图：</p>
-<p><img src="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-17.jpg"
-	width="748"
-	height="241"
-	srcset="/article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hue2a6b4c4612c06ab6c4321aaf11274e9_142537_05d36bf02dc9db133f26f24ca237cb8c.jpg 480w, /article/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/_hue2a6b4c4612c06ab6c4321aaf11274e9_142537_d0fa6d9fd3fb8bf3bffb72c60106ddd5.jpg 1024w"
-	loading="lazy"
-	
-		alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="310"
-		data-flex-basis="744px"
-	
-></p>
+<p><img src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-17.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019"/></p>
 <p>这样您就可以开始愉快的utuntu之旅了，在上面安装LNMP等环境，这里就暂不赘述了。喜欢本文的朋友，欢迎点赞、关注、评论哦！笔者后续将继续介绍在WSL下安装centos等发行版，敬请期待！</p>
 
-</section>
+                    </div>
+                </div>
 
+                <div class="mn-article-footer">
+                    
+                        <div class="mn-tag-cloud">
+                            
+                                <a class="mn-tag" href="../../tags/WSL/"># WSL</a>
+                            
+                                <a class="mn-tag" href="../../tags/WindowsServer/"># Windows Server</a>
+                            
+                                <a class="mn-tag" href="../../tags/Win2019/"># Win2019</a>
+                            
+                                <a class="mn-tag" href="../../tags/ubuntu/"># ubuntu</a>
+                            
+                        </div>
+                    
 
-    <footer class="article-footer">
-    
-    <section class="article-tags">
-        
-            <a href="/tags/WSL/">WSL</a>
-        
-            <a href="/tags/Windows-Server/">Windows Server</a>
-        
-            <a href="/tags/Win2019/">Win2019</a>
-        
-            <a href="/tags/ubuntu/">Ubuntu</a>
-        
-    </section>
+                    <div class="mn-prev-next">
+                        
+                            <a href="../Installing-Centos-on-Windows-10-using-WSL/">
+                                <small>Previous</small>
+                                <strong>在Windows 10上使用WSL安装Centos</strong>
+                            </a>
+                        
+                        
+                            <a href="../Full-guide-to-installing-Win2K-unattended/">
+                                <small>Next</small>
+                                <strong>无人参与安装Win2K全攻略</strong>
+                            </a>
+                        
+                    </div>
+                </div>
+            </article>
 
+        </div>
 
-    
-    <section class="article-copyright">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
-</svg>
-
-
-
-        <span>Licensed under CC BY-NC-SA 4.0</span>
-    </section>
-    </footer>
-
-
-    
-</article>
-
-    
-
-    
-
-<aside class="related-content--wrapper">
-    <h2 class="section-title">相关文章</h2>
-    <div class="related-content">
-        <div class="flex article-list--tile">
+        <div class="col-lg-4">
             
-                
-<article class="has-image">
-    <a href="/article/Installing-Centos-on-Windows-10-using-WSL/">
+    <aside>
         
         
-            <div class="article-image">
-                <img src="/article/Installing-Centos-on-Windows-10-using-WSL/_hu042130161c2b6c330ef21e4d39f984aa_520402_8e2ef752b1c06421b9d6f4d8910361d6.jpg" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post 在Windows 10上使用WSL安装Centos"
-                        data-key="Installing-Centos-on-Windows-10-using-WSL" 
-                        data-hash="md5-JsZY30jdV5q2M8&#43;4yDwixw==">
-                
+            <div class="mn-sidebar-card">
+                <h3>热门文章</h3>
+                <div class="mn-mini-list">
+                    
+                        <article class="mn-mini-item">
+                            <a href="../EagleDesk-cross-platform-remote-control-software/">
+                                <img src="../../upload/2026/03/EagleDesk-cross-platform-remote-control-software.jpg" alt="EagleDesk - 跨平台远程控制软件 - 现代化跨平台远程控制解决方案"/>
+                            </a>
+                            <div>
+                                <h4><a href="../EagleDesk-cross-platform-remote-control-software/">EagleDesk - 跨平台远程控制软件 - 现代化跨平台远程控制解决方案</a></h4>
+                                <div class="mn-mini-meta">2025-08-04</div>
+                            </div>
+                        </article>
+                    
+                        <article class="mn-mini-item">
+                            <a href="../SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/">
+                                <img src="../../upload/2026/03/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone.jpg" alt="SikkerBox-手机上的网络瑞士军刀"/>
+                            </a>
+                            <div>
+                                <h4><a href="../SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/">SikkerBox-手机上的网络瑞士军刀</a></h4>
+                                <div class="mn-mini-meta">2025-05-15</div>
+                            </div>
+                        </article>
+                    
+                        <article class="mn-mini-item">
+                            <a href="../EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/">
+                                <img src="../../upload/2026/03/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux.png" alt="EagleOS 9.5-基于AlmaLinux 9.5深度定制优化"/>
+                            </a>
+                            <div>
+                                <h4><a href="../EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/">EagleOS 9.5-基于AlmaLinux 9.5深度定制优化</a></h4>
+                                <div class="mn-mini-meta">2025-03-11</div>
+                            </div>
+                        </article>
+                    
+                        <article class="mn-mini-item">
+                            <a href="../IPCDump-For-tracking-inter-process-communication-on-Linux/">
+                                <img src="../../upload/2026/03/IPCDump-For-tracking-inter-process-communication-on-Linux.jpg" alt="新开源工具IPCDump：用于在Linux上跟踪进程间通信"/>
+                            </a>
+                            <div>
+                                <h4><a href="../IPCDump-For-tracking-inter-process-communication-on-Linux/">新开源工具IPCDump：用于在Linux上跟踪进程间通信</a></h4>
+                                <div class="mn-mini-meta">2021-02-11</div>
+                            </div>
+                        </article>
+                    
+                        <article class="mn-mini-item">
+                            <a href="../tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/">
+                                <img src="../../upload/2026/03/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine.png" alt="Tengine-rpm 基于Tengine 3.1深度定制优化"/>
+                            </a>
+                            <div>
+                                <h4><a href="../tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/">Tengine-rpm 基于Tengine 3.1深度定制优化</a></h4>
+                                <div class="mn-mini-meta">2025-03-31</div>
+                            </div>
+                        </article>
+                    
+                </div>
             </div>
         
 
-        <div class="article-details">
-            <h2 class="article-title">在Windows 10上使用WSL安装Centos</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/">
         
         
-            <div class="article-image">
-                <img src="/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/_hu22610833e332bcee47fc25cd9fe58b20_144072_d47b6d3e3776603f969773a458da4d78.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post EagleOS 9.5-基于AlmaLinux 9.5深度定制优化"
-                        data-key="EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux" 
-                        data-hash="md5-Q6Deysu4/9nHhAQrg9c&#43;iA==">
-                
+        
+            <div class="mn-sidebar-card mn-category-card">
+                <h3>分类</h3>
+                <div class="category-label">
+                    
+                        
+                        
+                        <a href="../../categories/CyberSecurity/" style="border-left-color:#d09daa;filter:saturate(1.7);">
+                            <span>网络安全</span>
+                            <span class="category-count">3</span>
+                        </a>
+                    
+                        
+                        
+                        <a href="../../categories/SoftwareDevelopment/" style="border-left-color:#a4a6c1;filter:saturate(1.7);">
+                            <span>软件开发</span>
+                            <span class="category-count">3</span>
+                        </a>
+                    
+                        
+                        
+                        <a href="../../categories/eagle/" style="border-left-color:#d7b64d;filter:saturate(1.7);">
+                            <span>雄鹰论文</span>
+                            <span class="category-count">16</span>
+                        </a>
+                    
+                        
+                        
+                        <a href="../../categories/system/" style="border-left-color:#8bb4b2;filter:saturate(1.7);">
+                            <span>操作系统</span>
+                            <span class="category-count">9</span>
+                        </a>
+                    
+                </div>
             </div>
         
 
-        <div class="article-details">
-            <h2 class="article-title">EagleOS 9.5-基于AlmaLinux 9.5深度定制优化</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/article/EagleOS7-deeply-customized-and-optimized-based-on-Centos/">
         
         
-            <div class="article-image">
-                <img src="/article/EagleOS7-deeply-customized-and-optimized-based-on-Centos/_hu61c4a54282b6a8633461609b806dcc04_47385_94cb9d700ad3bfb6226877fbba229209.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post EagleOS 7.9-基于Centos 7.9深度定制优化"
-                        data-key="EagleOS7-deeply-customized-and-optimized-based-on-Centos" 
-                        data-hash="md5-OyBD0zOp7Mz8&#43;xiDIsZ0ug==">
-                
+            <div class="mn-sidebar-card">
+                <h3>Tags</h3>
+                <div class="mn-tag-cloud">
+                    
+                        <a class="mn-tag" href="../../tags/publickey/"># public key</a>
+                    
+                        <a class="mn-tag" href="../../tags/anti-attack/"># anti-attack</a>
+                    
+                        <a class="mn-tag" href="../../tags/reverseproxy/"># reverse proxy</a>
+                    
+                        <a class="mn-tag" href="../../tags/RSA/"># RSA</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771599067/"># 公钥</a>
+                    
+                        <a class="mn-tag" href="../../tags/gpg/"># gpg</a>
+                    
+                        <a class="mn-tag" href="../../tags/GnuPG/"># GnuPG</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771598734/"># 防攻击</a>
+                    
+                        <a class="mn-tag" href="../../tags/WAF/"># WAF</a>
+                    
+                        <a class="mn-tag" href="../../tags/Rocky/"># Rocky</a>
+                    
+                        <a class="mn-tag" href="../../tags/HTTP/"># HTTP</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771598317/"># 反向代理</a>
+                    
+                        <a class="mn-tag" href="../../tags/nginx/"># nginx</a>
+                    
+                        <a class="mn-tag" href="../../tags/tengine-rpm/"># tengine-rpm</a>
+                    
+                        <a class="mn-tag" href="../../tags/rpm/"># rpm</a>
+                    
+                        <a class="mn-tag" href="../../tags/tengine/"># tengine</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771596975/"># 探索</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771596876/"># 求知</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771596183/"># 工具</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771596084/"># 镜像文件</a>
+                    
+                        <a class="mn-tag" href="../../tags/winimage/"># winimage</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771594585/"># 网页颜色</a>
+                    
+                        <a class="mn-tag" href="../../tags/Reservation/"># Reservation</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771593258/"># 酒店运营</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771593117/"># 酒店管理</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771593017/"># 小程序</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771592908/"># 微信</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771592809/"># 酒店预订</a>
+                    
+                        <a class="mn-tag" href="../../tags/hotel/"># hotel</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771592525/"># 酒店</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771590058/"># 哥德巴赫猜想</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771589958/"># 数学家</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771589701/"># 陈景润</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771589158/"># 检索功能</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771589058/"># 网页检索</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771588959/"># 网页</a>
+                    
+                        <a class="mn-tag" href="../../tags/networktoolkit/"># network toolkit</a>
+                    
+                        <a class="mn-tag" href="../../tags/SwissArmyKnife/"># Swiss Army Knife</a>
+                    
+                        <a class="mn-tag" href="../../tags/2FA/"># 2FA</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771585450/"># 网络工具包</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771585341/"># 瑞士军刀</a>
+                    
+                        <a class="mn-tag" href="../../tags/SikkerBox/"># SikkerBox</a>
+                    
+                        <a class="mn-tag" href="../../tags/ubuntu/"># ubuntu</a>
+                    
+                        <a class="mn-tag" href="../../tags/Win2019/"># Win2019</a>
+                    
+                        <a class="mn-tag" href="../../tags/WindowsServer/"># Windows Server</a>
+                    
+                        <a class="mn-tag" href="../../tags/DVWA/"># DVWA</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771579815/"># 靶机</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771579708/"># 网络安全</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771575965/"># 数学解法</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771575866/"># 化学</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771507118/"># 网站链接</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771507027/"># 主页链接</a>
+                    
+                        <a class="mn-tag" href="../../tags/Linkbotpro/"># Linkbotpro</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771503595/"># 行列式</a>
+                    
+                        <a class="mn-tag" href="../../tags/WSL/"># WSL</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771501460/"># 跟踪进程</a>
+                    
+                        <a class="mn-tag" href="../../tags/inter-process/"># inter-process</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771501284/"># 开源工具</a>
+                    
+                        <a class="mn-tag" href="../../tags/Linux/"># Linux</a>
+                    
+                        <a class="mn-tag" href="../../tags/IPCDump/"># IPCDump</a>
+                    
+                        <a class="mn-tag" href="../../tags/ssh/"># ssh</a>
+                    
+                        <a class="mn-tag" href="../../tags/firewall/"># firewall</a>
+                    
+                        <a class="mn-tag" href="../../tags/esxi/"># esxi</a>
+                    
+                        <a class="mn-tag" href="../../tags/shell/"># shell</a>
+                    
+                        <a class="mn-tag" href="../../tags/vSphere/"># vSphere</a>
+                    
+                        <a class="mn-tag" href="../../tags/vcenter/"># vcenter</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771499559/"># 防火墙</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771499470/"># 虚拟化</a>
+                    
+                        <a class="mn-tag" href="../../tags/encryption/"># encryption</a>
+                    
+                        <a class="mn-tag" href="../../tags/Sensitive/"># Sensitive</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771495443/"># 加密卷</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771495359/"># 敏感文件</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771495309/"># 敏感数据</a>
+                    
+                        <a class="mn-tag" href="../../tags/VeraCrypt/"># VeraCrypt</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771491467/"># 粘贴</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771491401/"># 复制</a>
+                    
+                        <a class="mn-tag" href="../../tags/MacOS/"># MacOS</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771491210/"># 快捷键</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771490700/"># 拾遗</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771490600/"># 经验</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771490509/"># 网站制作</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771490434/"># 主页制作</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771489400/"># 静默安装</a>
+                    
+                        <a class="mn-tag" href="../../tags/win2000/"># win2000</a>
+                    
+                        <a class="mn-tag" href="../../tags/Win2K/"># Win2K</a>
+                    
+                        <a class="mn-tag" href="../../tags/non-participation/"># non-participation</a>
+                    
+                        <a class="mn-tag" href="../../tags/automatically/"># automatically</a>
+                    
+                        <a class="mn-tag" href="../../tags/unattended/"># unattended</a>
+                    
+                        <a class="mn-tag" href="../../tags/optimize/"># optimize</a>
+                    
+                        <a class="mn-tag" href="../../tags/customize/"># customize</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771486951/"># 无人参与</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771486850/"># 自动化</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771486783/"># 无人值守</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771486683/"># 优化</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771486592/"># 定制</a>
+                    
+                        <a class="mn-tag" href="../../tags/RedHat/"># RedHat</a>
+                    
+                        <a class="mn-tag" href="../../tags/Centos/"># Centos</a>
+                    
+                        <a class="mn-tag" href="../../tags/AlmaLinux/"># AlmaLinux</a>
+                    
+                        <a class="mn-tag" href="../../tags/EagleOS/"># EagleOS</a>
+                    
+                        <a class="mn-tag" href="../../tags/control/"># control</a>
+                    
+                        <a class="mn-tag" href="../../tags/remote/"># remote</a>
+                    
+                        <a class="mn-tag" href="../../tags/flutter/"># flutter</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771484684/"># 远程桌面</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771484575/"># 远程控制</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771484475/"># 跨平台</a>
+                    
+                        <a class="mn-tag" href="../../tags/EagleDesk/"># EagleDesk</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771481883/"># 状态栏</a>
+                    
+                        <a class="mn-tag" href="../../tags/Peer-to-Peer/"># Peer-to-Peer</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771480483/"># 组建</a>
+                    
+                        <a class="mn-tag" href="../../tags/DIY/"># DIY</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771480283/"># 网络通信</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771480183/"># 网卡</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771480083/"># 计算机网络</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771479985/"># 对等网</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771478068/"># 实例</a>
+                    
+                        <a class="mn-tag" href="../../tags/html-tag1/"># html</a>
+                    
+                        <a class="mn-tag" href="../../tags/DHTML/"># DHTML</a>
+                    
+                        <a class="mn-tag" href="../../tags/HTML/"># 动态HTML</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771346898/"># 数学竞赛</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771345815/"># 简证</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771345291/"># 数学</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771345158/"># 不等式</a>
+                    
+                        <a class="mn-tag" href="../../tags/Win10/"># Win10</a>
+                    
+                        <a class="mn-tag" href="../../tags/Windows10/"># Windows10</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771275376/"># 密码</a>
+                    
+                        <a class="mn-tag" href="../../tags/1774771275285/"># 重置密码</a>
+                    
+                </div>
             </div>
         
 
-        <div class="article-details">
-            <h2 class="article-title">EagleOS 7.9-基于Centos 7.9深度定制优化</h2>
-        </div>
-    </a>
-</article>
+    </aside>
 
-            
-                
-<article class="has-image">
-    <a href="/article/3-Steps-to-Reset-Windows-10-Password/">
-        
-        
-            <div class="article-image">
-                <img src="/article/3-Steps-to-Reset-Windows-10-Password/_hub078c052602c7a69a5f8dc45425068e8_23093_bacedcd08965f7e7b480dad35af32e87.jpg" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Win10忘记密码怎么办？3步教您重置Windows10密码"
-                        data-key="3-Steps-to-Reset-Windows-10-Password" 
-                        data-hash="md5-3&#43;41h847aZXNX5sxrTDISw==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Win10忘记密码怎么办？3步教您重置Windows10密码</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/article/How-to-Change-Copy-Paste-and-Other-Shortcuts-in-macOS/">
-        
-        
-            <div class="article-image">
-                <img src="/article/How-to-Change-Copy-Paste-and-Other-Shortcuts-in-macOS/_huc799b94b0f12bd48b3d8df6731ada197_113588_8cbad3a8672e2c6adf7c5eeb36f277ce.jpg" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post 如何在MacOS下更改复制、粘贴等快捷键 以适应Windows下使用习惯（视频）"
-                        data-key="How-to-Change-Copy-Paste-and-Other-Shortcuts-in-macOS" 
-                        data-hash="md5-qiy&#43;UmzL7GuJfh/P781&#43;JQ==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">如何在MacOS下更改复制、粘贴等快捷键 以适应Windows下使用习惯（视频）</h2>
-        </div>
-    </a>
-</article>
-
-            
         </div>
     </div>
-</aside>
+</main>
 
-     
-    
-        
-    
-
-    <footer class="site-footer">
-    <section class="copyright">
-        &copy;  2000 -  2026 <a href="https://xmyy.com/" target="_blank">虾米技术网 xmyy.com</a>
-    </section>
-    <section class="powerby">
-        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 ，主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
-    </section>
-</footer>
-<script src="/plugins/jQuery/jquery.min.js"></script>
-<script src="/plugins/bootstrap/bootstrap.min.js" async></script>
-<script src="/plugins/slick/slick.min.js"></script>
-<script src="/js/script.js"></script>
 
     
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
     
-    <div class="pswp__bg"></div>
-
-    
-    <div class="pswp__scroll-wrap">
-
-        
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                
-                
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
+    <footer>
+        <div class="bg2 p-t-40 p-b-25">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-4 p-b-20">
+                        <div class="size-h-3 flex-s-c">
+                            <a href="../../">
+                                
+                                    <img class="max-s-full" src="../../themes/magnews2/images/logo.png" alt="虾米网"/>
+                                
+                            </a>
                         </div>
+
+                        <div class="mn-footer-about">
+                            <p class="f1-s-1 cl11 p-b-16">
+                                虾米网致力于打造领先的专业的IT技术门户，汇聚人工智能、网络安全、云计算及大数据等领域的深度技术文章，从入门教程到企业级架构，海量技术文档、问答及在线课程，为CTO、架构师及开发者提供前沿视野，陪您一起成长。
+                            </p>
+
+                            <p class="f1-s-1 cl11 p-b-16">
+                                This website is dedicated to building a leading and professional IT technology portal, gathering in-depth technical articles in fields such as artificial intelligence, cloud computing, and big data. etc. 
+                            </p>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 p-b-20">
+                        <div class="size-h-3 flex-s-c">
+                            <h5 class="f1-m-7 cl0">
+                                Popular Posts
+                            </h5>
+                        </div>
+
+                        <ul>
+                            
+                                <li class="flex-wr-sb-s p-b-20">
+                                    <a href="../EagleDesk-cross-platform-remote-control-software/" class="size-w-4 wrap-pic-w hov1 trans-03">
+                                        <img src="../../upload/2026/03/EagleDesk-cross-platform-remote-control-software.jpg" alt="EagleDesk - 跨平台远程控制软件 - 现代化跨平台远程控制解决方案"/>
+                                    </a>
+
+                                    <div class="size-w-5">
+                                        <h6 class="p-b-5">
+                                            <a href="../EagleDesk-cross-platform-remote-control-software/" class="f1-s-5 cl11 hov-cl10 trans-03">
+                                                EagleDesk - 跨平台远程控制软件 - 现代化跨平台远程控制解决方案
+                                            </a>
+                                        </h6>
+
+                                        <span class="f1-s-3 cl6">
+                                            2025-08-04
+                                        </span>
+                                    </div>
+                                </li>
+                            
+                                <li class="flex-wr-sb-s p-b-20">
+                                    <a href="../SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/" class="size-w-4 wrap-pic-w hov1 trans-03">
+                                        <img src="../../upload/2026/03/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone.jpg" alt="SikkerBox-手机上的网络瑞士军刀"/>
+                                    </a>
+
+                                    <div class="size-w-5">
+                                        <h6 class="p-b-5">
+                                            <a href="../SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone/" class="f1-s-5 cl11 hov-cl10 trans-03">
+                                                SikkerBox-手机上的网络瑞士军刀
+                                            </a>
+                                        </h6>
+
+                                        <span class="f1-s-3 cl6">
+                                            2025-05-15
+                                        </span>
+                                    </div>
+                                </li>
+                            
+                                <li class="flex-wr-sb-s p-b-20">
+                                    <a href="../EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/" class="size-w-4 wrap-pic-w hov1 trans-03">
+                                        <img src="../../upload/2026/03/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux.png" alt="EagleOS 9.5-基于AlmaLinux 9.5深度定制优化"/>
+                                    </a>
+
+                                    <div class="size-w-5">
+                                        <h6 class="p-b-5">
+                                            <a href="../EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/" class="f1-s-5 cl11 hov-cl10 trans-03">
+                                                EagleOS 9.5-基于AlmaLinux 9.5深度定制优化
+                                            </a>
+                                        </h6>
+
+                                        <span class="f1-s-3 cl6">
+                                            2025-03-11
+                                        </span>
+                                    </div>
+                                </li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 p-b-20">
+                        <div class="size-h-3 flex-s-c">
+                            <h5 class="f1-m-7 cl0">
+                                Category
+                            </h5>
+                        </div>
+
+                        <ul class="m-t--12">
+                            
+                                <li class="how-bor1 p-rl-5 p-tb-10">
+                                    <a href="../../categories/CyberSecurity/" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+                                        网络安全 (3)
+                                    </a>
+                                </li>
+                            
+                                <li class="how-bor1 p-rl-5 p-tb-10">
+                                    <a href="../../categories/SoftwareDevelopment/" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+                                        软件开发 (3)
+                                    </a>
+                                </li>
+                            
+                                <li class="how-bor1 p-rl-5 p-tb-10">
+                                    <a href="../../categories/eagle/" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+                                        雄鹰论文 (16)
+                                    </a>
+                                </li>
+                            
+                                <li class="how-bor1 p-rl-5 p-tb-10">
+                                    <a href="../../categories/system/" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+                                        操作系统 (9)
+                                    </a>
+                                </li>
+                            
+                        </ul>
                     </div>
                 </div>
             </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
         </div>
 
+        <div class="bg11">
+            <div class="container size-h-4 flex-c-c p-tb-15">
+                <span class="f1-s-1 cl0 txt-center">
+                    © 2000 - 2026 <a href="../../" target="_blank">虾米网 xmyy.com</a> 版权所有 All rights reserved.
+                    
+    
+    
+
+    
+    
+
+
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <div class="btn-back-to-top" id="myBtn">
+        <span class="symbol-btn-back-to-top">
+            <span class="fas fa-angle-up"></span>
+        </span>
     </div>
 
-</div>
+
+    <script src="../../themes/magnews2/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../../themes/magnews2/vendor/bootstrap/js/popper.min.js"></script>
+    <script src="../../themes/magnews2/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../themes/magnews2/vendor/animsition/js/animsition.min.js"></script>
+    <script src="../../themes/magnews2/js/main.js"></script>
 
 
 
-            </main>
-        </div>
-        <script type="text/javascript" src="/ts/main.js" defer></script>
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" type="text/css" href="https://xmyy.com/css/googleapis-css2.css">
-
-    </body>
-</html>
+</body></html>
