@@ -78,12 +78,12 @@ function getWeatherIcon(code) {
 }
 
 
-fetch("https://ip-api.com/json/")
+fetch("https://ipapi.co/json/")
   .then(res => res.json())
   .then(loc => {
     const city = loc.city;
-    const lat = loc.lat;
-    const lon = loc.lon;
+    const lat = loc.latitude;
+    const lon = loc.longitude;
 
     
     return fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`)
@@ -336,12 +336,12 @@ function getWeatherIcon(code) {
 }
 
 
-fetch("https://ip-api.com/json/")
+fetch("https://ipapi.co/json/")
   .then(res => res.json())
   .then(loc => {
     const city = loc.city;
-    const lat = loc.lat;
-    const lon = loc.lon;
+    const lat = loc.latitude;
+    const lon = loc.longitude;
 
     
     return fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`)
@@ -2634,22 +2634,22 @@ document.addEventListener('click', function(e) {
                         </article>
                     
                         <article class="mn-mini-item">
+                            <a href="../../article/How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login/">
+                                <img src="../../upload/2026/03/How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login.jpg" alt="如何通过ssh远程登录给esxi主机防火墙添加允许ip列表（视频）"/>
+                            </a>
+                            <div>
+                                <h4><a href="../../article/How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login/">如何通过ssh远程登录给esxi主机防火墙添加允许ip列表（视频）</a></h4>
+                                <div class="mn-mini-meta">2021-01-07</div>
+                            </div>
+                        </article>
+                    
+                        <article class="mn-mini-item">
                             <a href="../../article/IPCDump-For-tracking-inter-process-communication-on-Linux/">
                                 <img src="../../upload/2026/03/IPCDump-For-tracking-inter-process-communication-on-Linux.jpg" alt="新开源工具IPCDump：用于在Linux上跟踪进程间通信"/>
                             </a>
                             <div>
                                 <h4><a href="../../article/IPCDump-For-tracking-inter-process-communication-on-Linux/">新开源工具IPCDump：用于在Linux上跟踪进程间通信</a></h4>
                                 <div class="mn-mini-meta">2021-02-11</div>
-                            </div>
-                        </article>
-                    
-                        <article class="mn-mini-item">
-                            <a href="../../article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/">
-                                <img src="../../upload/2026/03/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine.png" alt="Tengine-rpm 基于Tengine 3.1深度定制优化"/>
-                            </a>
-                            <div>
-                                <h4><a href="../../article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine/">Tengine-rpm 基于Tengine 3.1深度定制优化</a></h4>
-                                <div class="mn-mini-meta">2025-03-31</div>
                             </div>
                         </article>
                     
