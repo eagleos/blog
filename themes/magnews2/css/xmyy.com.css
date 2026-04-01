@@ -956,6 +956,61 @@ a:hover {
     background: var(--mn-accent);
 }
 
+#weatherBox {
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.weather-icon {
+  font-size: 18px;
+}
+
+.share-container {
+  position: relative;
+  display: inline-block;
+}
+.share-btn {
+  background: #1677ff;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.share-panel {
+  display: none;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 10px;
+  width: 260px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  z-index: 9999;
+}
+.share-panel.active {
+  display: flex;
+  flex-wrap: wrap;
+}
+.share-item {
+  width: 25%;
+  text-align: center;
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 12px;
+}
+.share-item svg {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 5px;
+}
+.share-item:hover {
+  opacity: 0.7;
+}
+
 @media (max-width: 1199px) {
     .mn-headline-search {
         min-width: 220px;

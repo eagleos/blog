@@ -51,240 +51,66 @@
                 <div class="content-topbar container h-100">
                     <div class="left-topbar">
                         <span class="left-topbar-item">
-<style>
-#weatherBox {
-  font-size: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.weather-icon {
-  font-size: 18px;
-}
-</style>
 <div id="weatherBox" class="left-topbar-item flex-wr-s-c">
   🌍 获取天气中...
 </div>
-<script>
-
-function getWeatherIcon(code) {
-  if (code === 0) return "☀️";
-  if (code <= 3) return "⛅";
-  if (code <= 48) return "☁️";
-  if (code <= 67) return "🌧️";
-  if (code <= 77) return "❄️";
-  if (code <= 82) return "🌦️";
-  if (code <= 99) return "⛈️";
-  return "🌈";
-}
-
-
-fetch("https://ipapi.co/json/")
-  .then(res => res.json())
-  .then(loc => {
-    const city = loc.city;
-    const lat = loc.latitude;
-    const lon = loc.longitude;
-
-    
-    return fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`)
-      .then(res => res.json())
-      .then(weather => {
-        const temp = weather.current_weather.temperature;
-        const code = weather.current_weather.weathercode;
-        const icon = getWeatherIcon(code);
-
-        document.getElementById("weatherBox").innerHTML =
-          `<span class="weather-icon">${icon}</span> ${city} ${temp}°C`;
-      });
-  })
-  .catch(err => {
-    document.getElementById("weatherBox").innerText = "天气获取失败";
-    console.error(err);
-  });
-</script>
+<script src="../../themes/magnews2/js/weather.js"></script>
 </span>
                         <a href="../../2fa/" class="left-topbar-item">在线2FA</a>
                         <a href="https://ip40.com" class="left-topbar-item" target="_blank">IP查询</a>
                         <a href="../../links/" class="left-topbar-item">友情链接</a>
                     </div>
                     <div class="right-topbar">
-<style>
-.share-container {
-  position: relative;
-  display: inline-block;
-}
-
-.share-btn {
-  background: #1677ff;
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.share-panel {
-  display: none;
-  position: absolute;
-  top: 45px;
-  left: 0;
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  padding: 10px;
-  width: 260px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  z-index: 9999;
-}
-
-.share-panel.active {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.share-item {
-  width: 25%;
-  text-align: center;
-  margin: 10px 0;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-.share-item svg {
-  width: 28px;
-  height: 28px;
-  margin-bottom: 5px;
-}
-
-.share-item:hover {
-  opacity: 0.7;
-}
-</style>
-
-
 <div class="share-container">
   <div class="share-btn" onclick="toggleShare()">🔗 分享</div>
-
-  <div class="share-panel" id="sharePanel">
-    
+  <div class="share-panel" id="sharePanel">    
     
     <div class="share-item" onclick="shareWeChat()">
       <svg viewBox="0 0 1024 1024"><path fill="#07C160" d="M512 128c-212 0-384 137-384 306 0 95 57 180 147 237l-47 129 143-71c44 12 91 18 141 18 212 0 384-137 384-306S724 128 512 128z"></path></svg>
       微信
     </div>
-
     
     <div class="share-item" onclick="openShare(&#39;weibo&#39;)">
       <svg viewBox="0 0 1024 1024"><path fill="#E6162D" d="M512 256c-141 0-256 91-256 203s115 203 256 203 256-91 256-203S653 256 512 256z"></path></svg>
       微博
     </div>
-
     
     <div class="share-item" onclick="openShare(&#39;qq&#39;)">
       <svg viewBox="0 0 1024 1024"><path fill="#12B7F5" d="M512 128c-141 0-256 115-256 256 0 97 54 181 134 224-16 57-54 103-54 103s78-12 128-60c29 7 59 11 92 11 141 0 256-115 256-256S653 128 512 128z"></path></svg>
       QQ
     </div>
-
     
     <div class="share-item" onclick="openShare(&#39;twitter&#39;)">
       <svg viewBox="0 0 1024 1024"><path fill="#1DA1F2" d="M1024 194c-38 17-78 28-120 33 43-26 76-67 91-116-40 24-84 41-131 50C826 118 772 96 713 96c-113 0-204 91-204 204 0 16 2 31 5 46-170-9-321-90-422-214-18 30-28 65-28 102 0 71 36 134 90 171-33-1-64-10-91-25v3c0 99 70 181 163 200-17 5-35 7-53 7-13 0-26-1-38-4 26 81 101 140 190 142-70 55-158 87-254 87-17 0-34-1-50-3 90 58 197 92 312 92 374 0 579-310 579-579v-26c40-29 75-65 103-106z"></path></svg>
       X
     </div>
-
     
     <div class="share-item" onclick="openShare(&#39;facebook&#39;)">
       <svg viewBox="0 0 1024 1024"><path fill="#1877F2" d="M576 1024V560h152l24-176H576V272c0-51 14-86 86-86h92V24c-16-2-72-6-136-6-135 0-228 82-228 233v133H256v176h134v464h186z"></path></svg>
       Facebook
     </div>
-
     
     <div class="share-item" onclick="openShare(&#39;telegram&#39;)">
       <svg viewBox="0 0 1024 1024"><path fill="#0088CC" d="M512 0C229 0 0 229 0 512s229 512 512 512 512-229 512-512S795 0 512 0z"></path></svg>
       Telegram
     </div>
-
     
     <div class="share-item" onclick="openShare(&#39;whatsapp&#39;)">
       <svg viewBox="0 0 1024 1024"><path fill="#25D366" d="M512 0C229 0 0 229 0 512c0 90 24 176 66 252L0 1024l269-64c73 40 157 64 243 64 283 0 512-229 512-512S795 0 512 0z"></path></svg>
       WhatsApp
     </div>
-
     
     <div class="share-item" onclick="openShare(&#39;linkedin&#39;)">
       <svg viewBox="0 0 1024 1024"><path fill="#0A66C2" d="M128 384h192v512H128zM224 128c-64 0-96 32-96 96s32 96 96 96 96-32 96-96-32-96-96-96zM384 384h184v72h3c26-48 89-98 183-98 196 0 232 129 232 296v242H800V640c0-61-1-140-85-140-85 0-98 66-98 136v260H384z"></path></svg>
       LinkedIn
     </div>
-
     
     <div class="share-item" onclick="copyLink()">
       📋<br/>复制
     </div>
-
   </div>
 </div>
-
-<script>
-function toggleShare() {
-  document.getElementById('sharePanel').classList.toggle('active');
-}
-
-function getShareData() {
-  return {
-    url: encodeURIComponent(location.href),
-    title: encodeURIComponent(document.title)
-  };
-}
-
-function openShare(type) {
-  const {url, title} = getShareData();
-  let link = '';
-
-  switch(type) {
-    case 'weibo':
-      link = `https://service.weibo.com/share/share.php?url=${url}&title=${title}`;
-      break;
-    case 'qq':
-      link = `https://connect.qq.com/widget/shareqq/index.html?url=${url}&title=${title}`;
-      break;
-    case 'twitter':
-      link = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
-      break;
-    case 'facebook':
-      link = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-      break;
-    case 'telegram':
-      link = `https://t.me/share/url?url=${url}&text=${title}`;
-      break;
-    case 'whatsapp':
-      link = `https://api.whatsapp.com/send?text=${title}%20${url}`;
-      break;
-    case 'linkedin':
-      link = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
-      break;
-  }
-
-  window.open(link, '_blank');
-}
-
-function copyLink() {
-  navigator.clipboard.writeText(location.href);
-  alert('链接已复制');
-}
-
-
-function shareWeChat() {
-  alert('微信分享请使用浏览器右上角菜单或生成二维码');
-}
-
-
-document.addEventListener('click', function(e) {
-  if (!e.target.closest('.share-container')) {
-    document.getElementById('sharePanel').classList.remove('active');
-  }
-});
-</script>
+<script src="../../themes/magnews2/js/sharelinks.js"></script>
 </div>
                 </div>
             </div>
@@ -309,236 +135,62 @@ document.addEventListener('click', function(e) {
             <div class="menu-mobile">
                 <ul class="topbar-mobile">
                     <li class="left-topbar"><span class="left-topbar-item">
-<style>
-#weatherBox {
-  font-size: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.weather-icon {
-  font-size: 18px;
-}
-</style>
 <div id="weatherBox" class="left-topbar-item flex-wr-s-c">
   🌍 获取天气中...
 </div>
-<script>
-
-function getWeatherIcon(code) {
-  if (code === 0) return "☀️";
-  if (code <= 3) return "⛅";
-  if (code <= 48) return "☁️";
-  if (code <= 67) return "🌧️";
-  if (code <= 77) return "❄️";
-  if (code <= 82) return "🌦️";
-  if (code <= 99) return "⛈️";
-  return "🌈";
-}
-
-
-fetch("https://ipapi.co/json/")
-  .then(res => res.json())
-  .then(loc => {
-    const city = loc.city;
-    const lat = loc.latitude;
-    const lon = loc.longitude;
-
-    
-    return fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`)
-      .then(res => res.json())
-      .then(weather => {
-        const temp = weather.current_weather.temperature;
-        const code = weather.current_weather.weathercode;
-        const icon = getWeatherIcon(code);
-
-        document.getElementById("weatherBox").innerHTML =
-          `<span class="weather-icon">${icon}</span> ${city} ${temp}°C`;
-      });
-  })
-  .catch(err => {
-    document.getElementById("weatherBox").innerText = "天气获取失败";
-    console.error(err);
-  });
-</script>
+<script src="../../themes/magnews2/js/weather.js"></script>
 </span></li>
                     <li class="right-topbar">
-<style>
-.share-container {
-  position: relative;
-  display: inline-block;
-}
-
-.share-btn {
-  background: #1677ff;
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.share-panel {
-  display: none;
-  position: absolute;
-  top: 45px;
-  left: 0;
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  padding: 10px;
-  width: 260px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  z-index: 9999;
-}
-
-.share-panel.active {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.share-item {
-  width: 25%;
-  text-align: center;
-  margin: 10px 0;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-.share-item svg {
-  width: 28px;
-  height: 28px;
-  margin-bottom: 5px;
-}
-
-.share-item:hover {
-  opacity: 0.7;
-}
-</style>
-
-
 <div class="share-container">
   <div class="share-btn" onclick="toggleShare()">🔗 分享</div>
-
-  <div class="share-panel" id="sharePanel">
-    
+  <div class="share-panel" id="sharePanel">    
     
     <div class="share-item" onclick="shareWeChat()">
       <svg viewBox="0 0 1024 1024"><path fill="#07C160" d="M512 128c-212 0-384 137-384 306 0 95 57 180 147 237l-47 129 143-71c44 12 91 18 141 18 212 0 384-137 384-306S724 128 512 128z"></path></svg>
       微信
     </div>
-
     
     <div class="share-item" onclick="openShare(&#39;weibo&#39;)">
       <svg viewBox="0 0 1024 1024"><path fill="#E6162D" d="M512 256c-141 0-256 91-256 203s115 203 256 203 256-91 256-203S653 256 512 256z"></path></svg>
       微博
     </div>
-
     
     <div class="share-item" onclick="openShare(&#39;qq&#39;)">
       <svg viewBox="0 0 1024 1024"><path fill="#12B7F5" d="M512 128c-141 0-256 115-256 256 0 97 54 181 134 224-16 57-54 103-54 103s78-12 128-60c29 7 59 11 92 11 141 0 256-115 256-256S653 128 512 128z"></path></svg>
       QQ
     </div>
-
     
     <div class="share-item" onclick="openShare(&#39;twitter&#39;)">
       <svg viewBox="0 0 1024 1024"><path fill="#1DA1F2" d="M1024 194c-38 17-78 28-120 33 43-26 76-67 91-116-40 24-84 41-131 50C826 118 772 96 713 96c-113 0-204 91-204 204 0 16 2 31 5 46-170-9-321-90-422-214-18 30-28 65-28 102 0 71 36 134 90 171-33-1-64-10-91-25v3c0 99 70 181 163 200-17 5-35 7-53 7-13 0-26-1-38-4 26 81 101 140 190 142-70 55-158 87-254 87-17 0-34-1-50-3 90 58 197 92 312 92 374 0 579-310 579-579v-26c40-29 75-65 103-106z"></path></svg>
       X
     </div>
-
     
     <div class="share-item" onclick="openShare(&#39;facebook&#39;)">
       <svg viewBox="0 0 1024 1024"><path fill="#1877F2" d="M576 1024V560h152l24-176H576V272c0-51 14-86 86-86h92V24c-16-2-72-6-136-6-135 0-228 82-228 233v133H256v176h134v464h186z"></path></svg>
       Facebook
     </div>
-
     
     <div class="share-item" onclick="openShare(&#39;telegram&#39;)">
       <svg viewBox="0 0 1024 1024"><path fill="#0088CC" d="M512 0C229 0 0 229 0 512s229 512 512 512 512-229 512-512S795 0 512 0z"></path></svg>
       Telegram
     </div>
-
     
     <div class="share-item" onclick="openShare(&#39;whatsapp&#39;)">
       <svg viewBox="0 0 1024 1024"><path fill="#25D366" d="M512 0C229 0 0 229 0 512c0 90 24 176 66 252L0 1024l269-64c73 40 157 64 243 64 283 0 512-229 512-512S795 0 512 0z"></path></svg>
       WhatsApp
     </div>
-
     
     <div class="share-item" onclick="openShare(&#39;linkedin&#39;)">
       <svg viewBox="0 0 1024 1024"><path fill="#0A66C2" d="M128 384h192v512H128zM224 128c-64 0-96 32-96 96s32 96 96 96 96-32 96-96-32-96-96-96zM384 384h184v72h3c26-48 89-98 183-98 196 0 232 129 232 296v242H800V640c0-61-1-140-85-140-85 0-98 66-98 136v260H384z"></path></svg>
       LinkedIn
     </div>
-
     
     <div class="share-item" onclick="copyLink()">
       📋<br/>复制
     </div>
-
   </div>
 </div>
-
-<script>
-function toggleShare() {
-  document.getElementById('sharePanel').classList.toggle('active');
-}
-
-function getShareData() {
-  return {
-    url: encodeURIComponent(location.href),
-    title: encodeURIComponent(document.title)
-  };
-}
-
-function openShare(type) {
-  const {url, title} = getShareData();
-  let link = '';
-
-  switch(type) {
-    case 'weibo':
-      link = `https://service.weibo.com/share/share.php?url=${url}&title=${title}`;
-      break;
-    case 'qq':
-      link = `https://connect.qq.com/widget/shareqq/index.html?url=${url}&title=${title}`;
-      break;
-    case 'twitter':
-      link = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
-      break;
-    case 'facebook':
-      link = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-      break;
-    case 'telegram':
-      link = `https://t.me/share/url?url=${url}&text=${title}`;
-      break;
-    case 'whatsapp':
-      link = `https://api.whatsapp.com/send?text=${title}%20${url}`;
-      break;
-    case 'linkedin':
-      link = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
-      break;
-  }
-
-  window.open(link, '_blank');
-}
-
-function copyLink() {
-  navigator.clipboard.writeText(location.href);
-  alert('链接已复制');
-}
-
-
-function shareWeChat() {
-  alert('微信分享请使用浏览器右上角菜单或生成二维码');
-}
-
-
-document.addEventListener('click', function(e) {
-  if (!e.target.closest('.share-container')) {
-    document.getElementById('sharePanel').classList.remove('active');
-  }
-});
-</script>
+<script src="../../themes/magnews2/js/sharelinks.js"></script>
 </li>
                 </ul>
                 <ul class="main-menu-m">
@@ -2727,22 +2379,22 @@ ubuntu1804.exe
                         </article>
                     
                         <article class="mn-mini-item">
+                            <a href="../Programming-Security-from-Playing-with-the-Target-DVWA/">
+                                <img src="../../upload/2026/03/Programming-Security-from-Playing-with-the-Target-DVWA1.jpg" alt="从玩转靶机DVWA看程序设计安全"/>
+                            </a>
+                            <div>
+                                <h4><a href="../Programming-Security-from-Playing-with-the-Target-DVWA/">从玩转靶机DVWA看程序设计安全</a></h4>
+                                <div class="mn-mini-meta">2020-11-16</div>
+                            </div>
+                        </article>
+                    
+                        <article class="mn-mini-item">
                             <a href="../EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/">
                                 <img src="../../upload/2026/03/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux.png" alt="EagleOS 9.5-基于AlmaLinux 9.5深度定制优化"/>
                             </a>
                             <div>
                                 <h4><a href="../EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/">EagleOS 9.5-基于AlmaLinux 9.5深度定制优化</a></h4>
                                 <div class="mn-mini-meta">2025-03-11</div>
-                            </div>
-                        </article>
-                    
-                        <article class="mn-mini-item">
-                            <a href="../IPCDump-For-tracking-inter-process-communication-on-Linux/">
-                                <img src="../../upload/2026/03/IPCDump-For-tracking-inter-process-communication-on-Linux.jpg" alt="新开源工具IPCDump：用于在Linux上跟踪进程间通信"/>
-                            </a>
-                            <div>
-                                <h4><a href="../IPCDump-For-tracking-inter-process-communication-on-Linux/">新开源工具IPCDump：用于在Linux上跟踪进程间通信</a></h4>
-                                <div class="mn-mini-meta">2021-02-11</div>
                             </div>
                         </article>
                     
