@@ -11,7 +11,7 @@ function getWeatherIcon(code) {
 }
 
 // 获取IP定位
-fetch("https://xmstc.com/api/ipinfo")
+fetch("https://xmstc.com:8443/api/ipinfo")
   .then(res => res.json())
   .then(loc => {
     const city = loc.city;
