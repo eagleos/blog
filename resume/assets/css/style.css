@@ -96,7 +96,9 @@ strong {
 body {
   background-color: #f7f7ff !important;
   font-family: "mouse-300", Arial, Helvetica, sans-serif;
-  color: #6A6A6A; }
+  color: #6A6A6A;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 
 
@@ -222,11 +224,9 @@ body {
 .profile-box {
   /*width: 1050px;*/
   width: 793px;
-  margin: 30px auto;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  margin: 24px auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   background-color: #FFF;
-  /*padding-left: 40px;*/
-  /*padding-right: 20px; */
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -238,13 +238,13 @@ body {
       padding: 0px;
       padding-right: 10px; } }
   .profile-box .left-side {
-    /*background-color: #00ab9f;*/
     background-color: #4682bf;
     color: #FFF;
-    padding: 40px 20px;
+    padding: 18px 16px;
     padding-top: 10px;
-    /*height: 1125px;*/
-    height: 1525px;
+    /* 取消固定高度，避免打印分页错乱 */
+    height: auto;
+    min-height: 100%;
   }
     .profile-box .left-side .profile-info {
       padding: 5px;
@@ -329,9 +329,11 @@ body {
   } }
 
 .profile-box .rit-cover {
-  padding: 20px 5px;
-  padding-left: 1px;
-  height: 1525px;
+  padding: 16px 6px;
+  padding-left: 2px;
+  /* 取消固定高度，避免打印分页错乱 */
+  height: auto;
+  min-height: 100%;
 }
 
 .rit-cover .hotkey {
@@ -470,17 +472,15 @@ body {
 .all-side .service {
   font-size: 1.0rem;
   width: 98%;
-  /*text-align: justify;*/
-  /*text-indent: 15px;*/
   margin-left: 5px;
-  padding: 5px 0px; }
+  padding: 3px 0px; }
 
 .position-relative {
   position: relative !important;
 }
 .pb-5,
 .py-5 {
-  padding-bottom: 1rem !important;
+  padding-bottom: 0.6rem !important;
 }
 .mb-2,
 .my-2 {
@@ -491,7 +491,7 @@ body {
 }
 
 .resume-timeline {
-  padding-left: 2rem;
+  padding-left: 1.6rem;
 }
 
 .resume-timeline:before {
@@ -509,11 +509,11 @@ body {
   content: "";
   display: inline-block;
   position: absolute;
-  left: -32px;
-  top: 3px;
-  width: 15px;
-  height: 15px;
-  border: 4px solid #58677c;
+  left: -28px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border: 3px solid #58677c;
   background: white;
   border-radius: 50%;
 }
@@ -618,126 +618,90 @@ body {
   font-size: 1rem; }
 
 @media print {
+  @page {
+    size: A4;
+    margin: 10mm 10mm 12mm 10mm;
+  }
+
+  html, body {
+    width: 210mm;
+    background: #fff !important;
+  }
+
+  body {
+    color: #000 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* 去掉网页观感的阴影/背景，打印更干净 */
+  .overcover,
+  .container-fluid,
+  .container {
+    background: #fff !important;
+  }
+
   a {
+    color: #000 !important;
     text-decoration: none !important;
   }
-.container {
-  max-width: 793px;
-}
-.profile-box {
-  width: 793px;
-  margin: 30px auto;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  background-color: #FFF;
-  padding-left: 10px;
-  padding-right: 10px;
-}  
+
+  .profile-box {
+    width: auto;
+    margin: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  /* 取消固定高度，防止分页错乱 */
+  .profile-box .left-side,
   .profile-box .rit-cover {
-    padding: 20px 5px;
-    padding-left: 1px;
-    height: 1525px;
+    height: auto !important;
+    min-height: auto !important;
   }
-  .rit-cover .rit-titl {
-    padding: 12px;
-    padding-left: 5px;
-    border-bottom: 2px solid #CCC;
-    font-size: 1.2rem; }
-  .rit-cover .rit-titl i {
-    font-size: 18px;
-    margin-right: 5px; }
-  .rit-cover .about {
-    font-size: 1.0rem;
-    text-align: justify;
-    /*text-indent: 15px;*/
-    margin-left: 5px;
-    padding: 5px 0px; }
-  .rit-cover .work-exp {
-    padding: 5px 0px;
-  }
-  .rit-cover .work-exp h6 {
-    font-size: 1.1rem;
-    margin-bottom: 0px; }
-  .rit-cover .work-exp h6 span {
-    float: right;
-    font-size: 1.0rem; }
-  .rit-cover .work-exp i {
-    font-size: 1.1rem; }
-  .rit-cover .work-exp ul {
-    padding: 5px 0px; }
-  .rit-cover .work-exp ul li {
-    font-size: 1.1rem;
-    padding-left: 5px; }
-  .rit-cover .work-exp ul li i {
-    margin-right: 5px; }
 
-  .rit-cover .last-exp {
-    padding: 5px 0px;
-    /*position: relative;*/
-    /*z-index: 1;*/
+  /* 更适合A4的字号与行距 */
+  .profile-box .left-side .contact-box .detail,
+  .profile-box .left-side .refer-cov p,
+  .rit-cover .about,
+  .rit-cover .work-exp ul li,
+  .all-side .service,
+  .resume-timeline-item-desc ul li {
+    font-size: 11px !important;
+    line-height: 1.35 !important;
   }
-  .rit-cover .last-exp h6 {
-    font-size: 1.1rem;
-    margin-bottom: 0px; }
-  .rit-cover .last-exp h6 span {
-    float: right;
-    font-size: 1.0rem; }
-  .rit-cover .last-exp i {
-    font-size: 1.1rem; }
-  .rit-cover .last-exp ul {
-    padding: 5px 0px; }
-  .rit-cover .last-exp ul li {
-    font-size: 1.1rem;
-    padding-left: 5px; }
-  .rit-cover .last-exp ul li i {
-    margin-right: 5px; }
 
+  .profile-box .left-side .ltitle,
+  .rit-cover .rit-titl,
+  .all-side .all-titl {
+    font-size: 12px !important;
+    padding: 6px 0 !important;
+  }
+
+  /* 打印时减少彩色块占比：左侧改浅色字+深色背景保持层次 */
   .profile-box .left-side {
-    /*background-color: #00ab9f;*/
-    background-color: #4682bf;
-    color: #FFF;
-    padding: 40px 20px;
-    padding-top: 10px;
-    /*height: 1125px;*/
-    height: 1525px;
+    background-color: #2f5f93 !important;
+    color: #fff !important;
+    padding: 10px 10px !important;
   }
 
-  .pb-5,
-  .py-5 {
-    padding-bottom: 1rem !important;
+  /* 避免关键区块被拆页 */
+  h2, h3, h4,
+  .service,
+  .resume-timeline-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
-  .profile-box .left-side .article-cov {
-    padding: 8px; }
-  .profile-box .left-side .article-cov p {
-    font-size: 1.0rem; }
-
-  .profile-box .left-side .refer-cov {
-    padding: 8px; }
-  .profile-box .left-side .refer-cov b {
-    font-size: 1.3rem; }
-  .profile-box .left-side .refer-cov p {
-    font-size: 1.0rem; }
-  .profile-box .left-side .refer-cov span {
-    font-size: .8rem; }
-
-.profile-box .all-side {
-  width: 993px;
-  padding: 20px 20px;
+  /* 时间轴竖线/圆点打印更克制 */
+  .resume-timeline:before {
+    background: #999 !important;
+  }
+  .resume-timeline-item:before {
+    border-color: #666 !important;
+  }
 }
-.all-side .all-titl {
-  padding: 15px;
-  padding-left: 5px;
-  border-bottom: 2px solid #CCC;
-  font-size: 1.2rem; }
-.all-side .all-titl i {
-  font-size: 18px;
-  margin-right: 5px; }
-.all-side .service {
-  font-size: 1.0rem;
-  width: 98%;
-  margin-left: 5px;
-  padding: 5px 0px; }
-}
+
 
 @media screen and (max-width: 1024px) {
       .left-co, .rt-div, .all-co {
