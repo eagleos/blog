@@ -62,6 +62,11 @@
                 </url>
             
                 <url>
+                    <loc>/article/The-mainstream-method-of-app-development</loc>
+                    <lastmod>2022-02-09T20:34:02+08:00</lastmod>
+                </url>
+            
+                <url>
                     <loc>/article/EagleOS7-deeply-customized-and-optimized-based-on-Centos</loc>
                     <lastmod>2021-05-23T16:05:30+08:00</lastmod>
                 </url>
@@ -288,6 +293,11 @@
         
         
         
+            
+                <url>
+                    <loc>/tags/OpenSCA</loc>
+                    <lastmod>2026-07-02T20:46:39+08:00</lastmod>
+                </url>
             
                 <url>
                     <loc>/tags/sql</loc>

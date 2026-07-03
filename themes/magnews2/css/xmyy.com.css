@@ -732,24 +732,260 @@ a:hover {
 .mn-prose {
     color: var(--mn-text);
     line-height: 1.9;
+    font-size: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
-.mn-prose img {
-    max-width: 100%;
-    border-radius: 16px;
+.mn-prose > *:first-child {
+    margin-top: 0;
 }
 
-.mn-prose pre,
+/* Headings */
+.mn-prose h1,
+.mn-prose h2,
+.mn-prose h3,
+.mn-prose h4,
+.mn-prose h5,
+.mn-prose h6 {
+    font-family: "Lato", "Roboto", sans-serif;
+    color: var(--mn-dark);
+    font-weight: 700;
+    line-height: 1.35;
+    margin-top: 1.8em;
+    margin-bottom: 0.6em;
+}
+
+.mn-prose h1 {
+    font-size: 2em;
+    padding-bottom: 0.3em;
+    border-bottom: 2px solid var(--mn-border);
+}
+
+.mn-prose h2 {
+    font-size: 1.6em;
+    padding-bottom: 0.25em;
+    border-bottom: 1px solid var(--mn-border);
+}
+
+.mn-prose h3 {
+    font-size: 1.35em;
+}
+
+.mn-prose h4 {
+    font-size: 1.15em;
+}
+
+.mn-prose h5 {
+    font-size: 1em;
+}
+
+.mn-prose h6 {
+    font-size: 0.9em;
+    color: var(--mn-muted);
+}
+
+/* Paragraphs & links */
+.mn-prose p {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.mn-prose a {
+    color: var(--mn-accent);
+    text-decoration: underline;
+}
+
+.mn-prose a:hover {
+    color: var(--mn-accent-dark);
+}
+
+/* Lists */
+.mn-prose ul,
+.mn-prose ol {
+    padding-left: 1.8em;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.mn-prose ul {
+    list-style-type: disc;
+}
+
+.mn-prose ul ul {
+    list-style-type: circle;
+}
+
+.mn-prose ul ul ul {
+    list-style-type: square;
+}
+
+.mn-prose ol {
+    list-style-type: decimal;
+}
+
+.mn-prose ol ol {
+    list-style-type: lower-alpha;
+}
+
+.mn-prose ol ol ol {
+    list-style-type: lower-roman;
+}
+
+.mn-prose ul ul,
+.mn-prose ol ol,
+.mn-prose ul ol,
+.mn-prose ol ul {
+    margin-bottom: 0;
+}
+
+.mn-prose li {
+    margin-bottom: 0.3em;
+    line-height: 1.8;
+    list-style-type: inherit;
+}
+
+.mn-prose li > p {
+    margin-bottom: 0.5em;
+}
+
+/* Task lists */
+.mn-prose li:has(> input[type="checkbox"]) {
+    list-style: none !important;
+    margin-left: -1.5em;
+}
+
+.mn-prose li > input[type="checkbox"] {
+    margin-right: 0.5em;
+    vertical-align: middle;
+    display: inline !important;
+}
+
+/* Blockquote */
+.mn-prose blockquote {
+    margin: 1em 0;
+    padding: 12px 20px;
+    border-left: 4px solid var(--mn-accent);
+    background: #f6f8fb;
+    border-radius: 0 12px 12px 0;
+    color: var(--mn-muted);
+}
+
+.mn-prose blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Inline code */
 .mn-prose code {
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.88em;
+    padding: 2px 6px;
+    border-radius: 6px;
+    background: #f0f2f5;
+    color: #c7254e;
 }
 
+/* Code blocks */
 .mn-prose pre {
+    position: relative;
     background: #10151c;
     color: #f9fbff;
     border-radius: 16px;
     padding: 18px 22px;
     overflow-x: auto;
+    margin: 1em 0;
+    line-height: 1.6;
+}
+
+.mn-prose pre code {
+    font-size: 0.9em;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    color: inherit;
+}
+
+/* Tables */
+.mn-prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    overflow-x: auto;
+    display: block;
+    font-size: 0.95em;
+}
+
+.mn-prose table th,
+.mn-prose table td {
+    padding: 10px 14px;
+    border: 1px solid var(--mn-border);
+    text-align: left;
+}
+
+.mn-prose table th {
+    background: #f6f8fb;
+    font-weight: 700;
+    color: var(--mn-dark);
+}
+
+.mn-prose table tr:nth-child(even) {
+    background: #fafbfc;
+}
+
+/* Horizontal rule */
+.mn-prose hr {
+    border: 0;
+    border-top: 2px solid var(--mn-border);
+    margin: 2em 0;
+}
+
+/* Images */
+.mn-prose img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    margin: 1em 0;
+}
+
+/* Task lists */
+.mn-prose .task-list-item {
+    list-style: none;
+    margin-left: -1.5em;
+}
+
+.mn-prose .task-list-item input[type="checkbox"] {
+    margin-right: 0.5em;
+}
+
+/* Code copy button */
+.mn-code-copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 2;
+    font-family: "Roboto", sans-serif;
+}
+
+.mn-code-copy-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.mn-code-copy-btn.copied {
+    background: var(--mn-accent);
+    border-color: var(--mn-accent);
+    color: #fff;
 }
 
 .mn-article-footer {
