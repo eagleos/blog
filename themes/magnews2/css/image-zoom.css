@@ -1,0 +1,350 @@
+/* 图片放大功能样式 */
+:root {
+    --zoom-transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    --zoom-overlay-bg: rgba(0, 0, 0, 0.85);
+    --zoom-border-radius: 8px;
+    --zoom-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --zoom-icon-size: 24px;
+}
+
+/* 文章内容区域的图片样式 */
+.mn-prose img {
+    cursor: zoom-in;
+    transition: var(--zoom-transition);
+    border-radius: var(--zoom-border-radius);
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mn-prose img:hover {
+    transform: scale(1.02);
+    box-shadow: var(--zoom-shadow);
+}
+
+/* 放大模态框覆盖层 */
+.image-zoom-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--zoom-overlay-bg);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--zoom-transition);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.image-zoom-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 放大的图片容器 */
+.image-zoom-container {
+    position: relative;
+    max-width: 95vw;
+    max-height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.8);
+    transition: var(--zoom-transition);
+}
+
+.image-zoom-overlay.active .image-zoom-container {
+    transform: scale(1);
+}
+
+/* 放大的图片 */
+.image-zoom-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: var(--zoom-border-radius);
+    box-shadow: var(--zoom-shadow);
+    cursor: zoom-out;
+    transition: var(--zoom-transition);
+}
+
+/* 关闭按钮 */
+.image-zoom-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    transition: var(--zoom-transition);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.image-zoom-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+/* 图片信息面板 */
+.image-zoom-info {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 12px 16px;
+    border-radius: var(--zoom-border-radius);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: var(--zoom-transition);
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.image-zoom-overlay.active .image-zoom-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.image-zoom-info .image-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 4px 0;
+}
+
+.image-zoom-info .image-meta {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+/* 导航按钮（如果有多张图片） */
+.image-zoom-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    transition: var(--zoom-transition);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0.7;
+}
+
+.image-zoom-nav:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.image-zoom-nav.prev {
+    left: -80px;
+}
+
+.image-zoom-nav.next {
+    right: -80px;
+}
+
+/* 缩放控制按钮 */
+.image-zoom-controls {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    display: flex;
+    gap: 8px;
+}
+
+.image-zoom-control-btn {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: var(--zoom-transition);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.image-zoom-control-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+/* 加载状态 */
+.image-zoom-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 16px;
+}
+
+.image-zoom-loading::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    margin-left: 10px;
+    animation: zoom-loading-spin 1s linear infinite;
+}
+
+@keyframes zoom-loading-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .image-zoom-container {
+        max-width: 98vw;
+        max-height: 98vh;
+    }
+    
+    .image-zoom-close {
+        top: -40px;
+        right: -10px;
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+    
+    .image-zoom-info {
+        bottom: -50px;
+        padding: 10px 12px;
+    }
+    
+    .image-zoom-nav {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+    
+    .image-zoom-nav.prev {
+        left: -60px;
+    }
+    
+    .image-zoom-nav.next {
+        right: -60px;
+    }
+    
+    .image-zoom-controls {
+        top: -40px;
+    }
+    
+    .image-zoom-control-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-zoom-nav.prev {
+        left: 10px;
+    }
+    
+    .image-zoom-nav.next {
+        right: 10px;
+    }
+    
+    .image-zoom-close {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .image-zoom-controls {
+        top: 10px;
+        left: 10px;
+    }
+}
+
+/* 触摸设备优化 */
+@media (pointer: coarse) {
+    .mn-prose img:hover {
+        transform: none;
+    }
+    
+    .image-zoom-close,
+    .image-zoom-nav,
+    .image-zoom-control-btn {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* 减少动效模式 */
+@media (prefers-reduced-motion: reduce) {
+    .mn-prose img,
+    .image-zoom-overlay,
+    .image-zoom-container,
+    .image-zoom-img,
+    .image-zoom-close,
+    .image-zoom-info,
+    .image-zoom-nav,
+    .image-zoom-control-btn {
+        transition: none;
+    }
+}
+
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark) {
+    .mn-prose img {
+        box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* 高对比度模式 */
+@media (prefers-contrast: high) {
+    .image-zoom-close,
+    .image-zoom-nav,
+    .image-zoom-control-btn {
+        background: rgba(0, 0, 0, 0.8);
+        border-color: white;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .image-zoom-overlay {
+        display: none !important;
+    }
+}

@@ -3253,22 +3253,22 @@
                         </article>
                     
                         <article class="mn-mini-item">
-                            <a href="../Programming-Security-from-Playing-with-the-Target-DVWA/">
-                                <img src="../../upload/2026/03/Programming-Security-from-Playing-with-the-Target-DVWA1.jpg" alt="从玩转靶机DVWA看程序设计安全"/>
-                            </a>
-                            <div>
-                                <h4><a href="../Programming-Security-from-Playing-with-the-Target-DVWA/">从玩转靶机DVWA看程序设计安全</a></h4>
-                                <div class="mn-mini-meta">2020-11-16</div>
-                            </div>
-                        </article>
-                    
-                        <article class="mn-mini-item">
                             <a href="../EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/">
                                 <img src="../../upload/2026/03/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux.png" alt="EagleOS 9.5-基于AlmaLinux 9.5深度定制优化"/>
                             </a>
                             <div>
                                 <h4><a href="../EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux/">EagleOS 9.5-基于AlmaLinux 9.5深度定制优化</a></h4>
                                 <div class="mn-mini-meta">2025-03-11</div>
+                            </div>
+                        </article>
+                    
+                        <article class="mn-mini-item">
+                            <a href="../Programming-Security-from-Playing-with-the-Target-DVWA/">
+                                <img src="../../upload/2026/03/Programming-Security-from-Playing-with-the-Target-DVWA1.jpg" alt="从玩转靶机DVWA看程序设计安全"/>
+                            </a>
+                            <div>
+                                <h4><a href="../Programming-Security-from-Playing-with-the-Target-DVWA/">从玩转靶机DVWA看程序设计安全</a></h4>
+                                <div class="mn-mini-meta">2020-11-16</div>
                             </div>
                         </article>
                     
@@ -3663,8 +3663,15 @@
     <script src="../../themes/magnews2/vendor/animsition/js/animsition.min.js"></script>
     <script src="../../themes/magnews2/js/main.js"></script>
 
+
+
 <link rel="stylesheet" href="../../themes/magnews2/vendor/atom-one-dark.min.css"/>
 <script src="../../themes/magnews2/vendor/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="../../themes/magnews2/css/image-zoom.css"/>
+<script src="../../themes/magnews2/js/image-zoom.js"></script>
+
 <script>
 (function() {
     function initCodeBlocks() {
@@ -3695,10 +3702,38 @@
         });
     }
 
+    function initImageZoomForPost() {
+        
+        if (window.ImageZoom && !window.imageZoomInstance) {
+            window.imageZoomInstance = new window.ImageZoom({
+                selector: '.mn-prose img',
+                enableKeyboard: true,
+                enableTouch: true,
+                enableDrag: true,
+                maxZoomLevel: 3,
+                minZoomLevel: 1,
+                zoomStep: 0.5,
+                showInfo: true
+            });
+        } else if (window.imageZoomInstance) {
+            
+            window.imageZoomInstance.refresh();
+        }
+    }
+
+    
     if (typeof hljs !== 'undefined') {
         initCodeBlocks();
     } else {
         window.addEventListener('load', initCodeBlocks);
+    }
+
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initImageZoomForPost);
+    } else {
+        
+        setTimeout(initImageZoomForPost, 100);
     }
 })();
 </script>

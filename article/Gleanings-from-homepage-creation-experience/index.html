@@ -3735,8 +3735,15 @@ window.top.location.href=window.location.href;
     <script src="../../themes/magnews2/vendor/animsition/js/animsition.min.js"></script>
     <script src="../../themes/magnews2/js/main.js"></script>
 
+
+
 <link rel="stylesheet" href="../../themes/magnews2/vendor/atom-one-dark.min.css"/>
 <script src="../../themes/magnews2/vendor/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="../../themes/magnews2/css/image-zoom.css"/>
+<script src="../../themes/magnews2/js/image-zoom.js"></script>
+
 <script>
 (function() {
     function initCodeBlocks() {
@@ -3767,10 +3774,38 @@ window.top.location.href=window.location.href;
         });
     }
 
+    function initImageZoomForPost() {
+        
+        if (window.ImageZoom && !window.imageZoomInstance) {
+            window.imageZoomInstance = new window.ImageZoom({
+                selector: '.mn-prose img',
+                enableKeyboard: true,
+                enableTouch: true,
+                enableDrag: true,
+                maxZoomLevel: 3,
+                minZoomLevel: 1,
+                zoomStep: 0.5,
+                showInfo: true
+            });
+        } else if (window.imageZoomInstance) {
+            
+            window.imageZoomInstance.refresh();
+        }
+    }
+
+    
     if (typeof hljs !== 'undefined') {
         initCodeBlocks();
     } else {
         window.addEventListener('load', initCodeBlocks);
+    }
+
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initImageZoomForPost);
+    } else {
+        
+        setTimeout(initImageZoomForPost, 100);
     }
 })();
 </script>

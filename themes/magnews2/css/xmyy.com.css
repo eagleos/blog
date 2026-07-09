@@ -50,6 +50,44 @@ a:hover {
     color: #ccc;
 }
 
+/* 代码复制按钮样式 */
+.mn-code-copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    z-index: 10;
+}
+
+.mn-code-copy-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.mn-code-copy-btn.copied {
+    background: rgba(46, 125, 50, 0.2);
+    border-color: rgba(76, 175, 80, 0.4);
+    color: #4caf50;
+}
+
+.mn-code-copy-btn svg {
+    width: 14px;
+    height: 14px;
+}
+}
+
 .left-topbar-item:hover,
 .right-topbar a:hover {
     color: var(--mn-accent);
