@@ -10,11 +10,11 @@
         <updated>2026-07-09T00:27:03+08:00</updated>
 
         
-            <id>https://xmyy.com</id>
+            <id>https://www.xmyy.com</id>
         
         
-            <link rel="alternate" type="text/html" href="https://xmyy.com"/>
-            <link rel="self" type="application/atom+xml" href="https://xmyy.com/atom.xml"/>
+            <link rel="alternate" type="text/html" href="https://www.xmyy.com"/>
+            <link rel="self" type="application/atom+xml" href="https://www.xmyy.com/atom.xml"/>
         
         <rights>Copyright © 2026, 虾米云栈</rights>
         <generator uri="https://go-sonic.org/" version="v1.0.0">Sonic</generator>
@@ -24,12 +24,12 @@
                     <title><![CDATA[LLM 基础：从 Transformer 到大语言模型的核心原理]]></title>
                     <link rel="alternate" type="text/html"
                           href="/article/The-core-principles-of-Transformer-to-large-language-models"/>
-                    <id>tag:https://xmyy.com,2026-05-29:The-core-principles-of-Transformer-to-large-language-models</id>
+                    <id>tag:https://www.xmyy.com,2026-05-29:The-core-principles-of-Transformer-to-large-language-models</id>
                     <published>2026-05-29T23:01:06+08:00</published>
                     <updated>2026-07-06T23:03:15+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
@@ -42,12 +42,12 @@
                     <title><![CDATA[LLM提示词注入攻防全解析：真实事故案例与防御实践]]></title>
                     <link rel="alternate" type="text/html"
                           href="/article/analysis-of-LLM-prompt-injection-provides-comprehensive-offense-and-defense"/>
-                    <id>tag:https://xmyy.com,2026-04-14:analysis-of-LLM-prompt-injection-provides-comprehensive-offense-and-defense</id>
+                    <id>tag:https://www.xmyy.com,2026-04-14:analysis-of-LLM-prompt-injection-provides-comprehensive-offense-and-defense</id>
                     <published>2026-04-14T21:17:20+08:00</published>
                     <updated>2026-07-06T21:18:19+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
@@ -60,12 +60,12 @@
                     <title><![CDATA[macOS Tahoe 安装及配置 VeraCrypt 详细版]]></title>
                     <link rel="alternate" type="text/html"
                           href="/article/Detailed-version-of-installing-and-configuring-VeraCrypt-on-macOS-Tahoe"/>
-                    <id>tag:https://xmyy.com,2025-12-26:Detailed-version-of-installing-and-configuring-VeraCrypt-on-macOS-Tahoe</id>
+                    <id>tag:https://www.xmyy.com,2025-12-26:Detailed-version-of-installing-and-configuring-VeraCrypt-on-macOS-Tahoe</id>
                     <published>2025-12-26T16:55:37+08:00</published>
                     <updated>2026-07-01T16:56:43+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
@@ -78,12 +78,12 @@
                     <title><![CDATA[Kubernetes (K8s) 可观测性Observability]]></title>
                     <link rel="alternate" type="text/html"
                           href="/article/Kubernetes-Observability"/>
-                    <id>tag:https://xmyy.com,2025-09-23:Kubernetes-Observability</id>
+                    <id>tag:https://www.xmyy.com,2025-09-23:Kubernetes-Observability</id>
                     <published>2025-09-23T00:24:11+08:00</published>
                     <updated>2026-07-09T00:27:03+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
@@ -96,12 +96,12 @@
                     <title><![CDATA[EagleDesk - 跨平台远程控制软件 - 现代化跨平台远程控制解决方案]]></title>
                     <link rel="alternate" type="text/html"
                           href="/article/EagleDesk-cross-platform-remote-control-software"/>
-                    <id>tag:https://xmyy.com,2025-08-04:EagleDesk-cross-platform-remote-control-software</id>
+                    <id>tag:https://www.xmyy.com,2025-08-04:EagleDesk-cross-platform-remote-control-software</id>
                     <published>2025-08-04T22:08:00+08:00</published>
                     <updated>2025-08-04T22:08:00+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
@@ -114,12 +114,12 @@
                     <title><![CDATA[微信小程序：酒店预订管理系统]]></title>
                     <link rel="alternate" type="text/html"
                           href="/article/WeChat-Mini-Program-Hotel-Reservation-Management-System"/>
-                    <id>tag:https://xmyy.com,2025-07-17:WeChat-Mini-Program-Hotel-Reservation-Management-System</id>
+                    <id>tag:https://www.xmyy.com,2025-07-17:WeChat-Mini-Program-Hotel-Reservation-Management-System</id>
                     <published>2025-07-17T21:35:00+08:00</published>
                     <updated>2025-07-17T21:35:00+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
@@ -132,12 +132,12 @@
                     <title><![CDATA[SikkerBox-手机上的网络瑞士军刀]]></title>
                     <link rel="alternate" type="text/html"
                           href="/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone"/>
-                    <id>tag:https://xmyy.com,2025-05-15:SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone</id>
+                    <id>tag:https://www.xmyy.com,2025-05-15:SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone</id>
                     <published>2025-05-15T13:06:00+08:00</published>
                     <updated>2025-05-15T13:06:00+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
@@ -150,12 +150,12 @@
                     <title><![CDATA[SikkerBox-Cyber Swiss Army Knife on your cell phone]]></title>
                     <link rel="alternate" type="text/html"
                           href="/en/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone"/>
-                    <id>tag:https://xmyy.com,2025-05-15:SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone</id>
+                    <id>tag:https://www.xmyy.com,2025-05-15:SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone</id>
                     <published>2025-05-15T13:06:00+08:00</published>
                     <updated>2025-05-15T13:06:00+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
@@ -168,12 +168,12 @@
                     <title><![CDATA[Tengine-rpm 基于Tengine 3.1深度定制优化]]></title>
                     <link rel="alternate" type="text/html"
                           href="/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine"/>
-                    <id>tag:https://xmyy.com,2025-03-31:tengine-rpm-deeply-customized-and-optimized-based-on-Tengine</id>
+                    <id>tag:https://www.xmyy.com,2025-03-31:tengine-rpm-deeply-customized-and-optimized-based-on-Tengine</id>
                     <published>2025-03-31T23:59:00+08:00</published>
                     <updated>2025-03-31T23:59:00+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
@@ -186,12 +186,12 @@
                     <title><![CDATA[Tengine-rpm deeply customized and optimized based on Tengine]]></title>
                     <link rel="alternate" type="text/html"
                           href="/en/article/tengine-rpm-deeply-customized-and-optimized-based-on-Tengine"/>
-                    <id>tag:https://xmyy.com,2025-03-31:tengine-rpm-deeply-customized-and-optimized-based-on-Tengine</id>
+                    <id>tag:https://www.xmyy.com,2025-03-31:tengine-rpm-deeply-customized-and-optimized-based-on-Tengine</id>
                     <published>2025-03-31T23:59:00+08:00</published>
                     <updated>2025-03-31T23:59:00+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
@@ -204,12 +204,12 @@
                     <title><![CDATA[EagleOS 9.5-基于AlmaLinux 9.5深度定制优化]]></title>
                     <link rel="alternate" type="text/html"
                           href="/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux"/>
-                    <id>tag:https://xmyy.com,2025-03-11:EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux</id>
+                    <id>tag:https://www.xmyy.com,2025-03-11:EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux</id>
                     <published>2025-03-11T15:46:06+08:00</published>
                     <updated>2025-03-11T15:46:06+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
@@ -222,12 +222,12 @@
                     <title><![CDATA[EagleOS 9.5-deeply customized and optimized based on AlmaLinux 9.5]]></title>
                     <link rel="alternate" type="text/html"
                           href="/en/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux"/>
-                    <id>tag:https://xmyy.com,2025-03-11:EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux</id>
+                    <id>tag:https://www.xmyy.com,2025-03-11:EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux</id>
                     <published>2025-03-11T15:46:06+08:00</published>
                     <updated>2025-03-11T15:46:06+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
@@ -240,12 +240,12 @@
                     <title><![CDATA[普通人学习人工智能的完整指南]]></title>
                     <link rel="alternate" type="text/html"
                           href="/article/A-complete-guide-for-ordinary-people-to-learn-artificial-intelligence"/>
-                    <id>tag:https://xmyy.com,2025-03-04:A-complete-guide-for-ordinary-people-to-learn-artificial-intelligence</id>
+                    <id>tag:https://www.xmyy.com,2025-03-04:A-complete-guide-for-ordinary-people-to-learn-artificial-intelligence</id>
                     <published>2025-03-04T22:46:57+08:00</published>
                     <updated>2026-07-05T22:48:02+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
@@ -258,12 +258,12 @@
                     <title><![CDATA[Gradle配置全局替换国内镜像操作指南]]></title>
                     <link rel="alternate" type="text/html"
                           href="/article/operation-guide-of-Gradle-configuration-global-replacement-domestic-image"/>
-                    <id>tag:https://xmyy.com,2024-08-26:operation-guide-of-Gradle-configuration-global-replacement-domestic-image</id>
+                    <id>tag:https://www.xmyy.com,2024-08-26:operation-guide-of-Gradle-configuration-global-replacement-domestic-image</id>
                     <published>2024-08-26T16:49:12+08:00</published>
                     <updated>2026-07-06T16:51:40+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
@@ -276,12 +276,12 @@
                     <title><![CDATA[人工智能实战路线图]]></title>
                     <link rel="alternate" type="text/html"
                           href="/article/Artificial-Intelligence-Practical-Roadmap"/>
-                    <id>tag:https://xmyy.com,2024-06-02:Artificial-Intelligence-Practical-Roadmap</id>
+                    <id>tag:https://www.xmyy.com,2024-06-02:Artificial-Intelligence-Practical-Roadmap</id>
                     <published>2024-06-02T22:18:37+08:00</published>
                     <updated>2026-07-05T22:20:01+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
@@ -294,12 +294,12 @@
                     <title><![CDATA[OpenSCA用开源的方式做开源风险治理：Why? What? How?]]></title>
                     <link rel="alternate" type="text/html"
                           href="/article/OpenSCAWhyWhatHow"/>
-                    <id>tag:https://xmyy.com,2023-02-20:OpenSCAWhyWhatHow</id>
+                    <id>tag:https://www.xmyy.com,2023-02-20:OpenSCAWhyWhatHow</id>
                     <published>2023-02-20T21:28:39+08:00</published>
                     <updated>2026-06-23T21:28:39+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
@@ -312,12 +312,12 @@
                     <title><![CDATA[渗透测试常用工具汇总]]></title>
                     <link rel="alternate" type="text/html"
                           href="/article/Summary-of-commonly-used-penetration-testing-tools"/>
-                    <id>tag:https://xmyy.com,2022-09-21:Summary-of-commonly-used-penetration-testing-tools</id>
+                    <id>tag:https://www.xmyy.com,2022-09-21:Summary-of-commonly-used-penetration-testing-tools</id>
                     <published>2022-09-21T18:12:13+08:00</published>
                     <updated>2026-07-06T18:12:56+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
@@ -330,12 +330,12 @@
                     <title><![CDATA[Kubeadm搭建高可用Kubernetes v1.24.0集群]]></title>
                     <link rel="alternate" type="text/html"
                           href="/article/Building-a-high-availability-Kubernetes-v1240-cluster-Using-Kubeadm"/>
-                    <id>tag:https://xmyy.com,2022-08-25:Building-a-high-availability-Kubernetes-v1240-cluster-Using-Kubeadm</id>
+                    <id>tag:https://www.xmyy.com,2022-08-25:Building-a-high-availability-Kubernetes-v1240-cluster-Using-Kubeadm</id>
                     <published>2022-08-25T22:26:05+08:00</published>
                     <updated>2026-07-08T22:29:06+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
@@ -348,12 +348,12 @@
                     <title><![CDATA[ArgoCD保姆级入门教程]]></title>
                     <link rel="alternate" type="text/html"
                           href="/article/ArgoCD-beginner-tutorial-at-the-nanny-level"/>
-                    <id>tag:https://xmyy.com,2022-08-03:ArgoCD-beginner-tutorial-at-the-nanny-level</id>
+                    <id>tag:https://www.xmyy.com,2022-08-03:ArgoCD-beginner-tutorial-at-the-nanny-level</id>
                     <published>2022-08-03T23:17:38+08:00</published>
                     <updated>2026-07-08T23:19:46+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
@@ -366,12 +366,12 @@
                     <title><![CDATA[SQL审核平台]]></title>
                     <link rel="alternate" type="text/html"
                           href="/article/sql-review-platform"/>
-                    <id>tag:https://xmyy.com,2022-03-24:sql-review-platform</id>
+                    <id>tag:https://www.xmyy.com,2022-03-24:sql-review-platform</id>
                     <published>2022-03-24T18:16:06+08:00</published>
                     <updated>2026-07-01T18:17:48+08:00</updated>
                     <author>
                         <name>eagle</name>
-                        <uri>https://xmyy.com</uri>
+                        <uri>https://www.xmyy.com</uri>
                     </author>
                     <content type="html">
                         
