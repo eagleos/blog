@@ -274,7 +274,7 @@
   },
   {
     "title": "人工智能实战路线图",
-    "content": "![Ai-learn](/upload/2026/07/Ai-learn.png) https://github.com/tangyudi/Ai-Learn # 必备基础技能 要学人工智能（数据科学）这行还是需要一些基本功的，最基础也是最核心的就是**Python**和**数学**了！这两兄弟入门起来 并不难，先掌握基础的边用边学也是可以的！ ## 必备Python基础 如果对Python不熟悉的同学们，建议先看一下我的Python入门视频课程，可以快速入门！[传送门](https://www.bilibili.com/video/a...",
+    "content": "# 必备基础技能 要学人工智能（数据科学）这行还是需要一些基本功的，最基础也是最核心的就是**Python**和**数学**了！这两兄弟入门起来 并不难，先掌握基础的边用边学也是可以的！ ## 必备Python基础 如果对Python不熟悉的同学们，建议先看一下我的Python入门视频课程，可以快速入门！[传送门](https://www.bilibili.com/video/av22404277?from=search\u0026seid=12821472533341778879) - [x] 为什么是Python？ \ufffd\ufffd...",
     "date": "2024-06-02T22:18:37+08:00",
     "image": "https://www.xmyy.com/upload/2026/07/Ai-learn.png",
     "permalink": "https://www.xmyy.com/article/Artificial-Intelligence-Practical-Roadmap"
@@ -348,6 +348,97 @@
     "date": "2025-09-23T00:24:11+08:00",
     "image": "https://www.xmyy.com/upload/2026/07/Observability.png",
     "permalink": "https://www.xmyy.com/article/Kubernetes-Observability"
+  },
+  {
+    "title": "mysql导入时出现“ERROR at line : Unknown command”的解决办法",
+    "content": "mysql导入sql文件时报错了： ``` C:\\Users\\Administrator\u003emysql -hlocalhost -uroot -pok118.com db_xmyy mysql -hlocalhost -uroot -pok118.com --default-character-set=utf8mb4 db_xmyy \u003c D:\\web\\sonic\\source\\db_xmyy.sql mysql: [Warning] Using a password on the command line interface can be insecure. ``` 如下图： ![2026-07-12_123037](/upload/2026/07/2026-07-12_123037.jpg)",
+    "date": "2019-01-08T21:54:02+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/2026-07-12_123037.jpg",
+    "permalink": "https://www.xmyy.com/article/Solution-for-ERROR-at-line-Unknown-command-when-importing-MySQL"
+  },
+  {
+    "title": "Windows Server设置多用户远程桌面授权一步步图文详解",
+    "content": "\u003e 摘要：本文适用于Windows Server系列（Windows Server 2012/Windows Server 2016/Windows Server 2019/Windows Server 2022/Windows Server 2025等版本），文中示例基于Windows Server 2012，但适用于后续所有版本，配置方法大同小异，基本相同。对于Windows Server 服务器，一般都是默认能够支持两用户远程登录，而通过安装远程桌面服务里的远程桌面会话主机和远程桌面授权，并对其进行配置，即可实现多用户远...",
+    "date": "2017-12-06T22:59:04+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/58846-20160531161223336-1402409850.jpg",
+    "permalink": "https://www.xmyy.com/article/Step-by-step-illustrated-guide-to-setting-up-multi-user-remote-desktop-authorization-in-Windows-Server"
+  },
+  {
+    "title": "深度学习（Deep Learning）全面详解：从原理到应用",
+    "content": "深度学习是机器学习的重要分支，核心是通过**多层神经网络（深度神经网络）** 模拟人类大脑的层级化信息处理方式，从数据中自动学习特征表示，最终实现分类、回归、生成等任务。与传统机器学习依赖人工设计特征不同，深度学习的 “深度” 带来了**端到端学习**的能力，能处理图像、文本、语音等复杂高维数据，是当前人工智能领域的核心技术基石。 ### 一、深度学习\ufffd...",
+    "date": "2025-09-15T15:21:04+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/DeepLearning.png",
+    "permalink": "https://www.xmyy.com/article/Deep-Learning-Comprehensive-Explanation-From-Principles-to-Applications"
+  },
+  {
+    "title": "Transformer中的注意力",
+    "content": "1.自注意力 ===================================================================== 假设我们要翻译下边这句话：“The animal didn’t cross the street because it was too tired”。这里`it`指的是什么？是`street`还是`animal`？人理解起来很容易，但是对算法来讲就不那么容易了。 **当模型处理it这个词的时候，自注意力会让 ****`it`**** 和 ****`animal`**** 关联起来**。 当模型编码每个位置上的单词的时候，自注意力的...",
+    "date": "2023-06-09T17:30:24+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/image_kcyI07MfCJ.png",
+    "permalink": "https://www.xmyy.com/article/Attention-in-Transformer"
+  },
+  {
+    "title": "k8s上部署Ansible面板工具AWX",
+    "content": "awx === awx是红帽Ansible Tower的开源版本，他的功能是可以使用web界面来操作ansible 操作系统使用**openEuler 22.03** **这里是在k8s上部署的，需要使用动态制备pvc**，因为他有一个数据库需要使用存储 # 1. 部署awx ### 1.1 克隆仓库 ``` [root@master ~]# git clone https://gitee.com/yftyxa/awx-operator.git [root@master ~]# git checkout exam [root@master ~]# cd awx-operator/config/default/ [root@master default]# ls awx-demo.yaml kustomization.y...",
+    "date": "2024-06-21T17:43:50+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/3204832-20240621183907782-136086719.png",
+    "permalink": "https://www.xmyy.com/article/Deploy-the-Ansible-panel-tool-AWX-on-k8s"
+  },
+  {
+    "title": "MongoDB备份与还原mongodump、mongorestore",
+    "content": "一、 MongoDB 备份 ------------- MongoDB 备份的几种方式： * mongodump * 系统快照(这里不做详细介绍，具体内容见官网：[Back Up with Filesystem Snapshots](https://docs.mongodb.com/manual/core/backups/#back-up-with-filesystem-snapshots)) * cp 或者 rsync ### 1、mongodump mongodump 是 MongoDB 官方提供的备份工具，它可以从 MongoDB 数据库读取数据，并生成 BSON 文件，mongodump 适合用于备份和恢复数据量较小的 MongoDB 数据库，\ufffd\ufffd...",
+    "date": "2019-04-17T17:56:34+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/mongodb.png",
+    "permalink": "https://www.xmyy.com/article/MongoDB-backup-and-restore-mongodump-mongorestore"
+  },
+  {
+    "title": "CloudFlare Tunnel免费内网穿透的简明教程",
+    "content": "Tunnel可以做什么 ----------- * **将本地网络的服务暴露到公网，可以理解为内网穿透。** 例如我们在本地服务器 `192.168.1.1:3000` 搭建了一个 Transmission 服务用于 BT 下载，我们只能在内网环境才能访问这个服务，但通过内网穿透技术，我们可以在任何广域网环境下访问该服务。相比 NPS 之类传统穿透服务，Tunnel 不需要公网云服务器，同时自带域名解析，无需 DDNS 和公网 IP。 * **将非\ufffd\ufffd...",
+    "date": "2023-04-20T18:43:12+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/3fda36165f47fd88607ab63e5e670d60.png",
+    "permalink": "https://www.xmyy.com/article/CloudFlare-Tunnel-A-concise-tutorial-on-free-internal-network-penetration"
+  },
+  {
+    "title": "Elasticsearch - 修改最大值限制来解决max_result_window is too large问题",
+    "content": "# 一、前言 es响应数据量有限制，[官方默认值](https://www.elastic.co/guide/en/elasticsearch/reference/6.7/index-modules.html#dynamic-index-settings)为`10000`： ![20201013192624151](/upload/2026/07/20201013192624151.png) 如果实际查询到的数据超过这个值，就会报错：`max_result_window is too large` # 二、解决方法-修改响应最大值限制 **1、在`kibana`或者`eshead` 中，进行修改** ``` PUT log-20201010/_settings { \"index\" : { \"max_result_window\"...",
+    "date": "2020-10-13T21:03:08+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/Elasticsearch.webp",
+    "permalink": "https://www.xmyy.com/article/Elasticsearch-how-to-modify-maximum-value-limits"
+  },
+  {
+    "title": "从零入门：Google Cloud Platform (GCP) 基础架构与核心服务全解析",
+    "content": "### 一、基础概念 #### 1.1 什么是 GCP？ Google Cloud Platform (GCP) 是谷歌提供的公有云平台，提供计算、存储、数据库、网络等服务，支持企业构建、扩展和管理应用程序。 #### 1.2 核心服务分类 * **计算服务**：如 Compute Engine（虚拟机）、Google Kubernetes Engine（容器编排）。 * **存储服务**：如 Cloud Storage（对象存储）、Persistent Disk（块存储）。 * **数据库服务**：如 Cloud SQL（关系型数据\ufffd\ufffd...",
+    "date": "2025-05-25T21:28:02+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/v2-b7f85f6c979df2fd050c7d344285d0ee_720w.png",
+    "permalink": "https://www.xmyy.com/article/Starting-from-scratch-A-complete-analysis-of-Google-Cloud-Platform-GCP-infrastructure-and-core-services"
+  },
+  {
+    "title": "Git Submodule使用完整教程",
+    "content": "Git Submodule功能刚刚开始学习可能觉得有点怪异，所以本教程把每一步的操作的命令和结果都用代码的形式展现给大家，以便更好的理解。 ## 1.对于公共资源各种程序员的处理方式 每个公司的系统都会有一套统一的系统风格，或者针对某一个大客户的多个系统风格保持统一，而且如果风格改动后要同步到多个系统中；这样的需求几乎每个开发人员都遇到，下面看看各个层次的程...",
+    "date": "2012-03-27T21:59:44+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/90286f22334c8b17dcf1ba37a4c99de4.png",
+    "permalink": "https://www.xmyy.com/article/Complete-tutorial-for-using-Git-Submodule"
+  },
+  {
+    "title": "Go的时间格式化为什么是2006-01-02 15:04:05？",
+    "content": "没有什么是完美的！而且，有些东西，有些人认为好，有些人认为很糟糕。Go 也是如此。喜欢 Go 语言的朋友，大概率对其中某些地方不喜欢。比如，你喜欢 Go 中时间格式化固定的 `2006-01-02 15:04:05 -0700` 吗？为什么是这么一个时间？今天来一探究竟！ 01 新手的困惑 ------------------------------------------------------------------------ 无论是各种群里还是网上搜一下，包括国外的，对 `2006-01-02 ...",
+    "date": "2021-08-03T22:17:40+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/time-format.png",
+    "permalink": "https://www.xmyy.com/article/Why-is-Go-s-time-formatting"
+  },
+  {
+    "title": "10 个优化技巧减少Docker镜像大小",
+    "content": "### 什么是 docker？ Docker 是一种容器引擎，可以在容器内运行一段代码。Docker 镜像是在任何地方运行您的应用程序而无需担心应用程序依赖性的方式。 要构建镜像，docker 使用一个名为 Dockerfile 的文件。Dockerfile 是一个包含许多指令（RUN、COPY、EXPOSE 等）的文件。成功执行这些命令后，docker 将创建一个镜像供我们在任何地方使用。 ### 为什么要减小 docker 镜像大小？ 1. 安装不必要...",
+    "date": "2023-03-16T23:15:43+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/13d3571846644f3aa3c9676dde61e29c.jpg",
+    "permalink": "https://www.xmyy.com/article/10-optimization-tips-to-reduce-Docker-image-size"
+  },
+  {
+    "title": "vite+vue3+ts手把手教你创建一个vue3项目",
+    "content": "# 一.pnpm管理项目 为什么选择它？ * 快: pnpm是同类工具速度的将近⒉倍 * 高效: node\\_modules中的所有文件均链接自单一存储位置 * 支持单体仓库:monorepo，单个源码仓库中包含多个软件包的支持 * 权限严格: pnpm 创建的node\\_modules默认并非扁平结构，因此代码无法对任意软件包进行访问 # 二.Vite介绍 * 极速的服务启动，使用原生ESM文件，无需打包!（原来整个项目的代码打包在一起,然后...",
+    "date": "2024-01-18T23:31:35+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/5cce43bbac2b27cd0d1e7839e91d115b.png",
+    "permalink": "https://www.xmyy.com/article/Vite-vue3-TS-will-guide-you-step-by-step-to-create-a-Vue3-project"
   },
   {
     "title": "关于我们",
