@@ -462,6 +462,41 @@
     "permalink": "https://www.xmyy.com/article/PostgreSQL-Backup-and-Recovery-in-Practice-Mastering-pgdump-and-pgrestore-from-scratch"
   },
   {
+    "title": "Hadoop安装与搭建全流程教学全网最全超详细保姆级教学",
+    "content": "### 一.前言 1. Hadoop 的安装是一场充满细节的挑战😫！不过别担心，**本篇保姆级教程将手把手带你从零搭建一个 3 节点 Hadoop 集群**，即便是完全没接触过的新手，也能跟着步骤一遍成功✅！亲测有效，放心上车🚀！ 2. **基础知识** * 常用命令 | 命令 | 含义 | 例子 | | :-: | :-: | :-: | | `cd [路径]` | 切换目录 | `cd /etc/hosts` | | `vi [文件]` | 编辑文件 | `vi /etc/hosts` | | `source [文件]` | 使配...",
+    "date": "2025-06-04T15:45:53+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/6ddab3b1262c4c5e9bce01aa36b8f0c4.png",
+    "permalink": "https://www.xmyy.com/article/Full-process-tutorial-for-Hadoop-installation-and-setup-the-most-comprehensive-and-super-detailed-nanny-level-tutorial-across-the-entire-web"
+  },
+  {
+    "title": "Spark完全分布式集群环境搭建详细教程",
+    "content": "### 1.环境的准备 jdk、zookeeper、hadoop集群。 当前服务器：三个服务器节点（hadoop101/hadoop102/hadoop103） ### 2.将安装软件上传到 hadoop101服务器/opt目录下 例如：spark-3.5.0-bin-hadoop3-scala2.13.tgz ### 3.将spark的安装目录解压到 /usr/local/software/ ``` tar -zxvf /opt/spark-3.5.0-bin-hadoop3-scala2.13.tgz -C /usr/local/software ``` ### 4.修改文件名 ``` cd /usr/local/software/ mv spark-3.5.0-bin-hadoop3-scala2.13 spark ``` ### 5.spark环境...",
+    "date": "2025-12-23T17:02:45+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/d08016b9ab4b4d5eb23d06cc13d86019.png",
+    "permalink": "https://www.xmyy.com/article/Detailed-tutorial-on-setting-up-a-fully-distributed-Spark-cluster-environment"
+  },
+  {
+    "title": "Flink超全五万字保姆级详细教程",
+    "content": "**本文目录：** 一、Flink简介 二、Flink 部署及启动 三、Flink 运行架构 四、Flink 算子大全 五、流处理中的 Time 与 Window 六、Flink 状态管理 七、Flink 容错 八、Flink SQL 九、Flink CEP 十、Flink CDC 十一、基于 Flink 构建全场景实时数仓 十二、Flink 大厂面试题 Flink 涉及的知识点如下图所示，本文将逐一讲解： ![ef2f12e040ec133a543089328951dd83](/upload/2026/07/ef2f12e040ec133a543089328951dd83.png) **本文档参...",
+    "date": "2021-09-16T18:01:39+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/ef2f12e040ec133a543089328951dd83.png",
+    "permalink": "https://www.xmyy.com/article/Super-complete-50000-word-nanny-level-detailed-tutorial-of-Flink"
+  },
+  {
+    "title": "Hadoop基础",
+    "content": "在大数据时代，数据的存储和处理变得越来越重要。Hadoop作为一个开源的分布式计算平台，为大数据的存储和处理提供了强大的支持。本文将详细介绍Hadoop的基础概念、核心组件以及常见操作，帮助初学者快速入门Hadoop。 # 1. Hadoop简介 Hadoop是一个由Apache基金会所开发的分布式系统基础架构，主要用于处理大规模数据集。它具有高可靠性、高扩展性、高效性和低成本等特点。Hado...",
+    "date": "2026-05-09T20:40:18+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/1-21032Q95621c7.png",
+    "permalink": "https://www.xmyy.com/article/Hadoop-base"
+  },
+  {
+    "title": "Hadoop入门",
+    "content": "第 1 章 Hadoop 概述 =============== 1.1 Hadoop 是什么 -------------- 1） Hadoop是一个由Apache基金会所开发的分布式系统基础架构。 2） 主要解决，海量数据的存储和海量数据的分析计算问题。 3） 广义上来说，Hadoop通常是指一个更广泛的概念——Hadoop生态圈。 ![32534f76dd7c4be488720c47a0f55330](/upload/2026/07/32534f76dd7c4be488720c47a0f55330.png) **1.2** **Hadoop** **发展历史（了解）** 1）Hadoop创始人Doug Cutting，...",
+    "date": "2021-06-23T21:31:18+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/32534f76dd7c4be488720c47a0f55330.png",
+    "permalink": "https://www.xmyy.com/article/hadoop-ru-men"
+  },
+  {
     "title": "关于我们",
     "content": "## 关于我们 虾米云栈致力于打造领先的专业的IT技术门户，汇聚人工智能、网络安全、云计算及大数据等领域的深度技术文章，从入门教程到企业级架构，海量技术文档、问答及在线课程，为CTO、架构师及开发者提供前沿视野，陪您一起成长。 \u003e This website is committed to building a leading professional IT technology portal, gathering in-depth technical articles in fields such as artificial intelligence, cybersecurit...",
     "date": "2026-03-29T15:15:51+08:00",
