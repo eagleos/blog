@@ -242,7 +242,7 @@
     "content": "# 一. 开源风险治理为何如此重要？ 《供应链攻击威胁局势报告》显示，预计2021年的供应链攻击数量将增加至上一年的四倍之多。《2021年软件供应链安全报告》显示，425名大型企业的IT、安全和DevOps主管中，64%的人报告称去年受到了供应链攻击的影响。Gartner预测，97%的企业应用程序将依赖于开源的使用，且超过70%的应用程序因使用开源组件而产生缺陷和漏洞。 开源≠安全。市...",
     "date": "2023-02-20T21:28:39+08:00",
     "image": "https://www.xmyy.com/upload/2026/06/16c0d5045ef3b6248c6fbc0a1fcf6bf0.png",
-    "permalink": "https://www.xmyy.com/article/OpenSCAWhyWhatHow"
+    "permalink": "https://www.xmyy.com/article/OpenSCA-uses-an-open-source-approach-to-manage-open-source-risks"
   },
   {
     "title": "macOS Tahoe 安装及配置 VeraCrypt 详细版",
@@ -494,7 +494,14 @@
     "content": "第 1 章 Hadoop 概述 =============== 1.1 Hadoop 是什么 -------------- 1） Hadoop是一个由Apache基金会所开发的分布式系统基础架构。 2） 主要解决，海量数据的存储和海量数据的分析计算问题。 3） 广义上来说，Hadoop通常是指一个更广泛的概念——Hadoop生态圈。 ![32534f76dd7c4be488720c47a0f55330](/upload/2026/07/32534f76dd7c4be488720c47a0f55330.png) **1.2** **Hadoop** **发展历史（了解）** 1）Hadoop创始人Doug Cutting，...",
     "date": "2021-06-23T21:31:18+08:00",
     "image": "https://www.xmyy.com/upload/2026/07/32534f76dd7c4be488720c47a0f55330.png",
-    "permalink": "https://www.xmyy.com/article/hadoop-ru-men"
+    "permalink": "https://www.xmyy.com/article/Getting-started-with-Hadoop"
+  },
+  {
+    "title": "神经网络浅讲：从神经元到深度学习",
+    "content": "神经网络是一门重要的机器学习技术。它是目前最为火热的研究方向\\--深度学习的基础。学习神经网络不仅可以让你掌握一门强大的机器学习方法，同时也可以更好地帮助你理解深度学习技术。 　　本文以一种简单的，循序的方式讲解神经网络。适合对神经网络了解不多的同学。本文对阅读没有一定的前提要求，但是懂一些机器学习基础会更好地帮助理解本文。 　　神经网络...",
+    "date": "2015-12-31T01:11:51+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/673793-20151229110952448-2017198041.jpg",
+    "permalink": "https://www.xmyy.com/article/A-Brief-Introduction-to-Neural-Networks-From-Neurons-to-Deep-Learning"
   },
   {
     "title": "关于我们",
