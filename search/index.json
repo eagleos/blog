@@ -504,6 +504,118 @@
     "permalink": "https://www.xmyy.com/article/A-Brief-Introduction-to-Neural-Networks-From-Neurons-to-Deep-Learning"
   },
   {
+    "title": "awk的内置变量NF、NR、FNR、FS、OFS、RS、ORS",
+    "content": "NF 字段个数，（读取的列数） NR 记录数（行号），从1开始，新的文件延续上面的计数，新文件不从1开始 FNR 读取文件的记录数（行号），从1开始，新的文件重新从1开始计数 FS 输入字段分隔符，默认是空格 OFS 输出字段分隔符 默认也是空格 RS 输入行分隔符，默认为换行符 ORS 输出行分隔符，默认为换行符 ### NF 读取记录的字段数(列数)，例如： ``` [root@localhost test]# awk '{print \"字...",
+    "date": "2018-05-09T14:30:21+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/201610251815595252.png",
+    "permalink": "https://www.xmyy.com/article/awk-built-in-variable-nf-nr-fnr-fs-ofs-rs-ors"
+  },
+  {
+    "title": "apache在低配置服务器下的优化",
+    "content": "博主大清早在被窝里看看手机，浏览下博客，发现 Error establishing a database connection，显然是数据库挂了= = 貌似就是作死直接LAMP的下场（linux + apache +mysql + php） 博主立刻从床上弹起来，开电脑，重起mysql，就又可以了。 那么，虽然博主最近起不来→_→今天因为这个立马爬起来，但是总不能老是出错吧！ 于是开启了优化方案。。发现是由于apache内存占用太高导致mysql没内存用了 ...",
+    "date": "2016-01-25T14:50:15+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/2880px-Apache_HTTP_server_logo.png",
+    "permalink": "https://www.xmyy.com/article/Apache-optimization-on-low-spec-servers"
+  },
+  {
+    "title": "ubuntu国内源安装docker",
+    "content": "在Ubuntu 20.04上使用国内源安装Docker，可以使用清华大学源或阿里云源，具体如下。 先更新软件包，安装备要apt软件 ``` # 更新软件包索引 sudo apt-get update # 安装需要的软件包以使apt能够通过HTTPS使用仓库 sudo apt-get install ca-certificates curl gnupg lsb-release ``` * 使用清华大学源 ``` # 添加Docker官方的GPG密钥 curl -fsSL https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/...",
+    "date": "2024-06-30T14:57:58+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/t01244e5eda16b4451f.png",
+    "permalink": "https://www.xmyy.com/article/Ubuntu-domestic-source-installation-of-Docker"
+  },
+  {
+    "title": "从零开始开发微信小程序",
+    "content": "之前说要和同事一起开发个微信小程序项目，现在也在界面设计，功能定位等需求上开始实施了。所以在还未正式写项目前，打算在空闲时间学习下小程序。本意是在学习过程中结合实践整理出一个较为入门且不是很厚的教程，但也很难保证时间充裕能一直写下去。所以先开个头留个坑，那么本文开始先从小程序注册到创建第一个小程序说起： **一、从注册开始** 要开发小程...",
+    "date": "2019-06-29T15:29:58+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/weixinmini.png",
+    "permalink": "https://www.xmyy.com/article/Develop-WeChat-Mini-Programs-from-scratch"
+  },
+  {
+    "title": "手把手教你使用Java内存泄漏分析工具Memory Analyzer Tool",
+    "content": "一个大型的Java项目也许从开发到测试结束并可能不能未发现一些重大的问题，但是在生产环境中还是会出现一些非常棘手的问题，如内存泄漏直接导致服务宕机，遇到这样的问题对于一个经验尚浅的开发人员来说难度非常大，好的一点是JVM 能够记录下问题发生时系统的部分运行状态，并将其存储在堆转储 (Heap Dump) 文件中，从而为我们分析和诊断问题提供了重要的依据。要生...",
+    "date": "2019-08-06T16:27:41+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/nfd4jbyhjx.jpeg",
+    "permalink": "https://www.xmyy.com/article/Step-by-step-guide-to-using-the-Java-memory-leak-analysis-tool-Memory-Analyzer-Tool"
+  },
+  {
+    "title": "pyenv和pyenv-virtualenv的安装、配置和使用",
+    "content": "pyenv 是一个 python 版本管理工具，可以方便的在工作环境中安装、管理和切换不同版本的 python，结合 pyenv-virtualenv 插件，能够方便的创建和管理 python 虚拟环境，在虚拟环境中的各种操作，并不会影响到系统的正常运行，有效防止乱装 python 版本导致系统崩溃等问题的发生。 本文结合自己相关实践，总结了 pyenv 的安装，以及使用 pyenv 安装、管理不同版本的 python 等过程的相关...",
+    "date": "2019-06-23T16:56:53+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/python.avif",
+    "permalink": "https://www.xmyy.com/article/Installation-configuration-and-usage-of-pyenv-and-pyenv-virtualenv"
+  },
+  {
+    "title": "php firebase/php-jwt token验证",
+    "content": "# 一、JWT介绍 JWT全称JSON Web Token，基于JSON的开放标准((RFC 7519) ，以token的方式代替传统的Cookie-Session模式，用于各服务器、客户端传递信息签名验证。 # 二、JWT优点 1：服务端不需要保存传统会话信息，没有跨域传输问题，减小服务器开销。 2：jwt构成简单，占用很少的字节，便于传输。 3：json格式通用，不同语言之间都可以使用。 # 三、JWT组成 1：jwt由三部分组成： 头部（header...",
+    "date": "2019-09-15T17:37:13+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/1755571-20200229150735266-1964662043.png",
+    "permalink": "https://www.xmyy.com/article/php-firebase-php-jwt-token-verification"
+  },
+  {
+    "title": "SQL Server2022版+SSMS保姆级安装教程（附安装包）",
+    "content": "### 一，安装SQL Server数据库 #### 1.下载安装包 ##### （1）百度网盘下载安装包 链接：[https://pan.baidu.com/s/1wMreq9\\_BGoo2ji4PLOYpKQ?pwd=6ff6](https://pan.baidu.com/s/1wMreq9_BGoo2ji4PLOYpKQ?pwd=6ff6) ##### （2）官网下载安装包 https://www.microsoft.com/en-us/sql-server/sql-server-downloads ![cd7af6a9100f2a97ce9fc5d060e61e2d](/upload/2026/07/cd7af6a9100f2a97ce9fc5d060e61e2d.png) 进入官网后选择Developer选择安装 #### 2.安装配置 打开下载好后的...",
+    "date": "2025-06-27T18:52:13+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/sqlserver.webp",
+    "permalink": "https://www.xmyy.com/article/SQLServer-2022-Edition-SSMS-Babysitter-Level-Installation-Tutorial-with-Installation-Package"
+  },
+  {
+    "title": "初窥TiDB分布式关系型数据库全貌",
+    "content": "1、概念 ---- **定位：** 一个开源的、分布式、**NewSQL** 数据库。它不仅在处理海量数据和高并发请求时表现出色，还因其对 MySQL 生态的良好兼容性，吸引了大量开发者和企业。 * **对比 OldSQL (如 MySQL)：** 解决了单机容量瓶颈、性能瓶颈和高可用问题。 * **对比 NoSQL (如 MongoDB/Cassandra)：** 提供了完整的 ACID 事务支持（特别是跨行跨表事务）和熟悉的 SQL 接口。 2、核心特性 ------ | ...",
+    "date": "2025-12-04T19:52:19+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/tidb.png",
+    "permalink": "https://www.xmyy.com/article/A-Glimpse-into-TiDB-Distributed-Relational-Database"
+  },
+  {
+    "title": "两步创建微软Azure一年免费虚拟机VPS及完美避坑指南",
+    "content": "### 一、Azure一年免费虚拟机VPS 最近服务器要到期，找了一下，发现Azure还是很香的，提供了12个月的虚拟机。网上也看了蛮多申请和创建教程，看着挺麻烦的，有很多注意事项。 我最终创建了一台Ubuntu和一台Windows，体验的效果还蛮好的，特别是Ubuntu的，很满意。 #### Azure免费产品介绍： \u003e Azure 免费帐户 | Microsoft Azure，[https://azure.microsoft.com/zh-cn/free/](https://azure.microsoft.com/zh-cn/free...",
+    "date": "2024-03-10T20:06:38+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/Azure.webp",
+    "permalink": "https://www.xmyy.com/article/Two-stepcreation-of-a-free-Microsoft-Azure-virtual-machine-VPS-for-one-year-and-the-perfect-pitfall-avoidance-guide"
+  },
+  {
+    "title": "如何撸AWS免费一年服务器",
+    "content": "AWS - 亚马逊公司旗下云计算服务平台 之前有幸参加了aws培训学习，现在给大家介绍一些aws的使用方法 本文介绍先介绍如何在aws免费使用aws的服务器资源 1.注册/登陆 ------- 官网：[https://aws.amazon.com/cn/](https://aws.amazon.com/cn/) 注册：[https://portal.aws.amazon.com/billing/signup?nc2=h\\_ct\u0026src=default\u0026redirect\\_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation\u0026language=zh\\_cn#/start](https://portal.aws.amazon.com/billing...",
+    "date": "2020-12-23T20:20:14+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/607fae5d4bc235a791887d0b6733083f.png",
+    "permalink": "https://www.xmyy.com/article/How-to-get-a-free-one-year-server-on-AWS"
+  },
+  {
+    "title": "阿里云服务器新手完全指南：零基础快速上手",
+    "content": "##### **一、云服务器是什么？小白也能懂的解释** **通俗理解**：阿里云服务器（ECS）就像一台存放在互联网上的“虚拟电脑”，你可以通过网页随时随地管理它。 **新手必知3个概念**： 1. **实例**：代表一台虚拟服务器，就像你的个人电脑（但更强大） 2. **镜像**：预装好的系统模板（如Windows/Linux系统安装包） 3. **安全组**：控制网络访问权限的“虚拟防火墙” **云服务器...",
+    "date": "2025-04-29T21:39:38+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/v2-a6bc51bc00aae57fe754d5fa4a70937a_1440w.png",
+    "permalink": "https://www.xmyy.com/article/Alibaba-Cloud-Server-Beginner-Complete-Guide-Get-Started-Quickly-from-Scratch"
+  },
+  {
+    "title": "零基础用腾讯云服务器建站：手把手教你配置服务器+部署网站",
+    "content": "\u003e **云服务器（Cloud Server）是基于云计算技术提供的弹性计算服务，具备按需扩展、高可用性、灵活配置等特点。用户无需采购物理硬件，即可通过互联网快速部署和管理虚拟化资源，适用于网站托管、应用开发、数据分析等多种场景，大幅降低IT运维成本。** **现在云已经逐渐成为主流，众多企业选择上云，为了让更多初学者有更多的了解，方便快速上手学习，我这边来手把手...",
+    "date": "2025-11-14T21:58:09+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/Tencent-Cloud.png",
+    "permalink": "https://www.xmyy.com/article/Building-a-website-with-Tencent-Cloud-servers-from-scratch-Step-by-step-guide-to-configuring-your-server-and-deploying-your-website"
+  },
+  {
+    "title": "Jenkins集成LDAP",
+    "content": "# 重要 \u003e 1. ldap 创建两个 group`jenkins-admin` 和 `jenkins-manager`。并分别将用户 `admin`， `operator` 各自分配到两个组下。（ldapadmin 工具操作用户分配组：在用户条目上右键 `View\\Edit Group Membership`，选择要加入的组。 \u003e 2. 配置之前备份一下 config.xml 配置文件，方便出错恢复。文件地址 `/var/lib/jenkins_home/config.xml`。 \u003e 3. Jenkins 一旦集成 LDAP 认证就无法使用本地认证。因此在保存 ldap 配置之前...",
+    "date": "2020-01-06T22:27:25+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/b02da1d099856b841146ee74167fac6c.png",
+    "permalink": "https://www.xmyy.com/article/Jenkins-integrates-with-LDAP"
+  },
+  {
+    "title": "什么是Web安全？",
+    "content": "Web 安全包括一系列解决方案和安全策略，组织依赖这些解决方案和策略来保护其[网络](https://www.ibm.com/cn-zh/think/topics/networking)、用户和资产免受各种安全风险的影响。 对于企业而言，Web 安全对于防止代价高昂的[网络攻击](https://www.ibm.com/cn-zh/think/topics/cyber-attack)（例如恶意软件、网络钓鱼、分布式拒绝服务 (DDoS) 攻击等）至关重要；这些攻击可能会破坏核心业务实践并造成灾难...",
+    "date": "2026-05-28T01:42:21+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/31e3125e0db14e0e8254dbb944462b1c.png",
+    "permalink": "https://www.xmyy.com/article/What-is-Web-security"
+  },
+  {
+    "title": "系统安全是什么",
+    "content": "\u003e 系统安全是指保护信息系统及其数据免受未授权访问、破坏或改动的能力。它涵盖物理安全、网络安全、应用安全和数据保护等多个领域。通过实施安全策略、技术措施和管理控制，系统安全确保信息的机密性、完整性和可用性，从而减少安全风险并增强整体信任度。有效的系统安全管理是保护企业和个人信息安全的关键。 ## 一、系统安全的定义 系统安全是指通过一系列措...",
+    "date": "2024-07-17T02:07:55+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/524ae33955254c1a8a9e92449802543b.jpeg",
+    "permalink": "https://www.xmyy.com/article/What-is-system-security"
+  },
+  {
     "title": "关于我们",
     "content": "## 关于我们 虾米云栈致力于打造领先的专业的IT技术门户，汇聚人工智能、网络安全、云计算及大数据等领域的深度技术文章，从入门教程到企业级架构，海量技术文档、问答及在线课程，为CTO、架构师及开发者提供前沿视野，陪您一起成长。 \u003e This website is committed to building a leading professional IT technology portal, gathering in-depth technical articles in fields such as artificial intelligence, cybersecurit...",
     "date": "2026-03-29T15:15:51+08:00",
