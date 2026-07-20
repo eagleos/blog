@@ -616,6 +616,118 @@
     "permalink": "https://www.xmyy.com/article/What-is-system-security"
   },
   {
+    "title": "全网最全最详细两万字OpenStack知识图谱",
+    "content": "OpenStack简介 ----------- ### OpenStack背景介绍 .st0{fill:#EA2347;} .st1{fill:#504741;} OpenStack是一个自由、开源的云计算平台。它主要作为基础设施即服务（IaaS）部署在公用云和私有云中，提供虚拟服务器和其他资源给用户使用。该软件平台由相互关联的组件组成，控制着整个数据中心内不同的厂商的计算、存储和网络资源的硬件池。用户可以通过基于网络的仪表盘、命令行工具或RESTful网...",
+    "date": "2022-08-08T15:29:58+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/1953408-20210425192543008-1752884814.png",
+    "permalink": "https://www.xmyy.com/article/The-most-comprehensive-and-detailed-20000-word-OpenStack-knowledge-graph-on-the-entire-internet"
+  },
+  {
+    "title": "AI Agent框架深度解析：LangChain、AutoGen等五大框架如何选？开发者必看指南",
+    "content": "### AI Agent框架技术深度分析报告 在早前初步搭建agent应用的时候，调研过相关的agent框架，现整理与大家分享下。在决策的时候，因考虑到应用需要较强的适配性，面临与业务强耦合，吸取两年前使用langchain开发后又因难以实现特殊需要而优化开发的教训，在业务开发中采用了自定义开发的代码。 如何选择合适的开发框架，可能是初期进入开发之后面临的第一个问题。 总结而...",
+    "date": "2025-08-19T22:08:40+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/c6551f186dad4c7c6456ea127a002ad8.jpeg",
+    "permalink": "https://www.xmyy.com/article/In-depth-Analysis-of-AI-Agent-Frameworks-How-to-Choose-Among-the-Five-Major-Frameworks"
+  },
+  {
+    "title": "RAG 是什么？16 种 RAG 方案万字一次讲清！",
+    "content": "最近这两年，只要你接触过 AI 编程，大概率听过一个词，RAG（Retrieval-Augmented Generation）。 但很多小伙伴对 RAG 都只是一知半解，导致面试的时候只能说出 “检索增强生成” 这六个字，面试官再多问一点，就只能 “阿巴阿巴”。 而这篇文章，是对 RAG 技术的一个全景科普，从最初的 Naive RAG、到现在最主流的 Agentic RAG，总共 16 种主流 RAG 方案，我会一次性给大家讲清楚。以后开...",
+    "date": "2026-04-23T23:25:49+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/1776651602499-afc9fc4b-6105-4b96-a3cd-a6681bf69480.png",
+    "permalink": "https://www.xmyy.com/article/What-is-RAG-16-RAG-solutions-explained-in-ten-thousand-words"
+  },
+  {
+    "title": "一文搞懂 MCP：从入门到实战（含本地项目 MCP Server 示例）",
+    "content": "用 MCP 打通本地项目与大模型：从概念到实战 ---------------------------------------------------------------------------------- \u003e 一文搞清：**MCP 是什么、如何和 LangGraph / CrewAI / AutoGen 配合、以及如何给本地项目写一个可用的 MCP Server。** 1. MCP 是什么？ ----------------------------------------------------------------------- **MCP（Model Context Protocol）** 是一个开放协议，用来标准化： \u003e 「**大模型 ↔ 外部世界（工...",
+    "date": "2025-12-17T23:43:38+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/ce24a250-1946-11f0-82f5-00163e09d72f.webp",
+    "permalink": "https://www.xmyy.com/article/Understand-MCP-in-One-Article-From-Beginner-to-Practical-Including-Local-Project-MCP-Server-Examples"
+  },
+  {
+    "title": "TensorFlow安装步骤、使用示例及常见问题应对",
+    "content": "### 一、TensorFlow安装 #### （一）安装前准备 * **环境要求** * **Python版本**：TensorFlow支持Python 3.7 - 3.11。确保你的Python环境已经正确安装并且可以正常使用。你可以在命令行（Windows下是`cmd`，Linux和Mac下是终端）中输入`python --version`（对于Python 3）或者`python3 --version`来检查Python版本。 * **操作系统**：TensorFlow可以在Windows、Linux和MacOS等主流操作系统上安装。不同操作系统在安装过程...",
+    "date": "2024-12-31T14:41:22+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/v2-650abf8a5c2f9e5793aa7d0765d81d8d_720w.jpg",
+    "permalink": "https://www.xmyy.com/article/TensorFlow-installation-steps-usage-examples-and-common-problem-responses"
+  },
+  {
+    "title": "LangChain完整教程：六大组件+分层设计+完整项目实战",
+    "content": "### 前言 今天我想和大家分享一下我的LangChain学习历程,大多数文章要么止步于基础，要么直接跳入高级应用，却忽视了从理解到实践的关键桥梁。这份文章我不仅思考了如何来向大家展示一个直观的LangChain结构,还尽量保证内容的层层递进,你可以根据自己的需要来进行学习,希望我的总结能够帮助到大家,如果有更好的改进建议,也请大家指教,帮助我完善内容,以帮助更多的求知者...",
+    "date": "2025-11-11T14:53:28+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/LangChain.webp",
+    "permalink": "https://www.xmyy.com/article/Complete-LangChain-tutorial-Six-major-components-layered-design-complete-project-practice"
+  },
+  {
+    "title": "PyTorch安装超详细教程（含多系统、多场景、避坑指南）",
+    "content": "#### 一、安装前准备 ##### 1. 系统与硬件检查 | 系统 | 支持版本 | GPU 支持要求 | | --- | --- | --- | | **Windows** | 10/11（64位） | NVIDIA 显卡（CUDA 11.0+） | | **macOS** | 12+（Apple Silicon/M1） | 苹果显卡（Metal Performance Shaders） | | **Linux** | Ubuntu 20.04+/Debian 11 | NVIDIA/AMD/Intel 显卡（需对应驱动） | * **NVIDIA GPU 用户**： 打开「设备管理器」→「显示适配器」，确认显卡型号（如 RTX 3060），并检查驱动...",
+    "date": "2025-04-02T15:09:35+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/v2-366a6062873f6caac98358312ec8730a_720w.jpg",
+    "permalink": "https://www.xmyy.com/article/Detailed-PyTorch-Installation-Tutorial-Including-Multiple-Systems-Multiple-Scenarios-Pitfall-Avoidance-Guide"
+  },
+  {
+    "title": "AI工具软件有哪些？2026年主流AI工具分类全解析",
+    "content": "随着人工智能技术的飞速发展，AI工具软件已深度融入工作、创作、生活等场景，成为提升效率、激发创意的核心助力。2026年，AI工具生态持续完善，覆盖智能体、通用对话、图像生成、视频创作、音乐制作、办公协作、编程开发、原型设计等细分领域。以下结合当前主流工具，为你全面梳理AI工具软件的分类与代表产品。 ![b1057f56da9b4c8db2e9448a35b19cd0](/upload/2026/07/b1057f56da9b4c8db2e9...",
+    "date": "2026-04-08T16:56:29+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/b1057f56da9b4c8db2e9448a35b19cd0.webp",
+    "permalink": "https://www.xmyy.com/article/What-AI-tool-software-are-available-A-complete-analysis-of-mainstream-AI-tool-categories-for-2026"
+  },
+  {
+    "title": "Proxmox VE 9.1（PVE）安装保姆级教程（适用于最新版）",
+    "content": "\u003e 本教程基于 **Proxmox VE 9.1**（截至 2026 年 2 月的最新稳定版）编写。安装流程与 7.x/8.x 系列高度相似，界面和选项基本一致，仅有少量优化（如更严格的密码要求、Secure Boot 支持等）。如果你使用的是更早或更新版本，步骤也几乎完全适用。 ## 环境准备 * CPU：支持虚拟化（Intel VT-x 或 AMD-V，建议开启） * 主板：普通消费级/服务器主板均可（示例：Intel 12/13/14 系列、AMD Ryzen） * ...",
+    "date": "2026-02-15T17:15:33+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/85f3ce0404cb2893dd76e2350f7ba090.jpg",
+    "permalink": "https://www.xmyy.com/article/Proxmox-VE-PVE-Installation-Assistant-Tutorial-Latest-Version"
+  },
+  {
+    "title": "Prometheus快速入门",
+    "content": "Prometheus 是任何一个高级工程师必须要掌握的技能。那么如何从零部署一套 Prometheus 监控系统呢？本篇文章将从 Prometheus 的原理讲起，手把手带你用一个最简单的例子部署一套 Prometheus 监控系统。 基本原理 ---- Prometheus的基本架构如下图所示： ![16027237814690](/upload/2026/07/16027237814690.jpg) 从上图可以看到，整个 Prometheus 可以分为四大部分，分别是： * **Prometheus 服务器** Prometheus Server...",
+    "date": "2020-10-15T17:43:35+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/16027237814690.jpg",
+    "permalink": "https://www.xmyy.com/article/Prometheus-Quick-Start"
+  },
+  {
+    "title": "zabbix实现原理及架构详解",
+    "content": "zabbix是完全开源的工具，整合了cacti和nagios等特性。 ---------------------------------- zabbix功能很强大，如何理解zabbix的功能，我们可以和cacti、nagios的功能对比一下： * cacti是一款数据采集，数据存储，外加web界面展示的工具，它负责阈值范围内的实时变化，但是对超过阈值的告警功能很薄弱 * **优点**：实时监控数据变化，以web页面的方式呈现，更直观。 * **缺点**：告警不及时 * nag...",
+    "date": "2017-08-18T17:49:50+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/996586-20170818113035100-629235.png",
+    "permalink": "https://www.xmyy.com/article/Detailed-explanation-of-Zabbix-implementation-principles-and-architecture"
+  },
+  {
+    "title": "史上最全Terraform入门教程，助你无坑入门",
+    "content": "在云计算的浪潮中，基础设施管理变得越来越复杂。如何高效地配置和管理云资源，成为了每个开发者和运维工程师必须面对的挑战。Terraform，作为一种强大的基础设施即代码（IaC）工具，为我们提供了一种简洁而有效的解决方案。 在这篇博客中，我将深入探讨Terraform的功能与使用场景，帮助你理解其在云资源管理中的重要性。同时，我会详细介绍Terraform的安装步骤，以便你...",
+    "date": "2024-10-28T18:42:11+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/099f21e51301df552a213650f581a52b.png",
+    "permalink": "https://www.xmyy.com/article/The-most-comprehensive-Terraform-beginner-tutorial-ever-helping-you-get-started-without-pitfalls"
+  },
+  {
+    "title": "puppet详解",
+    "content": "一、puppet 介绍 ----------- ### 1、puppet是什么 　　`puppet`是一个IT基础设施自动化管理工具，它能够帮助系统管理员管理基础设施的整个生命周期： 供应(provisioning)、配置(configuration)、联动(orchestration)及报告(reporting)。 　　基于puppet ，可实现自动化重复任务、快速部署关键性应用以及在本地或云端完成主动管理变更和快速扩展架构规模等。 　　遵循GPL 协议(2.7.0-), 基于`ruby`语言开...",
+    "date": "2017-12-14T19:12:36+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/cec260f704f8408db1bc4917bac0360b.png",
+    "permalink": "https://www.xmyy.com/article/Detailed-explanation-of-puppet"
+  },
+  {
+    "title": "SaltStack快速入门",
+    "content": "saltstack介绍 ----------- Salt，一种全新的基础设施管理方式，部署轻松，在几分钟内可运行起来，扩展性好，很容易管理上万台服务器，速度够快，服务器之间秒级通讯 主要功能：远程执行 配置管理，参考官方文档： [http://docs.saltstack.cn/](http://docs.saltstack.cn/) 安装说明： [https://docs.saltproject.io/salt/install-guide/en/latest/](https://docs.saltproject.io/salt/install-guide/en/latest/) Saltstack原理 ----------...",
+    "date": "2025-01-06T19:19:44+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/Saltstack.webp",
+    "permalink": "https://www.xmyy.com/article/saltstack-kuai-su-ru-men"
+  },
+  {
+    "title": "Grafana中文入门教程",
+    "content": "在大厂工作久了，时常对一些工具的存在觉得理所当然。 比如说，需要计算资源的时候，一个配置文件就可以要来两百台虚拟化好的机子。需要试下缓存？点下鼠标就可以要到几十个配置好的 Redis 结点。 最省心的是，这些工具都已经根据工作流配置好了：鉴权、优化、网络连接等等通通不用你操心。 但一切要自己撸起袖子干的时候，开始发现各种踩坑。拿 Grafana 和服务监控...",
+    "date": "2025-09-16T21:00:09+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/o23qyhy87w.png",
+    "permalink": "https://www.xmyy.com/article/Grafana-Chinese-Beginner-Tutorial"
+  },
+  {
+    "title": "Loki基础知识",
+    "content": "Grafana Loki是一组组件，可以组成一个功能齐全的日志聚合系统。 Loki与其他日志系统不同是，它只会索引日志的元数据即`labels`(类似Prometheus的labels)，日志数据本身会被压缩并分块(chunck)存储在对象存储中，也可以存储在本地文件系统中。小的索引和高度压缩的分块简化了操作，大大降低了Loki的成本。 1.概述 ---- ### 1.1 基本概念 * Loki是一个为有效保存日志数据而优化的数据存储...",
+    "date": "2023-05-23T21:21:46+08:00",
+    "image": "https://www.xmyy.com/upload/2026/07/d3135d676e_1_k-hdOAQjRXKoyguzKuoeKg.jpg",
+    "permalink": "https://www.xmyy.com/article/Loki-basics"
+  },
+  {
     "title": "关于我们",
     "content": "## 关于我们 虾米云栈致力于打造领先的专业的IT技术门户，汇聚人工智能、网络安全、云计算及大数据等领域的深度技术文章，从入门教程到企业级架构，海量技术文档、问答及在线课程，为CTO、架构师及开发者提供前沿视野，陪您一起成长。 \u003e This website is committed to building a leading professional IT technology portal, gathering in-depth technical articles in fields such as artificial intelligence, cybersecurit...",
     "date": "2026-03-29T15:15:51+08:00",

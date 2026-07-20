@@ -15,37 +15,37 @@
 ## 📁 专题
   - 📂 **雄鹰论文**
     - 📂 **电脑科技**
-      - 📄 [组建对等网DIY](https://www.xmyy.com/article/DIY-Peer-to-Peer-Network-Setup)：《组建对等网DIY》发表于2000年第11期《电脑知识与技术》,DIY Peer-to-Peer Network Setup
       - 📄 [无人参与安装Win2K全攻略](https://www.xmyy.com/article/Full-guide-to-installing-Win2K-unattended)：《无人参与安装Win2K全攻略》发表于2001年4月26日《天极网》,Full guide to installing Win2K unattended
       - 📄 [winimage--制作镜像文件的好工具](https://www.xmyy.com/article/WinImage-good-tool-for-making-images)：《winimage--制作镜像文件的好工具》发表于2000年第10期《互联网世界》,WinImage good tool for making images
+      - 📄 [组建对等网DIY](https://www.xmyy.com/article/DIY-Peer-to-Peer-Network-Setup)：《组建对等网DIY》发表于2000年第11期《电脑知识与技术》,DIY Peer-to-Peer Network Setup
 
     - 📂 **化学论文**
-      - 📄 [一道化学题的数学解法](https://www.xmyy.com/article/Mathematical-solution-to-a-chemistry-problem)：《一道化学题的数学解法》发表于1996年第4期《数理天地(高中版)》,Mathematical solution to a chemistry problem
       - 📄 [求知贵探索](https://www.xmyy.com/article/knowing-in-exploration)：《求知贵探索》发表于1997年第1期《数理天地(高中版)》,knowing in exploration,The quest for knowledge
+      - 📄 [一道化学题的数学解法](https://www.xmyy.com/article/Mathematical-solution-to-a-chemistry-problem)：《一道化学题的数学解法》发表于1996年第4期《数理天地(高中版)》,Mathematical solution to a chemistry problem
 
     - 📂 **数学论文**
+      - 📄 [一道不等式题的简证](https://www.xmyy.com/article/A-short-proof-of-an-inequality-question)：《一道不等式题的简证》1997年第5期《数理天地(高中版)》,A short proof of an inequality question
       - 📄 [学一点“行列式”知识](https://www.xmyy.com/article/Learn-a-little-about-determinants)：《学一点“行列式”知识》发表于1996年12月11日《中学生知识报(高中版)》,Learn a little about determinants
       - 📄 [轸念陈景润](https://www.xmyy.com/article/Tribute-to-ChenJingrun)：《轸念陈景润》发表于1996年第7期《青少年日记》,Tribute to ChenJingrun,feel deeply concerned about Chen Jingrun
       - 📄 [一道数学赛题的别证](https://www.xmyy.com/article/An-alternative-proof-of-a-math-competition-problem)：《一道数学赛题的别证》发表于1995年第5期《数理天地(高中版)》,An alternative proof of a math competition problem
-      - 📄 [一道不等式题的简证](https://www.xmyy.com/article/A-short-proof-of-an-inequality-question)：《一道不等式题的简证》1997年第5期《数理天地(高中版)》,A short proof of an inequality question
 
     - 📂 **网站建设**
       - 📄 [网页检索功能的简单实现](https://www.xmyy.com/article/Simple-implementation-of-web-search-function)：《网页检索功能的简单实现》2000年第11期《电脑知识与技术》,Simple implementation of web search function
-      - 📄 [网页颜色不再单调](https://www.xmyy.com/article/Web-color-is-no-longer-monotonous)：《网页颜色不再单调》发表于2000年7月10日第28期《上海微型计算机周刊》,Web color is no longer monotonous
       - 📄 [动态HTML技术精彩实例](https://www.xmyy.com/article/Dynamic-HTML-technology-wonderful-examples)：《动态HTML技术精彩实例》发表于2000年6月5日第23期《上海微型计算机周刊》,Dynamic HTML technology wonderful examples
-      - 📄 [用DHTML制作动画一例](https://www.xmyy.com/article/An-example-of-animation-using-DHTML)：《用DHTML制作动画一例》发表于2001年第1期《软件世界》,An example of animation using DHTML
       - 📄 [状态栏上的动态HTML技术](https://www.xmyy.com/article/Dynamic-HTML-technology-on-the-status-bar)：《状态栏上的动态HTML技术》发表于 2000年第9期《软件世界》,Dynamic HTML technology on the status bar
       - 📄 [主页制作经验拾遗](https://www.xmyy.com/article/Gleanings-from-homepage-creation-experience)：《主页制作经验拾遗》发表于2000年10月30日第44期《上海微型计算机周刊》,Gleanings from homepage creation experience
+      - 📄 [用DHTML制作动画一例](https://www.xmyy.com/article/An-example-of-animation-using-DHTML)：《用DHTML制作动画一例》发表于2001年第1期《软件世界》,An example of animation using DHTML
       - 📄 [Linkbotpro--测试主页链接好工具](https://www.xmyy.com/article/Linkbotpro-Good-tool-for-testing-homepage-links)：《Linkbotpro--测试主页链接好工具》发表于2001年第9期《电脑商情报》,Linkbotpro Good tool for testing homepage links
+      - 📄 [网页颜色不再单调](https://www.xmyy.com/article/Web-color-is-no-longer-monotonous)：《网页颜色不再单调》发表于2000年7月10日第28期《上海微型计算机周刊》,Web color is no longer monotonous
 
 
   - 📂 **开发案例**
-    - 📄 [SQL审核平台](https://www.xmyy.com/article/sql-review-platform)：一套基于 ThinkPHP 6 + Layui 构建的轻量级 SQL 审核工单管理系统，支持多数据源、多级审核流程、企业微信通知，适用于团队对 My...
-    - 📄 [员工上网行为管理系统](https://www.xmyy.com/article/Employee-Internet-Behavior-Management-System-Meiya-Pico)：系统概述本系统是一套基于 PHP + MySQL 架构的员工上网行为管理系统（B/S架构），由**雄鹰（童建平）**设计开发，主要用于企业内...
-    - 📄 [微信小程序：酒店预订管理系统](https://www.xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System)：微信小程序：酒店预订管理系统,高效、专业的酒店运营管理平台,WeChat Mini Program Hotel Reservation Management System
-    - 📄 [EagleDesk - 跨平台远程控制软件 - 现代化跨平台远程控制解决方案](https://www.xmyy.com/article/EagleDesk-cross-platform-remote-control-software)：EagleDesk：跨平台远程控制软件,现代化跨平台远程控制解决方案,Cross-platform remote control software
     - 📄 [SikkerBox-手机上的网络瑞士军刀](https://www.xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone)：SikkerBox-采用现代、清晰的UI界面布局和指示，旨在打造成手机上的网络瑞士军刀，为您的数字生活提供一个功能强大且用户友好的安全层解决方案。本app已取得软件著作权证书！
     - 📄 [SikkerBox-Cyber Swiss Army Knife on your cell phone](https://www.xmyy.com/en/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone)：SikkerBox-With a modern and clear UI layout and instructions, SikkerBox is designed to be the Swiss Army Knife of networking on your phone, providing a powerful and user-friendly security layer solution for your digital life.This app has obtained the software copyright certificate!
+    - 📄 [SQL审核平台](https://www.xmyy.com/article/sql-review-platform)：一套基于 ThinkPHP 6 + Layui 构建的轻量级 SQL 审核工单管理系统，支持多数据源、多级审核流程、企业微信通知，适用于团队对 My...
+    - 📄 [EagleDesk - 跨平台远程控制软件 - 现代化跨平台远程控制解决方案](https://www.xmyy.com/article/EagleDesk-cross-platform-remote-control-software)：EagleDesk：跨平台远程控制软件,现代化跨平台远程控制解决方案,Cross-platform remote control software
+    - 📄 [员工上网行为管理系统](https://www.xmyy.com/article/Employee-Internet-Behavior-Management-System-Meiya-Pico)：系统概述本系统是一套基于 PHP + MySQL 架构的员工上网行为管理系统（B/S架构），由**雄鹰（童建平）**设计开发，主要用于企业内...
+    - 📄 [微信小程序：酒店预订管理系统](https://www.xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System)：微信小程序：酒店预订管理系统,高效、专业的酒店运营管理平台,WeChat Mini Program Hotel Reservation Management System
 
 
 ## 📁 操作系统
@@ -68,8 +68,8 @@
       - 📄 [EagleOS 9.5-deeply customized and optimized based on AlmaLinux 9.5](https://www.xmyy.com/en/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux)：EagleOS 9.5-deeply customized and optimized based on AlmaLinux 9.5, automatically performs the following system optimizations during the installation process.
 
     - 📂 **CentOS**
-      - 📄 [新开源工具IPCDump：用于在Linux上跟踪进程间通信](https://www.xmyy.com/article/IPCDump-For-tracking-inter-process-communication-on-Linux)：《新开源工具IPCDump：用于在Linux上跟踪进程间通信》发表于《今日头条》,IPCDump For tracking inter-process communication on Linux
       - 📄 [EagleOS 7.9-基于Centos 7.9深度定制优化](https://www.xmyy.com/article/EagleOS7-deeply-customized-and-optimized-based-on-Centos)：EagleOS 7.9-基于Centos 7.9深度定制优化，全程完全自动化无人值守安装。
+      - 📄 [新开源工具IPCDump：用于在Linux上跟踪进程间通信](https://www.xmyy.com/article/IPCDump-For-tracking-inter-process-communication-on-Linux)：《新开源工具IPCDump：用于在Linux上跟踪进程间通信》发表于《今日头条》,IPCDump For tracking inter-process communication on Linux
 
     - 📂 **Ubuntu**
       - 📄 [ubuntu国内源安装docker](https://www.xmyy.com/article/Ubuntu-domestic-source-installation-of-Docker)：在Ubuntu 20.04上使用国内源安装Docker，可以使用清华大学源或阿里云源，具体如下。先更新软件包，安装备要apt软件# 更新软件包...
@@ -94,9 +94,9 @@
 
   - 📂 **APP开发**
     - 📂 **Flutter开发**
+      - 📄 [主流的APP开发方式](https://www.xmyy.com/article/The-mainstream-method-of-app-development)：市面上主流APP开发框架对比包括：原生native、webapp、hybird、RN、weex、flutter、uni-app的总结和对比Native App使用原生语言...
       - 📄 [Gradle配置全局替换国内镜像操作指南](https://www.xmyy.com/article/operation-guide-of-Gradle-configuration-global-replacement-domestic-image)：在中国，由于网络环境的影响，使用 Gradle 下载依赖库和插件时经常遭遇超时和连接失败的问题。为了解决这一问题，使用国内的镜像...
       - 📄 [手机上的APP都是用什么编程语言写的](https://www.xmyy.com/article/What-programming-language-are-the-apps-on-phones-written-in)：今天想和大家分享的内容是和我们手机上APP相关的，它们都是用什么编程语言写的呢？主要针对两大移动端：Android和IOS，我们就不...
-      - 📄 [主流的APP开发方式](https://www.xmyy.com/article/The-mainstream-method-of-app-development)：市面上主流APP开发框架对比包括：原生native、webapp、hybird、RN、weex、flutter、uni-app的总结和对比Native App使用原生语言...
 
 
   - 📂 **后端开发**
@@ -125,9 +125,9 @@
     - 📄 [Spark完全分布式集群环境搭建详细教程](https://www.xmyy.com/article/Detailed-tutorial-on-setting-up-a-fully-distributed-Spark-cluster-environment)：1.环境的准备jdk、zookeeper、hadoop集群。当前服务器：三个服务器节点（hadoop101/hadoop102/hadoop103）2.将安装软件上传到 ha...
 
   - 📂 **Hadoop**
-    - 📄 [Hadoop安装与搭建全流程教学全网最全超详细保姆级教学](https://www.xmyy.com/article/Full-process-tutorial-for-Hadoop-installation-and-setup-the-most-comprehensive-and-super-detailed-nanny-level-tutorial-across-the-entire-web)：一.前言Hadoop 的安装是一场充满细节的挑战！不过别担心，本篇保姆级教程将手把手带你从零搭建一个 3 节点 Hadoop 集群，即便是...
-    - 📄 [Hadoop入门](https://www.xmyy.com/article/Getting-started-with-Hadoop)：第 1 章 Hadoop 概述1.1 Hadoop 是什么1） Hadoop是一个由Apache基金会所开发的分布式系统基础架构。2） 主要解决，海量数据的存...
     - 📄 [Hadoop基础](https://www.xmyy.com/article/Hadoop-base)：在大数据时代，数据的存储和处理变得越来越重要。Hadoop作为一个开源的分布式计算平台，为大数据的存储和处理提供了强大的支持。...
+    - 📄 [Hadoop入门](https://www.xmyy.com/article/Getting-started-with-Hadoop)：第 1 章 Hadoop 概述1.1 Hadoop 是什么1） Hadoop是一个由Apache基金会所开发的分布式系统基础架构。2） 主要解决，海量数据的存...
+    - 📄 [Hadoop安装与搭建全流程教学全网最全超详细保姆级教学](https://www.xmyy.com/article/Full-process-tutorial-for-Hadoop-installation-and-setup-the-most-comprehensive-and-super-detailed-nanny-level-tutorial-across-the-entire-web)：一.前言Hadoop 的安装是一场充满细节的挑战！不过别担心，本篇保姆级教程将手把手带你从零搭建一个 3 节点 Hadoop 集群，即便是...
 
 
 ## 📁 数据库
@@ -174,18 +174,25 @@
       - 📄 [Elasticsearch - 修改最大值限制来解决max_result_window is too large问题](https://www.xmyy.com/article/Elasticsearch-how-to-modify-maximum-value-limits)：一、前言es响应数据量有限制，官方默认值为10000：如果实际查询到的数据超过这个值，就会报错：max_result_window is too large...
 
     - 📂 **Loki**
+      - 📄 [Loki基础知识](https://www.xmyy.com/article/Loki-basics)：Grafana Loki是一组组件，可以组成一个功能齐全的日志聚合系统。Loki与其他日志系统不同是，它只会索引日志的元数据即labels(类...
 
     - 📂 **Grafana**
+      - 📄 [Grafana中文入门教程](https://www.xmyy.com/article/Grafana-Chinese-Beginner-Tutorial)：这篇文章里我们从头到尾介绍了如何用 Grafana 生成仪表盘，如何配置和连接数据源，以及如何导入和创建一个仪表盘。
 
     - 📂 **Prometheus**
+      - 📄 [Prometheus快速入门](https://www.xmyy.com/article/Prometheus-Quick-Start)：这篇文章从 Prometheus 的原理入门，剖析了 Prometheus 实现的原理，并且用一个简单的例子从零实现了一套业务监控系统。通过 Pro...
 
     - 📂 **Zabbix**
+      - 📄 [zabbix实现原理及架构详解](https://www.xmyy.com/article/Detailed-explanation-of-Zabbix-implementation-principles-and-architecture)：zabbix是完全开源的工具，整合了cacti和nagios等特性。zabbix功能很强大，如何理解zabbix的功能，我们可以和cacti、nagios的功能...
 
     - 📂 **Terraform**
+      - 📄 [史上最全Terraform入门教程，助你无坑入门](https://www.xmyy.com/article/The-most-comprehensive-Terraform-beginner-tutorial-ever-helping-you-get-started-without-pitfalls)：本文通过实际操作，使用Terraform在AWS上创建各种基础设施资源，包括VPC、子网、路由表、网关、安全组、EC2实例、EBS卷和弹性IP...
 
     - 📂 **Puppet**
+      - 📄 [puppet详解](https://www.xmyy.com/article/Detailed-explanation-of-puppet)：一、puppet 介绍1、puppet是什么puppet是一个IT基础设施自动化管理工具，它能够帮助系统管理员管理基础设施的整个生命周期： 供...
 
     - 📂 **SaltStack**
+      - 📄 [SaltStack快速入门](https://www.xmyy.com/article/saltstack-kuai-su-ru-men)：saltstack介绍Salt，一种全新的基础设施管理方式，部署轻松，在几分钟内可运行起来，扩展性好，很容易管理上万台服务器，速度够...
 
     - 📂 **Ansible**
       - 📄 [k8s上部署Ansible面板工具AWX](https://www.xmyy.com/article/Deploy-the-Ansible-panel-tool-AWX-on-k8s)：awxawx是红帽Ansible Tower的开源版本，他的功能是可以使用web界面来操作ansible操作系统使用openEuler 22.03这里是在k8s上部署...
@@ -219,23 +226,25 @@
 
   - 📂 **私有云**
     - 📂 **ProxmoxVE**
+      - 📄 [Proxmox VE 9.1（PVE）安装保姆级教程（适用于最新版）](https://www.xmyy.com/article/Proxmox-VE-PVE-Installation-Assistant-Tutorial-Latest-Version)：本教程基于 Proxmox VE 9.1（截至 2026 年 2 月的最新稳定版）编写。安装流程与 7.x/8.x 系列高度相似，界面和选项基本一致，仅...
 
     - 📂 **VMwareCloud**
       - 📄 [如何通过ssh远程登录给esxi主机防火墙添加允许ip列表（视频）](https://www.xmyy.com/article/How-to-add-allow-ip-list-to-esxi-host-firewall-via-ssh-remote-login)：《如何通过ssh远程登录给esxi主机防火墙添加允许ip列表》发表于《今日头条》,How to add allow ip list to esxi host firewall via ssh remote login
 
     - 📂 **OpenStack**
+      - 📄 [全网最全最详细两万字OpenStack知识图谱](https://www.xmyy.com/article/The-most-comprehensive-and-detailed-20000-word-OpenStack-knowledge-graph-on-the-entire-internet)：OpenStack简介OpenStack背景介绍.st0{fill:#EA2347;}.st1{fill:#504741;}OpenStack是一个自由、开源的云计算平台。它主要作为基...
 
 
 
 ## 📁 网络安全
   - 📂 **数据安全**
-    - 📄 [如何使用VeraCrypt保护PC上的敏感文件](https://www.xmyy.com/article/How-to-Protect-Sensitive-Files-on-PC-with-VeraCrypt)：《如何使用VeraCrypt保护PC上的敏感文件》发表于《今日头条》,How to Protect Sensitive Files on PC with VeraCrypt
     - 📄 [macOS Tahoe 安装及配置 VeraCrypt 详细版](https://www.xmyy.com/article/Detailed-version-of-installing-and-configuring-VeraCrypt-on-macOS-Tahoe)：一、准备工作在开始安装前，请先准备以下内容：软件用途下载来源VeraCrypt 安装包（.dmg）主程序官方网站（详见下面链接）macFUS...
     - 📄 [如何在MacOS上安装VeraCrypt以跨平台保护数据](https://www.xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms)：《如何在MacOS上安装VeraCrypt以跨平台保护数据》发表于《今日头条》,How to Install VeraCrypt on MacOS to Protect Data Across Platforms
+    - 📄 [如何使用VeraCrypt保护PC上的敏感文件](https://www.xmyy.com/article/How-to-Protect-Sensitive-Files-on-PC-with-VeraCrypt)：《如何使用VeraCrypt保护PC上的敏感文件》发表于《今日头条》,How to Protect Sensitive Files on PC with VeraCrypt
 
   - 📂 **应用安全**
-    - 📄 [OpenSCA用开源的方式做开源风险治理：Why? What? How?](https://www.xmyy.com/article/OpenSCA-uses-an-open-source-approach-to-manage-open-source-risks)：一. 开源风险治理为何如此重要？《供应链攻击威胁局势报告》显示，预计2021年的供应链攻击数量将增加至上一年的四倍之多。《2021...
     - 📄 [从玩转靶机DVWA看程序设计安全](https://www.xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA)：《从玩转靶机DVWA看程序设计安全》发表于《今日头条》,Programming Security from Playing with the Target DVWA
+    - 📄 [OpenSCA用开源的方式做开源风险治理：Why? What? How?](https://www.xmyy.com/article/OpenSCA-uses-an-open-source-approach-to-manage-open-source-risks)：一. 开源风险治理为何如此重要？《供应链攻击威胁局势报告》显示，预计2021年的供应链攻击数量将增加至上一年的四倍之多。《2021...
 
   - 📂 **系统安全**
     - 📄 [系统安全是什么](https://www.xmyy.com/article/What-is-system-security)：系统安全是指保护信息系统及其数据免受未授权访问、破坏或改动的能力。它涵盖物理安全、网络安全、应用安全和数据保护等多个领域...
@@ -249,19 +258,26 @@
 
 ## 📁 人工智能
   - 📂 **AI工具**
+    - 📄 [AI工具软件有哪些？2026年主流AI工具分类全解析](https://www.xmyy.com/article/What-AI-tool-software-are-available-A-complete-analysis-of-mainstream-AI-tool-categories-for-2026)：随着人工智能技术的飞速发展，AI工具软件已深度融入工作、创作、生活等场景，成为提升效率、激发创意的核心助力。2026年，AI工具...
 
   - 📂 **AI开发**
     - 📂 **Agent**
+      - 📄 [AI Agent框架深度解析：LangChain、AutoGen等五大框架如何选？开发者必看指南](https://www.xmyy.com/article/In-depth-Analysis-of-AI-Agent-Frameworks-How-to-Choose-Among-the-Five-Major-Frameworks)：本文对LangChain、AutoGen、Auto-GPT、MetaGPT和CrewAI五大主流AI Agent框架进行了技术深度分析，涵盖各框架的核心组件、实现原...
 
     - 📂 **RAG**
+      - 📄 [RAG 是什么？16 种 RAG 方案万字一次讲清！](https://www.xmyy.com/article/What-is-RAG-16-RAG-solutions-explained-in-ten-thousand-words)：最近这两年，只要你接触过 AI 编程，大概率听过一个词，RAG（Retrieval-Augmented Generation）。但很多小伙伴对 RAG 都只是一知...
 
     - 📂 **MCP**
+      - 📄 [一文搞懂 MCP：从入门到实战（含本地项目 MCP Server 示例）](https://www.xmyy.com/article/Understand-MCP-in-One-Article-From-Beginner-to-Practical-Including-Local-Project-MCP-Server-Examples)：用 MCP 打通本地项目与大模型：从概念到实战一文搞清：MCP 是什么、如何和 LangGraph / CrewAI / AutoGen 配合、以及如何给本地...
 
     - 📂 **LangChain**
+      - 📄 [LangChain完整教程：六大组件+分层设计+完整项目实战](https://www.xmyy.com/article/Complete-LangChain-tutorial-Six-major-components-layered-design-complete-project-practice)：前言今天我想和大家分享一下我的LangChain学习历程,大多数文章要么止步于基础，要么直接跳入高级应用，却忽视了从理解到实践的关...
 
     - 📂 **TensorFlow**
+      - 📄 [TensorFlow安装步骤、使用示例及常见问题应对](https://www.xmyy.com/article/TensorFlow-installation-steps-usage-examples-and-common-problem-responses)：一、TensorFlow安装（一）安装前准备环境要求Python版本：TensorFlow支持Python 3.7 - 3.11。确保你的Python环境已经正确安装并...
 
     - 📂 **PyTorch**
+      - 📄 [PyTorch安装超详细教程（含多系统、多场景、避坑指南）](https://www.xmyy.com/article/Detailed-PyTorch-Installation-Tutorial-Including-Multiple-Systems-Multiple-Scenarios-Pitfall-Avoidance-Guide)：一、安装前准备1. 系统与硬件检查系统支持版本GPU 支持要求Windows10/11（64位）NVIDIA 显卡（CUDA 11.0+）macOS12+（Apple Sili...
 
 
   - 📂 **AI基础**
@@ -279,8 +295,8 @@
       - 📄 [深度学习（Deep Learning）全面详解：从原理到应用](https://www.xmyy.com/article/Deep-Learning-Comprehensive-Explanation-From-Principles-to-Applications)：深度学习是机器学习的重要分支，核心是通过多层神经网络（深度神经网络） 模拟人类大脑的层级化信息处理方式，从数据中自动学习...
 
     - 📂 **机器学习**
-      - 📄 [普通人学习人工智能的完整指南](https://www.xmyy.com/article/A-complete-guide-for-ordinary-people-to-learn-artificial-intelligence)：一、入门阶段：打下坚实基础1. 了解AI基础知识📚 重要提示：在开始学习之前，你需要对AI有一个全面的了解。AI不仅仅是科幻电影中...
       - 📄 [人工智能实战路线图](https://www.xmyy.com/article/Artificial-Intelligence-Practical-Roadmap)：必备基础技能要学人工智能（数据科学）这行还是需要一些基本功的，最基础也是最核心的就是Python和数学了！这两兄弟入门起来并不...
+      - 📄 [普通人学习人工智能的完整指南](https://www.xmyy.com/article/A-complete-guide-for-ordinary-people-to-learn-artificial-intelligence)：一、入门阶段：打下坚实基础1. 了解AI基础知识📚 重要提示：在开始学习之前，你需要对AI有一个全面的了解。AI不仅仅是科幻电影中...
 
 
 
