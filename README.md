@@ -15,37 +15,37 @@
 ## 📁 专题
   - 📂 **雄鹰论文**
     - 📂 **电脑科技**
+      - 📄 [winimage--制作镜像文件的好工具](https://www.xmyy.com/article/WinImage-good-tool-for-making-images)：《winimage--制作镜像文件的好工具》发表于2000年第10期《互联网世界》,WinImage good tool for making images
       - 📄 [无人参与安装Win2K全攻略](https://www.xmyy.com/article/Full-guide-to-installing-Win2K-unattended)：《无人参与安装Win2K全攻略》发表于2001年4月26日《天极网》,Full guide to installing Win2K unattended
       - 📄 [组建对等网DIY](https://www.xmyy.com/article/DIY-Peer-to-Peer-Network-Setup)：《组建对等网DIY》发表于2000年第11期《电脑知识与技术》,DIY Peer-to-Peer Network Setup
-      - 📄 [winimage--制作镜像文件的好工具](https://www.xmyy.com/article/WinImage-good-tool-for-making-images)：《winimage--制作镜像文件的好工具》发表于2000年第10期《互联网世界》,WinImage good tool for making images
 
     - 📂 **化学论文**
       - 📄 [一道化学题的数学解法](https://www.xmyy.com/article/Mathematical-solution-to-a-chemistry-problem)：《一道化学题的数学解法》发表于1996年第4期《数理天地(高中版)》,Mathematical solution to a chemistry problem
       - 📄 [求知贵探索](https://www.xmyy.com/article/knowing-in-exploration)：《求知贵探索》发表于1997年第1期《数理天地(高中版)》,knowing in exploration,The quest for knowledge
 
     - 📂 **数学论文**
-      - 📄 [一道不等式题的简证](https://www.xmyy.com/article/A-short-proof-of-an-inequality-question)：《一道不等式题的简证》1997年第5期《数理天地(高中版)》,A short proof of an inequality question
-      - 📄 [轸念陈景润](https://www.xmyy.com/article/Tribute-to-ChenJingrun)：《轸念陈景润》发表于1996年第7期《青少年日记》,Tribute to ChenJingrun,feel deeply concerned about Chen Jingrun
       - 📄 [一道数学赛题的别证](https://www.xmyy.com/article/An-alternative-proof-of-a-math-competition-problem)：《一道数学赛题的别证》发表于1995年第5期《数理天地(高中版)》,An alternative proof of a math competition problem
+      - 📄 [轸念陈景润](https://www.xmyy.com/article/Tribute-to-ChenJingrun)：《轸念陈景润》发表于1996年第7期《青少年日记》,Tribute to ChenJingrun,feel deeply concerned about Chen Jingrun
+      - 📄 [一道不等式题的简证](https://www.xmyy.com/article/A-short-proof-of-an-inequality-question)：《一道不等式题的简证》1997年第5期《数理天地(高中版)》,A short proof of an inequality question
       - 📄 [学一点“行列式”知识](https://www.xmyy.com/article/Learn-a-little-about-determinants)：《学一点“行列式”知识》发表于1996年12月11日《中学生知识报(高中版)》,Learn a little about determinants
 
     - 📂 **网站建设**
-      - 📄 [网页检索功能的简单实现](https://www.xmyy.com/article/Simple-implementation-of-web-search-function)：《网页检索功能的简单实现》2000年第11期《电脑知识与技术》,Simple implementation of web search function
-      - 📄 [状态栏上的动态HTML技术](https://www.xmyy.com/article/Dynamic-HTML-technology-on-the-status-bar)：《状态栏上的动态HTML技术》发表于 2000年第9期《软件世界》,Dynamic HTML technology on the status bar
       - 📄 [网页颜色不再单调](https://www.xmyy.com/article/Web-color-is-no-longer-monotonous)：《网页颜色不再单调》发表于2000年7月10日第28期《上海微型计算机周刊》,Web color is no longer monotonous
-      - 📄 [Linkbotpro--测试主页链接好工具](https://www.xmyy.com/article/Linkbotpro-Good-tool-for-testing-homepage-links)：《Linkbotpro--测试主页链接好工具》发表于2001年第9期《电脑商情报》,Linkbotpro Good tool for testing homepage links
       - 📄 [主页制作经验拾遗](https://www.xmyy.com/article/Gleanings-from-homepage-creation-experience)：《主页制作经验拾遗》发表于2000年10月30日第44期《上海微型计算机周刊》,Gleanings from homepage creation experience
+      - 📄 [Linkbotpro--测试主页链接好工具](https://www.xmyy.com/article/Linkbotpro-Good-tool-for-testing-homepage-links)：《Linkbotpro--测试主页链接好工具》发表于2001年第9期《电脑商情报》,Linkbotpro Good tool for testing homepage links
+      - 📄 [状态栏上的动态HTML技术](https://www.xmyy.com/article/Dynamic-HTML-technology-on-the-status-bar)：《状态栏上的动态HTML技术》发表于 2000年第9期《软件世界》,Dynamic HTML technology on the status bar
       - 📄 [用DHTML制作动画一例](https://www.xmyy.com/article/An-example-of-animation-using-DHTML)：《用DHTML制作动画一例》发表于2001年第1期《软件世界》,An example of animation using DHTML
+      - 📄 [网页检索功能的简单实现](https://www.xmyy.com/article/Simple-implementation-of-web-search-function)：《网页检索功能的简单实现》2000年第11期《电脑知识与技术》,Simple implementation of web search function
       - 📄 [动态HTML技术精彩实例](https://www.xmyy.com/article/Dynamic-HTML-technology-wonderful-examples)：《动态HTML技术精彩实例》发表于2000年6月5日第23期《上海微型计算机周刊》,Dynamic HTML technology wonderful examples
 
 
   - 📂 **开发案例**
     - 📄 [EagleDesk - 跨平台远程控制软件 - 现代化跨平台远程控制解决方案](https://www.xmyy.com/article/EagleDesk-cross-platform-remote-control-software)：EagleDesk：跨平台远程控制软件,现代化跨平台远程控制解决方案,Cross-platform remote control software
-    - 📄 [微信小程序：酒店预订管理系统](https://www.xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System)：微信小程序：酒店预订管理系统,高效、专业的酒店运营管理平台,WeChat Mini Program Hotel Reservation Management System
+    - 📄 [SQL审核平台](https://www.xmyy.com/article/sql-review-platform)：一套基于 ThinkPHP 6 + Layui 构建的轻量级 SQL 审核工单管理系统，支持多数据源、多级审核流程、企业微信通知，适用于团队对 My...
     - 📄 [SikkerBox-手机上的网络瑞士军刀](https://www.xmyy.com/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone)：SikkerBox-采用现代、清晰的UI界面布局和指示，旨在打造成手机上的网络瑞士军刀，为您的数字生活提供一个功能强大且用户友好的安全层解决方案。本app已取得软件著作权证书！
     - 📄 [员工上网行为管理系统](https://www.xmyy.com/article/Employee-Internet-Behavior-Management-System-Meiya-Pico)：系统概述本系统是一套基于 PHP + MySQL 架构的员工上网行为管理系统（B/S架构），由**雄鹰（童建平）**设计开发，主要用于企业内...
-    - 📄 [SQL审核平台](https://www.xmyy.com/article/sql-review-platform)：一套基于 ThinkPHP 6 + Layui 构建的轻量级 SQL 审核工单管理系统，支持多数据源、多级审核流程、企业微信通知，适用于团队对 My...
     - 📄 [SikkerBox-Cyber Swiss Army Knife on your cell phone](https://www.xmyy.com/en/article/SikkerBox-Cyber-Swiss-Army-Knife-on-your-cell-phone)：SikkerBox-With a modern and clear UI layout and instructions, SikkerBox is designed to be the Swiss Army Knife of networking on your phone, providing a powerful and user-friendly security layer solution for your digital life.This app has obtained the software copyright certificate!
+    - 📄 [微信小程序：酒店预订管理系统](https://www.xmyy.com/article/WeChat-Mini-Program-Hotel-Reservation-Management-System)：微信小程序：酒店预订管理系统,高效、专业的酒店运营管理平台,WeChat Mini Program Hotel Reservation Management System
 
 
 ## 📁 操作系统
@@ -64,8 +64,8 @@
       - 📄 [apache在低配置服务器下的优化](https://www.xmyy.com/article/Apache-optimization-on-low-spec-servers)：博主大清早在被窝里看看手机，浏览下博客，发现 Error establishing a database connection，显然是数据库挂了= =貌似就是作死直...
 
     - 📂 **AlmaLinux**
-      - 📄 [EagleOS 9.5-deeply customized and optimized based on AlmaLinux 9.5](https://www.xmyy.com/en/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux)：EagleOS 9.5-deeply customized and optimized based on AlmaLinux 9.5, automatically performs the following system optimizations during the installation process.
       - 📄 [EagleOS 9.5-基于AlmaLinux 9.5深度定制优化](https://www.xmyy.com/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux)：EagleOS 9.5-基于AlmaLinux 9.5深度定制优化，全程完全自动化无人值守安装。
+      - 📄 [EagleOS 9.5-deeply customized and optimized based on AlmaLinux 9.5](https://www.xmyy.com/en/article/EagleOS-deeply-customized-and-optimized-based-on-AlmaLinux)：EagleOS 9.5-deeply customized and optimized based on AlmaLinux 9.5, automatically performs the following system optimizations during the installation process.
 
     - 📂 **CentOS**
       - 📄 [新开源工具IPCDump：用于在Linux上跟踪进程间通信](https://www.xmyy.com/article/IPCDump-For-tracking-inter-process-communication-on-Linux)：《新开源工具IPCDump：用于在Linux上跟踪进程间通信》发表于《今日头条》,IPCDump For tracking inter-process communication on Linux
@@ -94,9 +94,9 @@
 
   - 📂 **APP开发**
     - 📂 **Flutter开发**
+      - 📄 [Gradle配置全局替换国内镜像操作指南](https://www.xmyy.com/article/operation-guide-of-Gradle-configuration-global-replacement-domestic-image)：在中国，由于网络环境的影响，使用 Gradle 下载依赖库和插件时经常遭遇超时和连接失败的问题。为了解决这一问题，使用国内的镜像...
       - 📄 [主流的APP开发方式](https://www.xmyy.com/article/The-mainstream-method-of-app-development)：市面上主流APP开发框架对比包括：原生native、webapp、hybird、RN、weex、flutter、uni-app的总结和对比Native App使用原生语言...
       - 📄 [手机上的APP都是用什么编程语言写的](https://www.xmyy.com/article/What-programming-language-are-the-apps-on-phones-written-in)：今天想和大家分享的内容是和我们手机上APP相关的，它们都是用什么编程语言写的呢？主要针对两大移动端：Android和IOS，我们就不...
-      - 📄 [Gradle配置全局替换国内镜像操作指南](https://www.xmyy.com/article/operation-guide-of-Gradle-configuration-global-replacement-domestic-image)：在中国，由于网络环境的影响，使用 Gradle 下载依赖库和插件时经常遭遇超时和连接失败的问题。为了解决这一问题，使用国内的镜像...
 
 
   - 📂 **后端开发**
@@ -126,8 +126,8 @@
 
   - 📂 **Hadoop**
     - 📄 [Hadoop安装与搭建全流程教学全网最全超详细保姆级教学](https://www.xmyy.com/article/Full-process-tutorial-for-Hadoop-installation-and-setup-the-most-comprehensive-and-super-detailed-nanny-level-tutorial-across-the-entire-web)：一.前言Hadoop 的安装是一场充满细节的挑战！不过别担心，本篇保姆级教程将手把手带你从零搭建一个 3 节点 Hadoop 集群，即便是...
-    - 📄 [Hadoop入门](https://www.xmyy.com/article/Getting-started-with-Hadoop)：第 1 章 Hadoop 概述1.1 Hadoop 是什么1） Hadoop是一个由Apache基金会所开发的分布式系统基础架构。2） 主要解决，海量数据的存...
     - 📄 [Hadoop基础](https://www.xmyy.com/article/Hadoop-base)：在大数据时代，数据的存储和处理变得越来越重要。Hadoop作为一个开源的分布式计算平台，为大数据的存储和处理提供了强大的支持。...
+    - 📄 [Hadoop入门](https://www.xmyy.com/article/Getting-started-with-Hadoop)：第 1 章 Hadoop 概述1.1 Hadoop 是什么1） Hadoop是一个由Apache基金会所开发的分布式系统基础架构。2） 主要解决，海量数据的存...
 
 
 ## 📁 数据库
@@ -238,13 +238,13 @@
 
 ## 📁 网络安全
   - 📂 **数据安全**
-    - 📄 [macOS Tahoe 安装及配置 VeraCrypt 详细版](https://www.xmyy.com/article/Detailed-version-of-installing-and-configuring-VeraCrypt-on-macOS-Tahoe)：一、准备工作在开始安装前，请先准备以下内容：软件用途下载来源VeraCrypt 安装包（.dmg）主程序官方网站（详见下面链接）macFUS...
     - 📄 [如何使用VeraCrypt保护PC上的敏感文件](https://www.xmyy.com/article/How-to-Protect-Sensitive-Files-on-PC-with-VeraCrypt)：《如何使用VeraCrypt保护PC上的敏感文件》发表于《今日头条》,How to Protect Sensitive Files on PC with VeraCrypt
     - 📄 [如何在MacOS上安装VeraCrypt以跨平台保护数据](https://www.xmyy.com/article/How-to-Install-VeraCrypt-on-MacOS-to-Protect-Data-Across-Platforms)：《如何在MacOS上安装VeraCrypt以跨平台保护数据》发表于《今日头条》,How to Install VeraCrypt on MacOS to Protect Data Across Platforms
+    - 📄 [macOS Tahoe 安装及配置 VeraCrypt 详细版](https://www.xmyy.com/article/Detailed-version-of-installing-and-configuring-VeraCrypt-on-macOS-Tahoe)：一、准备工作在开始安装前，请先准备以下内容：软件用途下载来源VeraCrypt 安装包（.dmg）主程序官方网站（详见下面链接）macFUS...
 
   - 📂 **应用安全**
-    - 📄 [从玩转靶机DVWA看程序设计安全](https://www.xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA)：《从玩转靶机DVWA看程序设计安全》发表于《今日头条》,Programming Security from Playing with the Target DVWA
     - 📄 [OpenSCA用开源的方式做开源风险治理：Why? What? How?](https://www.xmyy.com/article/OpenSCA-uses-an-open-source-approach-to-manage-open-source-risks)：一. 开源风险治理为何如此重要？《供应链攻击威胁局势报告》显示，预计2021年的供应链攻击数量将增加至上一年的四倍之多。《2021...
+    - 📄 [从玩转靶机DVWA看程序设计安全](https://www.xmyy.com/article/Programming-Security-from-Playing-with-the-Target-DVWA)：《从玩转靶机DVWA看程序设计安全》发表于《今日头条》,Programming Security from Playing with the Target DVWA
 
   - 📂 **系统安全**
     - 📄 [系统安全是什么](https://www.xmyy.com/article/What-is-system-security)：系统安全是指保护信息系统及其数据免受未授权访问、破坏或改动的能力。它涵盖物理安全、网络安全、应用安全和数据保护等多个领域...
@@ -282,8 +282,8 @@
 
   - 📂 **AI基础**
     - 📂 **大语言模型**
-      - 📄 [LLM 基础：从 Transformer 到大语言模型的核心原理](https://www.xmyy.com/article/The-core-principles-of-Transformer-to-large-language-models)：1. 什么是 LLM**LLM（Large Language Model，大语言模型）**是一类基于 Transformer 架构、通过海量文本数据训练而成的深度学习...
       - 📄 [LLM提示词注入攻防全解析：真实事故案例与防御实践](https://www.xmyy.com/article/analysis-of-LLM-prompt-injection-provides-comprehensive-offense-and-defense)：在AI应用爆炸式普及的今天，一行精心构造的文字，就可能让价值数百万美元的AI系统"叛变"——提示词注入（Prompt Injection）已连...
+      - 📄 [LLM 基础：从 Transformer 到大语言模型的核心原理](https://www.xmyy.com/article/The-core-principles-of-Transformer-to-large-language-models)：1. 什么是 LLM**LLM（Large Language Model，大语言模型）**是一类基于 Transformer 架构、通过海量文本数据训练而成的深度学习...
 
     - 📂 **Transformer**
       - 📄 [Transformer中的注意力](https://www.xmyy.com/article/Attention-in-Transformer)：1.自注意力假设我们要翻译下边这句话：“The animal didn’t cross the street because it was too tired”。这里it指的是什么？...
