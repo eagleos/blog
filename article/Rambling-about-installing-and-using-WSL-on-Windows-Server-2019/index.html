@@ -5037,7 +5037,7 @@
     </div>
 
     <section class="bg0 p-b-70 p-t-5">
-        <div class="mn-page-hero bg-img1 size-a-18 how-overlay1" style="background-image: url(&#39;../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-thumbnail.jpg&#39;);">
+        <div class="mn-page-hero bg-img1 size-a-18 how-overlay1" style="background-image: url(&#39;../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019.jpg&#39;);">
             <div class="container h-full flex-col-e-c p-b-58">
                 
                     
@@ -5080,7 +5080,7 @@
                     <div class="mn-prose">
                         <p><span class="nowrap"><span class="emojify">💁🏻‍♂️</span>《今日头条》 2020-11-02 《漫谈在Windows Server 2019中安装使用WSL》 童建平</span></p>
 <p>熟稔IT历史的朋友一定不会忘记98蓝屏事件：时任微软CEO的比尔·盖茨和助理 Chris Capossela在1998年春季计算机分销商展会（COMDEX ）现场演示Windows 98的&#34;即插即用&#34;（plug-and-play）新特性时，经历了演示计算机当场冷不丁甩出蓝屏死机（Blue Screen of Death，简称BSOD）界面的尴尬一幕：</p>
-<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-1-thumbnail.gif" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-1.gif" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>尽管微软极力想要化解其中的尴尬，但该事件还是在该公司的历史上留下了难以抹去的一笔。蓝屏死机几乎已经成为了微软Windows操作系统的标志。</p>
 <p>那么，作为从业IT的您，如果是一名运维工程师，当你正在紧急处理线上故障时，突然办公电脑蓝屏死机了；又亦或您是一名程序猿，正在专注&#34;写bug&#34;时，也BSOD了，这是多么令人崩溃的事情啊。所以，拥有一个稳定的操作系统，是您的不二选择。</p>
 <p>笔者自从Windows Server 2000以来，一直用Windows Server系列产品作为办公操作系统，深谙其利：</p>
@@ -5109,12 +5109,12 @@
 </ul>
 <p>要在Windows Server 2019上使用WSL，首先需要确定您的系统版本大于1709，可按下面步骤确定您的操作系统版本：</p>
 <p>①在开始菜单中点击Windows Powershell进入，或者在开始菜单中磁性贴中点击Windows Powershell进入，如下图：</p>
-<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-2-thumbnail.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-2.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>②输入Powershell命令：</p>
 <pre><code class="language-shell">Get-ComputerInfo | Select WindowsProductName, WindowsVersion, WindowsInstallationType, OsServerLevel, OsVersion, OsHardwareAbstractionLayer
 </code></pre>
 <p>如下图：</p>
-<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-3-thumbnail.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-3.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>③稍等几秒，系统输出结果，如：</p>
 <pre><code class="language-shell">WindowsProductName : Windows Server 2019 Datacenter
 
@@ -5129,15 +5129,15 @@ OsVersion : 10.0.17763
 OsHardwareAbstractionLayer : 10.0.17763.1131
 </code></pre>
 <p>如下图：</p>
-<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-4-thumbnail.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-4.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>上面的WindowsVersion的值即为您的系统版本。图中值为1809，满足WSL安装要求。</p>
 <p>然后继续在上面的Powershell窗口中输入如下命令启用WSL：</p>
 <pre><code class="language-shell">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 </code></pre>
 <p>如下图：</p>
-<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-5-thumbnail.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-5.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>回车后， 稍等几秒，会提示您选择并重启计算机，如下图：</p>
-<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-6-thumbnail.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-6.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>输入y或直接回车，电脑立即重启。重启后即成功启用了WSL。</p>
 <p>接下来，就是选择下载并安装您喜欢的Linux发行版，在Windows 10下可以通过Microsoft Store应用直接下载安装，在Windows Server 2019中Microsoft Store应用不可用，可以通过以下网址来下载并手动安装Linux发行版：</p>
 <ul>
@@ -5157,37 +5157,37 @@ OsHardwareAbstractionLayer : 10.0.17763.1131
 <pre><code class="language-shell">Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx –UseBasicParsing
 </code></pre>
 <p>如下图：</p>
-<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-7-thumbnail.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-7.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>回车后开始下载，取决于您的下载速度，可能费时很长，如下图：</p>
-<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-8-thumbnail.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-8.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>有可能就遇到下载失败了，如下图：</p>
-<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-9-thumbnail.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-9.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>这时候，为方便查看下载进度，我们改用curl命令进行下载：</p>
 <pre><code class="language-shell">curl.exe -L -o ubuntu-1604.appx https://aka.ms/wsl-ubuntu-1604
 </code></pre>
 <p>也是失败，如下图：</p>
-<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-10-thumbnail.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-10.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>于是再改成下载更新版本的ubuntu：</p>
 <pre><code class="language-shell">curl.exe -L -o ubuntu-1804.appx https://aka.ms/wsl-ubuntu-1804
 </code></pre>
 <p>下载速度就很快了，5分钟左右就完成下载了，如下图：</p>
-<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-11-thumbnail.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-11.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>然后对下载后ubuntu-1804.appx文件进行重命名，并解压到当前目录的ubuntu1804子目录下：</p>
 <pre><code class="language-shell">Rename-Item ubuntu-1804.appx ubuntu-1804.zip
 
 Expand-Archive ubuntu-1804.zip ubuntu1804
 </code></pre>
 <p>如下图：</p>
-<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-12-thumbnail.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-12.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>然后继续输入下面命令切换到解压后的目录，并启动运行ubuntu：</p>
 <pre><code class="language-shell">cd ubuntu1804
 
 ubuntu1804.exe
 </code></pre>
 <p>如下图：</p>
-<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-13-thumbnail.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-13.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>很不幸，您将看到如下错误提示：</p>
-<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-14-thumbnail.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-14.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>解决的方法有2个，1个是按照错误提示中所述手工键入&#34;.\ubuntu1804.exe&#34;，或键入字母&#34;u&#34;再按Tab键也会自动填充&#34;.\ubuntu1804.exe&#34;命令。</p>
 <p>另1个方法是使用如下PowerShell命令将您的分发版路径添加到Windows环境路径（在本例中为 C:\Users\Administrator\Ubuntu1804）中：</p>
 <pre><code class="language-shell">$userenv = [System.Environment]::GetEnvironmentVariable(&#34;Path&#34;, &#34;User&#34;)
@@ -5195,11 +5195,11 @@ ubuntu1804.exe
 [System.Environment]::SetEnvironmentVariable(&#34;PATH&#34;, $userenv + &#34;;C:\Users\Administrator\Ubuntu1804&#34;, &#34;User&#34;)
 </code></pre>
 <p>如下图：</p>
-<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-15-thumbnail.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-15.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>只是，第2个方法因为是修改系统变量，需要关闭原有窗口并重新启动PowerShell或者重启下计算机。重启后，就可以在任意路径下直接通过键入&#34;.\ubuntu1804.exe&#34;命令启动您的分发版，然后稍等片刻等待系统完成初始化。如下图：</p>
-<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-16-thumbnail.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-16.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>之后，按照提示输入要创建的用户名和密码，即成功登录ubuntu系统，如下图：</p>
-<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-17-thumbnail.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Rambling-about-installing-and-using-WSL-on-Windows-Server-2019-17.jpg" alt="漫谈在Windows Server 2019中安装使用WSL-98蓝屏事件-Rambling about installing and using WSL on Windows Server 2019" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>这样您就可以开始愉快的utuntu之旅了，在上面安装LNMP等环境，这里就暂不赘述了。喜欢本文的朋友，欢迎点赞、关注、评论哦！笔者后续将继续介绍在WSL下安装centos等发行版，敬请期待！</p>
 
                     </div>

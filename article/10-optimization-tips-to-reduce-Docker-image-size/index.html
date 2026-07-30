@@ -5037,7 +5037,7 @@
     </div>
 
     <section class="bg0 p-b-70 p-t-5">
-        <div class="mn-page-hero bg-img1 size-a-18 how-overlay1" style="background-image: url(&#39;../../upload/2026/07/13d3571846644f3aa3c9676dde61e29c-thumbnail.jpg&#39;);">
+        <div class="mn-page-hero bg-img1 size-a-18 how-overlay1" style="background-image: url(&#39;../../upload/2026/07/13d3571846644f3aa3c9676dde61e29c.jpg&#39;);">
             <div class="container h-full flex-col-e-c p-b-58">
                 
                     
@@ -5113,7 +5113,7 @@ apt install python3 -y
 
 </code></pre>
 <p>从下图中可以看出，通过减少层数，可以减少一些 MB 的大小。</p>
-<p><img data-src="../../upload/2026/07/93a0b4c7952f91bbafa3ba30e34a3592-thumbnail.png" alt="93a0b4c7952f91bbafa3ba30e34a3592" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/93a0b4c7952f91bbafa3ba30e34a3592.png" alt="93a0b4c7952f91bbafa3ba30e34a3592" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <h3 id="2%EF%BC%9A%E4%BD%BF%E7%94%A8-docker-squash-%E5%87%8F%E5%B0%8F%E9%95%9C%E5%83%8F%E5%A4%A7%E5%B0%8F" tabindex="-1">2：使用 Docker Squash 减小镜像大小</h3>
 <p>Docker 在构建镜像时创建了很多层。压缩有助于在逻辑层中组织镜像。我们可以控制镜像的结构，而不是让镜像具有多个不必要的层。</p>
 <p>您可以使用以下命令安装 docker-squash。</p>
@@ -5124,7 +5124,7 @@ apt install python3 -y
 <pre><code class="language-">docker-squash image:old -t image:new
 
 </code></pre>
-<p><img data-src="../../upload/2026/07/07f61c7dcb7baead142ff3af9b66e284-thumbnail.png" alt="07f61c7dcb7baead142ff3af9b66e284" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/07f61c7dcb7baead142ff3af9b66e284.png" alt="07f61c7dcb7baead142ff3af9b66e284" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <h3 id="3%EF%BC%9A%E4%BD%BF%E7%94%A8%E8%BE%83%E5%B0%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E9%95%9C%E5%83%8F" tabindex="-1">3：使用较小的基础镜像</h3>
 <p>减小 docker 镜像大小最明显的方法是使用较小的基础镜像。</p>
 <p>如果希望为 python 应用程序创建镜像，请考虑使用 python:3.9-slim 镜像而不是 python:3.9。</p>
@@ -5165,7 +5165,7 @@ apt install python3 -y --no-install-recommends
 
 </code></pre>
 <p>如下图所示，带有 new 标签的镜像由于添加了此标志而减少了 5MB。当我们要安装多个包时，这将非常有帮助。</p>
-<p><img data-src="../../upload/2026/07/c79186fbfa140499ff56bc4a29d95ef8-thumbnail.png" alt="c79186fbfa140499ff56bc4a29d95ef8" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/c79186fbfa140499ff56bc4a29d95ef8.png" alt="c79186fbfa140499ff56bc4a29d95ef8" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>您可以在 apk add 命令中添加 --no-cache。</p>
 <h3 id="6%EF%BC%9A%E5%9C%A8-apt-install-%E5%91%BD%E4%BB%A4%E5%90%8E%E6%B7%BB%E5%8A%A0-rm--rf-%2Fvar%2Flib%2Fapt%2Flists%2F*" tabindex="-1">6：在 apt install 命令后添加 rm -rf /var/lib/apt/lists/*</h3>
 <p>我们可以在 apt install 之后添加这个命令来减少 docker 镜像的大小。</p>
@@ -5177,7 +5177,7 @@ apt install python3 -y --no-install-recommends &amp;&amp; \
 rm -rf /var/lib/apt/lists/*
 
 </code></pre>
-<p><img data-src="../../upload/2026/07/17814121068a43afaf6d5be475130f1b-thumbnail.png" alt="17814121068a43afaf6d5be475130f1b" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/17814121068a43afaf6d5be475130f1b.png" alt="17814121068a43afaf6d5be475130f1b" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>从上图中可以看出，我们已将 docker 镜像的大小减少了约 41 MB。</p>
 <h3 id="7%EF%BC%9A%E4%BD%BF%E7%94%A8-.dockerignore-%E6%96%87%E4%BB%B6" tabindex="-1">7：使用 .dockerignore 文件</h3>
 <p>如果您不想将某些文件复制到 docker 镜像，那么使用 .dockerignore 文件可以为您节省一些空间。</p>

@@ -5037,7 +5037,7 @@
     </div>
 
     <section class="bg0 p-b-70 p-t-5">
-        <div class="mn-page-hero bg-img1 size-a-18 how-overlay1" style="background-image: url(&#39;../../upload/2026/07/d3135d676e_1_k-hdOAQjRXKoyguzKuoeKg-thumbnail.jpg&#39;);">
+        <div class="mn-page-hero bg-img1 size-a-18 how-overlay1" style="background-image: url(&#39;../../upload/2026/07/d3135d676e_1_k-hdOAQjRXKoyguzKuoeKg.jpg&#39;);">
             <div class="container h-full flex-col-e-c p-b-58">
                 
                     
@@ -5166,7 +5166,7 @@
 <p>Loki这样的设计是为了在你的需求发生变化时，在不同的模式下轻松地重新部署集群，而不需要改变配置或对配置进行最小的改动。</p>
 <h5 id="2.2.1-%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F(monolithic-mode)" tabindex="-1">2.2.1 单体模式(Monolithic mode)</h5>
 <p>最简单的操作模式是设置<code>-target=all</code>。这是默认的target，不需要指定。这是单体模式；它将所有Loki的微服务组件作为一个单一的二进制或Docker镜像在一个进程中运行。</p>
-<p><img data-src="../../upload/2026/07/monolithic-mode-thumbnail.png" alt="monolithic-mode" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/><br/>
+<p><img data-src="../../upload/2026/07/monolithic-mode.png" alt="monolithic-mode" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/><br/>
 monolithic-mode</p>
 <p>单体模式对于快速入门，尝试使用Loki，以及<strong>每天不超过100GB</strong>的小规模读/写量是非常有用的。</p>
 <p>通过使用共享对象存储和配置<code>ring section</code>在所有实例之间共享状态，可以将单体模式的部署水平地扩展到更多的实例。</p>
@@ -5175,7 +5175,7 @@ monolithic-mode</p>
 <p>查询并行化的限制在于实例的数量和定义的查询并行度。</p>
 <h5 id="2.2.2-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%AF%E6%89%A9%E5%B1%95%E9%83%A8%E7%BD%B2%E6%A8%A1%E5%BC%8F" tabindex="-1">2.2.2 简单的可扩展部署模式</h5>
 <p>如果你的日志量每天超过几百GB，或者你想把日志读写分离，Loki提供简单的可扩展部署模式。这种部署模式可以扩展到<strong>每天几TB的日志量</strong>，甚至更多。对于更大的日志里，可以考虑采用微服务模式的部署。</p>
-<p><img data-src="../../upload/2026/07/simple-scalable-thumbnail.png" alt="simple-scalable" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/><br/>
+<p><img data-src="../../upload/2026/07/simple-scalable.png" alt="simple-scalable" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/><br/>
 simple-scalable.png</p>
 <p>在这种模式下，Loki的组件微服务被分成两类目标：<code>-target=read</code>和<code>-target=write</code>。BoltDB压缩器服务将作为读取目标的一部分运行。</p>
 <p>将读和写的路径分开是有好处的：</p>
@@ -5196,13 +5196,13 @@ simple-scalable.png</p>
 <li>ruler</li>
 <li>compactor</li>
 </ul>
-<p><img data-src="../../upload/2026/07/microservices-mode-thumbnail.png" alt="microservices-mode" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/><br/>
+<p><img data-src="../../upload/2026/07/microservices-mode.png" alt="microservices-mode" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/><br/>
 microservices-mode.png</p>
 <p>作为单独的微服务运行组件，可以通过增加微服务的数量来扩大规模。定制的集群对单个组件有更好的可观察性。微服务模式的部署是最有效的Loki部署模式。然而，它们的设置和维护也是最复杂的。</p>
 <p>微服务模式建议用于非常大的Loki集群或需要对扩展和集群操作进行更多控制的集群。</p>
 <p>微服务模式最适合与Kubernetes部署一起使用。有Jsonnet和分布式Helm chart安装。</p>
 <h3 id="2.3-%E7%BB%84%E4%BB%B6" tabindex="-1">2.3 组件</h3>
-<p><img data-src="../../upload/2026/07/loki_architecture_components-thumbnail.png" alt="loki_architecture_components" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/><br/>
+<p><img data-src="../../upload/2026/07/loki_architecture_components.png" alt="loki_architecture_components" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/><br/>
 loki_architecture_components.png</p>
 <h4 id="2.3.1-distributor(%E5%88%86%E5%8F%91%E5%99%A8)" tabindex="-1">2.3.1 Distributor(分发器)</h4>
 <p>distributor服务负责处理客户端传入的数据流。它是日志数据写入路径上的第一站。一旦distributor收到一组数据流，每个数据流都会被验证是否正确，以确保它在配置的租户（或全局）限制范围内。然后，有效的Chunck被分割成批次，并平行地发送到多个ingesters。</p>
@@ -5305,7 +5305,7 @@ loki_architecture_components.png</p>
 <li>索引网关（index gateway）</li>
 </ul>
 <p>在一个具有三个分发器和三个接收器的架构中，这些组件的哈希环将连接相同类型的组件实例。</p>
-<p><img data-src="../../upload/2026/07/ring-overview-thumbnail.png" alt="ring-overview" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/><br/>
+<p><img data-src="../../upload/2026/07/ring-overview.png" alt="ring-overview" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/><br/>
 ring-overview.png</p>
 <p>环中的每个节点代表一个组件实例。每个节点都有一个键值存储，用于保存该环中每个节点的通信信息。节点定期更新键值存储，以确保所有节点之间的内容保持一致。对于每个节点，键值存储包含以下内容：</p>
 <ul>

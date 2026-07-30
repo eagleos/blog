@@ -5037,7 +5037,7 @@
     </div>
 
     <section class="bg0 p-b-70 p-t-5">
-        <div class="mn-page-hero bg-img1 size-a-18 how-overlay1" style="background-image: url(&#39;../../upload/2026/07/2880px-Apache_HTTP_server_logo-thumbnail.png&#39;);">
+        <div class="mn-page-hero bg-img1 size-a-18 how-overlay1" style="background-image: url(&#39;../../upload/2026/07/2880px-Apache_HTTP_server_logo.png&#39;);">
             <div class="container h-full flex-col-e-c p-b-58">
                 
                     
@@ -5083,7 +5083,7 @@
 <p>于是开启了优化方案。。发现是由于apache内存占用太高导致mysql没内存用了 由于囊中羞涩，之前买的是512MB的digitalocean (配置 512MB RAM/1 CPU )</p>
 <p>之前重启了下mysql，过了一会儿用top监视一下资源使用：</p>
 <p>这么快又剩下57MB内存了!（58664K / 1024 =57MB）</p>
-<p><img data-src="../../upload/2026/07/optimizing-apache-for-low-memory-ram-vps-top-apache-use-thumbnail.png" alt="optimizing-apache-for-low-memory-ram-vps-top-apache-use" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/optimizing-apache-for-low-memory-ram-vps-top-apache-use.png" alt="optimizing-apache-for-low-memory-ram-vps-top-apache-use" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>必须要采取apche优化措施！</p>
 <p>你可以先用下面的命令看看内存占用情况和进程内存占用排行：</p>
 <ul>
@@ -5096,10 +5096,10 @@
 <li>apachectl -l</li>
 </ul>
 <p>博主工作在prefork模式下</p>
-<p><img data-src="../../upload/2026/07/apache-word-on-prefork-thumbnail.png" alt="apache-word-on-prefork" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/><br/>
+<p><img data-src="../../upload/2026/07/apache-word-on-prefork.png" alt="apache-word-on-prefork" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/><br/>
 apache-word-on-prefork</p>
 <p>于是打开 httpd.conf ，查看配置（vim /etc/httpd/conf/httpd.conf）</p>
-<p><img data-src="../../upload/2026/07/apache-prefork-configuration-thumbnail.png" alt="apache-prefork-configuration" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/apache-prefork-configuration.png" alt="apache-prefork-configuration" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>apache-prefork-configuration</p>
 <p>这几个参数意思如下：</p>
 <ul>
@@ -5155,7 +5155,7 @@ apache-word-on-prefork</p>
 </ul>
 <h2 id="%E4%BC%98%E5%8C%96%E5%90%8E" tabindex="-1">优化后</h2>
 <p>优化后： 稳定在200MB以上</p>
-<p><img data-src="../../upload/2026/07/optimizing-apache-for-low-memory-ram-vps-top-apache-use-optimized-thumbnail.png" alt="optimizing-apache-for-low-memory-ram-vps-top-apache-use-optimized" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/optimizing-apache-for-low-memory-ram-vps-top-apache-use-optimized.png" alt="optimizing-apache-for-low-memory-ram-vps-top-apache-use-optimized" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>博主暂时先这么优化，观察一阵子，再考虑是否进一步优化</p>
 <h2 id="%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99" tabindex="-1">参考资料</h2>
 <p>这个资料还有mysql优化，apache去除多余模块等：</p>

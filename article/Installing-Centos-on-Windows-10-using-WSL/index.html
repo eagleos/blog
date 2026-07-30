@@ -5037,7 +5037,7 @@
     </div>
 
     <section class="bg0 p-b-70 p-t-5">
-        <div class="mn-page-hero bg-img1 size-a-18 how-overlay1" style="background-image: url(&#39;../../upload/2026/03/Installing-Centos-on-Windows-10-using-WSL-thumbnail.jpg&#39;);">
+        <div class="mn-page-hero bg-img1 size-a-18 how-overlay1" style="background-image: url(&#39;../../upload/2026/03/Installing-Centos-on-Windows-10-using-WSL.jpg&#39;);">
             <div class="container h-full flex-col-e-c p-b-58">
                 
                     
@@ -5087,32 +5087,32 @@
 <p><a href="../Rambling-about-installing-and-using-WSL-on-Windows-Server-2019/" target="_blank">漫谈在Windows Server 2019中安装使用WSL</a></p>
 <h4 id="1-centos-wsl">1: 下载CentOS WSL</h4>
 <p>首先我们需要下载一个可用于WSL的CentOS镜像，该镜像应该是一个经过压缩的，且包含了rootfs及其它文件。幸运地，Github有牛人提供了一个开源的可运行在WSL上的CentOS实例，地址为：https://github.com/yuk7/CentWSL ，其最新版本基于目前流行的版本CentOS 7.6。如下图：</p>
-<p><img data-src="../../upload/2026/03/Installing-Centos-on-Windows-10-using-WSL1-thumbnail.jpg" alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Installing-Centos-on-Windows-10-using-WSL1.jpg" alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <h4 id="2-wsl-centos-7x">2: 解压WSL CentOS 7.x</h4>
 <p>从上面Github地址下载对应的压缩文件，右键点击并解压之，解压后文件大小300MB左右。如下，我们用WinRAR解压，当然您也可以用系统默认解压程序或其它解压缩工具。</p>
-<p><img data-src="../../upload/2026/03/Installing-Centos-on-Windows-10-using-WSL2-thumbnail.jpg" alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Installing-Centos-on-Windows-10-using-WSL2.jpg" alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <h4 id="3-wslcentosexe-">3: 在WSL中运行CentOS.exe 并安装</h4>
 <p>解压后，您将在目标目录中看到2个文件：rootfs.tar.gz和CentOS.exe。我们需要运行CentOS.exe，以便解压其中的文件并注册到WSL。右键点击并以管理员身份运行：</p>
-<p><img data-src="../../upload/2026/03/Installing-Centos-on-Windows-10-using-WSL3-thumbnail.jpg" alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Installing-Centos-on-Windows-10-using-WSL3.jpg" alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <h4 id="4-">4: 完成安装</h4>
 <p>稍等一些时间，系统将自动进行初始化，完成后您将看到如下图所示消息，此时可按任意键退出安装。</p>
-<p><img data-src="../../upload/2026/03/Installing-Centos-on-Windows-10-using-WSL4-thumbnail.jpg" alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Installing-Centos-on-Windows-10-using-WSL4.jpg" alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <h2 id="wslcentos-7">在WSL上启动CentOS 7</h2>
 <p>要在WSL上启动运行Centos，这时您返回解压后的目录，您将看到多出了2个目录，如下图：</p>
-<p><img data-src="../../upload/2026/03/Installing-Centos-on-Windows-10-using-WSL5-thumbnail.jpg" alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Installing-Centos-on-Windows-10-using-WSL5.jpg" alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>不用理会，此时再次右击并以管理员身份运行CentOS.exe，即成功登录系统了，如下图：</p>
-<p><img data-src="../../upload/2026/03/Installing-Centos-on-Windows-10-using-WSL6-thumbnail.jpg" alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Installing-Centos-on-Windows-10-using-WSL6.jpg" alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <h2 id="wslcentos-7-1">在WSL上更新Centos 7</h2>
 <p>现在，您可以随心所欲在CentOS上运行您想要执行的命令了。然而，为了检验系统可用性，我们最好使用yum命令测试下更新系统：</p>
 <pre><code class="language-shell">yum -y update
 </code></pre>
-<p><img data-src="../../upload/2026/03/Installing-Centos-on-Windows-10-using-WSL7-thumbnail.jpg" alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Installing-Centos-on-Windows-10-using-WSL7.jpg" alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <h2 id="wslcentos-7-2">在WSL上卸载CentOS 7</h2>
 <p>如果您因为某种原因不想使用了，可以使用下面命令在WSL上卸载CentOS：</p>
 <pre><code class="language-shell">./CentOS.exe clean
 </code></pre>
 <p>当您在使用CentOS过程中遭遇一些错误想重装，或者您不小心删除了解压缩的目录需要重装时，我们需要先卸载之：</p>
-<p><img data-src="../../upload/2026/03/Installing-Centos-on-Windows-10-using-WSL8-thumbnail.jpg" alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/03/Installing-Centos-on-Windows-10-using-WSL8.jpg" alt="在Windows 10上使用WSL安装Centos Installing Centos on Windows 10 using WSL" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>在WSL上重新安装CentOS，只需要重新执行前面的步骤操作即可。</p>
 
                     </div>

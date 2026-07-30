@@ -5037,7 +5037,7 @@
     </div>
 
     <section class="bg0 p-b-70 p-t-5">
-        <div class="mn-page-hero bg-img1 size-a-18 how-overlay1" style="background-image: url(&#39;../../upload/2026/07/1755571-20200229150735266-1964662043-thumbnail.png&#39;);">
+        <div class="mn-page-hero bg-img1 size-a-18 how-overlay1" style="background-image: url(&#39;../../upload/2026/07/1755571-20200229150735266-1964662043.png&#39;);">
             <div class="container h-full flex-col-e-c p-b-58">
                 
                     
@@ -5121,7 +5121,7 @@
 <p>jti: jwt的唯一身份标识，主要用来作为一次性token。</p>
 <p>其他声明：自己定义的字段，因为这部分是可以解开的，建议不要加入敏感信息，这里的data就是我自己定义的声明</p>
 <p>最终是这样的：<br/>
-<img data-src="../../upload/2026/07/1251386-20190915091903750-751010611-thumbnail.png" alt="1251386-20190915091903750-751010611" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<img data-src="../../upload/2026/07/1251386-20190915091903750-751010611.png" alt="1251386-20190915091903750-751010611" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>三部分分别以逗号隔开</p>
 <h1 id="%E5%9B%9B%E3%80%81jwt%E4%BD%BF%E7%94%A8" tabindex="-1">四、JWT使用</h1>
 <p>PHP有很多jwt包，包括比如：lcobucci/jwt，我这里使用firebase。可以从 <a href="https://github.com/firebase/php-jwt" target="_blank">git地址</a> 下载</p>
@@ -5185,7 +5185,7 @@ class MainController extends Controller
 }
 </code></pre>
 <p>在src目录下的JWT.php中的方法 decode中，可以看到作者是通过多个 自定义 throw new 抛出异常的</p>
-<p><img data-src="../../upload/2026/07/1251386-20190915092035347-1865060644-thumbnail.png" alt="1251386-20190915092035347-1865060644" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/1251386-20190915092035347-1865060644.png" alt="1251386-20190915092035347-1865060644" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>所以我们可以根据不同的throw new设置多个catch来捕获。</p>
 <p>输出的数据：</p>
 <pre><code class="language-">Array
@@ -5258,13 +5258,13 @@ class MainController extends Controller
 }
 </code></pre>
 <p>http头部响应是这样的：两个token客户端保存，一个用来取接口，一个用来刷新接口。</p>
-<p><img data-src="../../upload/2026/07/1251386-20190915092300990-555368323-thumbnail.png" alt="1251386-20190915092300990-555368323" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/1251386-20190915092300990-555368323.png" alt="1251386-20190915092300990-555368323" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>客户端请求的时候在http头部携带 Authorization: bearer token，注意bearer后面有个空格，我们用PHP模拟一下</p>
-<p><img data-src="../../upload/2026/07/1251386-20190915092313489-1904605800-thumbnail.png" alt="1251386-20190915092313489-1904605800" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/1251386-20190915092313489-1904605800.png" alt="1251386-20190915092313489-1904605800" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>请求信息是这样的，PHP获取Authorization信息判断。</p>
 <p>这个只是一种思路，大家可以按照自己的思路去弄，这种思路服务端不用保存token，但如果涉及到token的注销就必须保存，比如token没过期，但是要注销token，这时候可以上redis。</p>
 <p>最后请务必使用HTTPS</p>
-<p><img data-src="../../upload/2026/07/1251386-20190915092405580-1064446505-thumbnail.png" alt="1251386-20190915092405580-1064446505" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/1251386-20190915092405580-1064446505.png" alt="1251386-20190915092405580-1064446505" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>本文转自 <a href="https://www.cnblogs.com/yehuisir/p/11521165.html" target="_blank">https://www.cnblogs.com/yehuisir/p/11521165.html</a>，如有侵权，请联系删除。</p>
 
                     </div>

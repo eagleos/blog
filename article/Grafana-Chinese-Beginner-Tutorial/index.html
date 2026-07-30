@@ -5037,7 +5037,7 @@
     </div>
 
     <section class="bg0 p-b-70 p-t-5">
-        <div class="mn-page-hero bg-img1 size-a-18 how-overlay1" style="background-image: url(&#39;../../upload/2026/07/o23qyhy87w-thumbnail.png&#39;);">
+        <div class="mn-page-hero bg-img1 size-a-18 how-overlay1" style="background-image: url(&#39;../../upload/2026/07/o23qyhy87w.png&#39;);">
             <div class="container h-full flex-col-e-c p-b-58">
                 
                     
@@ -5163,12 +5163,12 @@ services:
 <li>Grafana 本尊</li>
 </ul>
 <p>在你的本地运行 <code>docker-compose up</code>，应该会看到类似：</p>
-<p><img data-src="../../upload/2026/07/5l70vw7s93-thumbnail.png" alt="5l70vw7s93" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/5l70vw7s93.png" alt="5l70vw7s93" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>那么就说明服务已经跑起来了。注意，在之后的所有步骤中，你的 docker 应该处于运行状态。</p>
 <p>在跑起来服务之后，到你的浏览器中，复制 <code>http://localhost:3000</code> 应该就可以看到 Grafana 跑起来的初始登录界面。初始的用户名是 <code>admin</code>，密码也是 <code>admin</code>。输入之后，会要求你改密码</p>
-<p><img data-src="../../upload/2026/07/o23qyhy87w-thumbnail.png" alt="o23qyhy87w" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/o23qyhy87w.png" alt="o23qyhy87w" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>然后就可以进入 Grafana 的主界面了：</p>
-<p><img data-src="../../upload/2026/07/wlhy7bshf1-thumbnail.png" alt="wlhy7bshf1" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/wlhy7bshf1.png" alt="wlhy7bshf1" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>到这里，你的 Grafana 就已经搭起来了。注意到 Docker 的配置文件中我们创建了三个服务，这三个服务之间分别有什么关系呢？</p>
 <p>或者说，Grafana 和时序数据库，数据源之间有什么关系呢？请看下文 <strong>Grafana 工作原理</strong></p>
 <h3 id="4.-grfana-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86" tabindex="-1">4. Grfana 工作原理</h3>
@@ -5180,22 +5180,22 @@ services:
 <p>在真实世界中，你的目的是监控你自己的服务，比如你的 Web 服务器，你的数据库之类。</p>
 <p>那么你就需要在你自己的服务器中把数据发送给普罗米修斯数据库。当然，你完全可以把数据发送给 MySQL (Grafana 也支持)，但普罗米修斯几乎是标配的时序数据库，强烈建议你用。</p>
 <p>用<strong>一张图</strong>来说明它们之间的关系：</p>
-<p><img data-src="../../upload/2026/07/04gp0xam9c-thumbnail.png" alt="04gp0xam9c" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/04gp0xam9c.png" alt="04gp0xam9c" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>这里，最左边的 Docker 服务会将服务的数据发送给中间的普罗米修斯（对应上文的 <code>Prometheus-exporter</code>），而最右边的 Grafana 会查询中间的普罗米修斯，来展示仪表盘。</p>
 <p>关于普罗米修斯本身也可以写一篇很长的教程了，这里我们先暂时略去不表。</p>
 <h3 id="5.-%E6%90%AD%E5%BB%BA%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%BB%AA%E8%A1%A8%E7%9B%98" tabindex="-1">5. 搭建你的第一个仪表盘</h3>
 <p>现在我们来搭建你的第一个仪表盘。</p>
 <h4 id="%E7%AC%AC-1-%E6%AD%A5---%E8%AE%BE%E7%BD%AE%E6%95%B0%E6%8D%AE%E6%BA%90" tabindex="-1"><strong>第 1 步 - 设置数据源</strong></h4>
 <p>进入 Grafana 后，在左侧你会发现有一个 Data Source 即数据源选项</p>
-<p><img data-src="../../upload/2026/07/7rh9gtnq4v-thumbnail.png" alt="7rh9gtnq4v" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/7rh9gtnq4v.png" alt="7rh9gtnq4v" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>点击后进入，点 <code>Add Data Source</code> 即添加数据源，选择 <code>Prometheus</code></p>
-<p><img data-src="../../upload/2026/07/bbg4qmh6t1-thumbnail.png" alt="bbg4qmh6t1" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/bbg4qmh6t1.png" alt="bbg4qmh6t1" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>之后设置数据源 URL。请注意，Promethues 的工作原理（下一个教程中会讲）是通过轮询一个 HTTP 请求来获取数据的，而 Grafana 在获取数据源的时候也是通过一个 HTTP 请求，因此这个地方你需要告诉 Grafana 你的 Prometheus 的数据端点是什么。</p>
 <p>这里我们填入 <code>http://prometheus:9090</code> 就可以了。</p>
 <blockquote>
 <p>你可能会问，为什么不是 <code>localhost:9090</code> 呢？原因是，我们用了 <code>docker-compose</code> 起的三个服务，可以把它们想象成三台独立的服务器，因此需要用一个域名来互相通信。我们在 docker-compose.yml 中设置的普罗米修斯服务器的名字就叫 <code>prometheus</code>，因此这里需要用前者。</p>
 </blockquote>
-<p><img data-src="../../upload/2026/07/fxk6k55xxz-thumbnail.png" alt="fxk6k55xxz" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/fxk6k55xxz.png" alt="fxk6k55xxz" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>点确认时一定要确认出现 <code>Data source is working</code> 这个检测，这时表明你的 Grafana 已经跟普罗米修斯说上话了</p>
 <h4 id="%E7%AC%AC-2-%E6%AD%A5---%E5%AF%BC%E5%85%A5-dashboard" tabindex="-1"><strong>第 2 步 - 导入 Dashboard</strong></h4>
 <p>在 Grafana 里，仪表盘的配置可以通过图形化界面进行，但配置好的仪表盘是以 JSON 存储的。这也就是说，如果你把你的 JSON 数据分享出去，别人导入就可以直接导入同样的仪表盘（前提是你们的监测数据一样）。</p>
@@ -5210,11 +5210,11 @@ services:
 </ul>
 <p>那么，这里我们就用一个标准的仪表盘：<strong><a href="https://grafana.com/grafana/dashboards/1860" target="_blank">https://grafana.com/grafana/dashboards/1860</a></strong></p>
 <p>在左侧的加号里，点 <code>Import</code> 即导入，在出现的界面中填入 <code>1860</code> 即我们要导入的仪表盘编号即可。</p>
-<p><img data-src="../../upload/2026/07/k11ppq033u-thumbnail.png" alt="k11ppq033u" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/k11ppq033u.png" alt="k11ppq033u" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>然后填入你需要的信息，比如仪表盘名字等</p>
-<p><img data-src="../../upload/2026/07/dlkuzf5t6u-thumbnail.png" alt="dlkuzf5t6u" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/dlkuzf5t6u.png" alt="dlkuzf5t6u" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>确认之后 Grafana 就会根据你的本机信息，生成类似 CPU 负载，内存和 I/O 之类的信息。我的磁盘状况如图：</p>
-<p><img data-src="../../upload/2026/07/gb639nfsbx-thumbnail.png" alt="gb639nfsbx" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/gb639nfsbx.png" alt="gb639nfsbx" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>要注意的是，这里的信息真正监控的是你的 Docker 中的系统信息。如果你只给你的 Docker 分配 1 个核和 2G 内存，那么这里应该看到的就是 1 个核和 2G 内存</p>
 <h4 id="%E7%AC%AC-3-%E6%AD%A5---%E7%94%9F%E6%88%90%E5%92%8C%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84%E4%BB%AA%E8%A1%A8%E7%9B%98" tabindex="-1"><strong>第 3 步 - 生成和创建新的仪表盘</strong></h4>
 <p>最后，在上面导入信息的基础上，你就可以开始创建和你的服务、业务相关的仪表盘了。</p>
@@ -5227,7 +5227,7 @@ services:
 <h5 id="%E5%A6%82%E4%BD%95%E6%89%8B%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E4%BB%AA%E8%A1%A8%E7%9B%98" tabindex="-1"><strong>如何手动生成一个仪表盘</strong></h5>
 <p>假设你已经按上面的步骤生成了一个基本的仪表盘，那么现在可以开始手动添加仪表盘了。同样是点左侧的加号，点 <code>Dashboard</code> 就可以进入添加仪表盘的界面。</p>
 <p>这里我们选择一个数据叫 <code>scrape_duration_seconds</code>，先不用管它的含义是什么，就当它是双 11 的销售额好了：</p>
-<p><img data-src="../../upload/2026/07/hw0eh0pb0p-thumbnail.png" alt="hw0eh0pb0p" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
+<p><img data-src="../../upload/2026/07/hw0eh0pb0p.png" alt="hw0eh0pb0p" loading="lazy" decoding="async" src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1 1&#39;%3E%3C/svg%3E"/></p>
 <p>添加好后点右上角的 <code>Apply</code> 或 <code>Save</code> 你的仪表盘就被保存了。这时候，用一个大屏幕展示一下，庆祝一下双十一又过了千亿吧</p>
 <h3 id="6.-%E6%80%BB%E7%BB%93" tabindex="-1">6. 总结</h3>
 <p>这篇文章里我们从头到尾介绍了如何用 Grafana 生成仪表盘，如何配置和连接数据源，以及如何导入和创建一个仪表盘。</p>
