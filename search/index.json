@@ -728,6 +728,20 @@
     "permalink": "https://www.xmyy.com/article/Loki-basics"
   },
   {
+    "title": "FPGA入门指南：从点亮第一颗LED开始",
+    "content": "### 一、到底啥是FPGA？（电子工程师的乐高） 刚接触硬件的同学可能会懵：这货和单片机有啥区别？简单来说，**FPGA就像一张白纸**（Field Programmable Gate Array现场可编程门阵列），你可以用硬件描述语言（比如Verilog）在上面\"画\"出任意数字电路！！！ 单片机是现成的芯片（固定架构），而FPGA允许你从底层构建电路。举个栗子：单片机是组装好的乐高套装，FPGA就是一堆零散的积...",
+    "date": "2025-05-14T22:44:09+08:00",
+    "image": "https://www.xmyy.com/upload/2026/08/53113c383f05435e88d5fb73088405bf.jpg",
+    "permalink": "https://www.xmyy.com/article/FPGA-Beginner-Guide-Starting-with-Lighting-Up-Your-First-LED"
+  },
+  {
+    "title": "一文弄懂Gitflow、Github flow、Gitlab flow的工作流",
+    "content": "Git 作为一个源码管理系统，不可避免涉及到多人协作。 协作必须有一个规范的工作流程，让大家有效地合作，使得项目井井有条地发展下去。\"工作流程\"在英语里，叫做\"workflow\"或者\"flow\"，原意是水流，比喻项目像水流那样，顺畅、自然地向前流动，不会发生冲击、对撞、甚至漩涡。 ![bg2015122301](/upload/2026/08/bg2015122301.png) 本文介绍三种广泛使用的工作流程： \u003e * Git flow \u003e * Github fl...",
+    "date": "2015-12-24T23:09:53+08:00",
+    "image": "https://www.xmyy.com/upload/2026/08/bg2015122301.png",
+    "permalink": "https://www.xmyy.com/article/Understand-Gitflow-GitHub-Flow-and-GitLab-Flow-workflows-in-one-article"
+  },
+  {
     "title": "关于我们",
     "content": "## 关于我们 虾米云栈致力于打造领先的专业的IT技术门户，汇聚人工智能、网络安全、云计算及大数据等领域的深度技术文章，从入门教程到企业级架构，海量技术文档、问答及在线课程，为CTO、架构师及开发者提供前沿视野，陪您一起成长。 \u003e This website is committed to building a leading professional IT technology portal, gathering in-depth technical articles in fields such as artificial intelligence, cybersecurit...",
     "date": "2026-03-29T15:15:51+08:00",
